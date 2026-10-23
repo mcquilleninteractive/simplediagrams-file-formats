@@ -1,0 +1,450 @@
+{
+  "embedded_assets": [],
+  "id": "06CCE7DC-7800-5548-BAC4-C2AFF220751A",
+  "name": "Basic shapes",
+  "pages": [
+    {
+      "content": {
+        "background": {"color_hex": "#FFFDF7", "kind": "solid"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {
+              "appearance": {
+                "color": "#5C7080",
+                "major_interval": 5,
+                "major_line": "solid",
+                "marker": "none",
+                "marker_placement": "major",
+                "minor_line": "dotted",
+                "strength": 0.1
+              },
+              "origin": {"x": 0, "y": 0},
+              "spacing_x": 20,
+              "spacing_y": 20,
+              "visible": true
+            },
+            "height": 1200,
+            "id": "14E58E40-C2CA-59CF-972C-E04E741777B3",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": [],
+        "guides": [
+          {
+            "axis": "horizontal",
+            "id": "B53C3C11-B86D-5056-BFB4-FF9DA721E246",
+            "position": 80
+          }
+        ]
+      },
+      "elements": [
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 90, "width": 180, "x": 80, "y": 80},
+                "id": "A6B37638-1160-5C80-A913-BE3A1ABCEFD9",
+                "kind": "rectangle",
+                "rotation_degrees": 0,
+                "style": {
+                  "fill_hex": "#D8ECFF",
+                  "fill_texture": "PencilFill",
+                  "line_width": 2,
+                  "stroke_hex": "#343A40"
+                },
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Rectangle"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 100, "width": 160, "x": 320, "y": 80},
+                "id": "B5824B16-A8B0-54A9-85F5-D6AFC2154836",
+                "kind": "ellipse",
+                "rotation_degrees": 15,
+                "style": {"fill_hex": "#DDF5E380", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Turned ellipse"
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 110, "width": 140, "x": 540, "y": 80},
+                "id": "FABE41E4-0C93-5670-B12E-C704BB461947",
+                "kind": "note",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFF1A8", "line_width": 2, "stroke_hex": "#8A7636"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "regular"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Sticky note"
+                },
+                "z_index": 2
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 120, "width": 180, "x": 740, "y": 80},
+                "id": "EE084FD7-8626-5C1C-9021-FA1D18888A58",
+                "kind": "note",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFF1A8", "line_width": 2, "stroke_hex": "#8A7636"},
+                "text_content": {
+                  "base_alignment": "leading",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "regular"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Index card"
+                },
+                "z_index": 3
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false,
+            "note_style": "indexCard",
+            "text_layout": {
+              "frame": {"height": 0.25, "width": 0.84, "x": 0.08, "y": 0.05},
+              "position": "top"
+            }
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 70, "width": 300, "x": 80, "y": 260},
+                "id": "402FDF13-0B8C-5BEA-8387-D0DED4451C95",
+                "kind": "text",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#00000000", "line_width": 0, "stroke_hex": "#00000000"},
+                "text_content": {
+                  "base_alignment": "leading",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [
+                    {
+                      "range": {"length": 4, "location": 0},
+                      "style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "bold"
+                      }
+                    },
+                    {
+                      "range": {"length": 6, "location": 6},
+                      "style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": true,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      }
+                    }
+                  ],
+                  "paragraph_runs": [{"alignment": "trailing", "range": {"length": 31, "location": 23}}],
+                  "string": "Bold, italic and plain\nSecond paragraph, right-aligned"
+                },
+                "z_index": 4
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 60, "width": 60, "x": 460, "y": 250},
+                "id": "2E8DA033-9C3E-5966-A8A1-FAFDF5E69FB7",
+                "kind": "ellipse",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#DDF5E3", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "A caption wider than its shape"
+                },
+                "z_index": 5
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false,
+            "text_layout": {"frame": {"height": 1, "width": 3, "x": -1, "y": 0}, "position": "below"}
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 64, "width": 204, "x": 620, "y": 250},
+                "id": "48C1181C-41BE-527C-B9D3-BAC52F0941D6",
+                "kind": "path",
+                "path": {
+                  "end_ending": "none",
+                  "is_closed": false,
+                  "is_smoothed": true,
+                  "marker_tip": "bullet",
+                  "nodes": [
+                    {"kind": "straight", "point": {"x": 2, "y": 50}},
+                    {"kind": "straight", "point": {"x": 50, "y": 2}},
+                    {"kind": "straight", "point": {"x": 100, "y": 62}},
+                    {"kind": "straight", "point": {"x": 150, "y": 2}},
+                    {"kind": "straight", "point": {"x": 202, "y": 50}}
+                  ],
+                  "start_ending": "none",
+                  "stroke_pattern": "solid"
+                },
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#00000000", "line_width": 4, "stroke_hex": "#1F6FB2"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 6
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 100, "width": 120, "x": 880, "y": 250},
+                "id": "37D6D706-3CC7-599D-A567-B9D8ACF5DE7A",
+                "kind": "path",
+                "path": {
+                  "end_ending": "none",
+                  "is_closed": true,
+                  "is_smoothed": false,
+                  "nodes": [
+                    {"kind": "straight", "point": {"x": 60, "y": 2}},
+                    {"kind": "straight", "point": {"x": 118, "y": 98}},
+                    {"kind": "straight", "point": {"x": 2, "y": 98}}
+                  ],
+                  "start_ending": "none",
+                  "stroke_pattern": "dashed"
+                },
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFD8A8", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 7
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [
+    {
+      "id": "D6B5336F-D107-5E11-B91D-54E458B96BEA",
+      "name": "Calm",
+      "style": {"fill_hex": "#E7F5FF", "line_width": 2, "stroke_hex": "#1C7ED6"}
+    },
+    {
+      "id": "5EB42EA3-57EC-5DDE-92B6-008E01FF66C8",
+      "name": "Sketch",
+      "style": {
+        "fill_hex": "#FFFFFF",
+        "fill_texture": "PencilThinDiagonalHatch",
+        "line_width": 2,
+        "stroke_hex": "#212529",
+        "stroke_pattern": "dashed"
+      }
+    }
+  ],
+  "revision": 0,
+  "schema_version": 17,
+  "selected_page_id": "14E58E40-C2CA-59CF-972C-E04E741777B3",
+  "shape_data_definitions": []
+}

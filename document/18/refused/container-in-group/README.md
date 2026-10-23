@@ -1,0 +1,19 @@
+# Refused: container in group
+
+**Rule broken:** A container or swimlanes is never a member of a group. Here the page's one group holds both of its containers, `Web tier` and `Notes`. Both containers break the same rule; nothing else is wrong.
+
+**Stated in:** [elements.md](../../elements.md#1210-rules-across-the-page), Complex shapes: rules across the page.
+
+**Caught by the JSON Schemas:** No. The check spans groups and elements.
+
+**The app's message (English):** "Shape 991246F5-D565-5AAC-B093-C922F44392DF holds a container, swimlanes, table, callout or lifeline record that is not valid."
+
+The identifier is that of the first container, `Web tier`.
+
+## In this folder
+
+`container-in-group.simplediagram/` is a complete document that breaks only this rule. It is stored without the empty `assets/` folder every document needs, because Git does not keep empty folders. Create an empty `assets/` folder inside it before opening it, or the document is refused for that instead.
+
+## To make it valid
+
+Remove the group. A container already holds its members; it is never grouped.

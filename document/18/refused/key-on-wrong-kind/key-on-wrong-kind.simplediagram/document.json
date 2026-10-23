@@ -1,0 +1,82 @@
+{
+  "embedded_assets": [],
+  "id": "291EEE9B-4DC3-5344-9F78-84B59F50282B",
+  "name": "Refused example",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "4ADFC4AB-9CB1-50D2-878F-CBB2D549682A",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 80, "width": 160, "x": 100, "y": 100},
+                "id": "555C09E6-C7B0-5056-8B0E-46850BC36496",
+                "kind": "rectangle",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#D8ECFF", "line_width": 2, "stroke_hex": "#343A40"},
+                "symbol_reference": {
+                  "asset_version": 1,
+                  "item_id": "Cylinder",
+                  "library_id": "com.simplediagrams.shapeLibrary.basic"
+                },
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Hello"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 17,
+  "selected_page_id": "4ADFC4AB-9CB1-50D2-878F-CBB2D549682A",
+  "shape_data_definitions": []
+}

@@ -1,0 +1,3 @@
+# Finder writes .DS_Store into any folder it shows. Inside a document package it makes the
+# document unreadable, so it must never be committed here.
+.DS_Store

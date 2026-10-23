@@ -1,0 +1,147 @@
+{
+  "embedded_assets": [],
+  "id": "ABC75891-34AE-5169-8D18-59D32CC43949",
+  "name": "Refused example",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [
+            {
+              "content": {
+                "end_attachment": {
+                  "connection_point_id": 0,
+                  "element_id": "994A2561-ADC9-5B22-A49E-719297AA8EF1"
+                },
+                "end_ending": "arrow",
+                "id": "AB5EE9B1-8ADA-556E-963C-4C8DAC5D886F",
+                "line_width": 2,
+                "points": [
+                  {"kind": "straight", "x": 260, "y": 140},
+                  {"kind": "straight", "x": 400, "y": 140}
+                ],
+                "start_attachment": {
+                  "connection_point_id": 1,
+                  "element_id": "B81BD158-75C0-5EA0-9DA1-3D8F54028E0A"
+                },
+                "start_ending": "none",
+                "stroke_hex": "#495057",
+                "stroke_pattern": "solid"
+              },
+              "is_locked": false
+            }
+          ],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "407A0DA8-ABBA-5D75-85A0-E3EE811E601A",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "drawableOrder": [
+          {"id": "B81BD158-75C0-5EA0-9DA1-3D8F54028E0A", "kind": "element"},
+          {"id": "994A2561-ADC9-5B22-A49E-719297AA8EF1", "kind": "element"}
+        ],
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 80, "width": 160, "x": 100, "y": 100},
+                "id": "B81BD158-75C0-5EA0-9DA1-3D8F54028E0A",
+                "kind": "rectangle",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#D8ECFF", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "A"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 80, "width": 160, "x": 400, "y": 100},
+                "id": "994A2561-ADC9-5B22-A49E-719297AA8EF1",
+                "kind": "rectangle",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#D8ECFF", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "B"
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 17,
+  "selected_page_id": "407A0DA8-ABBA-5D75-85A0-E3EE811E601A",
+  "shape_data_definitions": []
+}

@@ -1,0 +1,14 @@
+# Every file inside a document package keeps its exact bytes on every platform.
+# Asset file names and inventory entries are SHA-256 digests of those bytes, so a
+# line-ending conversion on checkout would break the examples and refused cases.
+document/**/*.simplediagram/** -text
+document/**/assets/** -text
+document/**/examples/**/*.json -text
+document/**/examples/**/*.svg -text
+document/**/examples/**/*.sdvector -text
+document/**/refused/**/*.json -text
+document/**/refused/**/*.svg -text
+document/**/refused/**/*.sdvector -text
+document/**/refused/**/*.txt -text
+*.png binary
+*.jpg binary

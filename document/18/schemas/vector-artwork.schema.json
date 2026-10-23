@@ -1,0 +1,463 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/18/vector-artwork.schema.json",
+  "title": "SimpleDiagrams vector artwork (.sdvector), formats 1 to 4",
+  "description": "One native vector artwork file: the bytes of an embedded asset of kind editable_vector, stored in a document package's assets folder with the extension .sdvector. The artwork is an ordered list of layers, each a path with a fill, a line or both. Some paints are linked: they take the placed shape's fill or line colour instead of a colour of their own. The file's schema_version is the vector artwork format version, 1 to 4, independent of the document format; document format 18 admits all four. The app reads this file leniently: it ignores keys it does not know at every level, so every object here is open. A writer must still write only the keys described here, each once, and leave optional keys out rather than writing null. What this schema cannot check: that asset_id equals the SHA-256 of the canonical encoding; the order of path commands after the first (a line, curve or close needs an open sub-path, and a close ends it); that dash_array has an even number of entries; the total of 250,000 path commands across all layers and clip paths; the order, nesting, depth (16) and total size (250,000) of compositing groups; the order and overlap of pinned parts; that each outline names an existing, unpinned layer without clip paths, in layer order, with its box inside the view box and its measures within its box; and the file size limit of 16,777,216 bytes.",
+  "type": "object",
+  "required": ["format", "schema_version", "asset_id", "source_view_box", "intrinsic_size", "layers"],
+  "properties": {
+    "format": {
+      "description": "Identifies the file as SimpleDiagrams vector artwork.",
+      "const": "com.simplediagrams.vector-asset"
+    },
+    "schema_version": {
+      "description": "The vector artwork format version: the lowest that can carry the artwork. 1 is a flat list of layers, 2 adds compositing groups, 3 adds pinned parts, 4 adds outlines (with or without pinned parts).",
+      "type": "integer",
+      "enum": [1, 2, 3, 4]
+    },
+    "asset_id": {
+      "description": "The artwork's identity: the lower-case hexadecimal SHA-256 of the canonical encoding of its meaning, which leaves out asset_id and source_sha256. It differs from the file's name, which is the SHA-256 of the file's bytes.",
+      "$ref": "#/$defs/Sha256"
+    },
+    "source_view_box": {
+      "description": "The coordinate box that every path coordinate is expressed in. The app maps it onto the placed shape's frame, stretching each axis independently.",
+      "$ref": "#/$defs/ViewBox"
+    },
+    "intrinsic_size": {
+      "description": "The artwork's natural size in diagram points.",
+      "$ref": "#/$defs/Size"
+    },
+    "source_sha256": {
+      "description": "The SHA-256 of the file the artwork was converted from, kept for provenance only. It plays no part in asset_id.",
+      "$ref": "#/$defs/Sha256"
+    },
+    "layers": {
+      "description": "The layers, drawn in order: the first is at the back.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50000,
+      "items": { "$ref": "#/$defs/Layer" }
+    },
+    "compositing_groups": {
+      "description": "Runs of consecutive layers drawn together and given one opacity as a unit. Required and not empty in format 2; optional in formats 3 and 4; absent (or empty) in format 1.",
+      "type": "array",
+      "maxItems": 4096,
+      "items": { "$ref": "#/$defs/CompositingGroup" }
+    },
+    "pins": {
+      "description": "Pinned parts: runs of layers that keep their drawn size and their distance from one spot of the frame while the rest of the artwork stretches. Required and not empty in format 3; optional in format 4; absent (or empty) in formats 1 and 2.",
+      "type": "array",
+      "maxItems": 1024,
+      "items": { "$ref": "#/$defs/Pin" }
+    },
+    "outlines": {
+      "description": "Layers the app redraws for the frame they are placed in instead of stretching. Required and not empty in format 4; absent (or empty) in formats 1 to 3.",
+      "type": "array",
+      "maxItems": 64,
+      "items": { "$ref": "#/$defs/Outline" }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "required": ["schema_version"], "properties": { "schema_version": { "const": 1 } } },
+      "then": {
+        "properties": {
+          "compositing_groups": { "maxItems": 0 },
+          "pins": { "maxItems": 0 },
+          "outlines": { "maxItems": 0 }
+        }
+      }
+    },
+    {
+      "if": { "required": ["schema_version"], "properties": { "schema_version": { "const": 2 } } },
+      "then": {
+        "required": ["compositing_groups"],
+        "properties": {
+          "compositing_groups": { "minItems": 1 },
+          "pins": { "maxItems": 0 },
+          "outlines": { "maxItems": 0 }
+        }
+      }
+    },
+    {
+      "if": { "required": ["schema_version"], "properties": { "schema_version": { "const": 3 } } },
+      "then": {
+        "required": ["pins"],
+        "properties": {
+          "pins": { "minItems": 1 },
+          "outlines": { "maxItems": 0 }
+        }
+      }
+    },
+    {
+      "if": { "required": ["schema_version"], "properties": { "schema_version": { "const": 4 } } },
+      "then": {
+        "required": ["outlines"],
+        "properties": {
+          "outlines": { "minItems": 1 }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "Sha256": {
+      "description": "A SHA-256 digest written as exactly 64 lower-case hexadecimal digits.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "Coordinate": {
+      "description": "A finite position in view-box units, within plus or minus 1,000,000,000.",
+      "type": "number",
+      "minimum": -1000000000,
+      "maximum": 1000000000
+    },
+    "Extent": {
+      "description": "A finite size from 0.000001 to 10,000,000.",
+      "type": "number",
+      "minimum": 0.000001,
+      "maximum": 10000000
+    },
+    "Opacity": {
+      "description": "An opacity from 0 (invisible) to 1 (opaque).",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "LineMeasure": {
+      "description": "A line width or dash length in diagram points, from 0 to 10,000. It is not stretched with the artwork.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10000
+    },
+    "ViewBox": {
+      "description": "A rectangle in view-box units: its top-left corner and a positive size.",
+      "type": "object",
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "$ref": "#/$defs/Coordinate" },
+        "y": { "$ref": "#/$defs/Coordinate" },
+        "width": { "$ref": "#/$defs/Extent" },
+        "height": { "$ref": "#/$defs/Extent" }
+      }
+    },
+    "Size": {
+      "description": "A positive width and height.",
+      "type": "object",
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "$ref": "#/$defs/Extent" },
+        "height": { "$ref": "#/$defs/Extent" }
+      }
+    },
+    "FillRule": {
+      "description": "How overlapping parts of a path decide what is inside it.",
+      "type": "string",
+      "enum": ["nonzero", "even_odd"]
+    },
+    "MoveCommand": {
+      "description": "Start a new sub-path at a point: [\"M\", x, y].",
+      "type": "array",
+      "prefixItems": [
+        { "const": "M" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" }
+      ],
+      "minItems": 3,
+      "items": false
+    },
+    "LineCommand": {
+      "description": "A straight line to a point: [\"L\", x, y].",
+      "type": "array",
+      "prefixItems": [
+        { "const": "L" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" }
+      ],
+      "minItems": 3,
+      "items": false
+    },
+    "QuadraticCommand": {
+      "description": "A quadratic curve: [\"Q\", control x, control y, end x, end y].",
+      "type": "array",
+      "prefixItems": [
+        { "const": "Q" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" }
+      ],
+      "minItems": 5,
+      "items": false
+    },
+    "CubicCommand": {
+      "description": "A cubic curve: [\"C\", first control x, first control y, second control x, second control y, end x, end y].",
+      "type": "array",
+      "prefixItems": [
+        { "const": "C" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" },
+        { "$ref": "#/$defs/Coordinate" }
+      ],
+      "minItems": 7,
+      "items": false
+    },
+    "CloseCommand": {
+      "description": "Close the current sub-path: [\"Z\"]. It counts as drawing, so a path of one move and one close is valid.",
+      "type": "array",
+      "prefixItems": [{ "const": "Z" }],
+      "minItems": 1,
+      "items": false
+    },
+    "PathCommand": {
+      "description": "One path command: a JSON array holding a one-letter operation followed by exactly the coordinates it takes.",
+      "oneOf": [
+        { "$ref": "#/$defs/MoveCommand" },
+        { "$ref": "#/$defs/LineCommand" },
+        { "$ref": "#/$defs/QuadraticCommand" },
+        { "$ref": "#/$defs/CubicCommand" },
+        { "$ref": "#/$defs/CloseCommand" }
+      ]
+    },
+    "Path": {
+      "description": "A shape made of one or more sub-paths. The first command must be a move, and at least one command must draw (a line, a curve or a close). Every later line, curve or close needs an open sub-path, and a new move is needed after a close before the next drawing command; this schema cannot check that ordering.",
+      "type": "object",
+      "required": ["commands"],
+      "properties": {
+        "commands": {
+          "description": "The commands in order.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 250000,
+          "prefixItems": [{ "$ref": "#/$defs/MoveCommand" }],
+          "items": { "$ref": "#/$defs/PathCommand" },
+          "contains": {
+            "type": "array",
+            "minItems": 1,
+            "prefixItems": [{ "enum": ["L", "Q", "C", "Z"] }]
+          }
+        }
+      }
+    },
+    "Paint": {
+      "description": "Where a colour comes from. An authored paint carries its own colour. A linked paint takes the placed shape's fill colour (linked_diagram_fill) or line colour (linked_diagram_stroke) and must not carry a colour of its own.",
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "description": "authored: use color_hex_rgba. linked_diagram_fill: use the placed shape's fill colour and fill texture. linked_diagram_stroke: use the placed shape's line colour and line texture; on a stroke, the shape's line width replaces the stroke's own width.",
+          "type": "string",
+          "enum": ["authored", "linked_diagram_fill", "linked_diagram_stroke"]
+        },
+        "color_hex_rgba": {
+          "description": "The colour as exactly # followed by eight upper-case hexadecimal digits: red, green, blue and alpha.",
+          "type": "string",
+          "pattern": "^#[0-9A-F]{8}$"
+        }
+      },
+      "if": { "required": ["kind"], "properties": { "kind": { "const": "authored" } } },
+      "then": { "required": ["color_hex_rgba"] },
+      "else": { "not": { "required": ["color_hex_rgba"] } }
+    },
+    "Fill": {
+      "description": "How the inside of a layer's path is painted. All three keys are required.",
+      "type": "object",
+      "required": ["paint", "rule", "opacity"],
+      "properties": {
+        "paint": { "$ref": "#/$defs/Paint" },
+        "rule": { "$ref": "#/$defs/FillRule" },
+        "opacity": { "$ref": "#/$defs/Opacity" }
+      }
+    },
+    "Stroke": {
+      "description": "How a layer's path is outlined. All eight keys are required. Widths and dash lengths are in diagram points and do not stretch with the artwork.",
+      "type": "object",
+      "required": ["paint", "width", "line_cap", "line_join", "miter_limit", "dash_array", "dash_offset", "opacity"],
+      "properties": {
+        "paint": { "$ref": "#/$defs/Paint" },
+        "width": {
+          "description": "Line weight, 0 to 10,000.",
+          "$ref": "#/$defs/LineMeasure"
+        },
+        "line_cap": {
+          "description": "How open ends are finished.",
+          "type": "string",
+          "enum": ["butt", "round", "square"]
+        },
+        "line_join": {
+          "description": "How corners are joined.",
+          "type": "string",
+          "enum": ["miter", "round", "bevel"]
+        },
+        "miter_limit": {
+          "description": "When a sharp corner is cut off, 1 to 10,000.",
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "dash_array": {
+          "description": "Dash and gap lengths, alternating; empty for a solid line. It must have an even number of entries (not checked by this schema), and when not empty at least one entry must be above zero.",
+          "type": "array",
+          "maxItems": 1024,
+          "items": { "$ref": "#/$defs/LineMeasure" },
+          "if": { "minItems": 1 },
+          "then": { "contains": { "exclusiveMinimum": 0 } }
+        },
+        "dash_offset": {
+          "description": "Where the dash pattern starts, within plus or minus 1,000,000,000.",
+          "$ref": "#/$defs/Coordinate"
+        },
+        "opacity": { "$ref": "#/$defs/Opacity" }
+      }
+    },
+    "ClipPath": {
+      "description": "A shape a layer is clipped to, with its own fill rule. Both keys are required.",
+      "type": "object",
+      "required": ["path", "rule"],
+      "properties": {
+        "path": { "$ref": "#/$defs/Path" },
+        "rule": { "$ref": "#/$defs/FillRule" }
+      }
+    },
+    "Layer": {
+      "description": "One drawn path with its paint and clipping. A layer has a fill, a stroke or both; a layer without one simply has no key for it.",
+      "type": "object",
+      "required": ["path", "clip_paths", "opacity"],
+      "properties": {
+        "path": { "$ref": "#/$defs/Path" },
+        "fill": { "$ref": "#/$defs/Fill" },
+        "stroke": { "$ref": "#/$defs/Stroke" },
+        "clip_paths": {
+          "description": "Shapes the layer is clipped to; it is drawn only where it falls inside every one. Empty for none.",
+          "type": "array",
+          "maxItems": 16,
+          "items": { "$ref": "#/$defs/ClipPath" }
+        },
+        "opacity": {
+          "description": "The layer's overall opacity.",
+          "$ref": "#/$defs/Opacity"
+        }
+      },
+      "anyOf": [{ "required": ["fill"] }, { "required": ["stroke"] }]
+    },
+    "CompositingGroup": {
+      "description": "One opacity applied to a run of consecutive layers drawn together, so overlaps inside the run do not show through each other. Groups are listed by first layer, a longer group before a shorter one that starts at the same layer; two groups are nested or separate, never partly overlapping; the run must end within the layer list. Those rules are not checked by this schema.",
+      "type": "object",
+      "required": ["first_layer_index", "layer_count", "opacity"],
+      "properties": {
+        "first_layer_index": {
+          "description": "The first layer of the run, counting from 0.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "layer_count": {
+          "description": "How many layers the run holds.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "opacity": { "$ref": "#/$defs/Opacity" }
+      }
+    },
+    "Pin": {
+      "description": "A pinned part: a run of consecutive layers that keeps its drawn size and its distance from one spot of the frame. Pinned parts are listed in layer order, stay inside the layer list and never overlap; this schema cannot check that.",
+      "type": "object",
+      "required": ["first_layer_index", "layer_count", "anchor"],
+      "properties": {
+        "first_layer_index": {
+          "description": "The part's first layer, counting from 0.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "layer_count": {
+          "description": "How many layers make the part.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "anchor": {
+          "description": "The spot of the frame the part keeps its distance from.",
+          "type": "string",
+          "enum": ["top-left", "top", "top-right", "left", "center", "right", "bottom-left", "bottom", "bottom-right"]
+        }
+      }
+    },
+    "Outline": {
+      "description": "A layer the app draws afresh for the frame it is placed in: a box whose corner radius, inset and pen keep their drawn size while its straight sides grow. The layer keeps its path as drawn at the artwork's own size, so a reader that does not redraw outlines can draw the layer as usual. Each kind takes exactly its own measures.",
+      "type": "object",
+      "required": ["layer_index", "kind", "box", "corner_radius", "offsets"],
+      "properties": {
+        "layer_index": {
+          "description": "The layer this outline draws, counting from 0.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "description": "What is drawn: hand_drawn_box, a rounded box; folded_corner_box and folded_corner_crease, a box with its top-right corner cut and the crease of that corner; tabbed_box and tabbed_box_divider, a box with a tab on the left of its top edge and the line under the tab.",
+          "type": "string",
+          "enum": ["hand_drawn_box", "folded_corner_box", "folded_corner_crease", "tabbed_box", "tabbed_box_divider"]
+        },
+        "box": {
+          "description": "The box at the drawn size, in view-box units, inside the source view box. Its width and height are above zero.",
+          "type": "object",
+          "required": ["x", "y", "width", "height"],
+          "properties": {
+            "x": { "$ref": "#/$defs/Coordinate" },
+            "y": { "$ref": "#/$defs/Coordinate" },
+            "width": { "type": "number", "exclusiveMinimum": 0 },
+            "height": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        },
+        "corner_radius": {
+          "description": "How round the box's corners are, from 0 to half the box's shorter side.",
+          "type": "number",
+          "minimum": 0
+        },
+        "offsets": {
+          "description": "Distances inwards at which the box is drawn, in increasing order, each from 0 to corner_radius: [0] for the box itself.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": { "type": "number", "minimum": 0 }
+        },
+        "fold": {
+          "description": "For the folded-corner kinds only: the length of each side of the cut corner, above 0 and no longer than the box's shorter side.",
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "tab": {
+          "description": "For the tabbed kinds only: the tab's size at the drawn size, narrower than the box and no taller than half of it.",
+          "type": "object",
+          "required": ["width", "height"],
+          "properties": {
+            "width": { "type": "number", "exclusiveMinimum": 0 },
+            "height": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "required": ["kind"], "properties": { "kind": { "const": "hand_drawn_box" } } },
+          "then": { "not": { "anyOf": [{ "required": ["fold"] }, { "required": ["tab"] }] } }
+        },
+        {
+          "if": { "required": ["kind"], "properties": { "kind": { "enum": ["folded_corner_box", "folded_corner_crease"] } } },
+          "then": {
+            "required": ["fold"],
+            "not": { "required": ["tab"] },
+            "properties": { "corner_radius": { "const": 0 }, "offsets": { "const": [0] } }
+          }
+        },
+        {
+          "if": { "required": ["kind"], "properties": { "kind": { "enum": ["tabbed_box", "tabbed_box_divider"] } } },
+          "then": {
+            "required": ["tab"],
+            "not": { "required": ["fold"] },
+            "properties": { "corner_radius": { "const": 0 }, "offsets": { "const": [0] } }
+          }
+        }
+      ]
+    }
+  }
+}
