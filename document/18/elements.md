@@ -783,6 +783,13 @@ document.
 | `type` | string | Yes | `container`, `swimlanes`, `table`, `callout`, `lifeline` | Which complex shape |
 | `hand_drawn` | boolean | No | Default `true` | `true`: lines are drawn with the app's hand-drawn pen. `false`: drawn exactly. The app writes the key only when it is `false` |
 
+**Informative: very large shapes are drawn with exact lines.** The hand-drawn pen's work grows with the
+length of the lines it draws. So that a document asking for shapes far larger than a page cannot make
+every repaint slow, the app draws a shape with exact lines, whatever `hand_drawn` says, when its lines
+would need more of the pen's work than one shape may have, or when the complex shapes behind it on the
+same page have already used what a page may have. Nothing is refused and nothing stored changes; only
+shapes much larger than a page, or pages of very many of them, look less hand-drawn.
+
 The keys of each type follow in [12.5](#125-container) to [12.9](#129-lifeline).
 
 ### 12.2 The element's own keys
@@ -809,7 +816,9 @@ A member is an object of the same form a group member has:
 | `id` | UUID | Yes | An element or group on the **same page** | Which one |
 
 A connector is never a member: a member of kind `connection` makes the app refuse the document. A
-member list MUST NOT repeat an entry and holds at most 100,000 entries. Members are references only;
+member list MUST NOT repeat an entry. A container holds at most 1,000 members, a lane at most 1,000,
+and all the lanes of one swimlanes shape at most 2,000 together ([12.11](#1211-how-much-a-shape-and-a-page-hold)).
+Members are references only;
 each member keeps its own position in page coordinates, and the reader does not check that a member
 lies inside its holder's frame. The rules that involve other shapes on the page are in
 [12.10](#1210-rules-across-the-page).
@@ -820,16 +829,20 @@ Faults in the record's *form* are found while the JSON is read and give the gene
 invalid `document.json`: an unknown type, key or enumerated value; a missing required key
 (`direction`, `lanes`, `row_sizes`, `column_sizes`, `cells`, or a lane's key); a lane or member `id`
 that is not a UUID; a member `kind` other than `element`, `group` or `connection`; and a list longer
-than its maximum (more than 50 lanes, 200 rows, 50 columns, 50 cells in a row, or 100,000 members).
+than its maximum (more than 50 lanes, 200 rows, 50 columns or 50 cells in a row). A member list
+longer than 1,000 is not one of these: it gets the message of
+[12.11](#1211-how-much-a-shape-and-a-page-hold), however long it is. A reader stops reading one
+past 2,001 entries, so a very long list costs little before it is refused.
 
 Faults in its *meaning* are found afterwards and give "Shape … holds a container, swimlanes, table,
 callout or lifeline record that is not valid.": no lanes, a share out of range, a cell count that does
 not match, more than 2,000 cells, strip or band sizes out of range, a forbidden flip or rotation, a
 frame below a smallest size, a tail rule, or a member rule.
 
-Two exceptions: a fault in the shape's own text, a lane title or a cell gives the text messages of
-[section 6](#6-text-content); and an `artwork_asset_id` that does not name an `editable_vector` asset
-gives "…invalid text in container artwork reference.".
+Three exceptions: a fault in the shape's own text, a lane title or a cell gives the text messages of
+[section 6](#6-text-content); an `artwork_asset_id` that does not name an `editable_vector` asset
+gives "…invalid text in container artwork reference."; and a shape or page holding more than it may
+gives the message of its limit ([12.11](#1211-how-much-a-shape-and-a-page-hold)).
 
 ### 12.5 `container`
 
@@ -837,7 +850,7 @@ A frame with a title that holds other shapes.
 
 | Key | Type | Required | Rules / bounds | Meaning |
 | --- | --- | --- | --- | --- |
-| `members` | array of members | No | Default `[]`. At most 100,000; no repeats; no connectors | What the container holds, in order. The app always writes the key, even when empty |
+| `members` | array of members | No | Default `[]`. At most 1,000; no repeats; no connectors | What the container holds, in order. The app always writes the key, even when empty |
 | `layout` | string | No | Default `free`. `free` or `automatic` | `free`: members stay where they are put. `automatic`: the members are meant to sit in order, left to right and then down (see below). The app writes the key only for `automatic` |
 | `artwork_asset_id` | string | No | MUST name an embedded asset of kind `editable_vector` | A drawing the container wears in place of its plain box, stretched to its frame. Absent: the app's own rounded box |
 | `title_style` | string | No | Default `band`. `band` or `corner_tag` | `band`: the title is drawn along the top. `corner_tag`: the title is drawn in a tag in the top-left corner, sized to the title, as a UML frame names itself. The app writes the key only for `corner_tag` |
@@ -889,9 +902,9 @@ A **lane** has exactly these four keys. Any other key makes the app refuse the d
 | Key | Type | Required | Rules / bounds | Meaning |
 | --- | --- | --- | --- | --- |
 | `id` | UUID | Yes | Unique among this shape's lanes | The lane's identity. It is unique only within its shape, not in the document: a copied shape keeps its lanes' identifiers |
-| `title` | text content | Yes | As any text content ([section 6](#6-text-content)) | The lane's title |
+| `title` | text content | Yes | As any text content ([section 6](#6-text-content)), and at most 1,000 characters and 100 runs | The lane's title |
 | `size` | number | Yes | Finite, 0.000001 to 1,000,000 | The lane's thickness as a **share**: its part of the sum of all the lanes' sizes, not a length in points |
-| `members` | array of members | Yes | As a container's; MUST be present even when empty | What the lane holds, in order |
+| `members` | array of members | Yes | As a container's: at most 1,000. MUST be present even when empty | What the lane holds, in order. All the lanes of one shape hold at most 2,000 together |
 
 **Laying out the lanes.** The title band is `title_band_size` points tall across the top of the frame.
 The lanes share what is left of the frame between them, in proportion to their `size` values:
@@ -938,7 +951,7 @@ Rows and columns with text in each cell.
 | --- | --- | --- | --- | --- |
 | `row_sizes` | array of numbers | Yes | 1 to 200 entries, each finite, 0.000001 to 1,000,000 | Each row's height as a share of the table's height |
 | `column_sizes` | array of numbers | Yes | 1 to 50 entries, each as above | Each column's width as a share of the table's width |
-| `cells` | array of rows, each an array of text content | Yes | Exactly one row per entry of `row_sizes`, and in every row exactly one cell per entry of `column_sizes`; at most 2,000 cells in all | Each cell's text, row by row ([section 6](#6-text-content)) |
+| `cells` | array of rows, each an array of text content | Yes | Exactly one row per entry of `row_sizes`, and in every row exactly one cell per entry of `column_sizes`; at most 2,000 cells in all. Each cell at most 2,000 characters and 200 runs; all the cells together at most 100,000 characters and 10,000 runs | Each cell's text, row by row ([section 6](#6-text-content)) |
 | `header_row` | boolean | No | Default `true` | `true`: the first row is drawn as a header, its text bold on a band of the fill colour. It changes only how the row is drawn, never the stored text. The app writes the key only when it is `false` |
 
 A row's height is the frame height × its share ÷ the sum of `row_sizes`; a column's width likewise
@@ -1076,14 +1089,47 @@ Nothing compares a complex shape, its members or a callout's tip with the page's
 
 | Budget | Limit | Refusal example |
 | --- | --- | --- |
-| One complex shape's text: its own `text_content`, every lane title and every cell together | 1,000,000 bytes of UTF-8 and 100,000 runs | "…invalid text in text content." / "…too many text-formatting runs (*n*)." |
+| One swimlanes shape's text: its own `text_content` and every lane title together | 1,000,000 bytes of UTF-8 and 100,000 runs | "…invalid text in text content." / "…too many text-formatting runs (*n*)." |
 | Lane titles and table cells across the whole document | 100,000 | "The diagram contains too many lane titles and table cells (*n*)." |
+
+A table's cells, and how much a page's complex shapes hold, have limits of their own
+([12.11](#1211-how-much-a-shape-and-a-page-hold)).
 
 **Informative: drawing order.** A container or swimlanes is drawn, and clicked, just behind the lowest
 thing it holds: a member, a member of a group it holds, a container inside it, or a connector joined
 to one of these. Inner holders are placed first, so a container inside another lands behind its own
 contents and the outer one behind it. This drawn order is worked out every time and never stored; a
 writer cannot put a container in front of its own contents.
+
+### 12.11 How much a shape and a page hold
+
+These limits keep a document that one person makes from hanging or exhausting the Mac of another who
+opens it. They are set far above any diagram drawn by hand. A document over any of them is refused as
+a whole, with the message shown; nothing is cut to fit.
+
+**Characters** here are scalars ([Terms](README.md#terms)), Unicode scalar values, so `é` written as
+one code point counts once however many bytes it takes. **Runs** are the character runs
+and paragraph runs of one text content together ([6.3](#63-runs-and-ranges)).
+
+| What is limited | Limit | Message (English) |
+| --- | --- | --- |
+| Members of one container | 1,000 | "The diagram contains a container holding too many shapes (*n*)." |
+| Members of one lane | 1,000 | "The diagram contains a lane holding too many shapes (*n*)." |
+| Members of all the lanes of one swimlanes shape together | 2,000 | "The diagram contains swimlanes holding too many shapes (*n*)." |
+| One lane title's characters | 1,000 | "The diagram contains a lane title that is too long (*n* characters)." |
+| One lane title's runs | 100 | "The diagram contains a lane title with too many text-formatting runs (*n*)." |
+| One table cell's characters | 2,000 | "The diagram contains a table cell that is too long (*n* characters)." |
+| One table cell's runs | 200 | "The diagram contains a table cell with too many text-formatting runs (*n*)." |
+| All the cells of one table: characters | 100,000 | "The diagram contains a table with too much text (*n* characters)." |
+| All the cells of one table: runs | 10,000 | "The diagram contains a table with too many text-formatting runs (*n*)." |
+| Complex shapes on one page, of every type | 2,000 | "The diagram contains a page with too many complex shapes (*n*)." |
+| Containers and swimlanes on one page together | 500 | "The diagram contains a page with too many containers and swimlanes (*n*)." |
+| Characters in all the lane titles and table cells on one page together | 1,000,000 | "The diagram contains a page with too much text in its complex shapes (*n* characters)." |
+
+*n* is the count the document holds, written as numbers are in the reader's language, for example
+`1,001` in English. A shape's own
+`text_content` is held to the limits every element's text has ([section 6](#6-text-content)), not to
+these. When a document breaks more than one limit, which message it gets is not specified.
 
 ## 13. Enumerated values
 

@@ -773,12 +773,14 @@ the general "invalid document.json" message rather than a specific one.
 ### Complex shapes
 
 A fault in the *form* of a `complex_shape` record, including a list longer than its maximum, is
-enforced while reading (**R**). The other limits here give the complex-shape message
-([elements.md](elements.md#124-which-message-a-fault-gives)).
+enforced while reading (**R**). How much a shape or a page holds gives a message naming the limit
+([elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold)). The other limits here give the
+complex-shape message ([elements.md](elements.md#124-which-message-a-fault-gives)).
 
 | What is limited | Limit | Defined in |
 | --- | --- | --- |
-| Members of one container or lane | 100,000 (above: **R**); none repeated | [elements.md](elements.md#123-members) |
+| Members of one container or lane | 1,000; none repeated | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| Members of all the lanes of one swimlanes shape | 2,000 | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
 | Lanes in one swimlanes | 1 to 50 (above 50: **R**) | [elements.md](elements.md#126-swimlanes) |
 | Table rows; columns; cells | 1 to 200 (above 200: **R**); 1 to 50 (above 50, or more than 50 cells in one row: **R**); 2,000 | [elements.md](elements.md#127-table) |
 | Lane, row and column shares | 0.000001 to 1,000,000 | [elements.md](elements.md) |
@@ -788,6 +790,10 @@ enforced while reading (**R**). The other limits here give the complex-shape mes
 | Shortest lifeline line | 20 points below the head | [elements.md](elements.md) |
 | Containers and swimlanes nested inside one another | 4 deep | [elements.md](elements.md) |
 | Lane titles plus table cells | 100,000 in the document | [elements.md](elements.md) |
+| One lane title | 1,000 scalars and 100 runs | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| One table cell; all the cells of one table | 2,000 scalars and 200 runs; 100,000 scalars and 10,000 runs | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| Complex shapes on one page; containers and swimlanes on one page | 2,000; 500 | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| Lane titles and table cells on one page | 1,000,000 scalars together | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
 
 ### Connections
 
@@ -1000,7 +1006,8 @@ most of them.
   point number the element does not have, or to an attach line it does not offer.
 - A complex shape that breaks a rule of [elements.md](elements.md): a key its type does not use, a
   member on another page or in two holders, a container or swimlanes in a group, counts or shares out
-  of range.
+  of range; or a container, lane, cell, table or page holding more than it may
+  ([elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold)).
 - A group with fewer than two members, a member in two groups, or a group that contains itself.
 - A `drawableOrder` that misses, repeats or invents anything.
 - A kind-specific key on the wrong kind of element, or a required one missing.

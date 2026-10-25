@@ -53,7 +53,8 @@ are listed below.
 
 - **Byte limits.** `maxLength` counts characters (Unicode scalar values), not bytes. Where the
   specification limits a string in bytes of UTF-8, the schema sets `maxLength` to the same number, which is
-  a weaker check, and the description says so.
+  a weaker check, and the description says so. A lane title's and a table cell's limits are in
+  characters, so for those `maxLength` checks exactly what the specification says.
 - **Optional keys.** Optional means the key is left out. These schemas refuse `null` for an optional key.
   The one key that is required and may be `null` is `shape_data_definition_id`.
 - **Explicit default values** such as `"hand_drawn": true` or `"header_row": true` are accepted, as the app
@@ -145,7 +146,11 @@ unless the page says otherwise.
 | --- | --- |
 | At most 100,000 elements, 200,000 connections, 100,000 groups and 200,000 direct group members | [Limits](../README.md#limits) |
 | At most 1,000,000 path nodes and connector points together | [Limits](../README.md#limits) |
-| At most 100,000 lane titles and table cells together; one complex shape's own text, lane titles and cells together at most 1,000,000 bytes and 100,000 runs | [Limits](../README.md#limits) |
+| At most 100,000 lane titles and table cells together; one swimlanes shape's own text and lane titles together at most 1,000,000 bytes and 100,000 runs | [Limits](../README.md#limits) |
+| All the lanes of one swimlanes shape hold at most 2,000 members together (each lane's 1,000 is checked) | [How much a shape and a page hold](../elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| A lane title's runs (at most 100) and a cell's (at most 200) count character runs and paragraph runs together (the schema checks each list on its own) | [How much a shape and a page hold](../elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| All the cells of one table hold at most 100,000 characters and 10,000 runs | [How much a shape and a page hold](../elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| One page holds at most 2,000 complex shapes, 500 containers and swimlanes together, and 1,000,000 characters in its lane titles and table cells together | [How much a shape and a page hold](../elements.md#1211-how-much-a-shape-and-a-page-hold) |
 | Shape data: every definition used by at least one element; each element's values cover every field of its definition exactly once; each value suits its field; a `choiceID` names one of the field's options; at most 100,000 fields across all definitions and 100,000 values across the document; at most 16 MiB of shape-data text | [shape-data.md](../shape-data.md) |
 
 ## Where the schemas are stricter than the app
