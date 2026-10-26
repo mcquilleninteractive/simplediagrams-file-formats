@@ -15,3 +15,6 @@ it record clarifications of wording only.
   and 1,000,000 characters in its lane titles and cells (`elements.md` §12.11), with the schemas and one
   refused example for each. SimpleDiagrams 5.1.0 and 5.1.1 open documents over these limits;
   SimpleDiagrams 5.2 refuses them.
+- The text content record's `background_hex` (`elements.md` §6.1), clarified before first
+  publication: SimpleDiagrams 5.2 and later read it and ignore it, draw no text background and never
+  write it again, as format 19 has no such key. Other readers may ignore it too.

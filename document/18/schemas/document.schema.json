@@ -946,7 +946,7 @@
           "items": { "$ref": "#/$defs/ParagraphRun" }
         },
         "background_hex": {
-          "description": "Optional: the colour of a filled rectangle behind the text block.",
+          "description": "Optional, written by SimpleDiagrams 5.1 as a filled rectangle behind the text block. SimpleDiagrams 5.2 and later read it and ignore it, draw no text background and never write it; other readers may ignore it.",
           "$ref": "#/$defs/Color"
         }
       },

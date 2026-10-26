@@ -346,7 +346,13 @@ no way to add them.
 | `character_runs` | array of character runs | Yes | [6.3](#63-runs-and-ranges) | Stretches of text with a different character style. `[]` for plain text |
 | `base_alignment` | string | Yes | `leading`, `center`, `trailing`, `justified` | Alignment of every paragraph not covered by a paragraph run. `leading` is drawn left-aligned and `trailing` right-aligned |
 | `paragraph_runs` | array of paragraph runs | Yes | [6.3](#63-runs-and-ranges) | Stretches of text with a different alignment. Usually `[]` |
-| `background_hex` | colour | No | A colour | A filled rectangle behind the text block. Absent: nothing behind the text |
+| `background_hex` | colour | No | A colour | Written by SimpleDiagrams 5.1 as a filled rectangle behind the text block. SimpleDiagrams 5.2 and later read it and ignore it (see below) |
+
+`background_hex` is part of format 18 because SimpleDiagrams 5.1 writes it, and a format 18 document
+may hold it. SimpleDiagrams 5.2 and later read it and ignore it: they draw no text background and never
+write the key again. Saving such a document in SimpleDiagrams 5.2 writes format 19, which has no such
+key; a highlight colour on the characters covers the same need there. Other readers MAY ignore it
+too.
 
 Character runs and paragraph runs together MUST number at most 100,000 in one text content ("The
 diagram contains too many text-formatting runs (*n*).").
