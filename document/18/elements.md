@@ -130,7 +130,7 @@ detailed rules.
 | `flip_horizontal` | 1 | boolean | Yes | See [section 3](#3-identity-frame-rotation-and-flips) | Mirror the artwork left to right |
 | `flip_vertical` | 1 | boolean | Yes | See [section 3](#3-identity-frame-rotation-and-flips) | Mirror the artwork top to bottom |
 | `text_layout` | 1 | object | No | Forbidden on `path`, `unresolved`, `svg_artwork`, `image`, `complex_shape` | Where the label sits ([section 7](#7-text-layout)). Absent: the default inset region, label centred |
-| `note_style` | 1 | string | No | `stickyNote` or `indexCard`; `note` only | Which note appearance. Absent: sticky note |
+| `note_style` | 1 | string | No | `stickyNote` or `indexCard`; `note` only | Which note appearance. Absent: sticky note. SimpleDiagrams 5.2 and later read any other word too ([11.3](#113-note)) |
 | `preserves_aspect_ratio` | 1 | boolean | No | Default `false` | Keep proportions when a person resizes the element ([section 9](#9-locking-and-aspect-ratio)) |
 | `shows_image_background` | 1 | boolean | No | Default `false`; `image` only | Fill the frame behind the picture |
 | `shows_image_border` | 1 | boolean | No | Default `false`; `image` only | Outline the frame |
@@ -602,7 +602,14 @@ An annotation with one of two looks, chosen by `note_style`:
 `note_style` on any other kind is refused. **Informative:** the app draws a sticky note as a
 rectangle with corners rounded to 3 points, and an index card as a square-cornered card with a rule
 every 20 points from the top, the first one in a fixed red (`#CC5B4F`, one point wide) and the rest in
-the note's line colour and weight.
+the note's line colour and weight. SimpleDiagrams 5.2 and later stop the rules at least 10 points
+above the card's bottom edge and keep them inside the card.
+
+A format 18 writer MUST write only `stickyNote` or `indexCard`. SimpleDiagrams 5.1 refuses a document
+with any other word. SimpleDiagrams 5.2 and later do not: they treat `note_style` as an open list in
+every format version. A word they know is drawn as that look (5.2 also knows `tapedNote`, `tag`,
+`notebookPage` and `pinnedNote`, which format 19 adds), and any other word is drawn as a sticky note
+and saved as `stickyNote`. Other readers MAY do the same.
 
 ### 11.4 `text`
 
@@ -1140,7 +1147,8 @@ these. When a document breaks more than one limit, which message it gets is not 
 ## 13. Enumerated values
 
 Every value below is stored exactly as shown, and is case-sensitive. An unknown value makes the app
-refuse the document, except `marker_tip`, which is read as absent.
+refuse the document, except `marker_tip`, which is read as absent, and, from SimpleDiagrams 5.2,
+`note_style`, which is read as a sticky note ([13.2](#132-note_style)).
 
 ### 13.1 Element and complex shape values
 
@@ -1160,6 +1168,9 @@ refuse the document, except `marker_tip`, which is read as absent.
 | --- | --- |
 | `stickyNote` | A sticky note (also the meaning when the key is absent) |
 | `indexCard` | An index card with ruled lines |
+
+SimpleDiagrams 5.1 refuses any other word. SimpleDiagrams 5.2 and later read any other word as
+described in [11.3](#113-note).
 
 ### 13.3 `image_content_mode`
 

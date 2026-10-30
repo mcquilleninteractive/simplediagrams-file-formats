@@ -6,6 +6,7 @@ plain-language specification, JSON Schemas, documents the app accepts and docume
 
 | Format | Folder | Status |
 | --- | --- | --- |
+| Document format 19 (`.simplediagram`), the current format | [`document/19/`](document/19/README.md) | Draft until SimpleDiagrams 5.2 is released and the `document-19` tag; final from that tag |
 | Document format 18 (`.simplediagram`) | [`document/18/`](document/18/README.md) | Draft until the `document-18` tag; final from that tag |
 
 ## The SimpleDiagrams document
@@ -20,6 +21,7 @@ up only when the way a document is laid out changes, not with every app release.
 
 | Document format | Written by SimpleDiagrams |
 | --- | --- |
+| 19 | 5.2 |
 | 18 | 5.1.0 and later 5.1 releases |
 | 17 | 5.0.16 |
 | 16 | No public release |
@@ -29,18 +31,23 @@ up only when the way a document is laid out changes, not with every app release.
 | 10 | 5.0.0 to 5.0.3 |
 | 1 to 9 | No public release |
 
-Each document format version that this repository specifies has its own folder; at present that is
-document format 18. A program that writes documents MUST write the newest format it implements; the
+Each document format version that this repository specifies has its own folder. Document format 19 is
+the current format. A program that writes documents MUST write the newest format it implements; the
 app reads every earlier format itself.
 
 ## The compatibility promise
 
 1. **A released format version's specification is frozen.** Its wording may be clarified; what it
-   allows or refuses never changes. Clarifications are listed in [CHANGELOG.md](CHANGELOG.md).
+   allows or refuses never changes. Clarifications are listed in [CHANGELOG.md](CHANGELOG.md). The one
+   exception is a format's generator catalogue (`document/19/generators/`), which may gain entries,
+   and words in its entries' open settings, without changing what any valid document means; each
+   addition is listed in the CHANGELOG.
 2. **The app opens every earlier document format version** it has ever written.
 3. **A document written to a published specification opens** in every app version that writes that
    format version or a later one. "Written to the specification" means using only what it lists
-   wherever a reader must know a value to proceed.
+   wherever a reader must know a value to proceed: for example, a generated shape that a format 19
+   document holds in its incomplete form, for the app to draw on opening, names only the generators,
+   versions and setting words the format 19 specification lists.
 4. **No promise is made that an older app opens a newer format.** The app refuses a newer document
    and asks the person to update SimpleDiagrams.
 5. **The app always saves in its newest format,** so a document saved by a newer app needs that app or
@@ -54,14 +61,17 @@ app reads every earlier format itself.
   `schemas/README.md` lists the rules a program must also check, with the page that states them.
 - **Test** a reader or writer against `examples/` (documents the app opens) and `refused/` (documents
   the app refuses, one broken rule each).
-- The schemas' `$id` values (such as `https://simplediagrams.com/schemas/document/18/document.schema.json`)
+- The schemas' `$id` values (such as `https://simplediagrams.com/schemas/document/19/document.schema.json`)
   are identifiers. They are not promised to be served at those addresses; use the files here.
 
 ## Versions and tags
 
 A format folder is a **draft** until this repository is tagged `document-<version>`, for example
-`document-18`. From that tag on, the folder is final and its rules are frozen
-([The compatibility promise](#the-compatibility-promise)).
+`document-19`, which happens when the SimpleDiagrams release that writes that format is published.
+From that tag on, the folder is final and its rules are frozen
+([The compatibility promise](#the-compatibility-promise)), except that `document/19/generators/` may gain
+entries, and words in its entries' open settings, after the tag. Such an addition never changes what an
+existing valid document means, and is recorded in [CHANGELOG.md](CHANGELOG.md).
 
 ## Questions and corrections
 

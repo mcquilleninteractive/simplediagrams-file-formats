@@ -737,7 +737,7 @@
         },
         "text_layout": { "$ref": "#/$defs/TextLayout" },
         "note_style": {
-          "description": "For a note only. Absent means a sticky note.",
+          "description": "For a note only. Absent means a sticky note. A format 18 writer writes only these two values; SimpleDiagrams 5.2 and later also read any other word, drawing a look they know as that look and any other as a sticky note.",
           "type": "string",
           "enum": ["stickyNote", "indexCard"]
         },

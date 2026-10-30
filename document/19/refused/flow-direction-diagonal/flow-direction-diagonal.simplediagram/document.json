@@ -1,0 +1,225 @@
+{
+  "embedded_assets": [],
+  "id": "7467AFFF-4DF6-58D0-8754-C6B7B94B23E7",
+  "name": "Flow direction diagonal",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "13B2588A-33B7-5904-B2E5-3849DCF0DBF6",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "generator": "com.simplediagrams.flow",
+            "generator_version": 1,
+            "made_at": {"height": 80, "width": 360},
+            "parts": [
+              {
+                "id": "00000000-0000-4000-8000-000000000001",
+                "loops": [
+                  [
+                    ["L", 0, 0, 105.78404442037319, 0, "start", 1],
+                    ["L", 105.78404442037319, 0, 133.7840444203732, 40, "start", 1],
+                    ["L", 133.7840444203732, 40, 105.78404442037319, 80, "start", 1],
+                    ["L", 105.78404442037319, 80, 0, 80, "start", 1],
+                    ["L", 0, 80, 28, 40, "start", 1],
+                    ["L", 28, 40, 0, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [8, 9],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": ""
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.85,
+                        "width": 0.18273345672325886,
+                        "x": 0.09444444444444444,
+                        "y": 0.075
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000002",
+                "loops": [
+                  [
+                    ["L", 113.10797778981342, 0, 218.8920222101866, 0, "start", 1],
+                    ["L", 218.8920222101866, 0, 246.8920222101866, 40, "start", 1],
+                    ["L", 246.8920222101866, 40, 218.8920222101866, 80, "start", 1],
+                    ["L", 218.8920222101866, 80, 113.10797778981342, 80, "start", 1],
+                    ["L", 113.10797778981342, 80, 141.10797778981342, 40, "start", 1],
+                    ["L", 141.10797778981342, 40, 113.10797778981342, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [10, 11],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": ""
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.85,
+                        "width": 0.18273345672325886,
+                        "x": 0.4086332716383706,
+                        "y": 0.075
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000003",
+                "loops": [
+                  [
+                    ["L", 226.2159555796268, 0, 332, 0, "start", 1],
+                    ["L", 332, 0, 360, 40, "start", 1],
+                    ["L", 360, 40, 332, 80, "start", 1],
+                    ["L", 332, 80, 226.2159555796268, 80, "start", 1],
+                    ["L", 226.2159555796268, 80, 254.2159555796268, 40, "start", 1],
+                    ["L", 254.2159555796268, 40, 226.2159555796268, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [12, 13],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": ""
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.85,
+                        "width": 0.18273345672325886,
+                        "x": 0.7228220988322966,
+                        "y": 0.075
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              }
+            ],
+            "resizing": "free",
+            "settings": {
+              "base_shape": "chevron",
+              "direction": "diagonal",
+              "pointer": false,
+              "spacing": "gap"
+            },
+            "stacking": "first_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1},
+                  {"id": 8, "x": 0.07777777777777778, "y": 0.5},
+                  {"id": 9, "x": 0.37162234561214774, "y": 0.5},
+                  {"id": 10, "x": 0.39196660497170394, "y": 0.5},
+                  {"id": 11, "x": 0.685811172806074, "y": 0.5},
+                  {"id": 12, "x": 0.70615543216563, "y": 0.5},
+                  {"id": 13, "x": 1, "y": 0.5}
+                ],
+                "frame": {"height": 80, "width": 360, "x": 80, "y": 80},
+                "id": "06A4F33E-98C1-5A96-B1F4-5A8CFF762BB5",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "13B2588A-33B7-5904-B2E5-3849DCF0DBF6",
+  "shape_data_definitions": []
+}

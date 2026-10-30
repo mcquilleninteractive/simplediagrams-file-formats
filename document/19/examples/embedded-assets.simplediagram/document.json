@@ -1,0 +1,185 @@
+{
+  "embedded_assets": [
+    {
+      "byte_count": 352,
+      "filename": "0cbd3459b35d3a9d81a5920823b2337a36360d0abfabdb3f836f22cd3870ac0c.svg",
+      "id": "0cbd3459b35d3a9d81a5920823b2337a36360d0abfabdb3f836f22cd3870ac0c",
+      "kind": "svg_artwork"
+    },
+    {
+      "byte_count": 104,
+      "filename": "607f8fab36cc00f9d86d810ab2b861db113cd4789632a4f1782bb678a52c18b3.png",
+      "id": "607f8fab36cc00f9d86d810ab2b861db113cd4789632a4f1782bb678a52c18b3",
+      "kind": "raster_png"
+    },
+    {
+      "byte_count": 1212,
+      "filename": "7fc8b29491a459027014717ef42f01b3a3defaf9d709c3f8c5ae7791f1c03df8.sdvector",
+      "id": "7fc8b29491a459027014717ef42f01b3a3defaf9d709c3f8c5ae7791f1c03df8",
+      "kind": "editable_vector"
+    }
+  ],
+  "id": "8162F1ED-EE94-5EB0-B06E-94DC4FDA2F0B",
+  "name": "Embedded assets",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "09018891-5B35-5CDC-906D-90C396EA8EEF",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "embedded_asset_id": "607f8fab36cc00f9d86d810ab2b861db113cd4789632a4f1782bb678a52c18b3",
+                "frame": {"height": 160, "width": 160, "x": 80, "y": 80},
+                "id": "6860DB2A-C74E-5BAE-85E5-015875AE5430",
+                "image_content_mode": "fit",
+                "kind": "image",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false,
+            "shows_image_border": true
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "embedded_asset_id": "0cbd3459b35d3a9d81a5920823b2337a36360d0abfabdb3f836f22cd3870ac0c",
+                "frame": {"height": 120, "width": 180, "x": 300, "y": 100},
+                "id": "6B51C608-1B6D-570C-A13F-79F75670D96C",
+                "kind": "svg_artwork",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#00000000", "line_width": 0, "stroke_hex": "#00000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "embedded_asset_id": "7fc8b29491a459027014717ef42f01b3a3defaf9d709c3f8c5ae7791f1c03df8",
+                "frame": {"height": 120, "width": 200, "x": 540, "y": 110},
+                "id": "2BF3552F-2C6E-5248-8AAB-5F911D87930F",
+                "kind": "editable_vector",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#D3F9D8", "line_width": 2, "stroke_hex": "#2B8A3E"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Tag"
+                },
+                "z_index": 2
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "09018891-5B35-5CDC-906D-90C396EA8EEF",
+  "shape_data_definitions": []
+}

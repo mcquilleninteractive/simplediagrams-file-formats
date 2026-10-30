@@ -1,0 +1,171 @@
+{
+  "embedded_assets": [],
+  "id": "925A9588-73EB-5C2D-AE26-47705F082EC2",
+  "name": "Lifelines",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [
+            {
+              "content": {
+                "end_attachment": {
+                  "attach_line_id": 0,
+                  "distance": 8,
+                  "element_id": "74231FB4-9472-5B82-B21A-67F7BBDF77CB"
+                },
+                "end_ending": "arrow",
+                "id": "7A598AAD-4055-5A8F-B5EC-BBA1CF39138B",
+                "label": {
+                  "content": {
+                    "base_alignment": "center",
+                    "base_style": {
+                      "color_hex": "#212529",
+                      "font_size": 13,
+                      "is_italic": false,
+                      "is_underlined": false,
+                      "weight": "regular"
+                    },
+                    "character_runs": [],
+                    "paragraph_runs": [],
+                    "string": "request"
+                  },
+                  "normal_offset": -10,
+                  "position": 0.5
+                },
+                "line_width": 2,
+                "points": [
+                  {"kind": "straight", "x": 160, "y": 140},
+                  {"kind": "straight", "x": 460, "y": 140}
+                ],
+                "start_attachment": {
+                  "attach_line_id": 0,
+                  "distance": 40,
+                  "element_id": "45C624A5-437D-5B2B-9C14-6E54C468EE99"
+                },
+                "start_ending": "none",
+                "stroke_hex": "#495057",
+                "stroke_pattern": "solid"
+              },
+              "is_locked": false
+            },
+            {
+              "content": {
+                "end_attachment": {
+                  "attach_line_id": 0,
+                  "distance": 80,
+                  "element_id": "45C624A5-437D-5B2B-9C14-6E54C468EE99"
+                },
+                "end_ending": "arrow",
+                "id": "8FEF3C15-7089-56D4-9EE5-3B6838801B14",
+                "line_width": 2,
+                "points": [
+                  {"kind": "straight", "x": 460, "y": 180},
+                  {"kind": "straight", "x": 160, "y": 180}
+                ],
+                "start_attachment": {
+                  "attach_line_id": 0,
+                  "distance": 48,
+                  "element_id": "74231FB4-9472-5B82-B21A-67F7BBDF77CB"
+                },
+                "start_ending": "none",
+                "stroke_hex": "#495057",
+                "stroke_pattern": "dashed"
+              },
+              "is_locked": false
+            }
+          ],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "8C7F2ADA-3D2B-576C-B9FB-E94B28BCA270",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {"type": "lifeline"},
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [{"id": 2, "x": 0.5, "y": 0}],
+                "frame": {"height": 300, "width": 120, "x": 100, "y": 60},
+                "id": "45C624A5-437D-5B2B-9C14-6E54C468EE99",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Client"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {"ends_in_destroy_mark": true, "head_style": "actor", "type": "lifeline"},
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [{"id": 2, "x": 0.5, "y": 0}],
+                "frame": {"height": 300, "width": 120, "x": 400, "y": 60},
+                "id": "74231FB4-9472-5B82-B21A-67F7BBDF77CB",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "User"
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "8C7F2ADA-3D2B-576C-B9FB-E94B28BCA270",
+  "shape_data_definitions": []
+}

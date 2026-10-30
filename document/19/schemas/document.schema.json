@@ -1,0 +1,2680 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/document.schema.json",
+  "title": "SimpleDiagrams document format 19: document.json",
+  "description": "The whole diagram in document format 19: its pages with their elements, connections and groups, its Quick Styles, the inventory of files in the package's assets folder, the shared table of shape-data definitions, and two optional advisory lists. Pages and elements are wrapped in several levels of records each named content, a result of how the format grew; every level and every array shown as required must be present. Objects are closed (unknown keys refused) exactly where the app refuses unknown keys: the top level, the outer record of each page and element, every complex-shape record and lane, every record inside a generated shape but the words of its text slots, every connector attachment, and every shape-data record. Everywhere else the app ignores unknown keys and drops them when it next saves, so those objects are open here; a writer must still not add keys. An optional key is omitted when it has no value; this schema refuses null for optional keys. Passing this schema is necessary but not sufficient: the README beside this file lists the rules it cannot check.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "schema_version",
+    "revision",
+    "name",
+    "selected_page_id",
+    "pages",
+    "quick_styles",
+    "embedded_assets",
+    "shape_data_definitions"
+  ],
+  "properties": {
+    "id": {
+      "description": "The document's own identity. It must differ from every other identifier in the document's shared set (pages, elements, connections, groups, guides and Quick Styles).",
+      "$ref": "#/$defs/Uuid"
+    },
+    "schema_version": {
+      "description": "The document schema version: always the manifest's format_version minus one, so 18 for document format 19.",
+      "type": "integer",
+      "const": 18
+    },
+    "revision": {
+      "description": "A counter raised by one for each committed edit. A new document has 0.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000000
+    },
+    "name": {
+      "description": "The name the document was given when it was created or imported. It may be empty. At most 512 bytes of UTF-8 (this schema checks 512 characters); no NUL character.",
+      "$ref": "#/$defs/NulFreeText",
+      "maxLength": 512
+    },
+    "selected_page_id": {
+      "description": "The id of the page shown when the document opens. It must name one of the pages.",
+      "$ref": "#/$defs/Uuid"
+    },
+    "pages": {
+      "description": "The pages, in order: at least one and at most 100.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": { "$ref": "#/$defs/Page" }
+    },
+    "quick_styles": {
+      "description": "The document's Quick Styles: named fill-and-line presets. May be empty.",
+      "type": "array",
+      "maxItems": 32,
+      "items": { "$ref": "#/$defs/QuickStyle" }
+    },
+    "embedded_assets": {
+      "description": "The inventory of the files in the package's assets folder. It must list every file there exactly once and nothing else.",
+      "type": "array",
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/EmbeddedAsset" }
+    },
+    "shape_data_definitions": {
+      "description": "The shared table of shape-data definitions. Every entry must be used by at least one element, and every element's shape_data_definition_id that is not null must name an entry. Required even when empty.",
+      "type": "array",
+      "maxItems": 100000,
+      "items": { "$ref": "#/$defs/ShapeDataDefinition" }
+    },
+    "required_libraries": {
+      "description": "Optional and advisory: the libraries the writer says the document needs, each with a readable name, so a reader without a library can name it. The app reads this list leniently (a faulty entry is left out) but a writer must write every entry correctly. A writer should omit the key rather than write an empty list.",
+      "type": "array",
+      "maxItems": 64,
+      "items": { "$ref": "#/$defs/RequiredLibrary" }
+    },
+    "library_shape_names": {
+      "description": "Optional: the readable name of each library shape the document uses. A name never decides which artwork is drawn. The app reads this list leniently (a faulty entry, or one naming a shape the document does not use, is left out) but a writer must write every entry correctly. A writer should omit the key rather than write an empty list.",
+      "type": "array",
+      "maxItems": 10000,
+      "items": { "$ref": "#/$defs/LibraryShapeName" }
+    }
+  },
+  "$defs": {
+    "Uuid": {
+      "description": "A UUID written as 8-4-4-4-12 hexadecimal digits. The app writes upper case and reads either case; identifiers are compared without regard to case.",
+      "type": "string",
+      "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+    },
+    "Sha256": {
+      "description": "A SHA-256 digest written as exactly 64 lower-case hexadecimal digits. An embedded asset's id is the digest of its file's bytes.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "Color": {
+      "description": "A colour: # followed by six (RRGGBB) or eight (RRGGBBAA, alpha last) hexadecimal digits in either letter case. Transparent is #00000000. Three-digit colours, colour names and none are refused.",
+      "type": "string",
+      "pattern": "^#(?:[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+    },
+    "NulFreeText": {
+      "description": "Text that contains no NUL character (U+0000).",
+      "type": "string",
+      "pattern": "^[^\\u0000]*$"
+    },
+    "Coordinate": {
+      "description": "A finite position or offset in diagram points, within plus or minus 1,000,000,000. Page coordinates have their origin at the top left, with x growing to the right and y growing downwards.",
+      "type": "number",
+      "minimum": -1000000000,
+      "maximum": 1000000000
+    },
+    "Dimension": {
+      "description": "A size in diagram points: above 0 and at most 10,000,000.",
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 10000000
+    },
+    "Fraction": {
+      "description": "A number from 0 to 1.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "TurnAngle": {
+      "description": "An angle in degrees, clockwise as seen on screen: at least 0 and less than 360.",
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMaximum": 360
+    },
+    "LineWidth": {
+      "description": "A line weight in diagram points, from 0 to 10,000. 0 draws no line.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10000
+    },
+    "Point": {
+      "description": "A position: x and y, each within plus or minus 1,000,000,000.",
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "$ref": "#/$defs/Coordinate" },
+        "y": { "$ref": "#/$defs/Coordinate" }
+      }
+    },
+    "Rect": {
+      "description": "A rectangle in diagram points: its top-left corner (x, y, each within plus or minus 1,000,000,000) and its size (width and height, each above 0 and at most 10,000,000).",
+      "type": "object",
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "$ref": "#/$defs/Coordinate" },
+        "y": { "$ref": "#/$defs/Coordinate" },
+        "width": { "$ref": "#/$defs/Dimension" },
+        "height": { "$ref": "#/$defs/Dimension" }
+      }
+    },
+    "Texture": {
+      "description": "One of the hand-drawn textures shipped with the app, by its stored name. PencilThinHoriztonalHatch keeps its historical spelling.",
+      "type": "string",
+      "enum": [
+        "Horizontal",
+        "Vertical",
+        "Grid",
+        "SingleHatch",
+        "TripleHatch",
+        "PencilFill",
+        "PencilThinHoriztonalHatch",
+        "PencilThinSquareHatch",
+        "PencilThinCrossHatch",
+        "PencilThinDiagonalHatch",
+        "WatercolorFill",
+        "Grain",
+        "PencilVerticalHatch",
+        "PencilTriangleHatch",
+        "PencilRandomHatch",
+        "PencilHorizontal",
+        "Chalk"
+      ]
+    },
+    "StrokePattern": {
+      "description": "A line pattern.",
+      "type": "string",
+      "enum": ["solid", "dashed", "dotted"]
+    },
+    "LineEnding": {
+      "description": "The decoration drawn at one end of a path or connector. none is a plain end; stop is a short bar across the end; solidArrow is drawn as a hollow arrow; openDiamond is the outlined diamond and diamond the filled one.",
+      "type": "string",
+      "enum": [
+        "none",
+        "stop",
+        "arrow",
+        "solidArrow",
+        "circle",
+        "solidCircle",
+        "openDiamond",
+        "diamond",
+        "halfCircle",
+        "crowFoot",
+        "one",
+        "oneAndOnlyOne",
+        "zeroOrOne",
+        "oneOrMany",
+        "zeroOrMany",
+        "filledArrow",
+        "slash",
+        "circlePlus",
+        "cross",
+        "halfArrow"
+      ]
+    },
+    "PointKind": {
+      "description": "straight: the line turns a corner at this point. curve: the line bends smoothly through it.",
+      "type": "string",
+      "enum": ["straight", "curve"]
+    },
+    "TextAlignment": {
+      "description": "Paragraph alignment. leading is drawn left-aligned and trailing right-aligned.",
+      "type": "string",
+      "enum": ["leading", "center", "trailing", "justified"]
+    },
+    "Page": {
+      "description": "One page: its elements, and a record holding everything else. Unknown keys are refused at this level.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content", "elements"],
+      "properties": {
+        "content": { "$ref": "#/$defs/PageSettings" },
+        "elements": {
+          "description": "The page's elements. Their order here does not decide drawing order. At most 100,000 on one page and 100,000 in the whole document.",
+          "type": "array",
+          "maxItems": 100000,
+          "items": { "$ref": "#/$defs/Element" }
+        }
+      }
+    },
+    "PageSettings": {
+      "description": "The second level of a page: its background, groups, optional output settings, drawing order and guides, and the record holding its connections. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["content", "background", "elements", "groups"],
+      "properties": {
+        "content": { "$ref": "#/$defs/PageConnections" },
+        "background": { "$ref": "#/$defs/Background" },
+        "elements": {
+          "description": "Left over from an older layout. Must be present and empty.",
+          "type": "array",
+          "maxItems": 0
+        },
+        "groups": {
+          "description": "The page's groups. At most 100,000 in the whole document.",
+          "type": "array",
+          "maxItems": 100000,
+          "items": { "$ref": "#/$defs/Group" }
+        },
+        "physicalOutputLayout": { "$ref": "#/$defs/PhysicalOutputLayout" },
+        "backgroundReferenceFrame": {
+          "description": "Optional: the rectangle, in page coordinates, a background image is anchored to. Without it the image is anchored to the rectangle from (0, 0) to the page's width and height.",
+          "$ref": "#/$defs/Rect"
+        },
+        "drawableOrder": {
+          "description": "Optional: the page's drawing order, back to front. When present it must name every element and connection on the page exactly once, and z_index is then not used for drawing. When absent, every connection is drawn behind every element and elements stack by z_index.",
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 300000,
+          "items": { "$ref": "#/$defs/DrawableReference" }
+        },
+        "guides": {
+          "description": "Optional: the page's ruler guides, at most 1,000. A writer should omit the key when there are none.",
+          "type": "array",
+          "maxItems": 1000,
+          "items": { "$ref": "#/$defs/Guide" }
+        }
+      }
+    },
+    "PageConnections": {
+      "description": "The third level of a page: its connections, and the record holding the page itself. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["content", "elements", "connections", "groups"],
+      "properties": {
+        "content": { "$ref": "#/$defs/PageCore" },
+        "elements": {
+          "description": "Left over from an older layout. Must be present and empty.",
+          "type": "array",
+          "maxItems": 0
+        },
+        "connections": {
+          "description": "The page's connections. At most 200,000 in the whole document.",
+          "type": "array",
+          "maxItems": 200000,
+          "items": { "$ref": "#/$defs/Connection" }
+        },
+        "groups": {
+          "description": "Left over from an older layout. Must be present and empty.",
+          "type": "array",
+          "maxItems": 0
+        }
+      }
+    },
+    "PageCore": {
+      "description": "The innermost level of a page: its identity, name, reference size, grid and optional export frame. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["id", "name", "width", "height", "grid", "elements", "connections"],
+      "properties": {
+        "id": {
+          "description": "The page's identity, unique in the document's shared identifier set.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "name": {
+          "description": "The page's name. It may be empty. At most 512 bytes of UTF-8 (this schema checks 512 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "maxLength": 512
+        },
+        "width": {
+          "description": "A reference width in diagram points. It does not bound or clip the page; the app writes 2,000.",
+          "$ref": "#/$defs/Dimension"
+        },
+        "height": {
+          "description": "A reference height in diagram points. It does not bound or clip the page; the app writes 1,200.",
+          "$ref": "#/$defs/Dimension"
+        },
+        "grid": { "$ref": "#/$defs/Grid" },
+        "export_frame": {
+          "description": "Optional: an authored output region in page coordinates.",
+          "$ref": "#/$defs/Rect"
+        },
+        "elements": {
+          "description": "Left over from an older layout. Must be present and empty; the app refuses anything here.",
+          "type": "array",
+          "maxItems": 0
+        },
+        "connections": {
+          "description": "Left over from an older layout. Must be present and empty; the app refuses anything here.",
+          "type": "array",
+          "maxItems": 0
+        }
+      }
+    },
+    "Grid": {
+      "description": "The page's grid. Spacing and origin decide where shapes snap; visible and appearance decide only what is drawn. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["spacing_x", "spacing_y", "origin"],
+      "properties": {
+        "spacing_x": {
+          "description": "The width of one grid cell in diagram points, 4 to 10,000.",
+          "type": "number",
+          "minimum": 4,
+          "maximum": 10000
+        },
+        "spacing_y": {
+          "description": "The height of one grid cell in diagram points, 4 to 10,000.",
+          "type": "number",
+          "minimum": 4,
+          "maximum": 10000
+        },
+        "origin": {
+          "description": "A page position that lies on a grid crossing; it shifts the whole lattice.",
+          "$ref": "#/$defs/Point"
+        },
+        "visible": {
+          "description": "Whether the grid is drawn. Absent means true.",
+          "type": "boolean"
+        },
+        "appearance": { "$ref": "#/$defs/GridAppearance" }
+      }
+    },
+    "GridAppearance": {
+      "description": "How the grid is drawn. Absent means the standard look: minor_line solid, major_line none, major_interval 5, marker none, marker_placement major, strength 0.1. Unknown keys are ignored.",
+      "type": "object",
+      "required": [
+        "minor_line",
+        "major_line",
+        "major_interval",
+        "marker",
+        "marker_placement",
+        "strength"
+      ],
+      "properties": {
+        "minor_line": {
+          "description": "Lines on every cell boundary.",
+          "type": "string",
+          "enum": ["none", "solid", "dashed", "dotted"]
+        },
+        "major_line": {
+          "description": "Lines on every major_interval-th cell boundary, replacing the minor line there.",
+          "type": "string",
+          "enum": ["none", "solid", "dashed", "dotted"]
+        },
+        "major_interval": {
+          "description": "How many cells lie between major lines, 2 to 20.",
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 20
+        },
+        "marker": {
+          "description": "A small mark where lines cross.",
+          "type": "string",
+          "enum": ["none", "dot", "cross"]
+        },
+        "marker_placement": {
+          "description": "every: at each cell corner. major: only where two major lines would cross.",
+          "type": "string",
+          "enum": ["every", "major"]
+        },
+        "color": {
+          "description": "Optional: the grid colour, exactly # and six hexadecimal digits. An alpha value is refused, because strength is the grid's only opacity. Absent, the app picks a colour to suit the background.",
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "strength": {
+          "description": "The opacity of the minor lines, 0.02 to 1.",
+          "type": "number",
+          "minimum": 0.02,
+          "maximum": 1
+        }
+      }
+    },
+    "Background": {
+      "description": "What is drawn behind the page. The keys allowed depend on kind: none takes no other key; solid takes color_hex only; image takes asset_id and layout, and optionally tint. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "description": "Which sort of background.",
+          "type": "string",
+          "enum": ["none", "solid", "image"]
+        },
+        "color_hex": { "description": "For solid only: the fill colour.", "$ref": "#/$defs/Color" },
+        "asset_id": {
+          "description": "For image only: the id of an embedded asset of kind raster_png or raster_jpeg.",
+          "$ref": "#/$defs/Sha256"
+        },
+        "layout": {
+          "description": "For image only. actual_size: one copy at its pixel size; tile: repeated without scaling; stretch: one copy scaled to fill the reference rectangle.",
+          "type": "string",
+          "enum": ["actual_size", "tile", "stretch"]
+        },
+        "tint": { "$ref": "#/$defs/BackgroundTint" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "none" } }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                { "required": ["color_hex"] },
+                { "required": ["asset_id"] },
+                { "required": ["layout"] },
+                { "required": ["tint"] }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "solid" } }
+          },
+          "then": {
+            "required": ["color_hex"],
+            "not": {
+              "anyOf": [
+                { "required": ["asset_id"] },
+                { "required": ["layout"] },
+                { "required": ["tint"] }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "image" } }
+          },
+          "then": {
+            "required": ["asset_id", "layout"],
+            "not": { "required": ["color_hex"] }
+          }
+        }
+      ]
+    },
+    "BackgroundTint": {
+      "description": "For an image background only: a colour wash over the image. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["color_hex", "opacity"],
+      "properties": {
+        "color_hex": { "$ref": "#/$defs/Color" },
+        "opacity": { "description": "The wash's opacity, 0 to 1.", "$ref": "#/$defs/Fraction" }
+      }
+    },
+    "PhysicalOutputLayout": {
+      "description": "Optional: a fixed output page size, such as A4, for printing and export. All six keys are required when it is present. After conversion to points (millimetres times 72 divided by 25.4, inches times 72, pixels times 72 divided by dpi) each side must be from 1 to 14,400 points and more than twice the margin. This schema checks only each value's own range (exactly for points, loosely for inches and millimetres, and not at all for pixels); it cannot compare a side with the margin, so that rule needs a separate check. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["width", "height", "unit", "dpi", "marginPoints", "landscape"],
+      "properties": {
+        "width": {
+          "description": "One side of the output page, in unit.",
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "description": "The other side of the output page, in unit.",
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "description": "The unit of width and height.",
+          "type": "string",
+          "enum": ["millimeters", "inches", "points", "pixels"]
+        },
+        "dpi": {
+          "description": "Pixels per inch, 1 to 2,400. Used to convert when unit is pixels, and must be in range whatever the unit.",
+          "type": "number",
+          "minimum": 1,
+          "maximum": 2400
+        },
+        "marginPoints": {
+          "description": "The margin on every side in diagram points, 0 to 720.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 720
+        },
+        "landscape": {
+          "description": "true: the longer side is horizontal. false: the longer side is vertical.",
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["unit"],
+            "properties": { "unit": { "const": "points" } }
+          },
+          "then": {
+            "properties": {
+              "width": { "minimum": 1, "maximum": 14400 },
+              "height": { "minimum": 1, "maximum": 14400 }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["unit"],
+            "properties": { "unit": { "const": "inches" } }
+          },
+          "then": { "properties": { "width": { "maximum": 200 }, "height": { "maximum": 200 } } }
+        },
+        {
+          "if": {
+            "required": ["unit"],
+            "properties": { "unit": { "const": "millimeters" } }
+          },
+          "then": { "properties": { "width": { "maximum": 5080 }, "height": { "maximum": 5080 } } }
+        }
+      ]
+    },
+    "DrawableReference": {
+      "description": "One entry of a page's drawing order: an element or a connection on the same page. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {
+          "description": "What the entry refers to.",
+          "type": "string",
+          "enum": ["element", "connection"]
+        },
+        "id": {
+          "description": "The id of an element or connection on this page.",
+          "$ref": "#/$defs/Uuid"
+        }
+      }
+    },
+    "Guide": {
+      "description": "A ruler guide: a line a person drags out to align things. It is not drawn content. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["id", "axis", "position"],
+      "properties": {
+        "id": {
+          "description": "The guide's identity, unique in the document's shared identifier set.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "axis": {
+          "description": "horizontal: a line of constant y. vertical: a line of constant x.",
+          "type": "string",
+          "enum": ["horizontal", "vertical"]
+        },
+        "position": {
+          "description": "The y of a horizontal guide or the x of a vertical one, in page coordinates.",
+          "$ref": "#/$defs/Coordinate"
+        }
+      }
+    },
+    "QuickStyle": {
+      "description": "A Quick Style: a named preset of fill and line that a person can apply to a shape. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["id", "name", "style"],
+      "properties": {
+        "id": {
+          "description": "The preset's identity, unique in the document's shared identifier set.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "name": {
+          "description": "The name shown. 1 to 128 bytes of UTF-8 (this schema checks 128 characters); no white space at either end; no control or format characters. The pattern checks format characters in the Basic Multilingual Plane only.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[^\\u0000-\\u0020\\u007F-\\u00A0\\u00AD\\u0600-\\u0605\\u061C\\u06DD\\u070F\\u0890\\u0891\\u08E2\\u180E\\u1680\\u2000-\\u200F\\u2028-\\u202F\\u205F-\\u2064\\u2066-\\u206F\\u3000\\uFEFF\\uFFF9-\\uFFFB](?:[^\\u0000-\\u001F\\u007F-\\u009F\\u00AD\\u0600-\\u0605\\u061C\\u06DD\\u070F\\u0890\\u0891\\u08E2\\u180E\\u200B-\\u200F\\u202A-\\u202E\\u2060-\\u2064\\u2066-\\u206F\\uFEFF\\uFFF9-\\uFFFB]*[^\\u0000-\\u0020\\u007F-\\u00A0\\u00AD\\u0600-\\u0605\\u061C\\u06DD\\u070F\\u0890\\u0891\\u08E2\\u180E\\u1680\\u2000-\\u200F\\u2028-\\u202F\\u205F-\\u2064\\u2066-\\u206F\\u3000\\uFEFF\\uFFF9-\\uFFFB])?$"
+        },
+        "style": { "$ref": "#/$defs/QuickStyleStyle" }
+      }
+    },
+    "QuickStyleStyle": {
+      "description": "The paint of a Quick Style. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["fill_hex", "stroke_hex", "line_width"],
+      "properties": {
+        "fill_hex": { "$ref": "#/$defs/Color" },
+        "stroke_hex": { "$ref": "#/$defs/Color" },
+        "line_width": {
+          "description": "Line weight in diagram points, 1 to 100 (narrower than an element's own range).",
+          "type": "number",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "fill_texture": { "$ref": "#/$defs/Texture" },
+        "stroke_texture": { "$ref": "#/$defs/Texture" },
+        "stroke_pattern": {
+          "description": "Optional: the line pattern the preset applies. Absent, applying the preset leaves line patterns alone.",
+          "$ref": "#/$defs/StrokePattern"
+        }
+      }
+    },
+    "Element": {
+      "description": "One shape on a page: its shape data, its complex-shape record when it is a complex shape, and three nested levels holding everything else. Unknown keys are refused at this level. Which optional keys an element may carry depends on its kind, found three levels down. A generated shape is never flipped and never keeps its proportions by preserves_aspect_ratio; what a known generator version allows is in the generator catalogue (generators/).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content", "shape_data_definition_id", "shape_data_values"],
+      "properties": {
+        "content": { "$ref": "#/$defs/ElementPresentation" },
+        "shape_data_definition_id": {
+          "description": "Required key, whose value may be null: the id of an entry in shape_data_definitions, or null for a shape with no shape data.",
+          "oneOf": [
+            { "$ref": "#/$defs/Uuid" },
+            { "type": "null" }
+          ]
+        },
+        "shape_data_values": {
+          "description": "This shape's own shape-data values: exactly one for each field of its definition, each field once, and none when shape_data_definition_id is null. At most 128.",
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/ShapeDataValueRecord" }
+        },
+        "complex_shape": { "$ref": "#/$defs/ComplexShape" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["shape_data_definition_id"],
+            "properties": { "shape_data_definition_id": { "type": "null" } }
+          },
+          "then": { "properties": { "shape_data_values": { "maxItems": 0 } } }
+        },
+        {
+          "if": {
+            "required": ["content"],
+            "properties": {
+              "content": {
+                "required": ["content"],
+                "properties": {
+                  "content": {
+                    "required": ["content"],
+                    "properties": {
+                      "content": {
+                        "required": ["kind"],
+                        "properties": { "kind": { "const": "complex_shape" } }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": { "required": ["complex_shape"] },
+          "else": { "not": { "required": ["complex_shape"] } }
+        },
+        {
+          "if": {
+            "required": ["complex_shape"],
+            "properties": {
+              "complex_shape": {
+                "required": ["type"],
+                "properties": { "type": { "not": { "const": "callout" } } }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "flip_horizontal": { "const": false },
+                  "flip_vertical": { "const": false }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["complex_shape"],
+            "properties": {
+              "complex_shape": {
+                "required": ["type"],
+                "properties": { "type": { "const": "table" } }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "content": {
+                        "properties": {
+                          "text_content": { "properties": { "string": { "const": "" } } }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["complex_shape"],
+            "properties": {
+              "complex_shape": {
+                "required": ["type", "layout"],
+                "properties": {
+                  "type": { "const": "container" },
+                  "layout": { "enum": ["automatic", "proportional"] }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "content": { "properties": { "rotation_degrees": { "multipleOf": 360 } } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["complex_shape"],
+            "properties": {
+              "complex_shape": {
+                "required": ["type"],
+                "properties": { "type": { "const": "lifeline" } }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "content": {
+                        "properties": {
+                          "frame": { "properties": { "height": { "minimum": 59.99999994 } } }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["complex_shape"],
+            "properties": {
+              "complex_shape": {
+                "required": ["type", "ends_in_destroy_mark"],
+                "properties": {
+                  "type": { "const": "lifeline" },
+                  "ends_in_destroy_mark": { "const": true }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "content": {
+                        "properties": {
+                          "frame": { "properties": { "height": { "minimum": 71.99999992800001 } } }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["complex_shape"],
+            "properties": {
+              "complex_shape": {
+                "required": ["type", "head_style"],
+                "properties": {
+                  "type": { "const": "lifeline" },
+                  "head_style": { "const": "actor" }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "content": {
+                        "properties": {
+                          "frame": { "properties": { "height": { "minimum": 91.999999908 } } }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["complex_shape"],
+            "properties": {
+              "complex_shape": {
+                "required": ["type", "head_style", "ends_in_destroy_mark"],
+                "properties": {
+                  "type": { "const": "lifeline" },
+                  "head_style": { "const": "actor" },
+                  "ends_in_destroy_mark": { "const": true }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "content": {
+                        "properties": {
+                          "frame": { "properties": { "height": { "minimum": 103.999999896 } } }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["complex_shape"],
+            "properties": {
+              "complex_shape": {
+                "required": ["type"],
+                "properties": { "type": { "const": "generated" } }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": { "properties": { "preserves_aspect_ratio": { "const": false } } }
+            }
+          }
+        }
+      ]
+    },
+    "ElementPresentation": {
+      "description": "The first level inside an element: flips, the label's layout, and kind-specific presentation. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["content", "flip_horizontal", "flip_vertical"],
+      "properties": {
+        "content": { "$ref": "#/$defs/ElementLock" },
+        "flip_horizontal": {
+          "description": "Mirror the artwork left to right about the frame's centre. The label is not mirrored. Only a callout among complex shapes may be flipped.",
+          "type": "boolean"
+        },
+        "flip_vertical": {
+          "description": "Mirror the artwork top to bottom about the frame's centre.",
+          "type": "boolean"
+        },
+        "text_layout": { "$ref": "#/$defs/TextLayout" },
+        "note_style": {
+          "description": "For a note only: its look. Absent means a sticky note. A writer writes one of these six words; a reader draws a word it does not know as a sticky note, so the app accepts any word here.",
+          "type": "string",
+          "enum": ["stickyNote", "indexCard", "tapedNote", "tag", "notebookPage", "pinnedNote"]
+        },
+        "preserves_aspect_ratio": {
+          "description": "Keep proportions when a person resizes the element. Absent means false. Never true on a generated shape.",
+          "type": "boolean"
+        },
+        "shows_image_background": {
+          "description": "For an image only: fill the frame behind the picture with the style's fill colour. Absent means false.",
+          "type": "boolean"
+        },
+        "shows_image_border": {
+          "description": "For an image only: outline the frame with the style's line colour and width. Absent means false.",
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["content"],
+            "properties": {
+              "content": {
+                "required": ["content"],
+                "properties": {
+                  "content": {
+                    "required": ["kind"],
+                    "properties": {
+                      "kind": {
+                        "enum": ["path", "unresolved", "svg_artwork", "image", "complex_shape"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": { "not": { "required": ["text_layout"] } }
+        },
+        {
+          "if": {
+            "required": ["content"],
+            "properties": {
+              "content": {
+                "required": ["content"],
+                "properties": {
+                  "content": {
+                    "required": ["kind"],
+                    "properties": { "kind": { "const": "note" } }
+                  }
+                }
+              }
+            }
+          },
+          "else": { "not": { "required": ["note_style"] } }
+        },
+        {
+          "if": {
+            "required": ["content"],
+            "properties": {
+              "content": {
+                "required": ["content"],
+                "properties": {
+                  "content": {
+                    "required": ["kind"],
+                    "properties": { "kind": { "const": "image" } }
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                { "required": ["shows_image_background"] },
+                { "required": ["shows_image_border"] }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ElementLock": {
+      "description": "The second level inside an element: the person's own lock on it. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["content", "is_locked"],
+      "properties": {
+        "content": { "$ref": "#/$defs/ElementCore" },
+        "is_locked": {
+          "description": "Whether a person locked this element. Locks inherited from groups are worked out, never stored.",
+          "type": "boolean"
+        }
+      }
+    },
+    "ElementCore": {
+      "description": "The innermost level of an element: its identity, kind, geometry, label, paint, connection points and the one kind-specific key its kind needs. Unknown keys are ignored.",
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "frame",
+        "rotation_degrees",
+        "z_index",
+        "text_content",
+        "style",
+        "connection_points"
+      ],
+      "properties": {
+        "id": {
+          "description": "The element's permanent identity, unique in the document's shared identifier set.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "kind": {
+          "description": "What the element is.",
+          "type": "string",
+          "enum": [
+            "rectangle",
+            "ellipse",
+            "note",
+            "text",
+            "symbol",
+            "editable_vector",
+            "svg_artwork",
+            "image",
+            "path",
+            "unresolved",
+            "complex_shape"
+          ]
+        },
+        "frame": {
+          "description": "Where the element is and how big, before rotation: its top-left corner in page coordinates and its size.",
+          "$ref": "#/$defs/Rect"
+        },
+        "rotation_degrees": {
+          "description": "A clockwise turn about the frame's centre, in degrees. Not limited to one turn: any finite value within plus or minus 1,000,000,000.",
+          "$ref": "#/$defs/Coordinate"
+        },
+        "z_index": {
+          "description": "Stacking depth when the page has no drawableOrder; higher is nearer the front. Any 64-bit whole number, written without a decimal point.",
+          "type": "integer",
+          "minimum": -9223372036854775808,
+          "maximum": 9223372036854775807
+        },
+        "text_content": {
+          "description": "The element's label, required even when empty.",
+          "$ref": "#/$defs/TextContent"
+        },
+        "style": { "$ref": "#/$defs/ElementStyle" },
+        "connection_points": {
+          "description": "Where connectors can attach, at most 128, with ids unique within the element. May be empty.",
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/ConnectionPoint" }
+        },
+        "symbol_reference": { "$ref": "#/$defs/SymbolReference" },
+        "embedded_asset_id": {
+          "description": "For editable_vector, svg_artwork and image only: the id of the embedded asset that holds the artwork, of the matching kind (editable_vector, svg_artwork, or raster_png or raster_jpeg).",
+          "$ref": "#/$defs/Sha256"
+        },
+        "image_content_mode": {
+          "description": "For image only, and required there. fit: the whole picture, as large as fits, centred. fill: the picture covers the frame and the overflow is clipped. stretch: the picture is distorted to the frame.",
+          "type": "string",
+          "enum": ["fit", "fill", "stretch"]
+        },
+        "path": { "$ref": "#/$defs/Path" },
+        "unresolved_content": { "$ref": "#/$defs/UnresolvedContent" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "symbol" } }
+          },
+          "then": { "required": ["symbol_reference"] },
+          "else": { "not": { "required": ["symbol_reference"] } }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "enum": ["editable_vector", "svg_artwork", "image"] } }
+          },
+          "then": { "required": ["embedded_asset_id"] },
+          "else": { "not": { "required": ["embedded_asset_id"] } }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "image" } }
+          },
+          "then": { "required": ["image_content_mode"] },
+          "else": { "not": { "required": ["image_content_mode"] } }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "path" } }
+          },
+          "then": { "required": ["path"] },
+          "else": { "not": { "required": ["path"] } }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "unresolved" } }
+          },
+          "then": { "required": ["unresolved_content"] },
+          "else": { "not": { "required": ["unresolved_content"] } }
+        }
+      ]
+    },
+    "ElementStyle": {
+      "description": "An element's fill and line. The keys are required on every kind, even where they are not drawn. Opacity has no key of its own: it is the alpha part of each colour. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["fill_hex", "stroke_hex", "line_width"],
+      "properties": {
+        "fill_hex": {
+          "description": "The fill colour and, through its alpha digits, the fill's opacity.",
+          "$ref": "#/$defs/Color"
+        },
+        "stroke_hex": { "description": "The line colour and opacity.", "$ref": "#/$defs/Color" },
+        "line_width": {
+          "description": "Line weight in diagram points. It does not change when the shape is resized.",
+          "$ref": "#/$defs/LineWidth"
+        },
+        "fill_texture": {
+          "description": "Optional: a hand-drawn texture, tinted with the fill colour, used in place of the flat fill.",
+          "$ref": "#/$defs/Texture"
+        },
+        "stroke_texture": {
+          "description": "Optional: a hand-drawn texture for the line.",
+          "$ref": "#/$defs/Texture"
+        },
+        "stroke_pattern_override": {
+          "description": "Optional: replaces the line pattern of a library shape's artwork for this one placed shape. It applies to symbol and editable_vector elements and to a container wearing a drawing, and only to artwork parts that follow the shape's line colour.",
+          "$ref": "#/$defs/StrokePattern"
+        }
+      }
+    },
+    "TextContent": {
+      "description": "A piece of rich text: an element's label, a connector's label, a lane title, a table cell or a generated shape's text slot. Only the formatting listed here exists: no links, attachments, HTML or RTF. Unknown keys are ignored. A writer must not write background_hex, a whole-text background that document format 19 does not have; a reader ignores it.",
+      "type": "object",
+      "required": ["string", "base_style", "character_runs", "base_alignment", "paragraph_runs"],
+      "properties": {
+        "string": {
+          "description": "The text, which may be empty. Line breaks are ordinary newline characters. At most 1,000,000 bytes of UTF-8 (this schema checks 1,000,000 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "maxLength": 1000000
+        },
+        "base_style": {
+          "description": "The appearance of all text not covered by a character run.",
+          "$ref": "#/$defs/CharacterStyle"
+        },
+        "character_runs": {
+          "description": "Stretches of text with a different character style, in ascending order without overlap. Character runs and paragraph runs together number at most 100,000.",
+          "type": "array",
+          "maxItems": 100000,
+          "items": { "$ref": "#/$defs/CharacterRun" }
+        },
+        "base_alignment": {
+          "description": "The alignment of all paragraphs not covered by a paragraph run.",
+          "$ref": "#/$defs/TextAlignment"
+        },
+        "paragraph_runs": {
+          "description": "Stretches of text with a different alignment, in ascending order without overlap.",
+          "type": "array",
+          "maxItems": 100000,
+          "items": { "$ref": "#/$defs/ParagraphRun" }
+        }
+      },
+      "if": {
+        "required": ["string"],
+        "properties": { "string": { "maxLength": 0 } }
+      },
+      "then": {
+        "properties": {
+          "character_runs": { "maxItems": 0 },
+          "paragraph_runs": { "maxItems": 0 }
+        }
+      }
+    },
+    "LaneTitle": {
+      "description": "A lane's title: text content of at most 1,000 characters (Unicode scalars, which maxLength counts) and at most 100 runs. The limit on runs counts character runs and paragraph runs together; this schema checks each list against it on its own.",
+      "allOf": [
+        { "$ref": "#/$defs/TextContent" }
+      ],
+      "properties": {
+        "string": { "maxLength": 1000 },
+        "character_runs": { "maxItems": 100 },
+        "paragraph_runs": { "maxItems": 100 }
+      }
+    },
+    "TableCell": {
+      "description": "One table cell: text content of at most 2,000 characters (Unicode scalars, which maxLength counts) and at most 200 runs, counted as for a lane title. A table's cells together hold at most 100,000 characters and 10,000 runs; this schema cannot check that.",
+      "allOf": [
+        { "$ref": "#/$defs/TextContent" }
+      ],
+      "properties": {
+        "string": { "maxLength": 2000 },
+        "character_runs": { "maxItems": 200 },
+        "paragraph_runs": { "maxItems": 200 }
+      }
+    },
+    "CharacterStyle": {
+      "description": "A complete character style: every required key, not only the ones that differ from the base style. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["font_size", "weight", "is_italic", "is_underlined", "color_hex"],
+      "properties": {
+        "font_family": {
+          "description": "Optional: a font name. Absent means the system font. At most 256 bytes of UTF-8 (this schema checks 256 characters); not blank; no control or format characters (the pattern checks format characters in the Basic Multilingual Plane only).",
+          "type": "string",
+          "maxLength": 256,
+          "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\u00AD\\u0600-\\u0605\\u061C\\u06DD\\u070F\\u0890\\u0891\\u08E2\\u180E\\u200B-\\u200F\\u202A-\\u202E\\u2060-\\u2064\\u2066-\\u206F\\uFEFF\\uFFF9-\\uFFFB]*[^\\u0000-\\u0020\\u007F-\\u00A0\\u00AD\\u0600-\\u0605\\u061C\\u06DD\\u070F\\u0890\\u0891\\u08E2\\u180E\\u1680\\u2000-\\u200F\\u2028-\\u202F\\u205F-\\u2064\\u2066-\\u206F\\u3000\\uFEFF\\uFFF9-\\uFFFB][^\\u0000-\\u001F\\u007F-\\u009F\\u00AD\\u0600-\\u0605\\u061C\\u06DD\\u070F\\u0890\\u0891\\u08E2\\u180E\\u200B-\\u200F\\u202A-\\u202E\\u2060-\\u2064\\u2066-\\u206F\\uFEFF\\uFFF9-\\uFFFB]*$"
+        },
+        "font_size": {
+          "description": "The font size in diagram points, 1 to 720. It does not change when the shape is resized.",
+          "type": "number",
+          "minimum": 1,
+          "maximum": 720
+        },
+        "weight": {
+          "description": "The font weight.",
+          "type": "string",
+          "enum": ["regular", "medium", "bold"]
+        },
+        "is_italic": { "description": "Italic.", "type": "boolean" },
+        "is_underlined": { "description": "Underlined.", "type": "boolean" },
+        "color_hex": { "description": "The text colour.", "$ref": "#/$defs/Color" },
+        "highlight_hex": {
+          "description": "Optional: a highlight drawn behind these characters, like a highlighter pen. Absent means none.",
+          "$ref": "#/$defs/Color"
+        }
+      }
+    },
+    "TextRange": {
+      "description": "A stretch of text counted in UTF-16 code units from the start of the string. It must end within the text and both of its ends must fall between whole user-perceived characters; this schema checks neither. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["location", "length"],
+      "properties": {
+        "location": {
+          "description": "Where the run starts, in UTF-16 code units.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "length": {
+          "description": "How many UTF-16 code units the run covers; above 0.",
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "CharacterRun": {
+      "description": "A stretch of text drawn with its own complete character style. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["range", "style"],
+      "properties": {
+        "range": { "$ref": "#/$defs/TextRange" },
+        "style": { "$ref": "#/$defs/CharacterStyle" }
+      }
+    },
+    "ParagraphRun": {
+      "description": "A stretch of text with its own paragraph alignment. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["range", "alignment"],
+      "properties": {
+        "range": { "$ref": "#/$defs/TextRange" },
+        "alignment": { "$ref": "#/$defs/TextAlignment" }
+      }
+    },
+    "TextLayout": {
+      "description": "Optional: where an element's label sits, as a region given in fractions of the element's frame. Not allowed on path, unresolved, svg_artwork, image or complex_shape elements. Absent, the label sits in the frame inset by a fixed margin, centred vertically. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["frame", "position"],
+      "properties": {
+        "frame": { "$ref": "#/$defs/TextLayoutFrame" },
+        "position": {
+          "description": "Vertical placement: top, middle or bottom of the region, or entirely above or below the shape (5 points clear of the frame).",
+          "type": "string",
+          "enum": ["above", "top", "middle", "bottom", "below"]
+        },
+        "rotation_degrees": {
+          "description": "Optional: the label's turn relative to its shape, at least 0 and less than 360. Absent means 0.",
+          "$ref": "#/$defs/TurnAngle"
+        }
+      }
+    },
+    "TextLayoutFrame": {
+      "description": "The text region in fractions of the element's frame, measured from the frame's top-left corner. Some part of it must touch the shape: x from minus width to 1 and y from minus height to 1. This schema checks only the looser bounds that follow from width and height being at most 8. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "type": "number", "minimum": -8, "maximum": 1 },
+        "y": { "type": "number", "minimum": -8, "maximum": 1 },
+        "width": { "type": "number", "minimum": 0.001, "maximum": 8 },
+        "height": { "type": "number", "minimum": 0.001, "maximum": 8 }
+      }
+    },
+    "ConnectionPoint": {
+      "description": "A numbered place on a shape that a connector end can attach to, as fractions of the unflipped frame. The x and y keys sit directly in the entry. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["id", "x", "y"],
+      "properties": {
+        "id": {
+          "description": "The point's number, 0 or more, unique within its element. Connectors refer to it.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "x": {
+          "description": "0 is the frame's left edge, 1 its right edge.",
+          "$ref": "#/$defs/Fraction"
+        },
+        "y": {
+          "description": "0 is the frame's top edge, 1 its bottom edge.",
+          "$ref": "#/$defs/Fraction"
+        }
+      }
+    },
+    "SymbolReference": {
+      "description": "For a symbol element only, and required there: which library shape it shows, by reference. The artwork is not stored in the document. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["library_id", "item_id", "asset_version"],
+      "properties": {
+        "library_id": {
+          "description": "The library's identifier: a built-in library's name such as com.simplediagrams.shapeLibrary.basic, or a published library's UUID. 1 to 256 bytes of UTF-8 (this schema checks 256 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "item_id": {
+          "description": "The shape's identifier within its library. 1 to 256 bytes of UTF-8 (this schema checks 256 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "asset_version": {
+          "description": "Which version of the shape's artwork, above 0.",
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "Path": {
+      "description": "For a path element only, and required there: a line or closed outline made of nodes. Unknown keys are ignored.",
+      "type": "object",
+      "required": [
+        "nodes",
+        "is_closed",
+        "is_smoothed",
+        "stroke_pattern",
+        "start_ending",
+        "end_ending"
+      ],
+      "properties": {
+        "nodes": {
+          "description": "The nodes in order: at least 2, and at least 3 when the path is closed. Path nodes and connector points together number at most 1,000,000 in the document.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 1000000,
+          "items": { "$ref": "#/$defs/PathNode" }
+        },
+        "is_closed": {
+          "description": "Join the last node back to the first and fill the outline.",
+          "type": "boolean"
+        },
+        "is_smoothed": {
+          "description": "Draw as a pencil curve through the midpoints of the nodes.",
+          "type": "boolean"
+        },
+        "stroke_pattern": { "$ref": "#/$defs/StrokePattern" },
+        "start_ending": {
+          "description": "The decoration at the first node. Not drawn on a closed path.",
+          "$ref": "#/$defs/LineEnding"
+        },
+        "end_ending": {
+          "description": "The decoration at the last node. Not drawn on a closed path.",
+          "$ref": "#/$defs/LineEnding"
+        },
+        "marker_tip": {
+          "description": "Optional: the marker tip the stroke was drawn with, which draws it as marker ink. Absent means an ordinary line. (The app reads a value it does not know as absent; a writer must use one of these.)",
+          "type": "string",
+          "enum": ["bullet", "chisel", "brush"]
+        }
+      },
+      "if": {
+        "required": ["is_closed"],
+        "properties": { "is_closed": { "const": true } }
+      },
+      "then": { "properties": { "nodes": { "minItems": 3 } } }
+    },
+    "PathNode": {
+      "description": "One node of a path. Its coordinates are in diagram points relative to the element frame's top-left corner, not fractions. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["point", "kind"],
+      "properties": {
+        "point": { "description": "Where the line goes to.", "$ref": "#/$defs/Point" },
+        "kind": { "$ref": "#/$defs/PointKind" },
+        "control_point": {
+          "description": "Optional: the first curve control for the segment arriving at this node.",
+          "$ref": "#/$defs/Point"
+        },
+        "second_control_point": {
+          "description": "Optional, and only with control_point: the second control, making the arriving segment a cubic curve.",
+          "$ref": "#/$defs/Point"
+        }
+      },
+      "dependentRequired": { "second_control_point": ["control_point"] }
+    },
+    "UnresolvedContent": {
+      "description": "For an unresolved element only, and required there: a fragment of an imported legacy document kept as inert text. A new document has no reason to contain one. Note the camel-case keys. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["sourceFormat", "typeIdentifier", "sourceFragment"],
+      "properties": {
+        "sourceFormat": {
+          "description": "Where the fragment came from; at most 128 bytes of UTF-8 (this schema checks 128 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "maxLength": 128
+        },
+        "typeIdentifier": {
+          "description": "The legacy element's type name; at most 512 bytes of UTF-8 (this schema checks 512 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "maxLength": 512
+        },
+        "sourceFragment": {
+          "description": "The original text of the element; at most 1,000,000 bytes of UTF-8 (this schema checks 1,000,000 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "maxLength": 1000000
+        }
+      }
+    },
+    "ComplexShape": {
+      "description": "For a complex_shape element only, and required there: which complex shape it is and the few values the app draws it from. type is read first; then only type, hand_drawn and that type's own keys are allowed. Unknown keys, and keys of another type, are refused. A generated shape has two forms: complete, with made_at and its drawing, and incomplete, without them.",
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "description": "Which complex shape.",
+          "type": "string",
+          "enum": ["container", "swimlanes", "table", "callout", "lifeline", "generated"]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "container" } }
+          },
+          "then": { "$ref": "#/$defs/ContainerRecord" }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "swimlanes" } }
+          },
+          "then": { "$ref": "#/$defs/SwimlanesRecord" }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "table" } }
+          },
+          "then": { "$ref": "#/$defs/TableRecord" }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "callout" } }
+          },
+          "then": { "$ref": "#/$defs/CalloutRecord" }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "lifeline" } }
+          },
+          "then": { "$ref": "#/$defs/LifelineRecord" }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "generated" } }
+          },
+          "then": {
+            "if": { "required": ["made_at"] },
+            "then": { "$ref": "#/$defs/GeneratedRecord" },
+            "else": { "$ref": "#/$defs/IncompleteGeneratedRecord" }
+          }
+        }
+      ]
+    },
+    "HandDrawn": {
+      "description": "Optional on every complex shape: draw its lines with the app's hand-drawn pen. Absent means true; false draws them exactly. A writer should write it only as false.",
+      "type": "boolean"
+    },
+    "Share": {
+      "description": "A lane's thickness, or a table row's or column's size, as a share of the total of its siblings, not in points: 0.000001 to 1,000,000.",
+      "type": "number",
+      "minimum": 1e-06,
+      "maximum": 1000000
+    },
+    "HolderMember": {
+      "description": "One thing a container or lane holds: an element or a whole group on the same page. Never a connection. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {
+          "description": "What the member is.",
+          "type": "string",
+          "enum": ["element", "group"]
+        },
+        "id": { "$ref": "#/$defs/Uuid" }
+      }
+    },
+    "HolderMembers": {
+      "description": "What a container or lane holds, in order: at most 1,000, none repeated. Each member must be on the same page and belong to at most one container or lane, and all the lanes of one swimlanes shape hold at most 2,000 together; this schema cannot check that.",
+      "type": "array",
+      "maxItems": 1000,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/HolderMember" }
+    },
+    "ContainerRecord": {
+      "description": "A container: a frame with a title (the element's text) that holds other shapes.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "const": "container" },
+        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
+        "members": {
+          "description": "Optional: what the container holds. Absent means none; the app always writes it.",
+          "$ref": "#/$defs/HolderMembers"
+        },
+        "layout": {
+          "description": "Optional. free (the default) leaves members where they are put; automatic means members are meant to sit in order, left to right and then down, and a writer should store them so; proportional means members keep their sizes and their places spread out or close in when a person resizes the container. The app draws members where they are stored. An automatic or proportional container's rotation, reduced to one turn, must be 0. A writer should not write it as free.",
+          "type": "string",
+          "enum": ["free", "automatic", "proportional"]
+        },
+        "artwork_asset_id": {
+          "description": "Optional: the id of an embedded asset of kind editable_vector that the container wears in place of its box, stretched to its frame.",
+          "$ref": "#/$defs/Sha256"
+        },
+        "title_style": {
+          "description": "Optional. band (the default): the title along the top. corner_tag: the title in a tag in the top-left corner. A writer should write it only as corner_tag.",
+          "type": "string",
+          "enum": ["band", "corner_tag"]
+        }
+      }
+    },
+    "SwimlanesRecord": {
+      "description": "Swimlanes: one shape divided into parallel lanes, each with a title strip and its own members, under a title band holding the element's own text.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "direction", "lanes"],
+      "properties": {
+        "type": { "const": "swimlanes" },
+        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
+        "direction": {
+          "description": "horizontal: lanes are rows, with title strips down the left side. vertical: lanes are columns, with title strips across the top.",
+          "type": "string",
+          "enum": ["horizontal", "vertical"]
+        },
+        "lanes": {
+          "description": "The lanes, from the top or the left: 1 to 50, with ids unique within this shape.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "items": { "$ref": "#/$defs/Lane" }
+        },
+        "title_strip_size": {
+          "description": "Optional: the thickness of each lane's title strip in diagram points, 28 to 10,000. Absent means 28.",
+          "type": "number",
+          "minimum": 28,
+          "maximum": 10000
+        },
+        "title_band_size": {
+          "description": "Optional: the height of the title band across the top in diagram points, 28 to 10,000. Absent means 28.",
+          "type": "number",
+          "minimum": 28,
+          "maximum": 10000
+        }
+      }
+    },
+    "Lane": {
+      "description": "One lane of swimlanes. It has exactly these four keys; any other is refused.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "size", "members"],
+      "properties": {
+        "id": {
+          "description": "The lane's identity, unique among this shape's lanes only.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "title": { "description": "The lane's title.", "$ref": "#/$defs/LaneTitle" },
+        "size": {
+          "description": "The lane's thickness as a share of all the lanes' shares.",
+          "$ref": "#/$defs/Share"
+        },
+        "members": {
+          "description": "What the lane holds; required even when empty.",
+          "$ref": "#/$defs/HolderMembers"
+        }
+      }
+    },
+    "TableRecord": {
+      "description": "A table: rows and columns with text in each cell, or, with variant entity, an entity table. The element's own text must be empty.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "row_sizes", "column_sizes", "cells"],
+      "properties": {
+        "type": { "const": "table" },
+        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
+        "row_sizes": {
+          "description": "Each row's height as a share of the table's: 1 to 200 entries.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 200,
+          "items": { "$ref": "#/$defs/Share" }
+        },
+        "column_sizes": {
+          "description": "Each column's width as a share of the table's: 1 to 50 entries.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "items": { "$ref": "#/$defs/Share" }
+        },
+        "cells": {
+          "description": "Each cell's text, row by row: exactly one row per row size and one cell per column size, and at most 2,000 cells; this schema checks only the bounds of each list.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 200,
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 50,
+            "items": { "$ref": "#/$defs/TableCell" }
+          }
+        },
+        "header_row": {
+          "description": "Optional: draw the first row as a header. Absent means true. A writer should write it only as false.",
+          "type": "boolean"
+        },
+        "variant": {
+          "description": "Optional: entity makes the table an entity table, whose rows are the fields of a database entity. Absent means a plain table.",
+          "const": "entity"
+        },
+        "row_ids": {
+          "description": "For an entity table, and required there: one UUID per row, the header's included, unique within the table.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 61,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Uuid" }
+        },
+        "row_marks": {
+          "description": "For an entity table, and required there: one list of marks per row; the header's is empty. A field has at most 8 marks, none repeated. An open list: SimpleDiagrams 5.2 draws primary_key, foreign_key, unique, indexed and nullable, and keeps any other.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 61,
+          "prefixItems": [
+            { "type": "array", "maxItems": 0 }
+          ],
+          "items": {
+            "type": "array",
+            "maxItems": 8,
+            "uniqueItems": true,
+            "items": { "$ref": "#/$defs/Name" }
+          }
+        },
+        "row_point_ids": {
+          "description": "For an entity table, and required there: one list per row; the header's is empty, and each field's holds the numbers of its two connection points, left end then right end, each 8 or more.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 61,
+          "prefixItems": [
+            { "type": "array", "maxItems": 0 }
+          ],
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "integer", "minimum": 8 }
+          }
+        }
+      },
+      "dependentRequired": {
+        "variant": ["row_ids", "row_marks", "row_point_ids"],
+        "row_ids": ["variant"],
+        "row_marks": ["variant"],
+        "row_point_ids": ["variant"]
+      },
+      "if": { "required": ["variant"] },
+      "then": {
+        "properties": {
+          "column_sizes": { "minItems": 2, "maxItems": 2 },
+          "row_sizes": { "minItems": 2, "maxItems": 61 },
+          "header_row": { "const": true },
+          "cells": {
+            "prefixItems": [
+              { "prefixItems": [{}, { "properties": { "string": { "const": "" } } }] }
+            ]
+          }
+        }
+      }
+    },
+    "CalloutRecord": {
+      "description": "A callout: a speech bubble with an optional tail. The only complex shape that may be flipped.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "const": "callout" },
+        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
+        "tail_tip": {
+          "description": "Optional: where the tail points, in diagram points from the centre of the frame along the bubble's own axes, before rotation and flipping. Absent means no tail. Once placed on the page it must lie within plus or minus 1,000,000,000, which this schema cannot check.",
+          "type": "object",
+          "required": ["x", "y"],
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" }
+          }
+        },
+        "tail_attachment": {
+          "description": "Optional, and only with tail_tip: locks the tail to a numbered connection point of another element on the same page. Never along an attach line, never the callout itself.",
+          "$ref": "#/$defs/PointAttachment"
+        }
+      },
+      "dependentRequired": { "tail_attachment": ["tail_tip"] }
+    },
+    "LifelineRecord": {
+      "description": "A UML lifeline: a head holding the element's text, and a dashed line down to the bottom of the frame. It offers connectors attach line 0. The frame must be tall enough for the head (40 points for a box, 72 for an actor) plus 20 points of line, and 12 more with a destroy mark.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "const": "lifeline" },
+        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
+        "head_style": {
+          "description": "Optional. box (the default): the name in a box. actor: a stick figure with the name below. A writer should write it only as actor.",
+          "type": "string",
+          "enum": ["box", "actor"]
+        },
+        "ends_in_destroy_mark": {
+          "description": "Optional: the line ends in UML's destroy mark. Absent means false. A writer should write it only as true.",
+          "type": "boolean"
+        }
+      }
+    },
+    "Connection": {
+      "description": "A connector: a line whose ends may be attached to elements on the same page. The outer record holds the lock and routing; the inner one holds the line. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["content", "is_locked"],
+      "properties": {
+        "content": { "$ref": "#/$defs/ConnectionContent" },
+        "is_locked": {
+          "description": "Whether a person locked this connector.",
+          "type": "boolean"
+        },
+        "routing": {
+          "description": "Optional. direct (the default): the line passes through every stored point. right_angle: the line travels only along two perpendicular directions; with exactly two points the route is worked out each time it is drawn. A writer should write it only as right_angle.",
+          "type": "string",
+          "enum": ["direct", "right_angle"]
+        },
+        "routes_around_shapes": {
+          "description": "Optional, for right-angle connectors: whether an automatic route also goes around shapes it is not attached to. Absent means true; ignored on a direct connector.",
+          "type": "boolean"
+        },
+        "routing_rotation_degrees": {
+          "description": "Optional: the angle of a right-angle connector's axes, at least 0 and less than 360. Absent means 0. It must be 0 unless routing is right_angle.",
+          "$ref": "#/$defs/TurnAngle"
+        }
+      },
+      "if": {
+        "required": ["routing"],
+        "properties": { "routing": { "const": "right_angle" } }
+      },
+      "else": { "properties": { "routing_rotation_degrees": { "const": 0 } } }
+    },
+    "ConnectionContent": {
+      "description": "The line of a connector: its identity, points, attachments, paint, endings and label. Unknown keys are ignored.",
+      "type": "object",
+      "required": [
+        "id",
+        "points",
+        "stroke_hex",
+        "line_width",
+        "stroke_pattern",
+        "start_ending",
+        "end_ending"
+      ],
+      "properties": {
+        "id": {
+          "description": "The connector's permanent identity, unique in the document's shared identifier set.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "points": {
+          "description": "The connector's points in page coordinates, start first: at least 2. An attached end is drawn where its target is, but its stored point is still required and should be where the target was.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 1000000,
+          "items": { "$ref": "#/$defs/ConnectorPoint" }
+        },
+        "start_attachment": {
+          "description": "Optional: binds the first point to an element on the same page.",
+          "$ref": "#/$defs/Attachment"
+        },
+        "end_attachment": {
+          "description": "Optional: binds the last point to an element on the same page.",
+          "$ref": "#/$defs/Attachment"
+        },
+        "stroke_hex": { "description": "The line colour and opacity.", "$ref": "#/$defs/Color" },
+        "line_width": { "$ref": "#/$defs/LineWidth" },
+        "stroke_pattern": { "$ref": "#/$defs/StrokePattern" },
+        "start_ending": {
+          "description": "The decoration at the start.",
+          "$ref": "#/$defs/LineEnding"
+        },
+        "end_ending": { "description": "The decoration at the end.", "$ref": "#/$defs/LineEnding" },
+        "stroke_texture": {
+          "description": "Optional: a hand-drawn texture for the line.",
+          "$ref": "#/$defs/Texture"
+        },
+        "label": { "$ref": "#/$defs/ConnectorLabel" }
+      }
+    },
+    "ConnectorPoint": {
+      "description": "One point of a connector, in page coordinates. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["x", "y", "kind"],
+      "properties": {
+        "x": { "$ref": "#/$defs/Coordinate" },
+        "y": { "$ref": "#/$defs/Coordinate" },
+        "kind": {
+          "description": "A corner or a smooth bend at this point. Ignored on a right-angle connector, where straight should be written.",
+          "$ref": "#/$defs/PointKind"
+        }
+      }
+    },
+    "Attachment": {
+      "description": "Where a connector end is attached, in one of two forms: a numbered connection point, or a place along an attach line. Unknown keys, both forms at once, or neither, are refused.",
+      "oneOf": [
+        { "$ref": "#/$defs/PointAttachment" },
+        { "$ref": "#/$defs/LineAttachment" }
+      ]
+    },
+    "PointAttachment": {
+      "description": "An end attached to one of an element's numbered connection points. The element must be on the same page and have a point with this number.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element_id", "connection_point_id"],
+      "properties": {
+        "element_id": {
+          "description": "The element this end is attached to.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "connection_point_id": {
+          "description": "The id of one of that element's connection points.",
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "LineAttachment": {
+      "description": "An end attached anywhere along an element's attach line. Only a lifeline offers one: line 0, its dashed line. The element must be on the same page and offer the line.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element_id", "attach_line_id", "distance"],
+      "properties": {
+        "element_id": {
+          "description": "The element this end is attached to.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "attach_line_id": {
+          "description": "The number of the attach line; a lifeline's dashed line is 0.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "distance": {
+          "description": "How far along the line the end sits, in diagram points from the line's start, 0 to 10,000,000. Beyond the line's present length it is drawn at the line's end.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10000000
+        }
+      }
+    },
+    "ConnectorLabel": {
+      "description": "Optional: one label drawn upright at a point along a connector. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["content", "position", "normal_offset"],
+      "properties": {
+        "content": {
+          "description": "The label's text and formatting.",
+          "$ref": "#/$defs/TextContent"
+        },
+        "position": {
+          "description": "How far along the drawn line, as a fraction of its length: 0 the start, 1 the end.",
+          "$ref": "#/$defs/Fraction"
+        },
+        "normal_offset": {
+          "description": "How far the label's centre is moved sideways from the line, in diagram points; positive is to the right of the direction of travel.",
+          "$ref": "#/$defs/Coordinate"
+        }
+      }
+    },
+    "Group": {
+      "description": "A group: a list of references to things on its page, which nest by referring to other groups. It holds no geometry of its own. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["id", "members", "is_locked", "rotation_degrees"],
+      "properties": {
+        "id": {
+          "description": "The group's identity, unique in the document's shared identifier set.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "members": {
+          "description": "The group's direct members, in order: at least 2, none repeated, each on the same page and in no other group, without loops. Direct members total at most 200,000 in the document.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 200000,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/GroupMember" }
+        },
+        "is_locked": { "description": "Whether a person locked this group.", "type": "boolean" },
+        "rotation_degrees": {
+          "description": "The angle of the group's selection frame, at least 0 and less than 360. It never turns the members; 0 is always valid.",
+          "$ref": "#/$defs/TurnAngle"
+        }
+      }
+    },
+    "GroupMember": {
+      "description": "One direct member of a group: an element, connection or group on the same page. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {
+          "description": "What the member is.",
+          "type": "string",
+          "enum": ["element", "connection", "group"]
+        },
+        "id": { "$ref": "#/$defs/Uuid" }
+      }
+    },
+    "EmbeddedAsset": {
+      "description": "One entry of the inventory of the assets folder. The file is named after the SHA-256 of its own bytes, with an extension fixed by its kind. Unknown keys are ignored.",
+      "type": "object",
+      "required": ["id", "kind", "filename", "byte_count"],
+      "properties": {
+        "id": {
+          "description": "The lower-case hexadecimal SHA-256 of the file's bytes, unique in the inventory. Elements, container drawings and page backgrounds refer to the asset by it.",
+          "$ref": "#/$defs/Sha256"
+        },
+        "kind": {
+          "description": "What the bytes are: native vector artwork (.sdvector), an SVG kept as its author drew it, or a PNG or JPEG image.",
+          "type": "string",
+          "enum": ["editable_vector", "svg_artwork", "raster_png", "raster_jpeg"]
+        },
+        "filename": {
+          "description": "The file's name in the assets folder: exactly the id, a dot and the extension for the kind (sdvector, svg, png, jpg).",
+          "type": "string"
+        },
+        "byte_count": {
+          "description": "The file's size in bytes, at most 16,777,216. All assets together are at most 104,857,600 bytes.",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16777216
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "editable_vector" } }
+          },
+          "then": { "properties": { "filename": { "pattern": "^[0-9a-f]{64}\\.sdvector$" } } }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "svg_artwork" } }
+          },
+          "then": { "properties": { "filename": { "pattern": "^[0-9a-f]{64}\\.svg$" } } }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "raster_png" } }
+          },
+          "then": { "properties": { "filename": { "pattern": "^[0-9a-f]{64}\\.png$" } } }
+        },
+        {
+          "if": {
+            "required": ["kind"],
+            "properties": { "kind": { "const": "raster_jpeg" } }
+          },
+          "then": { "properties": { "filename": { "pattern": "^[0-9a-f]{64}\\.jpg$" } } }
+        }
+      ]
+    },
+    "ShapeDataDefinition": {
+      "description": "One shared shape-data definition: a list of typed fields and, optionally, the library shape they came from. Unknown keys are refused. Keys in shape-data records are camel case.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "fields", "allowsDefinitionEditing"],
+      "properties": {
+        "id": {
+          "description": "Elements refer to the definition by this id, unique within shape_data_definitions. Not part of the document's shared identifier set.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "fields": {
+          "description": "The fields in display order, at most 128, with ids unique within the definition. Fields across all definitions total at most 100,000.",
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/ShapeDataField" }
+        },
+        "source": {
+          "description": "Optional (omit it; null is refused): the library shape these fields came from.",
+          "$ref": "#/$defs/ShapeDataSource"
+        },
+        "allowsDefinitionEditing": {
+          "description": "Whether the field definitions may be edited when this shape is copied into a person's own library.",
+          "type": "boolean"
+        }
+      }
+    },
+    "ShapeDataSource": {
+      "description": "The library shape a definition's fields came from. The same meaning as a symbol reference, with camel-case keys. Unknown keys are refused.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["libraryID", "itemID", "assetVersion"],
+      "properties": {
+        "libraryID": {
+          "description": "The library's identifier; 1 to 256 bytes of UTF-8 (this schema checks 256 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "itemID": {
+          "description": "The shape's identifier within its library; 1 to 256 bytes of UTF-8 (this schema checks 256 characters); no NUL character.",
+          "$ref": "#/$defs/NulFreeText",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "assetVersion": {
+          "description": "The artwork version the shape was placed with, above 0.",
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "ShapeDataField": {
+      "description": "One shape-data field. Exactly one of choiceOptions and choices is present. Unknown keys are refused.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "type", "defaultValue", "allowsInstanceEditing", "unit"],
+      "properties": {
+        "id": {
+          "description": "The field's identity, unique within its definition. Values refer to it.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "name": {
+          "description": "The field's name: 1 to 120 Unicode scalars; not blank once invisible characters are ignored; no control characters, line separator or paragraph separator. Names may repeat within a definition.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029]*[^\\u0000-\\u0020\\u007F-\\u00A0\\u00AD\\u034F\\u061C\\u115F\\u1160\\u1680\\u17B4\\u17B5\\u180B-\\u180F\\u2000-\\u200F\\u2028-\\u202F\\u205F-\\u206F\\u3000\\u3164\\uFE00-\\uFE0F\\uFEFF\\uFFA0\\uFFF0-\\uFFF8][^\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029]*$"
+        },
+        "type": {
+          "description": "What values the field holds.",
+          "type": "string",
+          "enum": ["text", "number", "boolean", "date", "choice"]
+        },
+        "defaultValue": {
+          "description": "The value a newly placed shape starts with: one of the field's type, or empty.",
+          "$ref": "#/$defs/ShapeDataValue"
+        },
+        "allowsInstanceEditing": {
+          "description": "Whether a person may edit this field's value on a placed shape.",
+          "type": "boolean"
+        },
+        "unit": {
+          "description": "A unit shown beside numbers: at most 64 Unicode scalars, no control characters, line separator or paragraph separator. Must be empty unless type is number.",
+          "type": "string",
+          "maxLength": 64,
+          "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029]*$"
+        },
+        "choiceOptions": {
+          "description": "The choices of a choice field, each with a lasting id: 1 to 128 for a choice field, empty for any other type. Option ids are unique within the field and labels differ once case, invisible characters and look-alike forms are ignored.",
+          "type": "array",
+          "maxItems": 128,
+          "items": { "$ref": "#/$defs/ChoiceOption" }
+        },
+        "choices": {
+          "description": "The older form of choiceOptions: labels only, from which the app derives each option's id. Write \"choices\": [] on a field that is not a choice field, or use choiceOptions.",
+          "type": "array",
+          "maxItems": 128,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/ChoiceLabel" }
+        },
+        "minimum": {
+          "description": "Optional (omit it; null is refused), for number fields only: the smallest allowed number.",
+          "$ref": "#/$defs/NumberBound"
+        },
+        "maximum": {
+          "description": "Optional (omit it; null is refused), for number fields only: the largest allowed number. With both bounds, at least one number must be allowed; this schema cannot check that.",
+          "$ref": "#/$defs/NumberBound"
+        }
+      },
+      "oneOf": [
+        { "required": ["choiceOptions"] },
+        { "required": ["choices"] }
+      ],
+      "allOf": [
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "number" } }
+          },
+          "else": {
+            "properties": { "unit": { "maxLength": 0 } },
+            "not": { "anyOf": [{ "required": ["minimum"] }, { "required": ["maximum"] }] }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "choice" } }
+          },
+          "then": {
+            "properties": {
+              "choiceOptions": { "minItems": 1 },
+              "choices": { "minItems": 1 },
+              "defaultValue": {
+                "properties": { "type": { "enum": ["empty", "choiceID", "choice"] } }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "choiceOptions": { "maxItems": 0 },
+              "choices": { "maxItems": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "text" } }
+          },
+          "then": {
+            "properties": {
+              "defaultValue": { "properties": { "type": { "enum": ["empty", "text"] } } }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "number" } }
+          },
+          "then": {
+            "properties": {
+              "defaultValue": { "properties": { "type": { "enum": ["empty", "number"] } } }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "boolean" } }
+          },
+          "then": {
+            "properties": {
+              "defaultValue": { "properties": { "type": { "enum": ["empty", "boolean"] } } }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "date" } }
+          },
+          "then": {
+            "properties": {
+              "defaultValue": { "properties": { "type": { "enum": ["empty", "date"] } } }
+            }
+          }
+        }
+      ]
+    },
+    "ChoiceLabel": {
+      "description": "The label of a choice: 1 to 256 Unicode scalars; not blank once invisible characters are ignored; no control characters, line separator or paragraph separator.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029]*[^\\u0000-\\u0020\\u007F-\\u00A0\\u00AD\\u034F\\u061C\\u115F\\u1160\\u1680\\u17B4\\u17B5\\u180B-\\u180F\\u2000-\\u200F\\u2028-\\u202F\\u205F-\\u206F\\u3000\\u3164\\uFE00-\\uFE0F\\uFEFF\\uFFA0\\uFFF0-\\uFFF8][^\\u0000-\\u001F\\u007F-\\u009F\\u2028\\u2029]*$"
+    },
+    "ChoiceOption": {
+      "description": "One choice of a choice field. Values store its id, so its label may be renamed without changing what they mean. Unknown keys are refused.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label"],
+      "properties": {
+        "id": {
+          "description": "The option's lasting identity, unique within its field.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "label": { "$ref": "#/$defs/ChoiceLabel" }
+      }
+    },
+    "NumberBound": {
+      "description": "A bound on a number field. Unknown keys are refused.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "inclusive"],
+      "properties": {
+        "value": { "description": "The bound, a finite number.", "type": "number" },
+        "inclusive": { "description": "Whether the bound itself is allowed.", "type": "boolean" }
+      }
+    },
+    "ShapeDataValue": {
+      "description": "A shape-data value: a type and, except for empty, a value. empty means no value, which differs from zero, false or empty text. Unknown keys are refused.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "description": "The value's type. choiceID is what the app writes for a choice; choice is the older form, holding a label.",
+          "type": "string",
+          "enum": ["empty", "text", "number", "boolean", "date", "choiceID", "choice"]
+        },
+        "value": { "description": "The value itself, absent for empty." }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "empty" } }
+          },
+          "then": { "not": { "required": ["value"] } },
+          "else": { "required": ["value"] }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "text" } }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "description": "Text of at most 4,096 Unicode scalars. Tab, line feed, carriage return and the line and paragraph separators are allowed; other control characters are refused.",
+                "type": "string",
+                "maxLength": 4096,
+                "pattern": "^[^\\u0000-\\u0008\\u000B\\u000C\\u000E-\\u001F\\u007F-\\u009F]*$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "number" } }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "description": "A finite number within the field's bounds.",
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "boolean" } }
+          },
+          "then": { "properties": { "value": { "type": "boolean" } } }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "date" } }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "description": "A calendar date written exactly YYYY-MM-DD, with a year above 0. This schema does not check 29 February in years that are not leap years.",
+                "type": "string",
+                "pattern": "^(?!0000)[0-9]{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12][0-9]|3[01])|(?:0[469]|11)-(?:0[1-9]|[12][0-9]|30)|02-(?:0[1-9]|1[0-9]|2[0-9]))$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "choiceID" } }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "description": "The id of one of the field's options.",
+                "$ref": "#/$defs/Uuid"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["type"],
+            "properties": { "type": { "const": "choice" } }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "description": "The older form: a label of at most 256 Unicode scalars, read as the id the older choices form derives from it. Write choiceID instead.",
+                "type": "string",
+                "maxLength": 256
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ShapeDataValueRecord": {
+      "description": "One of an element's own shape-data values. Unknown keys are refused.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fieldID", "value", "isOverride"],
+      "properties": {
+        "fieldID": {
+          "description": "The id of a field of the element's definition; each field appears once.",
+          "$ref": "#/$defs/Uuid"
+        },
+        "value": {
+          "description": "This shape's current value, which must suit the field.",
+          "$ref": "#/$defs/ShapeDataValue"
+        },
+        "isOverride": {
+          "description": "true when a person deliberately entered this value, whether or not it equals the default.",
+          "type": "boolean"
+        }
+      }
+    },
+    "RequiredLibrary": {
+      "description": "One entry of required_libraries. A faulty entry is left out by the app rather than refusing the document, but a writer must write every entry correctly. Unknown keys make the app leave the entry out.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["library_id", "display_name"],
+      "properties": {
+        "library_id": {
+          "description": "The identifier shapes use in symbol_reference.library_id: 1 to 256 ASCII letters, digits, dots, hyphens and underscores, beginning and ending with a letter or digit. Compared without regard to case; no library is named twice.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?$"
+        },
+        "display_name": {
+          "description": "The library's name, for display only: not blank, at most 200 Unicode scalars, with no control characters, line or paragraph separators, or text-direction controls.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\u061C\\u200E\\u200F\\u2028\\u2029\\u202A-\\u202E\\u2066-\\u2069]*[^\\u0000-\\u0020\\u007F-\\u00A0\\u061C\\u1680\\u2000-\\u200B\\u200E\\u200F\\u2028-\\u202F\\u205F\\u2066-\\u2069\\u3000][^\\u0000-\\u001F\\u007F-\\u009F\\u061C\\u200E\\u200F\\u2028\\u2029\\u202A-\\u202E\\u2066-\\u2069]*$"
+        },
+        "minimum_revision": {
+          "description": "Optional: the lowest library revision holding every shape the document uses, 1 to 1,000,000.",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        }
+      }
+    },
+    "LibraryShapeName": {
+      "description": "One entry of library_shape_names: the readable name of one library shape the document uses. A faulty entry is left out by the app rather than refusing the document, but a writer must write every entry correctly. Unknown keys make the app leave the entry out.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["library_id", "item_id", "slug"],
+      "properties": {
+        "library_id": {
+          "description": "The library id exactly as the document's references spell it; 1 to 256 bytes of UTF-8 (this schema checks 256 characters); no NUL character. Matched without regard to case.",
+          "$ref": "#/$defs/NulFreeText",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "item_id": {
+          "description": "The item id exactly as the references spell it; 1 to 256 bytes of UTF-8 (this schema checks 256 characters); no NUL character. Matched without regard to case.",
+          "$ref": "#/$defs/NulFreeText",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "slug": {
+          "description": "The shape's readable name within its library: runs of lower-case ASCII letters and digits joined by single hyphens, at most 128 bytes.",
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "library_readable_id": {
+          "description": "Optional, only where library_id is a UUID: the library's qualified name, either com.simplediagrams.local. followed by that UUID in lower case, or com.simplediagrams.shapeLibrary. followed by ASCII letters and digits from which that UUID is derived; at most 255 bytes.",
+          "type": "string",
+          "maxLength": 255,
+          "pattern": "^(?:com\\.simplediagrams\\.local\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|com\\.simplediagrams\\.shapeLibrary\\.[A-Za-z0-9]+)$"
+        }
+      }
+    },
+    "Name": {
+      "description": "A machine name, as roles, slots, settings and entity marks use: a lower-case letter, then up to 31 lower-case letters, digits or underscores.",
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{0,31}$"
+    },
+    "SettingValue": {
+      "description": "One setting's value: a finite number, true or false, or a word (a slug of at most 32 bytes; this schema checks 32 characters). Nothing else: no null, list, object or free text.",
+      "oneOf": [
+        { "type": "number" },
+        { "type": "boolean" },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        }
+      ]
+    },
+    "Settings": {
+      "description": "A generated shape's settings, by name: at most 16. A known generator version has exactly the ones it declares.",
+      "type": "object",
+      "maxProperties": 16,
+      "propertyNames": { "pattern": "^[a-z][a-z0-9_]{0,31}$" },
+      "additionalProperties": { "$ref": "#/$defs/SettingValue" }
+    },
+    "Segment": {
+      "description": "One segment of a loop, written in full: a line, [\"L\", x1, y1, x2, y2, wobble_from, wobble_share], or an arc, [\"A\", cx, cy, radius, from_degrees, to_degrees, wobble_from, wobble_share]. Positions and radii are in points in the made_at frame; angles are degrees clockwise from three o'clock. A segment is at least 0.01 points long; an arc's sweep is not 0 and at most 360 degrees either way; and every segment lies inside made_at. This schema checks each item's own range only.",
+      "type": "array",
+      "oneOf": [
+        {
+          "minItems": 7,
+          "maxItems": 7,
+          "items": false,
+          "prefixItems": [
+            { "const": "L" },
+            { "type": "number" },
+            { "type": "number" },
+            { "type": "number" },
+            { "type": "number" },
+            { "enum": ["start", "end"] },
+            { "type": "number", "minimum": 0, "maximum": 1 }
+          ]
+        },
+        {
+          "minItems": 8,
+          "maxItems": 8,
+          "items": false,
+          "prefixItems": [
+            { "const": "A" },
+            { "type": "number" },
+            { "type": "number" },
+            { "type": "number", "exclusiveMinimum": 0, "maximum": 10000000 },
+            { "type": "number", "minimum": -720, "maximum": 720 },
+            { "type": "number", "minimum": -720, "maximum": 720 },
+            { "enum": ["start", "end"] },
+            { "type": "number", "minimum": 0, "maximum": 1 }
+          ]
+        }
+      ]
+    },
+    "PartStyle": {
+      "description": "A part's own paint: at least one of five channels. A texture comes only with its own colour. A missing channel follows the shape's style; a part's own colour without its own texture is flat.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "fill_hex": { "$ref": "#/$defs/Color" },
+        "fill_texture": { "$ref": "#/$defs/Texture" },
+        "stroke_hex": { "$ref": "#/$defs/Color" },
+        "stroke_texture": { "$ref": "#/$defs/Texture" },
+        "line_width": { "$ref": "#/$defs/LineWidth" }
+      },
+      "dependentRequired": {
+        "fill_texture": ["fill_hex"],
+        "stroke_texture": ["stroke_hex"]
+      }
+    },
+    "GeneratedTextLayout": {
+      "description": "Where a generated shape's text area is: its frame in fractions of made_at, its position and an optional turn. The area, turned, lies inside made_at within 0.01 points; this schema cannot check that.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["frame", "position"],
+      "properties": {
+        "frame": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x", "y", "width", "height"],
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "width": { "type": "number", "minimum": 0 },
+            "height": { "type": "number", "minimum": 0 }
+          }
+        },
+        "position": {
+          "type": "string",
+          "enum": ["top", "middle", "bottom"]
+        },
+        "rotation_degrees": {
+          "description": "Optional: written only when it is not 0.",
+          "$ref": "#/$defs/TurnAngle"
+        }
+      }
+    },
+    "GeneratedText": {
+      "description": "The words of a generated shape's text area: text content of at most 500 characters (Unicode scalars, which maxLength counts).",
+      "allOf": [
+        { "$ref": "#/$defs/TextContent" }
+      ],
+      "properties": { "string": { "maxLength": 500 } }
+    },
+    "TextSlot": {
+      "description": "A part's text slot: its name, its area and its words. placed is written only as true.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slot", "text_layout", "text"],
+      "properties": {
+        "slot": { "$ref": "#/$defs/Name" },
+        "text_layout": { "$ref": "#/$defs/GeneratedTextLayout" },
+        "placed": { "const": true },
+        "text": { "$ref": "#/$defs/GeneratedText" }
+      }
+    },
+    "OwnTextArea": {
+      "description": "Where a generated shape's own text, the element's text_content, is set. placed is written only as true.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text_layout"],
+      "properties": {
+        "text_layout": { "$ref": "#/$defs/GeneratedTextLayout" },
+        "placed": { "const": true }
+      }
+    },
+    "GeneratedPart": {
+      "description": "One part of a generated shape: its identity, role, outline, optional paint, text slot and the connection points it owns.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "role", "loops", "texts", "point_ids"],
+      "properties": {
+        "id": { "description": "Unique among the shape's parts only.", "$ref": "#/$defs/Uuid" },
+        "role": { "$ref": "#/$defs/Name" },
+        "loops": {
+          "description": "1 to 4 closed loops, filled together by the even-odd rule; each 1 to 32 segments, at most 64 in the part.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 32,
+            "items": { "$ref": "#/$defs/Segment" }
+          }
+        },
+        "style": { "$ref": "#/$defs/PartStyle" },
+        "texts": {
+          "type": "array",
+          "maxItems": 1,
+          "items": { "$ref": "#/$defs/TextSlot" }
+        },
+        "point_ids": {
+          "description": "The numbers of the connection points the part owns, each 8 or more, each in the element's connection_points and owned by no other part.",
+          "type": "array",
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 8 }
+        }
+      }
+    },
+    "GeneratedRecord": {
+      "description": "A generated shape in the complete form: the generator, its version and settings, and the finished drawing as parts, every position in the made_at frame. Strict at every level but the words of its text slots. What a known generator version allows is checked by its schema in the generator catalogue (generators/<name>/<version>.schema.json), which the element must also pass; every rule on geometry and connection points is checked by neither.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "generator",
+        "generator_version",
+        "resizing",
+        "made_at",
+        "stacking",
+        "settings",
+        "parts"
+      ],
+      "properties": {
+        "type": { "const": "generated" },
+        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
+        "generator": {
+          "description": "Which generator drew the shape: a fully qualified reverse-DNS name, at least two labels joined by dots, each a slug, at most 128 bytes (this schema checks 128 characters), such as com.simplediagrams.ring. The com.simplediagrams. namespace is the generator catalogue's; another program names its generators under its own domain. A reader accepts a name it does not know.",
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 128,
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*(\\.[a-z0-9]+(-[a-z0-9]+)*)+$"
+        },
+        "generator_version": { "type": "integer", "minimum": 1, "maximum": 999 },
+        "resizing": { "enum": ["free", "proportional"] },
+        "made_at": {
+          "description": "The frame size, in points, the parts were drawn for.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["width", "height"],
+          "properties": {
+            "width": { "type": "number", "minimum": 1, "maximum": 10000000 },
+            "height": { "type": "number", "minimum": 1, "maximum": 10000000 }
+          }
+        },
+        "stacking": { "enum": ["last_in_front", "first_in_front"] },
+        "own_text": { "$ref": "#/$defs/OwnTextArea" },
+        "settings": { "$ref": "#/$defs/Settings" },
+        "parts": {
+          "description": "The parts in sequence: 1 to 24.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 24,
+          "items": { "$ref": "#/$defs/GeneratedPart" }
+        }
+      }
+    },
+    "IncompleteGeneratedRecord": {
+      "description": "A generated shape in the incomplete form, without made_at: one of the five generators format 19 admits in this form, at version 1, its settings, and each part's role and words, for the app to draw when it opens the document. Its settings, roles and slots are checked by the generator's catalogue schema, which the element must also pass.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "generator", "generator_version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "generated" },
+        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
+        "generator": {
+          "enum": [
+            "com.simplediagrams.ring",
+            "com.simplediagrams.flow",
+            "com.simplediagrams.pyramid",
+            "com.simplediagrams.cycle",
+            "com.simplediagrams.gauge"
+          ]
+        },
+        "generator_version": { "const": 1 },
+        "settings": { "$ref": "#/$defs/Settings" },
+        "parts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 24,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "texts"],
+            "properties": {
+              "id": { "$ref": "#/$defs/Uuid" },
+              "role": { "$ref": "#/$defs/Name" },
+              "texts": {
+                "type": "array",
+                "maxItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["slot", "text"],
+                  "properties": {
+                    "slot": { "$ref": "#/$defs/Name" },
+                    "text": { "$ref": "#/$defs/GeneratedText" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

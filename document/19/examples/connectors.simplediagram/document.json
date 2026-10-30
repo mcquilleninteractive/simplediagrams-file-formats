@@ -1,0 +1,279 @@
+{
+  "embedded_assets": [],
+  "id": "48D8E22E-F9DF-57F7-B9D9-AD274B30002C",
+  "name": "Connectors",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [
+            {
+              "content": {
+                "end_attachment": {
+                  "connection_point_id": 0,
+                  "element_id": "6F0CDF34-54D2-5A41-8047-CAEA993FF490"
+                },
+                "end_ending": "arrow",
+                "id": "24F6B20F-48CB-58D5-A5A9-4942DD646587",
+                "label": {
+                  "content": {
+                    "base_alignment": "center",
+                    "base_style": {
+                      "color_hex": "#212529",
+                      "font_size": 13,
+                      "is_italic": false,
+                      "is_underlined": false,
+                      "weight": "regular"
+                    },
+                    "character_runs": [],
+                    "paragraph_runs": [],
+                    "string": "sends"
+                  },
+                  "normal_offset": -12,
+                  "position": 0.5
+                },
+                "line_width": 2,
+                "points": [
+                  {"kind": "straight", "x": 260, "y": 140},
+                  {"kind": "straight", "x": 400, "y": 140}
+                ],
+                "start_attachment": {
+                  "connection_point_id": 1,
+                  "element_id": "A88322E3-4531-53DB-A811-227870E4EDEA"
+                },
+                "start_ending": "none",
+                "stroke_hex": "#495057",
+                "stroke_pattern": "solid"
+              },
+              "is_locked": false
+            },
+            {
+              "content": {
+                "end_attachment": {
+                  "connection_point_id": 0,
+                  "element_id": "2A9B56B8-430E-5840-9410-BEBACEA4C58D"
+                },
+                "end_ending": "zeroOrMany",
+                "id": "93E234D1-F091-5231-8522-5C6280F4B3A5",
+                "line_width": 2,
+                "points": [
+                  {"kind": "straight", "x": 180, "y": 180},
+                  {"kind": "straight", "x": 400, "y": 340}
+                ],
+                "start_attachment": {
+                  "connection_point_id": 3,
+                  "element_id": "A88322E3-4531-53DB-A811-227870E4EDEA"
+                },
+                "start_ending": "oneAndOnlyOne",
+                "stroke_hex": "#495057",
+                "stroke_pattern": "solid"
+              },
+              "is_locked": false,
+              "routing": "right_angle"
+            },
+            {
+              "content": {
+                "end_attachment": {
+                  "connection_point_id": 1,
+                  "element_id": "2A9B56B8-430E-5840-9410-BEBACEA4C58D"
+                },
+                "end_ending": "filledArrow",
+                "id": "30544F49-72CE-5364-A172-36D5E2049C71",
+                "line_width": 2,
+                "points": [
+                  {"kind": "straight", "x": 560, "y": 140},
+                  {"kind": "straight", "x": 620, "y": 140},
+                  {"kind": "straight", "x": 620, "y": 340},
+                  {"kind": "straight", "x": 560, "y": 340}
+                ],
+                "start_attachment": {
+                  "connection_point_id": 1,
+                  "element_id": "6F0CDF34-54D2-5A41-8047-CAEA993FF490"
+                },
+                "start_ending": "none",
+                "stroke_hex": "#495057",
+                "stroke_pattern": "solid"
+              },
+              "is_locked": false,
+              "routes_around_shapes": false,
+              "routing": "right_angle"
+            },
+            {
+              "content": {
+                "end_ending": "solidArrow",
+                "id": "17B11FD5-0696-5ECC-AD67-4199FC507ABB",
+                "line_width": 2,
+                "points": [
+                  {"kind": "straight", "x": 100, "y": 460},
+                  {"kind": "curve", "x": 200, "y": 420},
+                  {"kind": "curve", "x": 300, "y": 500},
+                  {"kind": "straight", "x": 400, "y": 460}
+                ],
+                "start_ending": "circle",
+                "stroke_hex": "#868E96",
+                "stroke_pattern": "dashed"
+              },
+              "is_locked": false
+            }
+          ],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "45FE05E1-6AFA-5C11-B029-5887D2A83146",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "drawableOrder": [
+          {"id": "24F6B20F-48CB-58D5-A5A9-4942DD646587", "kind": "connection"},
+          {"id": "93E234D1-F091-5231-8522-5C6280F4B3A5", "kind": "connection"},
+          {"id": "30544F49-72CE-5364-A172-36D5E2049C71", "kind": "connection"},
+          {"id": "17B11FD5-0696-5ECC-AD67-4199FC507ABB", "kind": "connection"},
+          {"id": "A88322E3-4531-53DB-A811-227870E4EDEA", "kind": "element"},
+          {"id": "6F0CDF34-54D2-5A41-8047-CAEA993FF490", "kind": "element"},
+          {"id": "2A9B56B8-430E-5840-9410-BEBACEA4C58D", "kind": "element"}
+        ],
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 80, "width": 160, "x": 100, "y": 100},
+                "id": "A88322E3-4531-53DB-A811-227870E4EDEA",
+                "kind": "rectangle",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#D8ECFF", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Order"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 80, "width": 160, "x": 400, "y": 100},
+                "id": "6F0CDF34-54D2-5A41-8047-CAEA993FF490",
+                "kind": "rectangle",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#D8ECFF", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Invoice"
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 80, "width": 160, "x": 400, "y": 300},
+                "id": "2A9B56B8-430E-5840-9410-BEBACEA4C58D",
+                "kind": "rectangle",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#D8ECFF", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Payment"
+                },
+                "z_index": 2
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "45FE05E1-6AFA-5C11-B029-5887D2A83146",
+  "shape_data_definitions": []
+}

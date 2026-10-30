@@ -1,0 +1,438 @@
+{
+  "embedded_assets": [],
+  "id": "10A168C4-31EA-56C5-A2B8-448ABE61E9C0",
+  "name": "Generated shape of 25 parts",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "16927F8B-52A6-531F-8389-E3EC05404521",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "generator": "com.example.blocks",
+            "generator_version": 1,
+            "made_at": {"height": 8, "width": 250},
+            "parts": [
+              {
+                "id": "BE396A78-F13B-51B8-B7DD-6F104F3EF6CE",
+                "loops": [
+                  [
+                    ["L", 0, 0, 8, 0, "start", 1],
+                    ["L", 8, 0, 8, 8, "start", 1],
+                    ["L", 8, 8, 0, 8, "start", 1],
+                    ["L", 0, 8, 0, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "4B584A3C-3B76-5A0D-926B-34D50E3EB9A9",
+                "loops": [
+                  [
+                    ["L", 10, 0, 18, 0, "start", 1],
+                    ["L", 18, 0, 18, 8, "start", 1],
+                    ["L", 18, 8, 10, 8, "start", 1],
+                    ["L", 10, 8, 10, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "A671B30B-0CC3-5C21-B250-CF6F9074BFFE",
+                "loops": [
+                  [
+                    ["L", 20, 0, 28, 0, "start", 1],
+                    ["L", 28, 0, 28, 8, "start", 1],
+                    ["L", 28, 8, 20, 8, "start", 1],
+                    ["L", 20, 8, 20, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "6549E7D6-2F14-511B-8E62-6E4249FB1E0B",
+                "loops": [
+                  [
+                    ["L", 30, 0, 38, 0, "start", 1],
+                    ["L", 38, 0, 38, 8, "start", 1],
+                    ["L", 38, 8, 30, 8, "start", 1],
+                    ["L", 30, 8, 30, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "E5736D5D-1129-5878-B017-88E09E184B02",
+                "loops": [
+                  [
+                    ["L", 40, 0, 48, 0, "start", 1],
+                    ["L", 48, 0, 48, 8, "start", 1],
+                    ["L", 48, 8, 40, 8, "start", 1],
+                    ["L", 40, 8, 40, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "82FB9DCC-B1E0-5D5F-ACA4-0EFF5BC76446",
+                "loops": [
+                  [
+                    ["L", 50, 0, 58, 0, "start", 1],
+                    ["L", 58, 0, 58, 8, "start", 1],
+                    ["L", 58, 8, 50, 8, "start", 1],
+                    ["L", 50, 8, 50, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "6486D9A9-3E1C-5926-B2A4-0D38BDE3F4D9",
+                "loops": [
+                  [
+                    ["L", 60, 0, 68, 0, "start", 1],
+                    ["L", 68, 0, 68, 8, "start", 1],
+                    ["L", 68, 8, 60, 8, "start", 1],
+                    ["L", 60, 8, 60, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "AC1765F0-032F-5EF8-BB76-685E39588DAD",
+                "loops": [
+                  [
+                    ["L", 70, 0, 78, 0, "start", 1],
+                    ["L", 78, 0, 78, 8, "start", 1],
+                    ["L", 78, 8, 70, 8, "start", 1],
+                    ["L", 70, 8, 70, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "848A2A17-7532-52F0-90F5-339A74E36BC6",
+                "loops": [
+                  [
+                    ["L", 80, 0, 88, 0, "start", 1],
+                    ["L", 88, 0, 88, 8, "start", 1],
+                    ["L", 88, 8, 80, 8, "start", 1],
+                    ["L", 80, 8, 80, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "7FB61ED0-48F4-54BF-901F-4898A6B936D8",
+                "loops": [
+                  [
+                    ["L", 90, 0, 98, 0, "start", 1],
+                    ["L", 98, 0, 98, 8, "start", 1],
+                    ["L", 98, 8, 90, 8, "start", 1],
+                    ["L", 90, 8, 90, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "B3C38087-3D9A-51D9-B9ED-8BEE4B2BBA36",
+                "loops": [
+                  [
+                    ["L", 100, 0, 108, 0, "start", 1],
+                    ["L", 108, 0, 108, 8, "start", 1],
+                    ["L", 108, 8, 100, 8, "start", 1],
+                    ["L", 100, 8, 100, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "6993FDCE-33C2-5293-9555-C3633BC50A6F",
+                "loops": [
+                  [
+                    ["L", 110, 0, 118, 0, "start", 1],
+                    ["L", 118, 0, 118, 8, "start", 1],
+                    ["L", 118, 8, 110, 8, "start", 1],
+                    ["L", 110, 8, 110, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "5283D9A5-5051-5214-8775-8B7655E8E34B",
+                "loops": [
+                  [
+                    ["L", 120, 0, 128, 0, "start", 1],
+                    ["L", 128, 0, 128, 8, "start", 1],
+                    ["L", 128, 8, 120, 8, "start", 1],
+                    ["L", 120, 8, 120, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "5D96C59E-AB7B-544B-BDA7-44A1D04CD871",
+                "loops": [
+                  [
+                    ["L", 130, 0, 138, 0, "start", 1],
+                    ["L", 138, 0, 138, 8, "start", 1],
+                    ["L", 138, 8, 130, 8, "start", 1],
+                    ["L", 130, 8, 130, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "4ED40697-BB11-51C4-9AEC-0F0A7BFA49E9",
+                "loops": [
+                  [
+                    ["L", 140, 0, 148, 0, "start", 1],
+                    ["L", 148, 0, 148, 8, "start", 1],
+                    ["L", 148, 8, 140, 8, "start", 1],
+                    ["L", 140, 8, 140, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "487F9BB8-DA63-5F6F-8B7A-DE65E8F0EF3C",
+                "loops": [
+                  [
+                    ["L", 150, 0, 158, 0, "start", 1],
+                    ["L", 158, 0, 158, 8, "start", 1],
+                    ["L", 158, 8, 150, 8, "start", 1],
+                    ["L", 150, 8, 150, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "9DC44853-0051-58B1-921B-93E0D9D751D8",
+                "loops": [
+                  [
+                    ["L", 160, 0, 168, 0, "start", 1],
+                    ["L", 168, 0, 168, 8, "start", 1],
+                    ["L", 168, 8, 160, 8, "start", 1],
+                    ["L", 160, 8, 160, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "CC54F397-B452-563A-9279-4D0EE8CD27A6",
+                "loops": [
+                  [
+                    ["L", 170, 0, 178, 0, "start", 1],
+                    ["L", 178, 0, 178, 8, "start", 1],
+                    ["L", 178, 8, 170, 8, "start", 1],
+                    ["L", 170, 8, 170, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "DCACE913-ABC3-5913-89DB-1A777088F33D",
+                "loops": [
+                  [
+                    ["L", 180, 0, 188, 0, "start", 1],
+                    ["L", 188, 0, 188, 8, "start", 1],
+                    ["L", 188, 8, 180, 8, "start", 1],
+                    ["L", 180, 8, 180, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "B12921C8-8B44-5B89-A532-51C3EA39ADC6",
+                "loops": [
+                  [
+                    ["L", 190, 0, 198, 0, "start", 1],
+                    ["L", 198, 0, 198, 8, "start", 1],
+                    ["L", 198, 8, 190, 8, "start", 1],
+                    ["L", 190, 8, 190, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "9A6F7028-BA91-5A49-8B64-91899AD2F307",
+                "loops": [
+                  [
+                    ["L", 200, 0, 208, 0, "start", 1],
+                    ["L", 208, 0, 208, 8, "start", 1],
+                    ["L", 208, 8, 200, 8, "start", 1],
+                    ["L", 200, 8, 200, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "54B30D96-1B52-55B2-BD32-9D65E7420B71",
+                "loops": [
+                  [
+                    ["L", 210, 0, 218, 0, "start", 1],
+                    ["L", 218, 0, 218, 8, "start", 1],
+                    ["L", 218, 8, 210, 8, "start", 1],
+                    ["L", 210, 8, 210, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "CBBE7C0F-A9D4-58B6-88BD-2F99384CE38A",
+                "loops": [
+                  [
+                    ["L", 220, 0, 228, 0, "start", 1],
+                    ["L", 228, 0, 228, 8, "start", 1],
+                    ["L", 228, 8, 220, 8, "start", 1],
+                    ["L", 220, 8, 220, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "ED11FC90-4135-5853-B9C3-7EDD167E87C0",
+                "loops": [
+                  [
+                    ["L", 230, 0, 238, 0, "start", 1],
+                    ["L", 238, 0, 238, 8, "start", 1],
+                    ["L", 238, 8, 230, 8, "start", 1],
+                    ["L", 230, 8, 230, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              },
+              {
+                "id": "21D8BD22-C8D3-54E7-AF14-9C3F3F76CB6A",
+                "loops": [
+                  [
+                    ["L", 240, 0, 248, 0, "start", 1],
+                    ["L", 248, 0, 248, 8, "start", 1],
+                    ["L", 248, 8, 240, 8, "start", 1],
+                    ["L", 240, 8, 240, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "block",
+                "texts": []
+              }
+            ],
+            "resizing": "free",
+            "settings": {},
+            "stacking": "last_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 8, "width": 250, "x": 80, "y": 80},
+                "id": "7748F2B5-53FD-523A-A89E-98D3B75A1883",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "16927F8B-52A6-531F-8389-E3EC05404521",
+  "shape_data_definitions": []
+}

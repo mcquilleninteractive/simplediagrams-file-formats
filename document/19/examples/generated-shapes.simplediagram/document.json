@@ -1,0 +1,1118 @@
+{
+  "embedded_assets": [],
+  "id": "B79F3D06-9CE5-5669-AFBB-AE90A66E949C",
+  "name": "Generated shapes",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "64F5D6F4-517C-5F7D-BA13-46C8D1C9D529",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "generator": "com.simplediagrams.ring",
+            "generator_version": 1,
+            "made_at": {"height": 200, "width": 200},
+            "parts": [
+              {
+                "id": "DC3085BC-E5FE-5E93-9E1F-C7ED17803DB3",
+                "loops": [
+                  [["A", 100, 100, 100, -90, 270, "start", 1]],
+                  [["A", 100, 100, 60, -90, 270, "start", 1]]
+                ],
+                "point_ids": [8],
+                "role": "section",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Customers"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.10362643408006988,
+                        "width": 0.20725286816013977,
+                        "x": 0.3963735659199301,
+                        "y": 0.8481867829599651
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              }
+            ],
+            "resizing": "proportional",
+            "settings": {"ring_width": 40},
+            "stacking": "last_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5000000000000001},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0.1464466094067263, "y": 0.1464466094067262},
+                  {"id": 5, "x": 0.1464466094067263, "y": 0.8535533905932737},
+                  {"id": 6, "x": 0.8535533905932737, "y": 0.1464466094067263},
+                  {"id": 7, "x": 0.8535533905932737, "y": 0.8535533905932737},
+                  {"id": 8, "x": 0.5, "y": 1}
+                ],
+                "frame": {"height": 200, "width": 200, "x": 80, "y": 80},
+                "id": "AFFF890D-1899-5ABE-8DDC-5A762BEFB8B6",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "generator": "com.simplediagrams.flow",
+            "generator_version": 1,
+            "made_at": {"height": 80, "width": 360},
+            "parts": [
+              {
+                "id": "7FB2910A-6402-5C31-A05A-D1A2B3B8E74D",
+                "loops": [
+                  [
+                    ["L", 0, 0, 105.78404442037319, 0, "start", 1],
+                    ["L", 105.78404442037319, 0, 133.7840444203732, 40, "start", 1],
+                    ["L", 133.7840444203732, 40, 105.78404442037319, 80, "start", 1],
+                    ["L", 105.78404442037319, 80, 0, 80, "start", 1],
+                    ["L", 0, 80, 28, 40, "start", 1],
+                    ["L", 28, 40, 0, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [8, 9],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Plan"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.85,
+                        "width": 0.18273345672325886,
+                        "x": 0.09444444444444444,
+                        "y": 0.075
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "DD571565-94BA-5762-AE6E-811D095C6568",
+                "loops": [
+                  [
+                    ["L", 113.10797778981342, 0, 218.8920222101866, 0, "start", 1],
+                    ["L", 218.8920222101866, 0, 246.8920222101866, 40, "start", 1],
+                    ["L", 246.8920222101866, 40, 218.8920222101866, 80, "start", 1],
+                    ["L", 218.8920222101866, 80, 113.10797778981342, 80, "start", 1],
+                    ["L", 113.10797778981342, 80, 141.10797778981342, 40, "start", 1],
+                    ["L", 141.10797778981342, 40, 113.10797778981342, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [10, 11],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Build"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.85,
+                        "width": 0.18273345672325886,
+                        "x": 0.4086332716383706,
+                        "y": 0.075
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "EBF9152F-4147-5AF5-9EDA-676527ABEBA4",
+                "loops": [
+                  [
+                    ["L", 226.2159555796268, 0, 332, 0, "start", 1],
+                    ["L", 332, 0, 360, 40, "start", 1],
+                    ["L", 360, 40, 332, 80, "start", 1],
+                    ["L", 332, 80, 226.2159555796268, 80, "start", 1],
+                    ["L", 226.2159555796268, 80, 254.2159555796268, 40, "start", 1],
+                    ["L", 254.2159555796268, 40, 226.2159555796268, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [12, 13],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Ship"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.85,
+                        "width": 0.18273345672325886,
+                        "x": 0.7228220988322966,
+                        "y": 0.075
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              }
+            ],
+            "resizing": "free",
+            "settings": {
+              "base_shape": "chevron",
+              "direction": "across",
+              "pointer": false,
+              "spacing": "gap"
+            },
+            "stacking": "first_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1},
+                  {"id": 8, "x": 0.07777777777777778, "y": 0.5},
+                  {"id": 9, "x": 0.37162234561214774, "y": 0.5},
+                  {"id": 10, "x": 0.39196660497170394, "y": 0.5},
+                  {"id": 11, "x": 0.685811172806074, "y": 0.5},
+                  {"id": 12, "x": 0.70615543216563, "y": 0.5},
+                  {"id": 13, "x": 1, "y": 0.5}
+                ],
+                "frame": {"height": 80, "width": 360, "x": 360, "y": 140},
+                "id": "753E3C7B-5742-5081-BC39-33DC6C0CB029",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 2
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "generator": "com.simplediagrams.pyramid",
+            "generator_version": 1,
+            "made_at": {"height": 200, "width": 240},
+            "parts": [
+              {
+                "id": "D3BA80B3-52C1-58B4-83EC-C825036DA3F1",
+                "loops": [
+                  [
+                    ["L", 120, 0, 158.4, 64, "start", 1],
+                    ["L", 158.4, 64, 81.6, 64, "start", 0.5],
+                    ["L", 81.6, 64, 120, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [8, 9],
+                "role": "layer",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Vision"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.1,
+                        "width": 0.11000000000000003,
+                        "x": 0.445,
+                        "y": 0.19
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "3F191E57-D6F7-5ED9-885C-1CE94BA32036",
+                "loops": [
+                  [
+                    ["L", 79.2, 68, 160.8, 68, "start", 0.5],
+                    ["L", 160.8, 68, 199.2, 132, "start", 1],
+                    ["L", 199.2, 132, 40.8, 132, "start", 0.5],
+                    ["L", 40.8, 132, 79.2, 68, "start", 1]
+                  ]
+                ],
+                "point_ids": [10, 11],
+                "role": "layer",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Goals"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.26,
+                        "width": 0.29,
+                        "x": 0.35500000000000004,
+                        "y": 0.37
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "1E0A94A4-E3CB-5917-AED2-FC6F35D42122",
+                "loops": [
+                  [
+                    ["L", 38.400000000000006, 136, 201.6, 136, "start", 0.5],
+                    ["L", 201.6, 136, 240, 200, "start", 1],
+                    ["L", 240, 200, 0, 200, "start", 0.5],
+                    ["L", 0, 200, 38.400000000000006, 136, "start", 1]
+                  ]
+                ],
+                "point_ids": [12, 13],
+                "role": "layer",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Tasks"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.26,
+                        "width": 0.63,
+                        "x": 0.18500000000000003,
+                        "y": 0.71
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              }
+            ],
+            "resizing": "free",
+            "settings": {"form": "pyramid"},
+            "stacking": "last_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 8, "x": 0.42, "y": 0.16},
+                  {"id": 9, "x": 0.58, "y": 0.16},
+                  {"id": 10, "x": 0.25, "y": 0.5},
+                  {"id": 11, "x": 0.75, "y": 0.5},
+                  {"id": 12, "x": 0.08000000000000002, "y": 0.84},
+                  {"id": 13, "x": 0.92, "y": 0.84}
+                ],
+                "frame": {"height": 200, "width": 240, "x": 80, "y": 360},
+                "id": "4DC0A34E-B1F7-5A06-B84C-A68FD46F688F",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 3
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "generator": "com.simplediagrams.cycle",
+            "generator_version": 1,
+            "made_at": {"height": 240, "width": 240},
+            "parts": [
+              {
+                "id": "3430C47A-AE23-56AB-B319-12032FA01E21",
+                "loops": [
+                  [
+                    ["A", 120, 120, 107.5, -133.61101140574345, -64.61946389387364, "start", 1],
+                    [
+                      "L",
+                      166.07753553123717,
+                      22.875797458266987,
+                      171.43538849998566,
+                      11.582285534809671,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      171.43538849998566,
+                      11.582285534809671,
+                      176.90509325944902,
+                      60.266756649806716,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      176.90509325944902,
+                      60.266756649806716,
+                      139.28827068749462,
+                      79.34335707555363,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      139.28827068749462,
+                      79.34335707555363,
+                      144.64612365624313,
+                      68.0498451520963,
+                      "start",
+                      0.5
+                    ],
+                    ["A", 120, 120, 57.5, -64.61946389387364, -133.61101140574345, "start", 1],
+                    [
+                      "L",
+                      80.33887439492949,
+                      78.3677394831986,
+                      45.85093908617252,
+                      42.165773816414784,
+                      "start",
+                      0.5
+                    ]
+                  ]
+                ],
+                "point_ids": [8],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Plan"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.11406433052173717,
+                        "width": 0.22812866104347435,
+                        "x": 0.38593566947826285,
+                        "y": 0.09921783473913143
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "F5222988-6757-565E-B845-40C1605C188E",
+                "loops": [
+                  [
+                    ["A", 120, 120, 107.5, -43.61101140574346, 25.38053610612635, "start", 1],
+                    [
+                      "L",
+                      217.124202541733,
+                      166.07753553123715,
+                      228.41771446519033,
+                      171.43538849998566,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      228.41771446519033,
+                      171.43538849998566,
+                      179.73324335019328,
+                      176.90509325944902,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      179.73324335019328,
+                      176.90509325944902,
+                      160.65664292444637,
+                      139.28827068749462,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      160.65664292444637,
+                      139.28827068749462,
+                      171.95015484790372,
+                      144.64612365624313,
+                      "start",
+                      0.5
+                    ],
+                    ["A", 120, 120, 57.5, 25.38053610612635, -43.61101140574346, "start", 1],
+                    [
+                      "L",
+                      161.63226051680138,
+                      80.33887439492948,
+                      197.8342261835852,
+                      45.8509390861725,
+                      "start",
+                      0.5
+                    ]
+                  ]
+                ],
+                "point_ids": [9],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Do"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.07479892340806193,
+                        "width": 0.14959784681612387,
+                        "x": 0.7689510765919381,
+                        "y": 0.46260053829596903
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "5A701891-BE00-5428-9072-1307E2007097",
+                "loops": [
+                  [
+                    ["A", 120, 120, 107.5, 46.38898859425654, 115.38053610612636, "start", 1],
+                    [
+                      "L",
+                      73.92246446876284,
+                      217.124202541733,
+                      68.56461150001434,
+                      228.41771446519033,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      68.56461150001434,
+                      228.41771446519033,
+                      63.094906740551004,
+                      179.7332433501933,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      63.094906740551004,
+                      179.7332433501933,
+                      100.71172931250538,
+                      160.65664292444637,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      100.71172931250538,
+                      160.65664292444637,
+                      95.35387634375687,
+                      171.95015484790372,
+                      "start",
+                      0.5
+                    ],
+                    ["A", 120, 120, 57.5, 115.38053610612636, 46.38898859425654, "start", 1],
+                    [
+                      "L",
+                      159.66112560507054,
+                      161.63226051680138,
+                      194.1490609138275,
+                      197.8342261835852,
+                      "start",
+                      0.5
+                    ]
+                  ]
+                ],
+                "point_ids": [10],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Check"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.11406433052173717,
+                        "width": 0.22812866104347435,
+                        "x": 0.38593566947826285,
+                        "y": 0.7867178347391314
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "6B8C0D35-F9D8-5FEB-90B3-F0A9B127D36D",
+                "loops": [
+                  [
+                    ["A", 120, 120, 107.5, 136.38898859425655, 205.38053610612636, "start", 1],
+                    [
+                      "L",
+                      22.875797458266987,
+                      73.92246446876285,
+                      11.582285534809657,
+                      68.56461150001434,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      11.582285534809657,
+                      68.56461150001434,
+                      60.266756649806695,
+                      63.094906740551004,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      60.266756649806695,
+                      63.094906740551004,
+                      79.34335707555363,
+                      100.71172931250538,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      79.34335707555363,
+                      100.71172931250538,
+                      68.04984515209628,
+                      95.35387634375687,
+                      "start",
+                      0.5
+                    ],
+                    ["A", 120, 120, 57.5, 205.38053610612636, 136.38898859425655, "start", 1],
+                    [
+                      "L",
+                      78.36773948319862,
+                      159.6611256050705,
+                      42.1657738164148,
+                      194.1490609138275,
+                      "start",
+                      0.5
+                    ]
+                  ]
+                ],
+                "point_ids": [11],
+                "role": "step",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Act"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.07479892340806193,
+                        "width": 0.14959784681612387,
+                        "x": 0.08145107659193807,
+                        "y": 0.4626005382959691
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              }
+            ],
+            "resizing": "proportional",
+            "settings": {"arrow_style": "arrow", "direction": "clockwise", "ring_width": 50},
+            "stacking": "last_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0.052083333333333336, "y": 0.5000000000000001},
+                  {"id": 1, "x": 0.9479166666666666, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0.052083333333333336},
+                  {"id": 3, "x": 0.5, "y": 0.9479166666666666},
+                  {"id": 4, "x": 0.18327508759352565, "y": 0.18327508759352557},
+                  {"id": 5, "x": 0.18327508759352565, "y": 0.8167249124064744},
+                  {"id": 6, "x": 0.8167249124064744, "y": 0.18327508759352565},
+                  {"id": 7, "x": 0.8167249124064744, "y": 0.8167249124064744},
+                  {"id": 8, "x": 0.42904074534498726, "y": 0.05773975483140828},
+                  {"id": 9, "x": 0.9422602451685917, "y": 0.4290407453449872},
+                  {"id": 10, "x": 0.5709592546550126, "y": 0.9422602451685917},
+                  {"id": 11, "x": 0.05773975483140828, "y": 0.5709592546550127}
+                ],
+                "frame": {"height": 240, "width": 240, "x": 400, "y": 340},
+                "id": "1A3A3A8F-593C-5561-B1AD-CC389ACB9094",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 4
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "generator": "com.simplediagrams.gauge",
+            "generator_version": 1,
+            "made_at": {"height": 140, "width": 200},
+            "own_text": {
+              "text_layout": {
+                "frame": {"height": 0.25, "width": 0.94, "x": 0.03, "y": 0.75},
+                "position": "middle"
+              }
+            },
+            "parts": [
+              {
+                "id": "C5846C40-6B88-5D44-AE30-5E0FE30C1CB7",
+                "loops": [
+                  [
+                    ["A", 100, 100, 100, 180, 238.25384291007748, "start", 1],
+                    [
+                      "L",
+                      47.38431118745834,
+                      14.961248299485376,
+                      60.53823339059375,
+                      36.22093622461403,
+                      "start",
+                      0.5
+                    ],
+                    ["A", 100, 100, 75, 238.25384291007748, 180, "start", 1],
+                    ["L", 25, 100.00000000000001, 0, 100.00000000000001, "start", 0.5]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "band",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Low"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.12326247905333615,
+                        "width": 0.1725674706746706,
+                        "x": 0.03154093391265704,
+                        "y": 0.3484382970366829
+                      },
+                      "position": "middle",
+                      "rotation_degrees": 299.12692145503877
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "A4EBDEC6-AD73-579D-97E4-704146AA2DB1",
+                "loops": [
+                  [
+                    ["A", 100, 100, 100, 240.87307854496126, 299.12692145503877, "start", 1],
+                    [
+                      "L",
+                      148.6745884355782,
+                      12.64563868571257,
+                      136.50594132668365,
+                      34.48422901428442,
+                      "start",
+                      0.5
+                    ],
+                    ["A", 100, 100, 75, 299.12692145503877, 240.87307854496126, "start", 1],
+                    [
+                      "L",
+                      63.49405867331638,
+                      34.48422901428441,
+                      51.32541156442184,
+                      12.645638685712541,
+                      "start",
+                      0.5
+                    ]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "band",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Normal"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.1232624790533361,
+                        "width": 0.17256747067467054,
+                        "x": 0.41371626466266465,
+                        "y": 0.027654474759046237
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "D979F705-6E86-5840-9C52-1EA9D98A8B07",
+                "loops": [
+                  [
+                    ["A", 100, 100, 100, 301.7461570899225, 360, "start", 1],
+                    ["L", 200, 99.99999999999997, 175, 99.99999999999999, "start", 0.5],
+                    ["A", 100, 100, 75, 360, 301.7461570899225, "start", 1],
+                    [
+                      "L",
+                      139.46176660940623,
+                      36.22093622461402,
+                      152.61568881254163,
+                      14.961248299485362,
+                      "start",
+                      0.5
+                    ]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "band",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "High"
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.12326247905333615,
+                        "width": 0.1725674706746706,
+                        "x": 0.7958915954126724,
+                        "y": 0.3484382970366827
+                      },
+                      "position": "middle",
+                      "rotation_degrees": 60.87307854496123
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "EF3F57F4-A242-52F7-904C-A29EF864BD0C",
+                "loops": [
+                  [
+                    ["A", 100, 100, 5, 356.7241710402016, 543.2758289597984, "start", 1],
+                    [
+                      "L",
+                      95.00816994009824,
+                      99.71428571428571,
+                      99.99999999999999,
+                      12.5,
+                      "start",
+                      0.5
+                    ],
+                    [
+                      "L",
+                      99.99999999999999,
+                      12.5,
+                      104.99183005990176,
+                      99.71428571428572,
+                      "start",
+                      0.5
+                    ]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "needle",
+                "texts": []
+              }
+            ],
+            "resizing": "proportional",
+            "settings": {"auto_rotate_labels": true, "maximum": 100, "minimum": 0, "value": 50},
+            "stacking": "last_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.7142857142857144},
+                  {"id": 1, "x": 1, "y": 0.7142857142857143},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0.1464466094067263, "y": 0.2092094420096089},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 0.8535533905932737, "y": 0.209209442009609},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 140, "width": 200, "x": 720, "y": 380},
+                "id": "DE937F27-E9D6-5B7E-94C7-2A2543C35648",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Load"
+                },
+                "z_index": 5
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "64F5D6F4-517C-5F7D-BA13-46C8D1C9D529",
+  "shape_data_definitions": []
+}

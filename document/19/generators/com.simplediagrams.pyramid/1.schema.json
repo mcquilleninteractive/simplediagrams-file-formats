@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/generators/com.simplediagrams.pyramid/1.schema.json",
+  "title": "SimpleDiagrams document format 19 generator catalogue: com.simplediagrams.pyramid, version 1",
+  "description": "The com.simplediagrams.pyramid generator at version 1: a pyramid or funnel cut into layers. An element of document.json whose complex_shape record has generator com.simplediagrams.pyramid and generator_version 1, in either form, must pass this schema as well as document.schema.json. It holds what this version declares, as far as JSON Schema can: its settings with their types, ranges and words (in the incomplete form only the words format 19 lists), its roles and their counts, the slot and the number of points on each part, own_text, stacking and resizing. The README.md beside this file states every rule, including those this schema cannot check. In a later release this entry may gain words in its open settings, in the complete form only; nothing else in it ever changes, and any other change to the generator is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["generator", "generator_version"],
+      "properties": {
+        "generator": { "const": "com.simplediagrams.pyramid" },
+        "generator_version": { "const": 1 }
+      },
+      "if": { "required": ["made_at"] },
+      "then": {
+        "properties": {
+          "settings": {
+            "required": ["form"],
+            "additionalProperties": false,
+            "properties": {
+              "form": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 32,
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              }
+            }
+          },
+          "parts": {
+            "minItems": 2,
+            "maxItems": 8,
+            "items": {
+              "properties": { "role": { "enum": ["layer"] } },
+              "allOf": [
+                {
+                  "if": { "properties": { "role": { "const": "layer" } } },
+                  "then": {
+                    "properties": {
+                      "texts": {
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": { "properties": { "slot": { "const": "label" } } }
+                      },
+                      "point_ids": { "minItems": 2, "maxItems": 2 }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "stacking": { "const": "last_in_front" },
+          "resizing": { "const": "free" }
+        },
+        "not": { "required": ["own_text"] }
+      },
+      "else": {
+        "properties": {
+          "settings": {
+            "required": ["form"],
+            "additionalProperties": false,
+            "properties": { "form": { "enum": ["pyramid", "funnel"] } }
+          },
+          "parts": {
+            "minItems": 2,
+            "maxItems": 8,
+            "items": {
+              "properties": { "role": { "enum": ["layer"] } },
+              "allOf": [
+                {
+                  "if": { "properties": { "role": { "const": "layer" } } },
+                  "then": {
+                    "properties": {
+                      "texts": {
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": { "properties": { "slot": { "const": "label" } } }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "content": {
+      "properties": {
+        "content": {
+          "properties": {
+            "content": {
+              "properties": {
+                "text_content": {
+                  "properties": {
+                    "string": {
+                      "description": "This version has no text of its own, so the element's text is empty.",
+                      "const": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

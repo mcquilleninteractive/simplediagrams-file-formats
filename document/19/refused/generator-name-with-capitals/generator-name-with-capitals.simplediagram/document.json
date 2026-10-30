@@ -1,0 +1,174 @@
+{
+  "embedded_assets": [],
+  "id": "42D18EB0-81F1-5162-8B4A-EA8CDBE964BD",
+  "name": "Generator name with capitals",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "1D37AEA1-C330-5D0C-8667-67ECBB957916",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "generator": "com.example.Steps",
+            "generator_version": 3,
+            "made_at": {"height": 80, "width": 240},
+            "parts": [
+              {
+                "id": "F23F4CFD-0EDF-5CF7-A59F-284FF9D071DB",
+                "loops": [
+                  [
+                    ["L", 0, 0, 80, 0, "start", 1],
+                    ["L", 80, 0, 80, 80, "start", 1],
+                    ["L", 80, 80, 0, 80, "start", 1],
+                    ["L", 0, 80, 0, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [8],
+                "role": "block",
+                "texts": [
+                  {
+                    "slot": "caption",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "First"
+                    },
+                    "text_layout": {
+                      "frame": {"height": 0.5, "width": 0.25, "x": 0.05, "y": 0.25},
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "BB9CE05E-9814-5337-885F-E8798636B29D",
+                "loops": [
+                  [
+                    ["L", 160, 0, 240, 0, "start", 1],
+                    ["L", 240, 0, 240, 80, "start", 1],
+                    ["L", 240, 80, 160, 80, "start", 1],
+                    ["L", 160, 80, 160, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [9],
+                "role": "block",
+                "style": {"fill_hex": "#D3F9D8"},
+                "texts": [
+                  {
+                    "slot": "caption",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": "Second"
+                    },
+                    "text_layout": {
+                      "frame": {"height": 0.5, "width": 0.25, "x": 0.7, "y": 0.25},
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "C5064E99-1FD0-5CE3-9793-6668067C9A93",
+                "loops": [
+                  [
+                    ["L", 90, 30, 150, 40, "start", 0.5],
+                    ["L", 150, 40, 90, 50, "start", 0.5],
+                    ["L", 90, 50, 90, 30, "start", 0.5]
+                  ]
+                ],
+                "point_ids": [],
+                "role": "link",
+                "texts": []
+              }
+            ],
+            "resizing": "free",
+            "settings": {"gap": 20, "shading": "soft", "shows_numbers": true},
+            "stacking": "last_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1},
+                  {"id": 8, "x": 0.16666666666666666, "y": 1},
+                  {"id": 9, "x": 0.8333333333333334, "y": 1}
+                ],
+                "frame": {"height": 80, "width": 240, "x": 80, "y": 80},
+                "id": "6DC06D2D-2696-54FB-A45A-68B4DE56A9CF",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "1D37AEA1-C330-5D0C-8667-67ECBB957916",
+  "shape_data_definitions": []
+}

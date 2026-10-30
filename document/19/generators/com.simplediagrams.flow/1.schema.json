@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/generators/com.simplediagrams.flow/1.schema.json",
+  "title": "SimpleDiagrams document format 19 generator catalogue: com.simplediagrams.flow, version 1",
+  "description": "The com.simplediagrams.flow generator at version 1: a row of steps. An element of document.json whose complex_shape record has generator com.simplediagrams.flow and generator_version 1, in either form, must pass this schema as well as document.schema.json. It holds what this version declares, as far as JSON Schema can: its settings with their types, ranges and words (in the incomplete form only the words format 19 lists), its roles and their counts, the slot and the number of points on each part, own_text, stacking and resizing. The README.md beside this file states every rule, including those this schema cannot check. In a later release this entry may gain words in its open settings, in the complete form only; nothing else in it ever changes, and any other change to the generator is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["generator", "generator_version"],
+      "properties": {
+        "generator": { "const": "com.simplediagrams.flow" },
+        "generator_version": { "const": 1 }
+      },
+      "if": { "required": ["made_at"] },
+      "then": {
+        "properties": {
+          "settings": {
+            "required": ["base_shape", "direction", "spacing", "pointer"],
+            "additionalProperties": false,
+            "properties": {
+              "base_shape": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 32,
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              },
+              "direction": { "enum": ["across", "down"] },
+              "spacing": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 32,
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              },
+              "pointer": { "type": "boolean" }
+            }
+          },
+          "parts": {
+            "minItems": 2,
+            "maxItems": 12,
+            "items": {
+              "properties": { "role": { "enum": ["step"] } },
+              "allOf": [
+                {
+                  "if": { "properties": { "role": { "const": "step" } } },
+                  "then": {
+                    "properties": {
+                      "texts": {
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": { "properties": { "slot": { "const": "label" } } }
+                      },
+                      "point_ids": { "minItems": 2, "maxItems": 2 }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "stacking": { "const": "first_in_front" },
+          "resizing": { "const": "free" }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "settings": {
+                  "properties": {
+                    "base_shape": { "enum": ["chevron", "arrow-box", "block-arrow", "hexagon"] }
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "settings": {
+                  "properties": {
+                    "spacing": { "not": { "const": "overlap" } },
+                    "pointer": { "const": false }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "not": { "required": ["own_text"] }
+      },
+      "else": {
+        "properties": {
+          "settings": {
+            "required": ["base_shape", "direction", "spacing", "pointer"],
+            "additionalProperties": false,
+            "properties": {
+              "base_shape": {
+                "enum": [
+                  "chevron",
+                  "arrow-box",
+                  "block-arrow",
+                  "rectangle",
+                  "rounded-rectangle",
+                  "circle",
+                  "hexagon"
+                ]
+              },
+              "direction": { "enum": ["across", "down"] },
+              "spacing": { "enum": ["gap", "touch", "overlap"] },
+              "pointer": { "type": "boolean" }
+            }
+          },
+          "parts": {
+            "minItems": 2,
+            "maxItems": 12,
+            "items": {
+              "properties": { "role": { "enum": ["step"] } },
+              "allOf": [
+                {
+                  "if": { "properties": { "role": { "const": "step" } } },
+                  "then": {
+                    "properties": {
+                      "texts": {
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": { "properties": { "slot": { "const": "label" } } }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "settings": {
+                  "properties": {
+                    "base_shape": { "enum": ["chevron", "arrow-box", "block-arrow", "hexagon"] }
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "settings": {
+                  "properties": {
+                    "spacing": { "not": { "const": "overlap" } },
+                    "pointer": { "const": false }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "content": {
+      "properties": {
+        "content": {
+          "properties": {
+            "content": {
+              "properties": {
+                "text_content": {
+                  "properties": {
+                    "string": {
+                      "description": "This version has no text of its own, so the element's text is empty.",
+                      "const": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

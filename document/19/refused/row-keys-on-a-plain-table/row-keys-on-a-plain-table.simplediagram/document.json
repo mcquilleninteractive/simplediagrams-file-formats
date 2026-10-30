@@ -1,0 +1,179 @@
+{
+  "embedded_assets": [],
+  "id": "7D41DCAE-AC04-58EE-8640-BC1C017D39DF",
+  "name": "Row keys on a plain table",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "CF8FBB94-F1EC-5A79-8B7D-5C3BEA8F0CCF",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "cells": [
+              [
+                {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Customer"
+                },
+                {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              ],
+              [
+                {
+                  "base_alignment": "leading",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "id"
+                },
+                {
+                  "base_alignment": "trailing",
+                  "base_style": {
+                    "color_hex": "#6C757D",
+                    "font_size": 12,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "uuid"
+                }
+              ],
+              [
+                {
+                  "base_alignment": "leading",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "field_1"
+                },
+                {
+                  "base_alignment": "trailing",
+                  "base_style": {
+                    "color_hex": "#6C757D",
+                    "font_size": 12,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "text"
+                }
+              ]
+            ],
+            "column_sizes": [2, 1],
+            "row_ids": [
+              "69BE8C4A-35AA-5D59-9435-6DB564D8220E",
+              "ABDED682-0077-5083-A9AF-B0E065F24DF2",
+              "0D420DD0-26BF-5FF7-A341-DFF59B9AC284"
+            ],
+            "row_marks": [[], ["primary_key"], []],
+            "row_point_ids": [[], [8, 9], [10, 11]],
+            "row_sizes": [1, 1, 1],
+            "type": "table"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1},
+                  {"id": 8, "x": 0, "y": 0.5},
+                  {"id": 9, "x": 1, "y": 0.5},
+                  {"id": 10, "x": 0, "y": 0.8333333333333334},
+                  {"id": 11, "x": 1, "y": 0.8333333333333334}
+                ],
+                "frame": {"height": 96, "width": 220, "x": 80, "y": 80},
+                "id": "9C677833-2069-539C-8F42-648AA0DC07B7",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "CF8FBB94-F1EC-5A79-8B7D-5C3BEA8F0CCF",
+  "shape_data_definitions": []
+}

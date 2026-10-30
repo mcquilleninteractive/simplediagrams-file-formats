@@ -1,0 +1,108 @@
+{
+  "embedded_assets": [],
+  "id": "A5B323CC-39CC-5F36-B765-8DF7020C3431",
+  "name": "Refused example",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "F8660A46-2A3B-5E2D-9189-21356B4ADA7A",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 80, "width": 160, "x": 100, "y": 100},
+                "id": "E57268CA-6C2D-5D20-BAF7-D45999AF5E12",
+                "kind": "rectangle",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#D8ECFF", "line_width": 2, "stroke_hex": "#343A40"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Pump"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": "2FCBA0DE-CFFE-5AA3-9B05-CED61C4CEF7B",
+          "shape_data_values": [
+            {
+              "fieldID": "819CC173-CC49-5187-8E7B-EB79AE4E0D1E",
+              "isOverride": true,
+              "value": {"type": "text", "value": "P-101"}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "F8660A46-2A3B-5E2D-9189-21356B4ADA7A",
+  "shape_data_definitions": [
+    {
+      "allowsDefinitionEditing": true,
+      "fields": [
+        {
+          "allowsInstanceEditing": true,
+          "choices": [],
+          "defaultValue": {"type": "empty"},
+          "id": "819CC173-CC49-5187-8E7B-EB79AE4E0D1E",
+          "name": "Tag",
+          "type": "text",
+          "unit": ""
+        },
+        {
+          "allowsInstanceEditing": true,
+          "choices": [],
+          "defaultValue": {"type": "empty"},
+          "id": "77E2AFA3-EBEF-539F-B233-BDDD0987E993",
+          "name": "Flow",
+          "type": "number",
+          "unit": "L/min"
+        }
+      ],
+      "id": "2FCBA0DE-CFFE-5AA3-9B05-CED61C4CEF7B"
+    }
+  ]
+}

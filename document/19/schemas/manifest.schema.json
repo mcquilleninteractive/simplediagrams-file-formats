@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/manifest.schema.json",
+  "title": "SimpleDiagrams document format 19: manifest.json",
+  "description": "The manifest of a SimpleDiagrams document package in document format 19. It names the format and its version so a reader can decide how to read the rest of the package before reading it. The app ignores keys it does not know here, and never reads app_version or app_build; a writer must not add any key other than those described here. The whole file is at most 65,536 bytes, which this schema cannot check. Whether contains_legacy_source agrees with the presence of legacy/source.sdxml is a package rule this schema cannot check either.",
+  "type": "object",
+  "required": ["format", "format_version", "contains_legacy_source"],
+  "properties": {
+    "format": {
+      "description": "Identifies the file as a SimpleDiagrams document. Any other value is refused. This key and format_version keep their names and meaning in every document format.",
+      "const": "com.simplediagrams.document"
+    },
+    "format_version": {
+      "description": "The document format version. This schema describes document format 19. The schema_version in document.json must be one less (18).",
+      "type": "integer",
+      "const": 19
+    },
+    "contains_legacy_source": {
+      "description": "True only for a document converted from an old .sdxml file, whose original is kept as legacy/source.sdxml in the package. A newly written document has false, and then the package must not contain a legacy folder.",
+      "type": "boolean"
+    },
+    "app_version": {
+      "description": "Optional: the version, such as 5.2.0, of the program that saved the document. SimpleDiagrams always writes it; another program may leave it out, and names its own version if it writes it. At most 32 bytes of UTF-8 (this schema checks 32 characters). Nothing is decided by it.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32
+    },
+    "app_build": {
+      "description": "Optional: the build number, such as 45, of the program that saved the document. SimpleDiagrams always writes it; another program may leave it out, and names its own build if it writes it. At most 32 bytes of UTF-8 (this schema checks 32 characters). Nothing is decided by it.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32
+    }
+  }
+}

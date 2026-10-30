@@ -1,0 +1,179 @@
+{
+  "embedded_assets": [],
+  "id": "84B04C63-0580-574E-917F-A98E76ECE2D1",
+  "name": "Entity table row lists of different lengths",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "1A2355AF-4E6C-5D3D-8770-4086EA1DCA93",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "cells": [
+              [
+                {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Customer"
+                },
+                {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              ],
+              [
+                {
+                  "base_alignment": "leading",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "id"
+                },
+                {
+                  "base_alignment": "trailing",
+                  "base_style": {
+                    "color_hex": "#6C757D",
+                    "font_size": 12,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "uuid"
+                }
+              ],
+              [
+                {
+                  "base_alignment": "leading",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "field_1"
+                },
+                {
+                  "base_alignment": "trailing",
+                  "base_style": {
+                    "color_hex": "#6C757D",
+                    "font_size": 12,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "text"
+                }
+              ]
+            ],
+            "column_sizes": [2, 1],
+            "row_ids": [
+              "8AB9526E-4DF1-533B-BD25-A0D8DFC9DFFE",
+              "6F90AA6D-CEB7-5B4B-B5A7-75DF78190CA1"
+            ],
+            "row_marks": [[], ["primary_key"], []],
+            "row_point_ids": [[], [8, 9], [10, 11]],
+            "row_sizes": [1, 1, 1],
+            "type": "table",
+            "variant": "entity"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1},
+                  {"id": 8, "x": 0, "y": 0.5},
+                  {"id": 9, "x": 1, "y": 0.5},
+                  {"id": 10, "x": 0, "y": 0.8333333333333334},
+                  {"id": 11, "x": 1, "y": 0.8333333333333334}
+                ],
+                "frame": {"height": 96, "width": 220, "x": 80, "y": 80},
+                "id": "275D620A-CC57-5FB3-990C-D671022B9EA9",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "1A2355AF-4E6C-5D3D-8770-4086EA1DCA93",
+  "shape_data_definitions": []
+}

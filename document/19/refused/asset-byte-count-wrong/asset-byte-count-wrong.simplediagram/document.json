@@ -1,0 +1,86 @@
+{
+  "embedded_assets": [
+    {
+      "byte_count": 105,
+      "filename": "607f8fab36cc00f9d86d810ab2b861db113cd4789632a4f1782bb678a52c18b3.png",
+      "id": "607f8fab36cc00f9d86d810ab2b861db113cd4789632a4f1782bb678a52c18b3",
+      "kind": "raster_png"
+    }
+  ],
+  "id": "0D38911F-CE67-5383-84DC-4D5C94CC5E8A",
+  "name": "Refused example",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "9F6B172C-9887-5699-8240-8EEEE3EA95EE",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "embedded_asset_id": "607f8fab36cc00f9d86d810ab2b861db113cd4789632a4f1782bb678a52c18b3",
+                "frame": {"height": 160, "width": 160, "x": 100, "y": 100},
+                "id": "9B7A7EED-CB2D-5F06-8EB7-117CBD72A736",
+                "image_content_mode": "fit",
+                "kind": "image",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#00000000", "line_width": 0, "stroke_hex": "#00000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "9F6B172C-9887-5699-8240-8EEEE3EA95EE",
+  "shape_data_definitions": []
+}

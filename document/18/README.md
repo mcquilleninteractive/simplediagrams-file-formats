@@ -997,7 +997,8 @@ most of them.
   inside pages.
 - Content in a left-over array that must be empty.
 - An unknown value in a fixed list: an element `kind`, a line ending, texture, pattern, font weight,
-  alignment, text position, routing name, background kind and so on.
+  alignment, text position, routing name, background kind and so on. (`note_style` is read by
+  SimpleDiagrams 5.2 and later instead; see [elements.md](elements.md#113-note).)
 - A fraction in a whole-number field.
 - A repeated UUID anywhere in the shared namespace.
 - A colour that is not `#RRGGBB` or `#RRGGBBAA`, such as `#FFF` or `none`; a grid colour with alpha.

@@ -1,0 +1,150 @@
+{
+  "embedded_assets": [],
+  "id": "84B5F139-C4DF-5336-A5CD-272F59EFAAB3",
+  "library_shape_names": [
+    {
+      "item_id": "Cylinder",
+      "library_id": "com.simplediagrams.shapeLibrary.basic",
+      "slug": "cylinder"
+    },
+    {
+      "item_id": "A7B42E71-F63D-86CB-A432-C991DD0D7BB0",
+      "library_id": "678BF989-9CFF-895B-A260-AE0831F9E4C1",
+      "library_readable_id": "com.simplediagrams.shapeLibrary.exampleLibrary",
+      "slug": "rain-barrel"
+    }
+  ],
+  "name": "Library shapes",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "29D8A081-E699-5D5C-A3CA-02BE0F1AE9B0",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 100, "width": 70, "x": 100, "y": 100},
+                "id": "62EA37B1-CDBA-5B84-9E70-48932F35947A",
+                "kind": "symbol",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "symbol_reference": {
+                  "asset_version": 1,
+                  "item_id": "Cylinder",
+                  "library_id": "com.simplediagrams.shapeLibrary.basic"
+                },
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Stock"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 0, "x": 0, "y": 0.5},
+                  {"id": 1, "x": 1, "y": 0.5},
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 4, "x": 0, "y": 0},
+                  {"id": 5, "x": 0, "y": 1},
+                  {"id": 6, "x": 1, "y": 0},
+                  {"id": 7, "x": 1, "y": 1}
+                ],
+                "frame": {"height": 100, "width": 80, "x": 300, "y": 100},
+                "id": "38B6F7F7-95C9-59C3-90A0-47CF2C3D59CF",
+                "kind": "symbol",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "symbol_reference": {
+                  "asset_version": 1,
+                  "item_id": "A7B42E71-F63D-86CB-A432-C991DD0D7BB0",
+                  "library_id": "678BF989-9CFF-895B-A260-AE0831F9E4C1"
+                },
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Rain barrel"
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false,
+            "preserves_aspect_ratio": true
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "required_libraries": [
+    {
+      "display_name": "Example Library",
+      "library_id": "678BF989-9CFF-895B-A260-AE0831F9E4C1",
+      "minimum_revision": 1
+    }
+  ],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "29D8A081-E699-5D5C-A3CA-02BE0F1AE9B0",
+  "shape_data_definitions": []
+}

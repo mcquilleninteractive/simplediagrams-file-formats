@@ -1,0 +1,208 @@
+{
+  "embedded_assets": [],
+  "id": "7F99C9C6-B3A7-5BD8-9505-FDB48BDDD178",
+  "name": "Pyramid with point 0",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "2C0A4719-62C8-5BB7-A749-4EAD64887C8B",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "generator": "com.simplediagrams.pyramid",
+            "generator_version": 1,
+            "made_at": {"height": 200, "width": 240},
+            "parts": [
+              {
+                "id": "00000000-0000-4000-8000-000000000001",
+                "loops": [
+                  [
+                    ["L", 120, 0, 158.4, 64, "start", 1],
+                    ["L", 158.4, 64, 81.6, 64, "start", 0.5],
+                    ["L", 81.6, 64, 120, 0, "start", 1]
+                  ]
+                ],
+                "point_ids": [8, 9],
+                "role": "layer",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": ""
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.1,
+                        "width": 0.11000000000000003,
+                        "x": 0.445,
+                        "y": 0.19
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000002",
+                "loops": [
+                  [
+                    ["L", 79.2, 68, 160.8, 68, "start", 0.5],
+                    ["L", 160.8, 68, 199.2, 132, "start", 1],
+                    ["L", 199.2, 132, 40.8, 132, "start", 0.5],
+                    ["L", 40.8, 132, 79.2, 68, "start", 1]
+                  ]
+                ],
+                "point_ids": [10, 11],
+                "role": "layer",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": ""
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.26,
+                        "width": 0.29,
+                        "x": 0.35500000000000004,
+                        "y": 0.37
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000003",
+                "loops": [
+                  [
+                    ["L", 38.400000000000006, 136, 201.6, 136, "start", 0.5],
+                    ["L", 201.6, 136, 240, 200, "start", 1],
+                    ["L", 240, 200, 0, 200, "start", 0.5],
+                    ["L", 0, 200, 38.400000000000006, 136, "start", 1]
+                  ]
+                ],
+                "point_ids": [12, 13],
+                "role": "layer",
+                "texts": [
+                  {
+                    "slot": "label",
+                    "text": {
+                      "base_alignment": "center",
+                      "base_style": {
+                        "color_hex": "#212529",
+                        "font_size": 15,
+                        "is_italic": false,
+                        "is_underlined": false,
+                        "weight": "medium"
+                      },
+                      "character_runs": [],
+                      "paragraph_runs": [],
+                      "string": ""
+                    },
+                    "text_layout": {
+                      "frame": {
+                        "height": 0.26,
+                        "width": 0.63,
+                        "x": 0.18500000000000003,
+                        "y": 0.71
+                      },
+                      "position": "middle"
+                    }
+                  }
+                ]
+              }
+            ],
+            "resizing": "free",
+            "settings": {"form": "pyramid"},
+            "stacking": "last_in_front",
+            "type": "generated"
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [
+                  {"id": 2, "x": 0.5, "y": 0},
+                  {"id": 3, "x": 0.5, "y": 1},
+                  {"id": 8, "x": 0.42, "y": 0.16},
+                  {"id": 9, "x": 0.58, "y": 0.16},
+                  {"id": 10, "x": 0.25, "y": 0.5},
+                  {"id": 11, "x": 0.75, "y": 0.5},
+                  {"id": 12, "x": 0.08000000000000002, "y": 0.84},
+                  {"id": 13, "x": 0.92, "y": 0.84},
+                  {"id": 0, "x": 0, "y": 0.5}
+                ],
+                "frame": {"height": 200, "width": 240, "x": 80, "y": 80},
+                "id": "195AA880-FAEB-5047-8C2D-A156D5F6F926",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "2C0A4719-62C8-5BB7-A749-4EAD64887C8B",
+  "shape_data_definitions": []
+}
