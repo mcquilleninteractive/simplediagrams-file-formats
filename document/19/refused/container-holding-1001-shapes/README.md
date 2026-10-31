@@ -2,7 +2,7 @@
 
 **Rule broken:** A container holds at most 1,000 members. Here the container `Parts` holds 1,001 small squares.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** Yes. The schema limits a member list to 1,000 entries.
 

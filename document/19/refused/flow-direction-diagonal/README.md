@@ -1,12 +1,12 @@
 # Refused: flow direction diagonal
 
-**Rule broken:** A flow version 1's `direction` is `across` or `down`; no other word is allowed. Here `direction` is `diagonal`.
+**Rule broken:** A flow's `direction` is `across` or `down`; a known type's words are a closed list. Here `direction` is `diagonal`.
 
-**Stated in:** [generators/com.simplediagrams.flow/README.md](../../generators/com.simplediagrams.flow/README.md#the-record), The record.
+**Stated in:** [complex-shapes/flow/README.md](../../complex-shapes/flow/README.md#settings), Settings.
 
-**Caught by the JSON Schemas:** Yes: `generators/com.simplediagrams.flow/1.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/flow/1.schema.json`.
 
-**The app's message (English):** "The shape 06A4F33E-98C1-5A96-B1F4-5A8CFF762BB5 is not a valid generated shape."
+**The app's message (English):** "The shape 06A4F33E-98C1-5A96-B1F4-5A8CFF762BB5 is not a valid complex shape."
 
 ## In this folder
 

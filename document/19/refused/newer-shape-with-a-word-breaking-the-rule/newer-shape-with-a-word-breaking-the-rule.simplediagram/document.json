@@ -1,0 +1,147 @@
+{
+  "embedded_assets": [],
+  "id": "626D512F-954F-51E7-9441-4702A2DB58D9",
+  "name": "Newer shape with a word breaking the rule",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "23718A5F-CE3F-5C4F-B496-9D16A7A6E18F",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "1438DD10-12D5-5F26-8A34-1EACCA25B194",
+                "point_ids": [8],
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "7E6C1F1B-BCFC-5553-BAA5-FD4B16A54D1C",
+                "point_ids": [9],
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Plan"
+                }
+              },
+              {
+                "id": "E7E7EF62-847E-5BB3-80AD-7704049744C7",
+                "point_ids": [10],
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Delegate"
+                }
+              },
+              {
+                "id": "BEB7A7CC-9AFD-5667-A4D4-285BFF249E51",
+                "point_ids": [11],
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Drop"
+                }
+              }
+            ],
+            "settings": {"corner": "Soft Edge", "gap": 12, "shows_axes": true},
+            "type": "matrix",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 240, "width": 240, "x": 80, "y": 80},
+                "id": "773090EE-6D2C-50D4-BB8A-69E1582B98D3",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": true,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "23718A5F-CE3F-5C4F-B496-9D16A7A6E18F",
+  "shape_data_definitions": []
+}

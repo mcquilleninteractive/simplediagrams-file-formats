@@ -54,7 +54,10 @@
               {"id": "9AB09DA3-8724-5C77-9710-84968207A012", "kind": "element"},
               {"id": "39AB83E2-5004-5CBE-AAC1-21926DB3717C", "kind": "element"}
             ],
-            "type": "container"
+            "parts": [],
+            "settings": {"layout": "free", "title_style": "band"},
+            "type": "container",
+            "version": 1
           },
           "content": {
             "content": {
@@ -185,8 +188,10 @@
           "complex_shape": {
             "hand_drawn": false,
             "members": [{"id": "726303C4-9615-5FF4-A7B8-C4950687FE20", "kind": "element"}],
-            "title_style": "corner_tag",
-            "type": "container"
+            "parts": [],
+            "settings": {"layout": "free", "title_style": "corner_tag"},
+            "type": "container",
+            "version": 1
           },
           "content": {
             "content": {

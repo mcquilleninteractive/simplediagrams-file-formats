@@ -1,14 +1,12 @@
 # Refused: table cell count mismatch
 
-**Rule broken:** A table has one row of `cells` per entry of `row_sizes` and one cell per entry of `column_sizes`. Here `row_sizes` has three entries and `cells` two rows.
+**Rule broken:** Each row of a table has one cell for each column. Here the table has two columns and its last row one cell.
 
-**Stated in:** [elements.md](../../elements.md#127-table), Complex shapes: `table`.
+**Stated in:** [complex-shapes/table/README.md](../../complex-shapes/table/README.md#rules), Rules.
 
-**Caught by the JSON Schemas:** No. JSON Schema cannot compare the lengths of two arrays.
+**Caught by the JSON Schemas:** No. JSON Schema cannot compare the lengths of two lists.
 
-**The app's message (English):** "Shape 890CB3FA-71CA-55F8-A832-0F424FD90E6D holds a container, swimlanes, table, callout or lifeline record that is not valid."
-
-The identifier is the table's.
+**The app's message (English):** "The shape 293EB0A1-5C9A-54CC-83C1-9F35497B8A03 is not a valid complex shape."
 
 ## In this folder
 
@@ -16,4 +14,4 @@ The identifier is the table's.
 
 ## To make it valid
 
-Add the third row of cells, or remove one entry from `row_sizes`.
+Give the last row its second cell back.

@@ -2,11 +2,11 @@
 
 **Rule broken:** A part's `style`, when present, holds at least one channel. Here the section has `"style": {}`.
 
-**Stated in:** [generated-shapes.md](../../generated-shapes.md#3-parts), Parts.
+**Stated in:** [elements.md](../../elements.md#123-parts), Parts.
 
 **Caught by the JSON Schemas:** Yes: `document.schema.json`.
 
-**The app's message (English):** "The shape 696CAEB6-4185-59DD-89A2-40B202E57E88 is not a valid generated shape."
+**The app's message (English):** "The SimpleDiagrams document contains an invalid document.json file."
 
 ## In this folder
 

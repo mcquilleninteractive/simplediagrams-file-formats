@@ -1,12 +1,12 @@
 # Refused: cycle direction sideways
 
-**Rule broken:** A cycle version 1's `direction` is `clockwise` or `anticlockwise`; no other word is allowed. Here `direction` is `sideways`.
+**Rule broken:** A cycle's `direction` is `clockwise` or `anticlockwise`. Here `direction` is `sideways`.
 
-**Stated in:** [generators/com.simplediagrams.cycle/README.md](../../generators/com.simplediagrams.cycle/README.md#the-record), The record.
+**Stated in:** [complex-shapes/cycle/README.md](../../complex-shapes/cycle/README.md#settings), Settings.
 
-**Caught by the JSON Schemas:** Yes: `generators/com.simplediagrams.cycle/1.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/cycle/1.schema.json`.
 
-**The app's message (English):** "The shape F2C04E1E-C147-5923-8833-5563EE997B54 is not a valid generated shape."
+**The app's message (English):** "The shape F2C04E1E-C147-5923-8833-5563EE997B54 is not a valid complex shape."
 
 ## In this folder
 

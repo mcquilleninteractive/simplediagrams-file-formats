@@ -1,12 +1,12 @@
 # Refused: ring part of an unknown role
 
-**Rule broken:** A known generator version holds only the roles it declares, in their order. Here a ring version 1 has a part whose role it does not declare.
+**Rule broken:** A known type holds only the roles its entry declares, in their order. Here a ring's part has the role `slice`.
 
-**Stated in:** [generators/com.simplediagrams.ring/README.md](../../generators/com.simplediagrams.ring/README.md#the-record), The record.
+**Stated in:** [complex-shapes/ring/README.md](../../complex-shapes/ring/README.md#parts), Parts.
 
-**Caught by the JSON Schemas:** Yes: `generators/com.simplediagrams.ring/1.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/ring/1.schema.json`.
 
-**The app's message (English):** "The shape AC730CB7-F63C-584A-9D6D-90C8A893CD3B is not a valid generated shape."
+**The app's message (English):** "The shape AC730CB7-F63C-584A-9D6D-90C8A893CD3B is not a valid complex shape."
 
 ## In this folder
 
@@ -14,4 +14,4 @@
 
 ## To make it valid
 
-Give the part the role `section`, or remove it with its point.
+Give the part the role `section`.

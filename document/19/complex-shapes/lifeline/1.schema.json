@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/complex-shapes/lifeline/1.schema.json",
+  "title": "SimpleDiagrams document format 19 complex shape catalogue: lifeline, version 1",
+  "description": "The lifeline complex shape at version 1: a participant in a UML sequence diagram. An element of document.json whose complex_shape has type lifeline and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "lifeline" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": ["head_style", "ends_in_destroy_mark"],
+          "additionalProperties": false,
+          "properties": {
+            "head_style": { "enum": ["box", "actor"] },
+            "ends_in_destroy_mark": { "type": "boolean" }
+          }
+        },
+        "parts": { "maxItems": 0 }
+      },
+      "not": { "anyOf": [{ "required": ["members"] }, { "required": ["own_text_layout"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "complex_shape": {
+            "properties": {
+              "settings": {
+                "properties": {
+                  "head_style": { "const": "box" },
+                  "ends_in_destroy_mark": { "const": false }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "frame": { "properties": { "height": { "minimum": 59.99999994 } } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "complex_shape": {
+            "properties": {
+              "settings": {
+                "properties": {
+                  "head_style": { "const": "box" },
+                  "ends_in_destroy_mark": { "const": true }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "frame": { "properties": { "height": { "minimum": 71.99999992800001 } } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "complex_shape": {
+            "properties": {
+              "settings": {
+                "properties": {
+                  "head_style": { "const": "actor" },
+                  "ends_in_destroy_mark": { "const": false }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "frame": { "properties": { "height": { "minimum": 91.999999908 } } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "complex_shape": {
+            "properties": {
+              "settings": {
+                "properties": {
+                  "head_style": { "const": "actor" },
+                  "ends_in_destroy_mark": { "const": true }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": {
+                    "properties": {
+                      "frame": { "properties": { "height": { "minimum": 103.999999896 } } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -26,12 +26,14 @@
       "elements": [
         {
           "complex_shape": {
-            "layout": "proportional",
             "members": [
               {"id": "4278FEA9-8D70-5212-8ADB-B619A9FB3F64", "kind": "element"},
               {"id": "87F3EB81-B2EB-5157-9AEC-18BAC6DDE925", "kind": "element"}
             ],
-            "type": "container"
+            "parts": [],
+            "settings": {"layout": "proportional", "title_style": "band"},
+            "type": "container",
+            "version": 1
           },
           "content": {
             "content": {

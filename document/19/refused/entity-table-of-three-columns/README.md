@@ -2,11 +2,11 @@
 
 **Rule broken:** An entity table has exactly two columns: names and types. Here it has three.
 
-**Stated in:** [elements.md](../../elements.md#entity-tables), Entity tables.
+**Stated in:** [complex-shapes/entity_table/README.md](../../complex-shapes/entity_table/README.md#parts), Parts.
 
-**Caught by the JSON Schemas:** Yes: `document.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/entity_table/1.schema.json`.
 
-**The app's message (English):** "Shape A2ACE886-4FFD-5F66-8659-94831223B906 holds a container, swimlanes, table, callout or lifeline record that is not valid."
+**The app's message (English):** "The shape A2ACE886-4FFD-5F66-8659-94831223B906 is not a valid complex shape."
 
 ## In this folder
 
@@ -14,4 +14,4 @@
 
 ## To make it valid
 
-Remove the third column.
+Remove the third column, and each row's third cell.

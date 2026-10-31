@@ -26,166 +26,75 @@
       "elements": [
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.flow",
-            "generator_version": 1,
-            "made_at": {"height": 80, "width": 360},
             "parts": [
               {
                 "id": "6AC79D86-9357-56F9-8F4F-9A6C8C02F3F5",
-                "loops": [
-                  [
-                    ["L", 0, 0, 105.78404442037319, 0, "start", 1],
-                    ["L", 105.78404442037319, 0, 133.7840444203732, 40, "start", 1],
-                    ["L", 133.7840444203732, 40, 105.78404442037319, 80, "start", 1],
-                    ["L", 105.78404442037319, 80, 0, 80, "start", 1],
-                    ["L", 0, 80, 28, 40, "start", 1],
-                    ["L", 28, 40, 0, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [8, 9],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "One"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.18273345672325886,
-                        "x": 0.09444444444444444,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "One"
+                }
               },
               {
                 "id": "47412F9D-244C-5854-B7CA-C6FE92B46F9D",
-                "loops": [
-                  [
-                    ["L", 113.10797778981342, 0, 218.8920222101866, 0, "start", 1],
-                    ["L", 218.8920222101866, 0, 246.8920222101866, 40, "start", 1],
-                    ["L", 246.8920222101866, 40, 218.8920222101866, 80, "start", 1],
-                    ["L", 218.8920222101866, 80, 113.10797778981342, 80, "start", 1],
-                    ["L", 113.10797778981342, 80, 141.10797778981342, 40, "start", 1],
-                    ["L", 141.10797778981342, 40, 113.10797778981342, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [10, 11],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Two"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.18273345672325886,
-                        "x": 0.4086332716383706,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Two"
+                }
               },
               {
                 "id": "DF2547BC-214C-525D-A220-745ADF11736B",
-                "loops": [
-                  [
-                    ["L", 226.2159555796268, 0, 332, 0, "start", 1],
-                    ["L", 332, 0, 360, 40, "start", 1],
-                    ["L", 360, 40, 332, 80, "start", 1],
-                    ["L", 332, 80, 226.2159555796268, 80, "start", 1],
-                    ["L", 226.2159555796268, 80, 254.2159555796268, 40, "start", 1],
-                    ["L", 254.2159555796268, 40, 226.2159555796268, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [12, 13],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Three"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.18273345672325886,
-                        "x": 0.7228220988322966,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Three"
+                }
               }
             ],
-            "resizing": "free",
             "settings": {
               "base_shape": "chevron",
               "direction": "across",
               "pointer": false,
               "spacing": "gap"
             },
-            "stacking": "first_in_front",
-            "type": "generated"
+            "type": "flow",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0, "y": 0},
-                  {"id": 5, "x": 0, "y": 1},
-                  {"id": 6, "x": 1, "y": 0},
-                  {"id": 7, "x": 1, "y": 1},
-                  {"id": 8, "x": 0.07777777777777778, "y": 0.5},
-                  {"id": 9, "x": 0.37162234561214774, "y": 0.5},
-                  {"id": 10, "x": 0.39196660497170394, "y": 0.5},
-                  {"id": 11, "x": 0.685811172806074, "y": 0.5},
-                  {"id": 12, "x": 0.70615543216563, "y": 0.5},
-                  {"id": 13, "x": 1, "y": 0.5}
-                ],
+                "connection_points": [],
                 "frame": {"height": 80, "width": 360, "x": 80, "y": 60},
                 "id": "AE9F0781-E175-5E00-B94C-7BF9563A52B3",
                 "kind": "complex_shape",
@@ -216,163 +125,75 @@
         },
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.flow",
-            "generator_version": 1,
-            "made_at": {"height": 80, "width": 360},
             "parts": [
               {
                 "id": "A9CD6974-2BF1-5632-9EE9-0075F47678C6",
-                "loops": [
-                  [
-                    ["L", 0, 0, 88, 0, "start", 1],
-                    ["L", 88, 0, 116, 40, "start", 1],
-                    ["L", 116, 40, 88, 80, "start", 1],
-                    ["L", 88, 80, 0, 80, "start", 1],
-                    ["L", 0, 80, 0, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [8, 9],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "One"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.2111111111111111,
-                        "x": 0.016666666666666666,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "One"
+                }
               },
               {
                 "id": "0722E979-6B5A-569A-9E9B-63BB9F5E9AF9",
-                "loops": [
-                  [
-                    ["L", 122, 0, 210, 0, "start", 1],
-                    ["L", 210, 0, 238, 40, "start", 1],
-                    ["L", 238, 40, 210, 80, "start", 1],
-                    ["L", 210, 80, 122, 80, "start", 1],
-                    ["L", 122, 80, 122, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [10, 11],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Two"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.2111111111111111,
-                        "x": 0.35555555555555557,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Two"
+                }
               },
               {
                 "id": "3302E5DF-2649-5AB3-B7CE-FD38351A5567",
-                "loops": [
-                  [
-                    ["L", 244, 0, 332, 0, "start", 1],
-                    ["L", 332, 0, 360, 40, "start", 1],
-                    ["L", 360, 40, 332, 80, "start", 1],
-                    ["L", 332, 80, 244, 80, "start", 1],
-                    ["L", 244, 80, 244, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [12, 13],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Three"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.2111111111111111,
-                        "x": 0.6944444444444444,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Three"
+                }
               }
             ],
-            "resizing": "free",
             "settings": {
-              "base_shape": "arrow-box",
+              "base_shape": "arrow_box",
               "direction": "across",
               "pointer": false,
               "spacing": "gap"
             },
-            "stacking": "first_in_front",
-            "type": "generated"
+            "type": "flow",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0, "y": 0},
-                  {"id": 5, "x": 0, "y": 1},
-                  {"id": 6, "x": 1, "y": 0},
-                  {"id": 7, "x": 1, "y": 1},
-                  {"id": 8, "x": 0, "y": 0.5},
-                  {"id": 9, "x": 0.32222222222222224, "y": 0.5},
-                  {"id": 10, "x": 0.3388888888888889, "y": 0.5},
-                  {"id": 11, "x": 0.6611111111111111, "y": 0.5},
-                  {"id": 12, "x": 0.6777777777777778, "y": 0.5},
-                  {"id": 13, "x": 1, "y": 0.5}
-                ],
+                "connection_points": [],
                 "frame": {"height": 80, "width": 360, "x": 80, "y": 180},
                 "id": "723F8595-74F4-50BA-992B-16422BC194FE",
                 "kind": "complex_shape",
@@ -403,169 +224,75 @@
         },
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.flow",
-            "generator_version": 1,
-            "made_at": {"height": 80, "width": 360},
             "parts": [
               {
                 "id": "214EFCD0-B6C7-5150-A2F5-F4D003BB1A7E",
-                "loops": [
-                  [
-                    ["L", 0, 20, 88, 20, "start", 1],
-                    ["L", 88, 20, 88, 0, "start", 1],
-                    ["L", 88, 0, 116, 40, "start", 1],
-                    ["L", 116, 40, 88, 80, "start", 1],
-                    ["L", 88, 80, 88, 60, "start", 1],
-                    ["L", 88, 60, 0, 60, "start", 1],
-                    ["L", 0, 60, 0, 20, "start", 1]
-                  ]
-                ],
                 "point_ids": [8, 9],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "One"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.35,
-                        "width": 0.25,
-                        "x": 0.016666666666666666,
-                        "y": 0.325
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "One"
+                }
               },
               {
                 "id": "39454B67-4CA0-55E6-9793-DE63674F2C7C",
-                "loops": [
-                  [
-                    ["L", 122, 20, 210, 20, "start", 1],
-                    ["L", 210, 20, 210, 0, "start", 1],
-                    ["L", 210, 0, 238, 40, "start", 1],
-                    ["L", 238, 40, 210, 80, "start", 1],
-                    ["L", 210, 80, 210, 60, "start", 1],
-                    ["L", 210, 60, 122, 60, "start", 1],
-                    ["L", 122, 60, 122, 20, "start", 1]
-                  ]
-                ],
                 "point_ids": [10, 11],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Two"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.35,
-                        "width": 0.25,
-                        "x": 0.35555555555555557,
-                        "y": 0.325
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Two"
+                }
               },
               {
                 "id": "5737469A-5BE9-5323-BB15-D4F2313FA6DC",
-                "loops": [
-                  [
-                    ["L", 244, 20, 332, 20, "start", 1],
-                    ["L", 332, 20, 332, 0, "start", 1],
-                    ["L", 332, 0, 360, 40, "start", 1],
-                    ["L", 360, 40, 332, 80, "start", 1],
-                    ["L", 332, 80, 332, 60, "start", 1],
-                    ["L", 332, 60, 244, 60, "start", 1],
-                    ["L", 244, 60, 244, 20, "start", 1]
-                  ]
-                ],
                 "point_ids": [12, 13],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Three"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.35,
-                        "width": 0.25,
-                        "x": 0.6944444444444444,
-                        "y": 0.325
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Three"
+                }
               }
             ],
-            "resizing": "free",
             "settings": {
-              "base_shape": "block-arrow",
+              "base_shape": "block_arrow",
               "direction": "across",
               "pointer": false,
               "spacing": "gap"
             },
-            "stacking": "first_in_front",
-            "type": "generated"
+            "type": "flow",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0, "y": 0},
-                  {"id": 5, "x": 0, "y": 1},
-                  {"id": 6, "x": 1, "y": 0},
-                  {"id": 7, "x": 1, "y": 1},
-                  {"id": 8, "x": 0, "y": 0.5},
-                  {"id": 9, "x": 0.32222222222222224, "y": 0.5},
-                  {"id": 10, "x": 0.3388888888888889, "y": 0.5},
-                  {"id": 11, "x": 0.6611111111111111, "y": 0.5},
-                  {"id": 12, "x": 0.6777777777777778, "y": 0.5},
-                  {"id": 13, "x": 1, "y": 0.5}
-                ],
+                "connection_points": [],
                 "frame": {"height": 80, "width": 360, "x": 80, "y": 300},
                 "id": "E975CBFE-08AC-5817-80E7-2B0AC92436C5",
                 "kind": "complex_shape",
@@ -596,166 +323,75 @@
         },
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.flow",
-            "generator_version": 1,
-            "made_at": {"height": 80, "width": 360},
             "parts": [
               {
                 "id": "A4F28BF7-1847-5782-9D42-571C9D99BF61",
-                "loops": [
-                  [
-                    ["L", 0, 0, 112, 0, "start", 1],
-                    ["L", 112, 0, 112, 28, "start", 1],
-                    ["L", 112, 28, 124, 40, "start", 0.5],
-                    ["L", 124, 40, 112, 52, "start", 0.5],
-                    ["L", 112, 52, 112, 80, "start", 1],
-                    ["L", 112, 80, 0, 80, "start", 1],
-                    ["L", 0, 80, 0, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [8, 9],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "One"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.2777777777777778,
-                        "x": 0.016666666666666666,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "One"
+                }
               },
               {
                 "id": "565C0820-A650-5126-B6F5-822A648F7EBC",
-                "loops": [
-                  [
-                    ["L", 124, 0, 236, 0, "start", 1],
-                    ["L", 236, 0, 236, 28, "start", 1],
-                    ["L", 236, 28, 248, 40, "start", 0.5],
-                    ["L", 248, 40, 236, 52, "start", 0.5],
-                    ["L", 236, 52, 236, 80, "start", 1],
-                    ["L", 236, 80, 124, 80, "start", 1],
-                    ["L", 124, 80, 124, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [10, 11],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Two"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.2777777777777778,
-                        "x": 0.3611111111111111,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Two"
+                }
               },
               {
                 "id": "2C7B3F57-2DCF-519F-BF50-F315E02EA882",
-                "loops": [
-                  [
-                    ["L", 248, 0, 360, 0, "start", 1],
-                    ["L", 360, 0, 360, 80, "start", 1],
-                    ["L", 360, 80, 248, 80, "start", 1],
-                    ["L", 248, 80, 248, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [12, 13],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Three"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.2777777777777778,
-                        "x": 0.7055555555555556,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Three"
+                }
               }
             ],
-            "resizing": "free",
             "settings": {
               "base_shape": "rectangle",
               "direction": "across",
               "pointer": true,
               "spacing": "gap"
             },
-            "stacking": "first_in_front",
-            "type": "generated"
+            "type": "flow",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0, "y": 0},
-                  {"id": 5, "x": 0, "y": 1},
-                  {"id": 6, "x": 1, "y": 0},
-                  {"id": 7, "x": 1, "y": 1},
-                  {"id": 8, "x": 0, "y": 0.5},
-                  {"id": 9, "x": 0.34444444444444444, "y": 0.5},
-                  {"id": 10, "x": 0.34444444444444444, "y": 0.5},
-                  {"id": 11, "x": 0.6888888888888889, "y": 0.5},
-                  {"id": 12, "x": 0.6888888888888889, "y": 0.5},
-                  {"id": 13, "x": 1, "y": 0.5}
-                ],
+                "connection_points": [],
                 "frame": {"height": 80, "width": 360, "x": 80, "y": 420},
                 "id": "C16AE799-2E41-5CE6-89CB-EDCB32C030C2",
                 "kind": "complex_shape",
@@ -786,172 +422,75 @@
         },
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.flow",
-            "generator_version": 1,
-            "made_at": {"height": 80, "width": 360},
             "parts": [
               {
                 "id": "F7BF1E1F-FE7A-5D97-A217-ED053D590877",
-                "loops": [
-                  [
-                    ["L", 8, 0, 130.46153846153845, 0, "start", 1],
-                    ["A", 130.46153846153845, 8, 8, -90, 0, "start", 1],
-                    ["L", 138.46153846153845, 8, 138.46153846153845, 72, "start", 1],
-                    ["A", 130.46153846153845, 72, 8, 0, 90, "start", 1],
-                    ["L", 130.46153846153845, 80, 8, 80, "start", 1],
-                    ["A", 8, 72, 8, 90, 180, "start", 1],
-                    ["L", 0, 72, 0, 8, "start", 1],
-                    ["A", 8, 8, 8, 180, 270, "start", 1]
-                  ]
-                ],
                 "point_ids": [8, 9],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "One"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.8218672339271003,
-                        "width": 0.32956699055256045,
-                        "x": 0.02752419703141206,
-                        "y": 0.0890663830364499
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "One"
+                }
               },
               {
                 "id": "384624F1-5449-55E8-8B47-64238CD6109C",
-                "loops": [
-                  [
-                    ["L", 118.76923076923076, 0, 241.23076923076923, 0, "start", 1],
-                    ["A", 241.23076923076923, 8, 8, -90, 0, "start", 1],
-                    ["L", 249.23076923076923, 8, 249.23076923076923, 72, "start", 1],
-                    ["A", 241.23076923076923, 72, 8, 0, 90, "start", 1],
-                    ["L", 241.23076923076923, 80, 118.76923076923076, 80, "start", 1],
-                    ["A", 118.76923076923076, 72, 8, 90, 180, "start", 1],
-                    ["L", 110.76923076923076, 72, 110.76923076923076, 8, "start", 1],
-                    ["A", 118.76923076923076, 8, 8, 180, 270, "start", 1]
-                  ]
-                ],
                 "point_ids": [10, 11],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Two"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.8218672339271003,
-                        "width": 0.26350144399422887,
-                        "x": 0.40128205128205124,
-                        "y": 0.0890663830364499
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Two"
+                }
               },
               {
                 "id": "4D3FBD88-0751-5C56-B473-772C1DF0D4F5",
-                "loops": [
-                  [
-                    ["L", 229.53846153846155, 0, 352, 0, "start", 1],
-                    ["A", 352, 8, 8, -90, 0, "start", 1],
-                    ["L", 360, 8, 360, 72, "start", 1],
-                    ["A", 352, 72, 8, 0, 90, "start", 1],
-                    ["L", 352, 80, 229.53846153846155, 80, "start", 1],
-                    ["A", 229.53846153846155, 72, 8, 90, 180, "start", 1],
-                    ["L", 221.53846153846155, 72, 221.53846153846155, 8, "start", 1],
-                    ["A", 229.53846153846155, 8, 8, 180, 270, "start", 1]
-                  ]
-                ],
                 "point_ids": [12, 13],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Three"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.8218672339271003,
-                        "width": 0.263501443994229,
-                        "x": 0.708974358974359,
-                        "y": 0.0890663830364499
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Three"
+                }
               }
             ],
-            "resizing": "free",
             "settings": {
-              "base_shape": "rounded-rectangle",
+              "base_shape": "rounded_rectangle",
               "direction": "across",
               "pointer": false,
               "spacing": "overlap"
             },
-            "stacking": "first_in_front",
-            "type": "generated"
+            "type": "flow",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0, "y": 0},
-                  {"id": 5, "x": 0, "y": 1},
-                  {"id": 6, "x": 1, "y": 0},
-                  {"id": 7, "x": 1, "y": 1},
-                  {"id": 8, "x": 0, "y": 0.5},
-                  {"id": 9, "x": 0.3846153846153846, "y": 0.5},
-                  {"id": 10, "x": 0.30769230769230765, "y": 0.5},
-                  {"id": 11, "x": 0.6923076923076923, "y": 0.5},
-                  {"id": 12, "x": 0.6153846153846154, "y": 0.5},
-                  {"id": 13, "x": 1, "y": 0.5}
-                ],
+                "connection_points": [],
                 "frame": {"height": 80, "width": 360, "x": 80, "y": 540},
                 "id": "14F29E3E-ED51-53DC-B810-A3EFF76C13BA",
                 "kind": "complex_shape",
@@ -982,139 +521,75 @@
         },
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.flow",
-            "generator_version": 1,
-            "made_at": {"height": 80, "width": 360},
             "parts": [
               {
                 "id": "37835668-46AA-56C8-B786-DD559AD1371F",
-                "loops": [[["A", 100, 40, 40, -90, 270, "start", 1]]],
                 "point_ids": [8, 9],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "One"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.557106780035601,
-                        "width": 0.12380150718610976,
-                        "x": 0.2158770241847229,
-                        "y": 0.2214466099821995
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "One"
+                }
               },
               {
                 "id": "897F4F80-0D1C-5322-A9F3-656AE8B2AD0B",
-                "loops": [[["A", 180, 40, 40, -90, 270, "start", 1]]],
                 "point_ids": [10, 11],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Two"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.557106780035601,
-                        "width": 0.12380150718610976,
-                        "x": 0.43809924640694514,
-                        "y": 0.2214466099821995
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Two"
+                }
               },
               {
                 "id": "DA7FDE5F-5FFB-51EF-B183-F88C39A99D34",
-                "loops": [[["A", 260, 40, 40, -90, 270, "start", 1]]],
                 "point_ids": [12, 13],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Three"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.557106780035601,
-                        "width": 0.12380150718610967,
-                        "x": 0.6603214686291673,
-                        "y": 0.2214466099821995
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Three"
+                }
               }
             ],
-            "resizing": "free",
             "settings": {
               "base_shape": "circle",
               "direction": "across",
               "pointer": false,
               "spacing": "touch"
             },
-            "stacking": "first_in_front",
-            "type": "generated"
+            "type": "flow",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0.16666666666666666, "y": 0.5},
-                  {"id": 1, "x": 0.8333333333333334, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0.16666666666666666, "y": 0},
-                  {"id": 5, "x": 0.16666666666666666, "y": 1},
-                  {"id": 6, "x": 0.8333333333333334, "y": 0},
-                  {"id": 7, "x": 0.8333333333333334, "y": 1},
-                  {"id": 8, "x": 0.16666666666666666, "y": 0.5},
-                  {"id": 9, "x": 0.3888888888888889, "y": 0.5},
-                  {"id": 10, "x": 0.3888888888888889, "y": 0.5},
-                  {"id": 11, "x": 0.6111111111111112, "y": 0.5},
-                  {"id": 12, "x": 0.6111111111111112, "y": 0.5},
-                  {"id": 13, "x": 0.8333333333333334, "y": 0.5}
-                ],
+                "connection_points": [],
                 "frame": {"height": 80, "width": 360, "x": 80, "y": 660},
                 "id": "B4F4607D-26DE-5BDA-909E-6A4174ABA833",
                 "kind": "complex_shape",
@@ -1145,166 +620,75 @@
         },
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.flow",
-            "generator_version": 1,
-            "made_at": {"height": 80, "width": 360},
             "parts": [
               {
                 "id": "7C862A91-E784-5D29-8E54-BE83D58D934E",
-                "loops": [
-                  [
-                    ["L", 0, 40, 20, 0, "start", 1],
-                    ["L", 20, 0, 92, 0, "start", 1],
-                    ["L", 92, 0, 112, 40, "start", 1],
-                    ["L", 112, 40, 92, 80, "start", 1],
-                    ["L", 92, 80, 20, 80, "start", 1],
-                    ["L", 20, 80, 0, 40, "start", 1]
-                  ]
-                ],
                 "point_ids": [8, 9],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "One"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.16666666666666666,
-                        "x": 0.07222222222222222,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "One"
+                }
               },
               {
                 "id": "160E98F9-D81D-5620-82DB-2306DBD6BE99",
-                "loops": [
-                  [
-                    ["L", 124, 40, 144, 0, "start", 1],
-                    ["L", 144, 0, 216, 0, "start", 1],
-                    ["L", 216, 0, 236, 40, "start", 1],
-                    ["L", 236, 40, 216, 80, "start", 1],
-                    ["L", 216, 80, 144, 80, "start", 1],
-                    ["L", 144, 80, 124, 40, "start", 1]
-                  ]
-                ],
                 "point_ids": [10, 11],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Two"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.16666666666666666,
-                        "x": 0.4166666666666667,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Two"
+                }
               },
               {
                 "id": "60374175-BAF3-5FDB-8F69-0C7CAC169388",
-                "loops": [
-                  [
-                    ["L", 248, 40, 268, 0, "start", 1],
-                    ["L", 268, 0, 340, 0, "start", 1],
-                    ["L", 340, 0, 360, 40, "start", 1],
-                    ["L", 360, 40, 340, 80, "start", 1],
-                    ["L", 340, 80, 268, 80, "start", 1],
-                    ["L", 268, 80, 248, 40, "start", 1]
-                  ]
-                ],
                 "point_ids": [12, 13],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Three"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.85,
-                        "width": 0.16666666666666666,
-                        "x": 0.7611111111111111,
-                        "y": 0.075
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Three"
+                }
               }
             ],
-            "resizing": "free",
             "settings": {
               "base_shape": "hexagon",
               "direction": "across",
               "pointer": false,
               "spacing": "gap"
             },
-            "stacking": "first_in_front",
-            "type": "generated"
+            "type": "flow",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0, "y": 0},
-                  {"id": 5, "x": 0, "y": 1},
-                  {"id": 6, "x": 1, "y": 0},
-                  {"id": 7, "x": 1, "y": 1},
-                  {"id": 8, "x": 0, "y": 0.5},
-                  {"id": 9, "x": 0.3111111111111111, "y": 0.5},
-                  {"id": 10, "x": 0.34444444444444444, "y": 0.5},
-                  {"id": 11, "x": 0.6555555555555556, "y": 0.5},
-                  {"id": 12, "x": 0.6888888888888889, "y": 0.5},
-                  {"id": 13, "x": 1, "y": 0.5}
-                ],
+                "connection_points": [],
                 "frame": {"height": 80, "width": 360, "x": 80, "y": 780},
                 "id": "8651CD7C-A586-5911-A86C-A3DF1006EFF1",
                 "kind": "complex_shape",
@@ -1335,166 +719,75 @@
         },
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.flow",
-            "generator_version": 1,
-            "made_at": {"height": 360, "width": 80},
             "parts": [
               {
                 "id": "AC70B185-4EB8-54B6-A423-F0CDD76A4B38",
-                "loops": [
-                  [
-                    ["L", 0, 0, 0, 105.78404442037319, "start", 1],
-                    ["L", 0, 105.78404442037319, 40, 133.7840444203732, "start", 1],
-                    ["L", 40, 133.7840444203732, 80, 105.78404442037319, "start", 1],
-                    ["L", 80, 105.78404442037319, 80, 0, "start", 1],
-                    ["L", 80, 0, 40, 28, "start", 1],
-                    ["L", 40, 28, 0, 0, "start", 1]
-                  ]
-                ],
                 "point_ids": [8, 9],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "One"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.18273345672325886,
-                        "width": 0.85,
-                        "x": 0.075,
-                        "y": 0.09444444444444444
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "One"
+                }
               },
               {
                 "id": "622AE178-D152-521B-8E59-D35FC8234216",
-                "loops": [
-                  [
-                    ["L", 0, 113.10797778981342, 0, 218.8920222101866, "start", 1],
-                    ["L", 0, 218.8920222101866, 40, 246.8920222101866, "start", 1],
-                    ["L", 40, 246.8920222101866, 80, 218.8920222101866, "start", 1],
-                    ["L", 80, 218.8920222101866, 80, 113.10797778981342, "start", 1],
-                    ["L", 80, 113.10797778981342, 40, 141.10797778981342, "start", 1],
-                    ["L", 40, 141.10797778981342, 0, 113.10797778981342, "start", 1]
-                  ]
-                ],
                 "point_ids": [10, 11],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Two"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.18273345672325886,
-                        "width": 0.85,
-                        "x": 0.075,
-                        "y": 0.4086332716383706
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Two"
+                }
               },
               {
                 "id": "ED3E023A-E062-59DE-B280-1358D9B21BEC",
-                "loops": [
-                  [
-                    ["L", 0, 226.2159555796268, 0, 332, "start", 1],
-                    ["L", 0, 332, 40, 360, "start", 1],
-                    ["L", 40, 360, 80, 332, "start", 1],
-                    ["L", 80, 332, 80, 226.2159555796268, "start", 1],
-                    ["L", 80, 226.2159555796268, 40, 254.2159555796268, "start", 1],
-                    ["L", 40, 254.2159555796268, 0, 226.2159555796268, "start", 1]
-                  ]
-                ],
                 "point_ids": [12, 13],
                 "role": "step",
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Three"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.18273345672325886,
-                        "width": 0.85,
-                        "x": 0.075,
-                        "y": 0.7228220988322966
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Three"
+                }
               }
             ],
-            "resizing": "free",
             "settings": {
               "base_shape": "chevron",
               "direction": "down",
               "pointer": false,
               "spacing": "gap"
             },
-            "stacking": "first_in_front",
-            "type": "generated"
+            "type": "flow",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0, "y": 0},
-                  {"id": 5, "x": 0, "y": 1},
-                  {"id": 6, "x": 1, "y": 0},
-                  {"id": 7, "x": 1, "y": 1},
-                  {"id": 8, "x": 0.5, "y": 0.07777777777777778},
-                  {"id": 9, "x": 0.5, "y": 0.37162234561214774},
-                  {"id": 10, "x": 0.5, "y": 0.39196660497170394},
-                  {"id": 11, "x": 0.5, "y": 0.685811172806074},
-                  {"id": 12, "x": 0.5, "y": 0.70615543216563},
-                  {"id": 13, "x": 0.5, "y": 1}
-                ],
+                "connection_points": [],
                 "frame": {"height": 360, "width": 80, "x": 520, "y": 60},
                 "id": "3266DBD5-C2B8-503C-B997-B108CCE3907B",
                 "kind": "complex_shape",

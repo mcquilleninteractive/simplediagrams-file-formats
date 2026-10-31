@@ -2,7 +2,7 @@
 
 **Rule broken:** All the lanes of one swimlanes shape hold at most 2,000 members together. Here the three lanes hold 1,000, 1,000 and 1 small squares: each lane is within its own limit, and the shape is one over.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** No. The check adds up every lane of the shape.
 

@@ -2,11 +2,11 @@
 
 **Rule broken:** A ring's `ring_width` is a multiple of 10 from 10 to 10,000, or `full`. Here `ring_width` is 45.
 
-**Stated in:** [generators/com.simplediagrams.ring/README.md](../../generators/com.simplediagrams.ring/README.md#the-record), The record.
+**Stated in:** [complex-shapes/ring/README.md](../../complex-shapes/ring/README.md#settings), Settings.
 
-**Caught by the JSON Schemas:** Yes: `generators/com.simplediagrams.ring/1.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/ring/1.schema.json`.
 
-**The app's message (English):** "The shape E8B31034-F14D-5F69-A894-1604CD78C1CA is not a valid generated shape."
+**The app's message (English):** "The shape E8B31034-F14D-5F69-A894-1604CD78C1CA is not a valid complex shape."
 
 ## In this folder
 

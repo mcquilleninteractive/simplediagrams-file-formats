@@ -68,12 +68,16 @@
         },
         {
           "complex_shape": {
-            "tail_attachment": {
-              "connection_point_id": 6,
-              "element_id": "F31AB779-A161-595C-87AD-ADD2DC0C046A"
+            "parts": [],
+            "settings": {
+              "tail_attachment": {
+                "connection_point_id": 6,
+                "element_id": "F31AB779-A161-595C-87AD-ADD2DC0C046A"
+              },
+              "tail_tip": {"x": -120, "y": 60}
             },
-            "tail_tip": {"x": -120, "y": 60},
-            "type": "callout"
+            "type": "callout",
+            "version": 1
           },
           "content": {
             "content": {
@@ -117,7 +121,12 @@
           "shape_data_values": []
         },
         {
-          "complex_shape": {"tail_tip": {"x": 40, "y": 80}, "type": "callout"},
+          "complex_shape": {
+            "parts": [],
+            "settings": {"tail_tip": {"x": 40, "y": 80}},
+            "type": "callout",
+            "version": 1
+          },
           "content": {
             "content": {
               "content": {

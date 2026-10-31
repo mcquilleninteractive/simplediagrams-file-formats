@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/complex-shapes/gauge/1.schema.json",
+  "title": "SimpleDiagrams document format 19 complex shape catalogue: gauge, version 1",
+  "description": "The gauge complex shape at version 1: a half dial with bands and a needle. An element of document.json whose complex_shape has type gauge and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "gauge" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": ["minimum", "maximum", "value", "auto_rotate_labels"],
+          "additionalProperties": false,
+          "properties": {
+            "minimum": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+            "maximum": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+            "value": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+            "auto_rotate_labels": { "type": "boolean" }
+          }
+        },
+        "parts": {
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "properties": { "role": { "enum": ["band", "needle"] } },
+            "allOf": [
+              {
+                "if": { "properties": { "role": { "const": "band" } } },
+                "then": {
+                  "required": ["role", "id", "text"],
+                  "propertyNames": { "enum": ["role", "id", "text", "text_layout", "style"] },
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "properties": { "string": { "maxLength": 500 } }
+                    }
+                  }
+                }
+              },
+              {
+                "if": { "properties": { "role": { "const": "needle" } } },
+                "then": {
+                  "required": ["role", "id"],
+                  "propertyNames": { "enum": ["role", "id", "style"] }
+                }
+              }
+            ]
+          },
+          "allOf": [
+            {
+              "contains": { "properties": { "role": { "const": "band" } } },
+              "minContains": 1,
+              "maxContains": 5
+            },
+            {
+              "contains": { "properties": { "role": { "const": "needle" } } },
+              "minContains": 1,
+              "maxContains": 1
+            }
+          ]
+        }
+      },
+      "not": { "anyOf": [{ "required": ["members"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false },
+        "preserves_aspect_ratio": { "const": false },
+        "content": {
+          "properties": {
+            "content": {
+              "properties": {
+                "text_content": {
+                  "properties": {
+                    "string": {
+                      "description": "The caption: at most 500 characters (Unicode scalars, which maxLength counts).",
+                      "maxLength": 500
+                    }
+                  }
+                },
+                "connection_points": {
+                  "description": "This type places its own connection points, worked out as the document is read, so the element lists none.",
+                  "maxItems": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

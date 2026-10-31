@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/complex-shapes/swimlanes/1.schema.json",
+  "title": "SimpleDiagrams document format 19 complex shape catalogue: swimlanes, version 1",
+  "description": "The swimlanes complex shape at version 1: one shape divided into parallel lanes. An element of document.json whose complex_shape has type swimlanes and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "swimlanes" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": ["direction", "title_strip_size", "title_band_size"],
+          "additionalProperties": false,
+          "properties": {
+            "direction": { "enum": ["horizontal", "vertical"] },
+            "title_strip_size": { "type": "number", "minimum": 28, "maximum": 10000 },
+            "title_band_size": { "type": "number", "minimum": 28, "maximum": 10000 }
+          }
+        },
+        "parts": {
+          "minItems": 1,
+          "maxItems": 50,
+          "items": {
+            "properties": { "role": { "enum": ["lane"] } },
+            "allOf": [
+              {
+                "if": { "properties": { "role": { "const": "lane" } } },
+                "then": {
+                  "required": ["role", "id", "text", "size", "members"],
+                  "propertyNames": { "enum": ["role", "id", "text", "size", "members"] },
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "properties": {
+                        "string": { "maxLength": 1000 },
+                        "character_runs": { "maxItems": 100 },
+                        "paragraph_runs": { "maxItems": 100 }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "allOf": [
+            {
+              "contains": { "properties": { "role": { "const": "lane" } } },
+              "minContains": 1,
+              "maxContains": 50
+            }
+          ]
+        }
+      },
+      "not": { "anyOf": [{ "required": ["members"] }, { "required": ["own_text_layout"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false }
+      }
+    }
+  }
+}

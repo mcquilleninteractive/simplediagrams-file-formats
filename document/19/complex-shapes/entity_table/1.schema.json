@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/complex-shapes/entity_table/1.schema.json",
+  "title": "SimpleDiagrams document format 19 complex shape catalogue: entity_table, version 1",
+  "description": "The entity_table complex shape at version 1: one entity of a database: its name, then its fields. An element of document.json whose complex_shape has type entity_table and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "entity_table" },
+        "version": { "const": 1 },
+        "settings": { "required": [], "additionalProperties": false, "properties": {} },
+        "parts": {
+          "minItems": 4,
+          "maxItems": 63,
+          "items": {
+            "properties": { "role": { "enum": ["column", "header", "field"] } },
+            "allOf": [
+              {
+                "if": { "properties": { "role": { "const": "column" } } },
+                "then": {
+                  "required": ["role", "size"],
+                  "propertyNames": { "enum": ["role", "size"] }
+                }
+              },
+              {
+                "if": { "properties": { "role": { "const": "header" } } },
+                "then": {
+                  "required": ["role", "id", "size", "cells"],
+                  "propertyNames": { "enum": ["role", "id", "size", "cells"] },
+                  "properties": {
+                    "cells": {
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "string": { "maxLength": 2000 },
+                          "character_runs": { "maxItems": 200 },
+                          "paragraph_runs": { "maxItems": 200 }
+                        }
+                      },
+                      "prefixItems": [
+                        {},
+                        { "properties": { "string": { "const": "" } } }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "if": { "properties": { "role": { "const": "field" } } },
+                "then": {
+                  "required": ["role", "id", "size", "cells", "marks", "point_ids"],
+                  "propertyNames": {
+                    "enum": ["role", "id", "size", "cells", "marks", "point_ids"]
+                  },
+                  "properties": {
+                    "cells": {
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "string": { "maxLength": 2000 },
+                          "character_runs": { "maxItems": 200 },
+                          "paragraph_runs": { "maxItems": 200 }
+                        }
+                      }
+                    },
+                    "marks": {
+                      "items": {
+                        "enum": ["primary_key", "foreign_key", "unique", "indexed", "nullable"]
+                      }
+                    },
+                    "point_ids": { "minItems": 2, "maxItems": 2 }
+                  }
+                }
+              }
+            ]
+          },
+          "allOf": [
+            {
+              "contains": { "properties": { "role": { "const": "column" } } },
+              "minContains": 2,
+              "maxContains": 2
+            },
+            {
+              "contains": { "properties": { "role": { "const": "header" } } },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": { "properties": { "role": { "const": "field" } } },
+              "minContains": 1,
+              "maxContains": 60
+            }
+          ]
+        }
+      },
+      "not": { "anyOf": [{ "required": ["members"] }, { "required": ["own_text_layout"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false },
+        "content": {
+          "properties": {
+            "content": {
+              "properties": {
+                "text_content": {
+                  "properties": {
+                    "string": {
+                      "description": "This type has no text of its own, so the element's text is empty.",
+                      "const": ""
+                    }
+                  }
+                },
+                "connection_points": {
+                  "description": "This type places its own connection points, worked out as the document is read, so the element lists none.",
+                  "maxItems": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

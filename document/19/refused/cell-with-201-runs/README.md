@@ -2,7 +2,7 @@
 
 **Rule broken:** A table cell has at most 200 runs, character runs and paragraph runs together. Here the first cell has 201 paragraph runs, one on each of its 201 letters.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** Yes for this case. All 201 runs are paragraph runs, and the schema limits each list of runs to 200. A cell with 120 runs of each kind passes the schema and is refused by the app.
 

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/complex-shapes/flow/1.schema.json",
+  "title": "SimpleDiagrams document format 19 complex shape catalogue: flow, version 1",
+  "description": "The flow complex shape at version 1: a row of steps. An element of document.json whose complex_shape has type flow and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "flow" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": ["base_shape", "direction", "spacing", "pointer"],
+          "additionalProperties": false,
+          "properties": {
+            "base_shape": {
+              "enum": [
+                "chevron",
+                "arrow_box",
+                "block_arrow",
+                "rectangle",
+                "rounded_rectangle",
+                "circle",
+                "hexagon"
+              ]
+            },
+            "direction": { "enum": ["across", "down"] },
+            "spacing": { "enum": ["gap", "touch", "overlap"] },
+            "pointer": { "type": "boolean" }
+          }
+        },
+        "parts": {
+          "minItems": 2,
+          "maxItems": 12,
+          "items": {
+            "properties": { "role": { "enum": ["step"] } },
+            "allOf": [
+              {
+                "if": { "properties": { "role": { "const": "step" } } },
+                "then": {
+                  "required": ["role", "id", "text", "point_ids"],
+                  "propertyNames": {
+                    "enum": ["role", "id", "text", "point_ids", "text_layout", "style"]
+                  },
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "properties": { "string": { "maxLength": 500 } }
+                    },
+                    "point_ids": { "minItems": 2, "maxItems": 2 }
+                  }
+                }
+              }
+            ]
+          },
+          "allOf": [
+            {
+              "contains": { "properties": { "role": { "const": "step" } } },
+              "minContains": 2,
+              "maxContains": 12
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "settings": {
+                "properties": {
+                  "base_shape": { "enum": ["chevron", "arrow_box", "block_arrow", "hexagon"] }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "properties": {
+                  "spacing": { "not": { "const": "overlap" } },
+                  "pointer": { "const": false }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "not": { "anyOf": [{ "required": ["members"] }, { "required": ["own_text_layout"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false },
+        "preserves_aspect_ratio": { "const": false },
+        "content": {
+          "properties": {
+            "content": {
+              "properties": {
+                "text_content": {
+                  "properties": {
+                    "string": {
+                      "description": "This type has no text of its own, so the element's text is empty.",
+                      "const": ""
+                    }
+                  }
+                },
+                "connection_points": {
+                  "description": "This type places its own connection points, worked out as the document is read, so the element lists none.",
+                  "maxItems": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

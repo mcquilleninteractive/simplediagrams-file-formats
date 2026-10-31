@@ -2,7 +2,7 @@
 
 **Rule broken:** A page holds at most 2,000 complex shapes, of every type. Here the page holds 2,001 lifelines.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** No. The check counts every element on the page.
 

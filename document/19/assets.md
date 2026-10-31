@@ -101,7 +101,7 @@ kinds:
 | An `editable_vector` element | `embedded_asset_id` ([elements.md](elements.md)) | `editable_vector` |
 | An `svg_artwork` element | `embedded_asset_id` | `svg_artwork` |
 | An `image` element | `embedded_asset_id` | `raster_png` or `raster_jpeg` |
-| A container (a `complex_shape` of type `container`) | `artwork_asset_id` ([elements.md](elements.md#125-container)) | `editable_vector` |
+| A container (a `complex_shape` of type `container`) | Its `artwork` setting, `{"asset_id": …}` ([container](complex-shapes/container/README.md)) | `editable_vector` |
 | A page with an image background | the background's `asset_id` ([README.md, Background](README.md#background)) | `raster_png` or `raster_jpeg` |
 
 A reference MUST name an asset in the inventory, of a kind its user accepts. Otherwise the document is

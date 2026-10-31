@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://simplediagrams.com/schemas/document/19/document.schema.json",
   "title": "SimpleDiagrams document format 19: document.json",
-  "description": "The whole diagram in document format 19: its pages with their elements, connections and groups, its Quick Styles, the inventory of files in the package's assets folder, the shared table of shape-data definitions, and two optional advisory lists. Pages and elements are wrapped in several levels of records each named content, a result of how the format grew; every level and every array shown as required must be present. Objects are closed (unknown keys refused) exactly where the app refuses unknown keys: the top level, the outer record of each page and element, every complex-shape record and lane, every record inside a generated shape but the words of its text slots, every connector attachment, and every shape-data record. Everywhere else the app ignores unknown keys and drops them when it next saves, so those objects are open here; a writer must still not add keys. An optional key is omitted when it has no value; this schema refuses null for optional keys. Passing this schema is necessary but not sufficient: the README beside this file lists the rules it cannot check.",
+  "description": "The whole diagram in document format 19: its pages with their elements, connections and groups, its Quick Styles, the inventory of files in the package's assets folder, the shared table of shape-data definitions, and two optional advisory lists. Pages and elements are wrapped in several levels of records each named content, a result of how the format grew; every level and every array shown as required must be present. Objects are closed (unknown keys refused) exactly where the app refuses unknown keys: the top level, the outer record of each page and element, every complex-shape record and every record inside it but its texts, every connector attachment, and every shape-data record. Everywhere else the app ignores unknown keys and drops them when it next saves, so those objects are open here; a writer must still not add keys. An optional key is omitted when it has no value; this schema refuses null for optional keys. Passing this schema is necessary but not sufficient: the README beside this file lists the rules it cannot check.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -628,7 +628,7 @@
       }
     },
     "Element": {
-      "description": "One shape on a page: its shape data, its complex-shape record when it is a complex shape, and three nested levels holding everything else. Unknown keys are refused at this level. Which optional keys an element may carry depends on its kind, found three levels down. A generated shape is never flipped and never keeps its proportions by preserves_aspect_ratio; what a known generator version allows is in the generator catalogue (generators/).",
+      "description": "One shape on a page: its shape data, its complex-shape record when it is a complex shape, and three nested levels holding everything else. Unknown keys are refused at this level. Which optional keys an element may carry depends on its kind, found three levels down. What each known complex-shape type and version allows of its element, such as flips or its own text, is in its catalogue entry (complex-shapes/): only a callout among them may be flipped. A shape of a type or version the catalogue does not list keeps its flips as written.",
       "type": "object",
       "additionalProperties": false,
       "required": ["content", "shape_data_definition_id", "shape_data_values"],
@@ -679,220 +679,6 @@
           },
           "then": { "required": ["complex_shape"] },
           "else": { "not": { "required": ["complex_shape"] } }
-        },
-        {
-          "if": {
-            "required": ["complex_shape"],
-            "properties": {
-              "complex_shape": {
-                "required": ["type"],
-                "properties": { "type": { "not": { "const": "callout" } } }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "properties": {
-                  "flip_horizontal": { "const": false },
-                  "flip_vertical": { "const": false }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "required": ["complex_shape"],
-            "properties": {
-              "complex_shape": {
-                "required": ["type"],
-                "properties": { "type": { "const": "table" } }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "properties": {
-                  "content": {
-                    "properties": {
-                      "content": {
-                        "properties": {
-                          "text_content": { "properties": { "string": { "const": "" } } }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "required": ["complex_shape"],
-            "properties": {
-              "complex_shape": {
-                "required": ["type", "layout"],
-                "properties": {
-                  "type": { "const": "container" },
-                  "layout": { "enum": ["automatic", "proportional"] }
-                }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "properties": {
-                  "content": {
-                    "properties": {
-                      "content": { "properties": { "rotation_degrees": { "multipleOf": 360 } } }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "required": ["complex_shape"],
-            "properties": {
-              "complex_shape": {
-                "required": ["type"],
-                "properties": { "type": { "const": "lifeline" } }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "properties": {
-                  "content": {
-                    "properties": {
-                      "content": {
-                        "properties": {
-                          "frame": { "properties": { "height": { "minimum": 59.99999994 } } }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "required": ["complex_shape"],
-            "properties": {
-              "complex_shape": {
-                "required": ["type", "ends_in_destroy_mark"],
-                "properties": {
-                  "type": { "const": "lifeline" },
-                  "ends_in_destroy_mark": { "const": true }
-                }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "properties": {
-                  "content": {
-                    "properties": {
-                      "content": {
-                        "properties": {
-                          "frame": { "properties": { "height": { "minimum": 71.99999992800001 } } }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "required": ["complex_shape"],
-            "properties": {
-              "complex_shape": {
-                "required": ["type", "head_style"],
-                "properties": {
-                  "type": { "const": "lifeline" },
-                  "head_style": { "const": "actor" }
-                }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "properties": {
-                  "content": {
-                    "properties": {
-                      "content": {
-                        "properties": {
-                          "frame": { "properties": { "height": { "minimum": 91.999999908 } } }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "required": ["complex_shape"],
-            "properties": {
-              "complex_shape": {
-                "required": ["type", "head_style", "ends_in_destroy_mark"],
-                "properties": {
-                  "type": { "const": "lifeline" },
-                  "head_style": { "const": "actor" },
-                  "ends_in_destroy_mark": { "const": true }
-                }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "properties": {
-                  "content": {
-                    "properties": {
-                      "content": {
-                        "properties": {
-                          "frame": { "properties": { "height": { "minimum": 103.999999896 } } }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "required": ["complex_shape"],
-            "properties": {
-              "complex_shape": {
-                "required": ["type"],
-                "properties": { "type": { "const": "generated" } }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": { "properties": { "preserves_aspect_ratio": { "const": false } } }
-            }
-          }
         }
       ]
     },
@@ -903,7 +689,7 @@
       "properties": {
         "content": { "$ref": "#/$defs/ElementLock" },
         "flip_horizontal": {
-          "description": "Mirror the artwork left to right about the frame's centre. The label is not mirrored. Only a callout among complex shapes may be flipped.",
+          "description": "Mirror the artwork left to right about the frame's centre. The label is not mirrored. Among complex shapes of the types the catalogue lists, only a callout may be flipped.",
           "type": "boolean"
         },
         "flip_vertical": {
@@ -917,7 +703,7 @@
           "enum": ["stickyNote", "indexCard", "tapedNote", "tag", "notebookPage", "pinnedNote"]
         },
         "preserves_aspect_ratio": {
-          "description": "Keep proportions when a person resizes the element. Absent means false. Never true on a generated shape.",
+          "description": "Keep proportions when a person resizes the element. Absent means false. Never true on a ring, flow, pyramid, cycle or gauge, whose catalogue entries say how they resize.",
           "type": "boolean"
         },
         "shows_image_background": {
@@ -1151,7 +937,7 @@
       }
     },
     "TextContent": {
-      "description": "A piece of rich text: an element's label, a connector's label, a lane title, a table cell or a generated shape's text slot. Only the formatting listed here exists: no links, attachments, HTML or RTF. Unknown keys are ignored. A writer must not write background_hex, a whole-text background that document format 19 does not have; a reader ignores it.",
+      "description": "A piece of rich text: an element's label, a connector's label, a part's text or a cell of a complex shape. Only the formatting listed here exists: no links, attachments, HTML or RTF. Unknown keys are ignored. A writer must not write background_hex, a whole-text background that document format 19 does not have; a reader ignores it.",
       "type": "object",
       "required": ["string", "base_style", "character_runs", "base_alignment", "paragraph_runs"],
       "properties": {
@@ -1190,28 +976,6 @@
           "character_runs": { "maxItems": 0 },
           "paragraph_runs": { "maxItems": 0 }
         }
-      }
-    },
-    "LaneTitle": {
-      "description": "A lane's title: text content of at most 1,000 characters (Unicode scalars, which maxLength counts) and at most 100 runs. The limit on runs counts character runs and paragraph runs together; this schema checks each list against it on its own.",
-      "allOf": [
-        { "$ref": "#/$defs/TextContent" }
-      ],
-      "properties": {
-        "string": { "maxLength": 1000 },
-        "character_runs": { "maxItems": 100 },
-        "paragraph_runs": { "maxItems": 100 }
-      }
-    },
-    "TableCell": {
-      "description": "One table cell: text content of at most 2,000 characters (Unicode scalars, which maxLength counts) and at most 200 runs, counted as for a lane title. A table's cells together hold at most 100,000 characters and 10,000 runs; this schema cannot check that.",
-      "allOf": [
-        { "$ref": "#/$defs/TextContent" }
-      ],
-      "properties": {
-        "string": { "maxLength": 2000 },
-        "character_runs": { "maxItems": 200 },
-        "paragraph_runs": { "maxItems": 200 }
       }
     },
     "CharacterStyle": {
@@ -1441,68 +1205,27 @@
       }
     },
     "ComplexShape": {
-      "description": "For a complex_shape element only, and required there: which complex shape it is and the few values the app draws it from. type is read first; then only type, hand_drawn and that type's own keys are allowed. Unknown keys, and keys of another type, are refused. A generated shape has two forms: complete, with made_at and its drawing, and incomplete, without them.",
+      "description": "For a complex_shape element only, and required there: the one structure every complex shape is saved in. type names a catalogue entry and version its version; settings are the shape-wide values, parts the pieces a person can touch, members the shapes it holds on its whole body. Nothing drawn is saved: the app draws the shape from these each time. Unknown keys are refused here and in every record inside, except texts. What a known type and version allows is checked by its catalogue entry's schema (complex-shapes/<type>/<version>.schema.json), which the element must also pass. A reader opens a shape of a type or version it does not know as a placeholder.",
       "type": "object",
-      "required": ["type"],
+      "additionalProperties": false,
+      "required": ["type", "version", "settings", "parts"],
       "properties": {
-        "type": {
-          "description": "Which complex shape.",
-          "type": "string",
-          "enum": ["container", "swimlanes", "table", "callout", "lifeline", "generated"]
+        "type": { "$ref": "#/$defs/Word" },
+        "version": { "type": "integer", "minimum": 1, "maximum": 999 },
+        "hand_drawn": {
+          "description": "Optional: false draws the lines exactly. Absent means the hand-drawn pen; it is written only as false.",
+          "const": false
+        },
+        "settings": { "$ref": "#/$defs/Settings" },
+        "members": { "$ref": "#/$defs/HolderMembers" },
+        "own_text_layout": { "$ref": "#/$defs/PlacedTextLayout" },
+        "parts": {
+          "description": "The parts, in the order and roles the entry declares: at most 256.",
+          "type": "array",
+          "maxItems": 256,
+          "items": { "$ref": "#/$defs/Part" }
         }
-      },
-      "allOf": [
-        {
-          "if": {
-            "required": ["type"],
-            "properties": { "type": { "const": "container" } }
-          },
-          "then": { "$ref": "#/$defs/ContainerRecord" }
-        },
-        {
-          "if": {
-            "required": ["type"],
-            "properties": { "type": { "const": "swimlanes" } }
-          },
-          "then": { "$ref": "#/$defs/SwimlanesRecord" }
-        },
-        {
-          "if": {
-            "required": ["type"],
-            "properties": { "type": { "const": "table" } }
-          },
-          "then": { "$ref": "#/$defs/TableRecord" }
-        },
-        {
-          "if": {
-            "required": ["type"],
-            "properties": { "type": { "const": "callout" } }
-          },
-          "then": { "$ref": "#/$defs/CalloutRecord" }
-        },
-        {
-          "if": {
-            "required": ["type"],
-            "properties": { "type": { "const": "lifeline" } }
-          },
-          "then": { "$ref": "#/$defs/LifelineRecord" }
-        },
-        {
-          "if": {
-            "required": ["type"],
-            "properties": { "type": { "const": "generated" } }
-          },
-          "then": {
-            "if": { "required": ["made_at"] },
-            "then": { "$ref": "#/$defs/GeneratedRecord" },
-            "else": { "$ref": "#/$defs/IncompleteGeneratedRecord" }
-          }
-        }
-      ]
-    },
-    "HandDrawn": {
-      "description": "Optional on every complex shape: draw its lines with the app's hand-drawn pen. Absent means true; false draws them exactly. A writer should write it only as false.",
-      "type": "boolean"
+      }
     },
     "Share": {
       "description": "A lane's thickness, or a table row's or column's size, as a share of the total of its siblings, not in points: 0.000001 to 1,000,000.",
@@ -1511,7 +1234,7 @@
       "maximum": 1000000
     },
     "HolderMember": {
-      "description": "One thing a container or lane holds: an element or a whole group on the same page. Never a connection. Unknown keys are ignored.",
+      "description": "One thing a shape or a part holds: an element or a whole group on the same page. Never a connection. Unknown keys are refused.",
       "type": "object",
       "required": ["kind", "id"],
       "properties": {
@@ -1521,241 +1244,15 @@
           "enum": ["element", "group"]
         },
         "id": { "$ref": "#/$defs/Uuid" }
-      }
+      },
+      "additionalProperties": false
     },
     "HolderMembers": {
-      "description": "What a container or lane holds, in order: at most 1,000, none repeated. Each member must be on the same page and belong to at most one container or lane, and all the lanes of one swimlanes shape hold at most 2,000 together; this schema cannot check that.",
+      "description": "What a shape or a part holds, in order: at most 1,000, none repeated. Each member must be on the same page and belong to at most one holder, and all the lanes of one swimlanes shape hold at most 2,000 together; this schema cannot check that.",
       "type": "array",
       "maxItems": 1000,
       "uniqueItems": true,
       "items": { "$ref": "#/$defs/HolderMember" }
-    },
-    "ContainerRecord": {
-      "description": "A container: a frame with a title (the element's text) that holds other shapes.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type"],
-      "properties": {
-        "type": { "const": "container" },
-        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
-        "members": {
-          "description": "Optional: what the container holds. Absent means none; the app always writes it.",
-          "$ref": "#/$defs/HolderMembers"
-        },
-        "layout": {
-          "description": "Optional. free (the default) leaves members where they are put; automatic means members are meant to sit in order, left to right and then down, and a writer should store them so; proportional means members keep their sizes and their places spread out or close in when a person resizes the container. The app draws members where they are stored. An automatic or proportional container's rotation, reduced to one turn, must be 0. A writer should not write it as free.",
-          "type": "string",
-          "enum": ["free", "automatic", "proportional"]
-        },
-        "artwork_asset_id": {
-          "description": "Optional: the id of an embedded asset of kind editable_vector that the container wears in place of its box, stretched to its frame.",
-          "$ref": "#/$defs/Sha256"
-        },
-        "title_style": {
-          "description": "Optional. band (the default): the title along the top. corner_tag: the title in a tag in the top-left corner. A writer should write it only as corner_tag.",
-          "type": "string",
-          "enum": ["band", "corner_tag"]
-        }
-      }
-    },
-    "SwimlanesRecord": {
-      "description": "Swimlanes: one shape divided into parallel lanes, each with a title strip and its own members, under a title band holding the element's own text.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type", "direction", "lanes"],
-      "properties": {
-        "type": { "const": "swimlanes" },
-        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
-        "direction": {
-          "description": "horizontal: lanes are rows, with title strips down the left side. vertical: lanes are columns, with title strips across the top.",
-          "type": "string",
-          "enum": ["horizontal", "vertical"]
-        },
-        "lanes": {
-          "description": "The lanes, from the top or the left: 1 to 50, with ids unique within this shape.",
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 50,
-          "items": { "$ref": "#/$defs/Lane" }
-        },
-        "title_strip_size": {
-          "description": "Optional: the thickness of each lane's title strip in diagram points, 28 to 10,000. Absent means 28.",
-          "type": "number",
-          "minimum": 28,
-          "maximum": 10000
-        },
-        "title_band_size": {
-          "description": "Optional: the height of the title band across the top in diagram points, 28 to 10,000. Absent means 28.",
-          "type": "number",
-          "minimum": 28,
-          "maximum": 10000
-        }
-      }
-    },
-    "Lane": {
-      "description": "One lane of swimlanes. It has exactly these four keys; any other is refused.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["id", "title", "size", "members"],
-      "properties": {
-        "id": {
-          "description": "The lane's identity, unique among this shape's lanes only.",
-          "$ref": "#/$defs/Uuid"
-        },
-        "title": { "description": "The lane's title.", "$ref": "#/$defs/LaneTitle" },
-        "size": {
-          "description": "The lane's thickness as a share of all the lanes' shares.",
-          "$ref": "#/$defs/Share"
-        },
-        "members": {
-          "description": "What the lane holds; required even when empty.",
-          "$ref": "#/$defs/HolderMembers"
-        }
-      }
-    },
-    "TableRecord": {
-      "description": "A table: rows and columns with text in each cell, or, with variant entity, an entity table. The element's own text must be empty.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type", "row_sizes", "column_sizes", "cells"],
-      "properties": {
-        "type": { "const": "table" },
-        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
-        "row_sizes": {
-          "description": "Each row's height as a share of the table's: 1 to 200 entries.",
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 200,
-          "items": { "$ref": "#/$defs/Share" }
-        },
-        "column_sizes": {
-          "description": "Each column's width as a share of the table's: 1 to 50 entries.",
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 50,
-          "items": { "$ref": "#/$defs/Share" }
-        },
-        "cells": {
-          "description": "Each cell's text, row by row: exactly one row per row size and one cell per column size, and at most 2,000 cells; this schema checks only the bounds of each list.",
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 200,
-          "items": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": { "$ref": "#/$defs/TableCell" }
-          }
-        },
-        "header_row": {
-          "description": "Optional: draw the first row as a header. Absent means true. A writer should write it only as false.",
-          "type": "boolean"
-        },
-        "variant": {
-          "description": "Optional: entity makes the table an entity table, whose rows are the fields of a database entity. Absent means a plain table.",
-          "const": "entity"
-        },
-        "row_ids": {
-          "description": "For an entity table, and required there: one UUID per row, the header's included, unique within the table.",
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 61,
-          "uniqueItems": true,
-          "items": { "$ref": "#/$defs/Uuid" }
-        },
-        "row_marks": {
-          "description": "For an entity table, and required there: one list of marks per row; the header's is empty. A field has at most 8 marks, none repeated. An open list: SimpleDiagrams 5.2 draws primary_key, foreign_key, unique, indexed and nullable, and keeps any other.",
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 61,
-          "prefixItems": [
-            { "type": "array", "maxItems": 0 }
-          ],
-          "items": {
-            "type": "array",
-            "maxItems": 8,
-            "uniqueItems": true,
-            "items": { "$ref": "#/$defs/Name" }
-          }
-        },
-        "row_point_ids": {
-          "description": "For an entity table, and required there: one list per row; the header's is empty, and each field's holds the numbers of its two connection points, left end then right end, each 8 or more.",
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 61,
-          "prefixItems": [
-            { "type": "array", "maxItems": 0 }
-          ],
-          "items": {
-            "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
-            "items": { "type": "integer", "minimum": 8 }
-          }
-        }
-      },
-      "dependentRequired": {
-        "variant": ["row_ids", "row_marks", "row_point_ids"],
-        "row_ids": ["variant"],
-        "row_marks": ["variant"],
-        "row_point_ids": ["variant"]
-      },
-      "if": { "required": ["variant"] },
-      "then": {
-        "properties": {
-          "column_sizes": { "minItems": 2, "maxItems": 2 },
-          "row_sizes": { "minItems": 2, "maxItems": 61 },
-          "header_row": { "const": true },
-          "cells": {
-            "prefixItems": [
-              { "prefixItems": [{}, { "properties": { "string": { "const": "" } } }] }
-            ]
-          }
-        }
-      }
-    },
-    "CalloutRecord": {
-      "description": "A callout: a speech bubble with an optional tail. The only complex shape that may be flipped.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type"],
-      "properties": {
-        "type": { "const": "callout" },
-        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
-        "tail_tip": {
-          "description": "Optional: where the tail points, in diagram points from the centre of the frame along the bubble's own axes, before rotation and flipping. Absent means no tail. Once placed on the page it must lie within plus or minus 1,000,000,000, which this schema cannot check.",
-          "type": "object",
-          "required": ["x", "y"],
-          "properties": {
-            "x": { "type": "number" },
-            "y": { "type": "number" }
-          }
-        },
-        "tail_attachment": {
-          "description": "Optional, and only with tail_tip: locks the tail to a numbered connection point of another element on the same page. Never along an attach line, never the callout itself.",
-          "$ref": "#/$defs/PointAttachment"
-        }
-      },
-      "dependentRequired": { "tail_attachment": ["tail_tip"] }
-    },
-    "LifelineRecord": {
-      "description": "A UML lifeline: a head holding the element's text, and a dashed line down to the bottom of the frame. It offers connectors attach line 0. The frame must be tall enough for the head (40 points for a box, 72 for an actor) plus 20 points of line, and 12 more with a destroy mark.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type"],
-      "properties": {
-        "type": { "const": "lifeline" },
-        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
-        "head_style": {
-          "description": "Optional. box (the default): the name in a box. actor: a stick figure with the name below. A writer should write it only as actor.",
-          "type": "string",
-          "enum": ["box", "actor"]
-        },
-        "ends_in_destroy_mark": {
-          "description": "Optional: the line ends in UML's destroy mark. Absent means false. A writer should write it only as true.",
-          "type": "boolean"
-        }
-      }
     },
     "Connection": {
       "description": "A connector: a line whose ends may be attached to elements on the same page. The outer record holds the lock and routing; the inner one holds the line. Unknown keys are ignored.",
@@ -2412,85 +1909,49 @@
         }
       }
     },
-    "Name": {
-      "description": "A machine name, as roles, slots, settings and entity marks use: a lower-case letter, then up to 31 lower-case letters, digits or underscores.",
+    "Word": {
+      "description": "A word, as types, setting names, setting words, roles and marks are: lower-case letters and digits, starting with a letter, in groups joined by single underscores, at most 32 bytes (this schema checks 32 characters).",
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]{0,31}$"
+      "maxLength": 32,
+      "pattern": "^[a-z][a-z0-9]*(_[a-z0-9]+)*$"
+    },
+    "SettingPoint": {
+      "description": "A point setting: x and y in diagram points, from an origin its catalogue entry states.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" }
+      }
+    },
+    "AssetSetting": {
+      "description": "An embedded-asset setting: the asset's id, labelled.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["asset_id"],
+      "properties": { "asset_id": { "$ref": "#/$defs/Sha256" } }
     },
     "SettingValue": {
-      "description": "One setting's value: a finite number, true or false, or a word (a slug of at most 32 bytes; this schema checks 32 characters). Nothing else: no null, list, object or free text.",
+      "description": "One setting's value, of one of six kinds: true or false, a finite number, a word, a point, an attachment to a numbered connection point, or an embedded asset. Nothing else: no null, list, free text or other object.",
       "oneOf": [
-        { "type": "number" },
         { "type": "boolean" },
-        {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 32,
-          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
-        }
+        { "type": "number" },
+        { "$ref": "#/$defs/Word" },
+        { "$ref": "#/$defs/SettingPoint" },
+        { "$ref": "#/$defs/PointAttachment" },
+        { "$ref": "#/$defs/AssetSetting" }
       ]
     },
     "Settings": {
-      "description": "A generated shape's settings, by name: at most 16. A known generator version has exactly the ones it declares.",
+      "description": "A complex shape's settings, by name: at most 16. A known type and version has exactly the ones its catalogue entry declares, every one written, defaults included.",
       "type": "object",
       "maxProperties": 16,
-      "propertyNames": { "pattern": "^[a-z][a-z0-9_]{0,31}$" },
+      "propertyNames": { "$ref": "#/$defs/Word" },
       "additionalProperties": { "$ref": "#/$defs/SettingValue" }
     },
-    "Segment": {
-      "description": "One segment of a loop, written in full: a line, [\"L\", x1, y1, x2, y2, wobble_from, wobble_share], or an arc, [\"A\", cx, cy, radius, from_degrees, to_degrees, wobble_from, wobble_share]. Positions and radii are in points in the made_at frame; angles are degrees clockwise from three o'clock. A segment is at least 0.01 points long; an arc's sweep is not 0 and at most 360 degrees either way; and every segment lies inside made_at. This schema checks each item's own range only.",
-      "type": "array",
-      "oneOf": [
-        {
-          "minItems": 7,
-          "maxItems": 7,
-          "items": false,
-          "prefixItems": [
-            { "const": "L" },
-            { "type": "number" },
-            { "type": "number" },
-            { "type": "number" },
-            { "type": "number" },
-            { "enum": ["start", "end"] },
-            { "type": "number", "minimum": 0, "maximum": 1 }
-          ]
-        },
-        {
-          "minItems": 8,
-          "maxItems": 8,
-          "items": false,
-          "prefixItems": [
-            { "const": "A" },
-            { "type": "number" },
-            { "type": "number" },
-            { "type": "number", "exclusiveMinimum": 0, "maximum": 10000000 },
-            { "type": "number", "minimum": -720, "maximum": 720 },
-            { "type": "number", "minimum": -720, "maximum": 720 },
-            { "enum": ["start", "end"] },
-            { "type": "number", "minimum": 0, "maximum": 1 }
-          ]
-        }
-      ]
-    },
-    "PartStyle": {
-      "description": "A part's own paint: at least one of five channels. A texture comes only with its own colour. A missing channel follows the shape's style; a part's own colour without its own texture is flat.",
-      "type": "object",
-      "additionalProperties": false,
-      "minProperties": 1,
-      "properties": {
-        "fill_hex": { "$ref": "#/$defs/Color" },
-        "fill_texture": { "$ref": "#/$defs/Texture" },
-        "stroke_hex": { "$ref": "#/$defs/Color" },
-        "stroke_texture": { "$ref": "#/$defs/Texture" },
-        "line_width": { "$ref": "#/$defs/LineWidth" }
-      },
-      "dependentRequired": {
-        "fill_texture": ["fill_hex"],
-        "stroke_texture": ["stroke_hex"]
-      }
-    },
-    "GeneratedTextLayout": {
-      "description": "Where a generated shape's text area is: its frame in fractions of made_at, its position and an optional turn. The area, turned, lies inside made_at within 0.01 points; this schema cannot check that.",
+    "PlacedTextLayout": {
+      "description": "Where a person placed a part's text or the shape's own text: a region in fractions of the element's frame, where the text sits in it, and an optional turn. The region, turned, lies inside the element's frame; this schema cannot check that.",
       "type": "object",
       "additionalProperties": false,
       "required": ["frame", "position"],
@@ -2511,168 +1972,65 @@
           "enum": ["top", "middle", "bottom"]
         },
         "rotation_degrees": {
-          "description": "Optional: written only when it is not 0.",
-          "$ref": "#/$defs/TurnAngle"
+          "description": "Optional: written only when it is not 0; more than 0 and less than 360.",
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 360
         }
       }
     },
-    "GeneratedText": {
-      "description": "The words of a generated shape's text area: text content of at most 500 characters (Unicode scalars, which maxLength counts).",
-      "allOf": [
-        { "$ref": "#/$defs/TextContent" }
-      ],
-      "properties": { "string": { "maxLength": 500 } }
-    },
-    "TextSlot": {
-      "description": "A part's text slot: its name, its area and its words. placed is written only as true.",
+    "PartStyle": {
+      "description": "A part's own paint: at least one of five channels. A texture comes only with its own colour. A missing channel follows the shape's style; a part's own colour without its own texture is flat.",
       "type": "object",
       "additionalProperties": false,
-      "required": ["slot", "text_layout", "text"],
+      "minProperties": 1,
       "properties": {
-        "slot": { "$ref": "#/$defs/Name" },
-        "text_layout": { "$ref": "#/$defs/GeneratedTextLayout" },
-        "placed": { "const": true },
-        "text": { "$ref": "#/$defs/GeneratedText" }
+        "fill_hex": { "$ref": "#/$defs/Color" },
+        "fill_texture": { "$ref": "#/$defs/Texture" },
+        "stroke_hex": { "$ref": "#/$defs/Color" },
+        "stroke_texture": { "$ref": "#/$defs/Texture" },
+        "line_width": { "$ref": "#/$defs/LineWidth" }
+      },
+      "dependentRequired": {
+        "fill_texture": ["fill_hex"],
+        "stroke_texture": ["stroke_hex"]
       }
     },
-    "OwnTextArea": {
-      "description": "Where a generated shape's own text, the element's text_content, is set. placed is written only as true.",
+    "Part": {
+      "description": "One piece of a complex shape a person can touch: a lane, a column or row, a field, a section, a step, a band, a needle. Its keys come from one closed set of ten; its catalogue entry says which each role requires and which it forbids.",
       "type": "object",
       "additionalProperties": false,
-      "required": ["text_layout"],
+      "required": ["role"],
       "properties": {
-        "text_layout": { "$ref": "#/$defs/GeneratedTextLayout" },
-        "placed": { "const": true }
-      }
-    },
-    "GeneratedPart": {
-      "description": "One part of a generated shape: its identity, role, outline, optional paint, text slot and the connection points it owns.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["id", "role", "loops", "texts", "point_ids"],
-      "properties": {
-        "id": { "description": "Unique among the shape's parts only.", "$ref": "#/$defs/Uuid" },
-        "role": { "$ref": "#/$defs/Name" },
-        "loops": {
-          "description": "1 to 4 closed loops, filled together by the even-odd rule; each 1 to 32 segments, at most 64 in the part.",
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 4,
-          "items": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 32,
-            "items": { "$ref": "#/$defs/Segment" }
-          }
+        "id": {
+          "description": "The part's identity, unique among the shape's parts only.",
+          "$ref": "#/$defs/Uuid"
         },
+        "role": { "$ref": "#/$defs/Word" },
+        "text": { "$ref": "#/$defs/TextContent" },
+        "text_layout": { "$ref": "#/$defs/PlacedTextLayout" },
         "style": { "$ref": "#/$defs/PartStyle" },
-        "texts": {
+        "size": { "$ref": "#/$defs/Share" },
+        "members": { "$ref": "#/$defs/HolderMembers" },
+        "cells": {
+          "description": "Texts, one per column: at most 50.",
           "type": "array",
-          "maxItems": 1,
-          "items": { "$ref": "#/$defs/TextSlot" }
+          "maxItems": 50,
+          "items": { "$ref": "#/$defs/TextContent" }
+        },
+        "marks": {
+          "description": "Words marking the part: at most 8, none repeated.",
+          "type": "array",
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Word" }
         },
         "point_ids": {
-          "description": "The numbers of the connection points the part owns, each 8 or more, each in the element's connection_points and owned by no other part.",
+          "description": "The numbers of the connection points the part owns: at most 2, each 8 or more, none owned by another part.",
           "type": "array",
           "maxItems": 2,
           "uniqueItems": true,
           "items": { "type": "integer", "minimum": 8 }
-        }
-      }
-    },
-    "GeneratedRecord": {
-      "description": "A generated shape in the complete form: the generator, its version and settings, and the finished drawing as parts, every position in the made_at frame. Strict at every level but the words of its text slots. What a known generator version allows is checked by its schema in the generator catalogue (generators/<name>/<version>.schema.json), which the element must also pass; every rule on geometry and connection points is checked by neither.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "type",
-        "generator",
-        "generator_version",
-        "resizing",
-        "made_at",
-        "stacking",
-        "settings",
-        "parts"
-      ],
-      "properties": {
-        "type": { "const": "generated" },
-        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
-        "generator": {
-          "description": "Which generator drew the shape: a fully qualified reverse-DNS name, at least two labels joined by dots, each a slug, at most 128 bytes (this schema checks 128 characters), such as com.simplediagrams.ring. The com.simplediagrams. namespace is the generator catalogue's; another program names its generators under its own domain. A reader accepts a name it does not know.",
-          "type": "string",
-          "minLength": 3,
-          "maxLength": 128,
-          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*(\\.[a-z0-9]+(-[a-z0-9]+)*)+$"
-        },
-        "generator_version": { "type": "integer", "minimum": 1, "maximum": 999 },
-        "resizing": { "enum": ["free", "proportional"] },
-        "made_at": {
-          "description": "The frame size, in points, the parts were drawn for.",
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["width", "height"],
-          "properties": {
-            "width": { "type": "number", "minimum": 1, "maximum": 10000000 },
-            "height": { "type": "number", "minimum": 1, "maximum": 10000000 }
-          }
-        },
-        "stacking": { "enum": ["last_in_front", "first_in_front"] },
-        "own_text": { "$ref": "#/$defs/OwnTextArea" },
-        "settings": { "$ref": "#/$defs/Settings" },
-        "parts": {
-          "description": "The parts in sequence: 1 to 24.",
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 24,
-          "items": { "$ref": "#/$defs/GeneratedPart" }
-        }
-      }
-    },
-    "IncompleteGeneratedRecord": {
-      "description": "A generated shape in the incomplete form, without made_at: one of the five generators format 19 admits in this form, at version 1, its settings, and each part's role and words, for the app to draw when it opens the document. Its settings, roles and slots are checked by the generator's catalogue schema, which the element must also pass.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type", "generator", "generator_version", "settings", "parts"],
-      "properties": {
-        "type": { "const": "generated" },
-        "hand_drawn": { "$ref": "#/$defs/HandDrawn" },
-        "generator": {
-          "enum": [
-            "com.simplediagrams.ring",
-            "com.simplediagrams.flow",
-            "com.simplediagrams.pyramid",
-            "com.simplediagrams.cycle",
-            "com.simplediagrams.gauge"
-          ]
-        },
-        "generator_version": { "const": 1 },
-        "settings": { "$ref": "#/$defs/Settings" },
-        "parts": {
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 24,
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["role", "texts"],
-            "properties": {
-              "id": { "$ref": "#/$defs/Uuid" },
-              "role": { "$ref": "#/$defs/Name" },
-              "texts": {
-                "type": "array",
-                "maxItems": 1,
-                "items": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": ["slot", "text"],
-                  "properties": {
-                    "slot": { "$ref": "#/$defs/Name" },
-                    "text": { "$ref": "#/$defs/GeneratedText" }
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }

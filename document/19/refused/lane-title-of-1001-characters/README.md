@@ -2,7 +2,7 @@
 
 **Rule broken:** A lane title holds at most 1,000 characters. Here the one lane's title is 1,001 letters.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** Yes. The schema limits a lane title's `string` to 1,000 characters.
 

@@ -2,11 +2,11 @@
 
 **Rule broken:** A container or swimlanes is never a member of a group. Here the page's one group holds both of its containers, `Web tier` and `Notes`. Both containers break the same rule; nothing else is wrong.
 
-**Stated in:** [elements.md](../../elements.md#1211-rules-across-the-page), Complex shapes: rules across the page.
+**Stated in:** [elements.md](../../elements.md#1210-rules-across-the-page), Complex shapes: rules across the page.
 
 **Caught by the JSON Schemas:** No. The check spans groups and elements.
 
-**The app's message (English):** "Shape 991246F5-D565-5AAC-B093-C922F44392DF holds a container, swimlanes, table, callout or lifeline record that is not valid."
+**The app's message (English):** "The shape 991246F5-D565-5AAC-B093-C922F44392DF is not a valid complex shape."
 
 The identifier is that of the first container, `Web tier`.
 

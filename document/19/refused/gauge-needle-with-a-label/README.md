@@ -1,12 +1,12 @@
 # Refused: gauge needle with a label
 
-**Rule broken:** A gauge's bands each have a `label`; its needle has no text slot. Here the needle has one.
+**Rule broken:** A part holds only the keys its role declares: a gauge's needle has no text. Here the needle has one.
 
-**Stated in:** [generators/com.simplediagrams.gauge/README.md](../../generators/com.simplediagrams.gauge/README.md#the-record), The record.
+**Stated in:** [complex-shapes/gauge/README.md](../../complex-shapes/gauge/README.md#parts), Parts.
 
-**Caught by the JSON Schemas:** Yes: `generators/com.simplediagrams.gauge/1.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/gauge/1.schema.json`.
 
-**The app's message (English):** "The shape 5C579624-BB64-59D0-8EAD-B60AA9DB45DD is not a valid generated shape."
+**The app's message (English):** "The shape 5C579624-BB64-59D0-8EAD-B60AA9DB45DD is not a valid complex shape."
 
 ## In this folder
 
@@ -14,4 +14,4 @@
 
 ## To make it valid
 
-Remove the needle's text slot: `"texts": []`.
+Remove the needle's `text`.

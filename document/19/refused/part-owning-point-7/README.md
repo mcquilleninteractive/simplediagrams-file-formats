@@ -1,12 +1,12 @@
 # Refused: part owning point 7
 
-**Rule broken:** A part owns only points numbered from 8; points 0 to 7 are the shape's own. Here the section lists point 7 as its own.
+**Rule broken:** A part owns only connection points numbered from 8; points 0 to 7 are the shape's own. Here the section lists point 7.
 
-**Stated in:** [generated-shapes.md](../../generated-shapes.md#8-connection-points), Connection points.
+**Stated in:** [elements.md](../../elements.md#123-parts), Parts.
 
 **Caught by the JSON Schemas:** Yes: `document.schema.json`.
 
-**The app's message (English):** "The shape C89C4071-CA23-5A06-A994-08B8E554690E is not a valid generated shape."
+**The app's message (English):** "The SimpleDiagrams document contains an invalid document.json file."
 
 ## In this folder
 
@@ -14,4 +14,4 @@
 
 ## To make it valid
 
-Give the section a point of its own, number 8 at the middle of its outer edge, and list that.
+List point 8 as the section's: `[8]`.

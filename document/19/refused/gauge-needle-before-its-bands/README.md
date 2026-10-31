@@ -1,12 +1,12 @@
 # Refused: gauge needle before its bands
 
-**Rule broken:** A known generator version lists its parts' roles in their declared order: a gauge's bands, then its needle. Here the needle comes first.
+**Rule broken:** A known type's parts come in the order of its roles: a gauge's bands, then its needle. Here the needle comes first.
 
-**Stated in:** [generators/com.simplediagrams.gauge/README.md](../../generators/com.simplediagrams.gauge/README.md#the-record), The record.
+**Stated in:** [complex-shapes/gauge/README.md](../../complex-shapes/gauge/README.md#parts), Parts.
 
 **Caught by the JSON Schemas:** No.
 
-**The app's message (English):** "The shape D6EA4981-18A3-5DB9-B7A5-F43AB8BB5E0A is not a valid generated shape."
+**The app's message (English):** "The shape D6EA4981-18A3-5DB9-B7A5-F43AB8BB5E0A is not a valid complex shape."
 
 ## In this folder
 

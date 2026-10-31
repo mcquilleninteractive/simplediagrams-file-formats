@@ -59,9 +59,7 @@ Many elements may use the same reference.
 **Asset versions only grow.** When a library changes a shape's artwork, the shape gets a new asset
 version; the old version keeps its old artwork. So a document never silently resolves to different
 geometry from the one it was made with. A reference to a version a reader does not have is not
-resolved to a nearby version. This rule holds for built-in and downloadable shapes. The one known
-exception is the Basic library's `heptagon`, whose artwork changed in SimpleDiagrams 5.1.1 without its
-asset version changing. SimpleDiagrams 5.2 draws it at asset version 1 with the artwork of 5.1.1.
+resolved to a nearby version. This rule holds for built-in and downloadable shapes.
 
 **The reference gives only the artwork.** Everything else about the element (its frame, rotation,
 paint, connection points, text and text layout) is the element's own and MUST be written out

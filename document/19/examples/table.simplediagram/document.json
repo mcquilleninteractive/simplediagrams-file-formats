@@ -26,95 +26,109 @@
       "elements": [
         {
           "complex_shape": {
-            "cells": [
-              [
-                {
-                  "base_alignment": "center",
-                  "base_style": {
-                    "color_hex": "#212529",
-                    "font_size": 15,
-                    "is_italic": false,
-                    "is_underlined": false,
-                    "weight": "medium"
+            "parts": [
+              {"role": "column", "size": 2},
+              {"role": "column", "size": 1},
+              {
+                "cells": [
+                  {
+                    "base_alignment": "center",
+                    "base_style": {
+                      "color_hex": "#212529",
+                      "font_size": 15,
+                      "is_italic": false,
+                      "is_underlined": false,
+                      "weight": "medium"
+                    },
+                    "character_runs": [],
+                    "paragraph_runs": [],
+                    "string": "Plan"
                   },
-                  "character_runs": [],
-                  "paragraph_runs": [],
-                  "string": "Plan"
-                },
-                {
-                  "base_alignment": "center",
-                  "base_style": {
-                    "color_hex": "#212529",
-                    "font_size": 15,
-                    "is_italic": false,
-                    "is_underlined": false,
-                    "weight": "medium"
+                  {
+                    "base_alignment": "center",
+                    "base_style": {
+                      "color_hex": "#212529",
+                      "font_size": 15,
+                      "is_italic": false,
+                      "is_underlined": false,
+                      "weight": "medium"
+                    },
+                    "character_runs": [],
+                    "paragraph_runs": [],
+                    "string": "Price"
+                  }
+                ],
+                "role": "row",
+                "size": 1
+              },
+              {
+                "cells": [
+                  {
+                    "base_alignment": "leading",
+                    "base_style": {
+                      "color_hex": "#212529",
+                      "font_size": 15,
+                      "is_italic": false,
+                      "is_underlined": false,
+                      "weight": "medium"
+                    },
+                    "character_runs": [],
+                    "paragraph_runs": [],
+                    "string": "Starter"
                   },
-                  "character_runs": [],
-                  "paragraph_runs": [],
-                  "string": "Price"
-                }
-              ],
-              [
-                {
-                  "base_alignment": "leading",
-                  "base_style": {
-                    "color_hex": "#212529",
-                    "font_size": 15,
-                    "is_italic": false,
-                    "is_underlined": false,
-                    "weight": "medium"
+                  {
+                    "base_alignment": "trailing",
+                    "base_style": {
+                      "color_hex": "#212529",
+                      "font_size": 15,
+                      "is_italic": false,
+                      "is_underlined": false,
+                      "weight": "medium"
+                    },
+                    "character_runs": [],
+                    "paragraph_runs": [],
+                    "string": "10"
+                  }
+                ],
+                "role": "row",
+                "size": 1
+              },
+              {
+                "cells": [
+                  {
+                    "base_alignment": "leading",
+                    "base_style": {
+                      "color_hex": "#212529",
+                      "font_size": 15,
+                      "is_italic": false,
+                      "is_underlined": false,
+                      "weight": "medium"
+                    },
+                    "character_runs": [],
+                    "paragraph_runs": [],
+                    "string": "Team"
                   },
-                  "character_runs": [],
-                  "paragraph_runs": [],
-                  "string": "Starter"
-                },
-                {
-                  "base_alignment": "trailing",
-                  "base_style": {
-                    "color_hex": "#212529",
-                    "font_size": 15,
-                    "is_italic": false,
-                    "is_underlined": false,
-                    "weight": "medium"
-                  },
-                  "character_runs": [],
-                  "paragraph_runs": [],
-                  "string": "10"
-                }
-              ],
-              [
-                {
-                  "base_alignment": "leading",
-                  "base_style": {
-                    "color_hex": "#212529",
-                    "font_size": 15,
-                    "is_italic": false,
-                    "is_underlined": false,
-                    "weight": "medium"
-                  },
-                  "character_runs": [],
-                  "paragraph_runs": [],
-                  "string": "Team"
-                },
-                {
-                  "base_alignment": "trailing",
-                  "base_style": {
-                    "color_hex": "#212529",
-                    "font_size": 15,
-                    "is_italic": false,
-                    "is_underlined": false,
-                    "weight": "medium"
-                  },
-                  "character_runs": [],
-                  "paragraph_runs": [],
-                  "string": "25"
-                }
-              ]
+                  {
+                    "base_alignment": "trailing",
+                    "base_style": {
+                      "color_hex": "#212529",
+                      "font_size": 15,
+                      "is_italic": false,
+                      "is_underlined": false,
+                      "weight": "medium"
+                    },
+                    "character_runs": [],
+                    "paragraph_runs": [],
+                    "string": "25"
+                  }
+                ],
+                "role": "row",
+                "size": 1
+              }
             ],
-            "column_sizes": [2, 1],
-            "row_sizes": [1, 1, 1],
-            "type": "table"
+            "settings": {"header_row": true},
+            "type": "table",
+            "version": 1
           },
           "content": {
             "content": {

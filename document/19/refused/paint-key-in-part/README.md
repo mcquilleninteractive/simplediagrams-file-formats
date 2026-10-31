@@ -1,8 +1,8 @@
 # Refused: paint key in part
 
-**Rule broken:** A part holds only `id`, `role`, `loops`, `style`, `texts` and `point_ids`; there is no `paint` key. Here the section has `"paint": "band"`.
+**Rule broken:** A part holds only the ten part keys: `id`, `role`, `text`, `text_layout`, `style`, `size`, `members`, `cells`, `marks` and `point_ids`. Here the section has `"paint": "band"`.
 
-**Stated in:** [generated-shapes.md](../../generated-shapes.md#3-parts), Parts.
+**Stated in:** [elements.md](../../elements.md#123-parts), Parts.
 
 **Caught by the JSON Schemas:** Yes: `document.schema.json`.
 
@@ -14,4 +14,4 @@
 
 ## To make it valid
 
-Remove `paint`. Every part is filled and outlined; a part without a visible fill has a fill colour with zero alpha.
+Remove `paint`. A part's own colours go in its `style`.

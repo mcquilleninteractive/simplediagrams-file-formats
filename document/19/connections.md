@@ -151,7 +151,7 @@ The two forms:
 ```
 
 A callout's tail uses the same record, restricted to the numbered-point form on another shape
-([elements.md](elements.md#128-callout)).
+([callout](complex-shapes/callout/README.md)).
 
 ### Attach lines
 
@@ -164,7 +164,7 @@ In document format 19 exactly one kind of shape offers an attach line:
 
 | Shape | Line number | The line |
 | --- | --- | --- |
-| A UML lifeline (a `complex_shape` element of type `lifeline`; [elements.md](elements.md#129-lifeline)) | `0` | Its dashed line, from the bottom centre of its head down to the bottom centre of its frame, or, when the lifeline ends in a destroy mark, to the centre of that mark, 12 points higher |
+| A UML lifeline (a `complex_shape` element of type `lifeline`; [lifeline](complex-shapes/lifeline/README.md)) | `0` | Its dashed line, from the bottom centre of its head down to the bottom centre of its frame, or, when the lifeline ends in a destroy mark, to the centre of that mark, 12 points higher |
 
 No other element offers any attach line, so `attach_line_id` on an attachment to any other element is
 refused. A line's number is permanent: a lifeline's dashed line is always `0`.
@@ -178,8 +178,8 @@ flipped or been resized to:
 
 - for a numbered point, at that connection point's position on the page
   ([elements.md](elements.md#8-connection-points) gives how a point's fractions, the frame, flips and
-  rotation combine; on a generated shape the fractions are of the frame its parts were drawn for, placed
-  through one transform, as [generated-shapes.md](generated-shapes.md#8-connection-points) describes);
+  rotation combine; a complex shape that places its own points works their positions out as it is
+  read, as [elements.md](elements.md#126-the-elements-own-keys) describes);
 - for an attach line, at `distance` along the line, measured from its start, and at the line's end when
   `distance` is longer than the line.
 
@@ -361,7 +361,7 @@ A writer MUST meet every rule in this table.
 | A group is not a member of itself | Same |
 | Each element, connection and group has at most one direct parent group | Same |
 | No loops (group A in group B in group A) | Same |
-| A container or swimlanes element is never a member of a group; a container holding it does that job ([elements.md](elements.md#1211-rules-across-the-page)) | "Shape *id* holds a container, swimlanes, table, callout or lifeline record that is not valid." |
+| A container or swimlanes element is never a member of a group; a container holding it does that job ([elements.md](elements.md#1210-rules-across-the-page)) | "The shape *id* is not a valid complex shape." |
 | Nesting at most 64 levels deep | "The diagram contains groups nested too deeply (*n*)." |
 | `rotation_degrees` at least 0 and less than 360 | "The SimpleDiagrams document contains an invalid document.json file." |
 | Group identifiers unique, and distinct from every other identifier in the shared namespace | "The diagram repeats identifier *id*." |
@@ -369,7 +369,7 @@ A writer MUST meet every rule in this table.
 
 A group MAY be a member of a container or a lane, but only as a whole and only if it is not itself inside
 another group; then none of the shapes or groups inside it may also be a member of a container or lane on
-its own ([elements.md](elements.md#1211-rules-across-the-page)).
+its own ([elements.md](elements.md#1210-rules-across-the-page)).
 
 ### Geometry
 

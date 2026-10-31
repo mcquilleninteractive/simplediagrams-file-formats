@@ -19,9 +19,8 @@ writing a document from a program. The other pages describe the records that sit
 | Page | What it covers |
 | --- | --- |
 | [README.md](README.md) (this page) | Conventions, the package on disk, the manifest, the document and its pages, identity rules, every limit, versions, writing a document |
-| [elements.md](elements.md) | Every element kind, style, text, text layout, connection points, complex shapes |
-| [generated-shapes.md](generated-shapes.md) | Generated shapes: the record every reader can draw, saved as finished parts, and the form other programs may write without the drawing |
-| [generators/](generators/README.md) | The generator catalogue: one page and schema for each generator version, such as `com.simplediagrams.ring` version 1 |
+| [elements.md](elements.md) | Every element kind, style, text, text layout, connection points, and the one structure every complex shape is saved in |
+| [complex-shapes/](complex-shapes/README.md) | The complex-shape catalogue: one page and schema for each type and version, such as `ring` version 1 |
 | [connections.md](connections.md) | Connectors, how their ends attach, routing, labels; groups |
 | [assets.md](assets.md) | Embedded assets, the asset inventory, SVG and raster rules, the vector artwork format (`.sdvector`) |
 | [shape-data.md](shape-data.md) | Shape data: definitions, fields and values |
@@ -125,8 +124,7 @@ and to every record on every page of this folder.
 - A reader SHOULD treat `null` for an optional key as if the key were absent: the app reads most of
   them that way, and never writes `null` itself. The exceptions, where the app refuses `null`, are in
   shape-data records, listed in [shape-data.md](shape-data.md#how-shape-data-records-are-read), and
-  `placed` and `rotation_degrees` in a generated shape's text areas
-  ([generated-shapes.md](generated-shapes.md#5-text-areas)).
+  everywhere in a complex shape's record ([elements.md](elements.md#121-the-structure)).
 - One key is required and may be `null`: `shape_data_definition_id`, on every element
   ([elements.md](elements.md)). It MUST be present.
 - A required list MUST be present and MUST NOT be `null`, even when it is empty. Write `[]`.
@@ -172,12 +170,12 @@ value is lost the next time the app saves.
 | The top level of `document.json` | Refuses the document |
 | A page's outer record ([Pages](#pages)) | Refuses the document |
 | An element's outer record ([elements.md](elements.md)) | Refuses the document |
-| A `complex_shape` record and each lane in it ([elements.md](elements.md)); in a generated shape, every record but the words of a text slot ([generated-shapes.md](generated-shapes.md)) | Refuses the document |
+| A `complex_shape` record and every record inside it but its texts ([elements.md](elements.md#121-the-structure)) | Refuses the document |
 | A connector end's attachment, and a callout's tail attachment ([connections.md](connections.md), [elements.md](elements.md)) | Refuses the document |
 | Every shape-data record ([shape-data.md](shape-data.md)) | Refuses the document |
 | An entry of `required_libraries` or `library_shape_names` ([libraries.md](libraries.md)) | Drops that one entry; the rest of the document opens |
 | Inside a `.sdvector` asset ([assets.md](assets.md)) | Ignored; the asset's bytes are kept unchanged |
-| Every other record: the manifest, page layers A to C, the grid and its appearance, the background, the physical output layout, drawing-order entries, guides, Quick Styles, element layers 1 to 3, styles, text, text layouts (except inside a generated shape, where they are strict), paths, connection points, connections, groups and the asset inventory | Ignored, and lost at the next save |
+| Every other record: the manifest, page layers A to C, the grid and its appearance, the background, the physical output layout, drawing-order entries, guides, Quick Styles, element layers 1 to 3, styles, text, text layouts (except inside a complex shape, where they are strict), paths, connection points, connections, groups and the asset inventory | Ignored, and lost at the next save |
 
 A text record's `background_hex`, which document format 19 does not have, is one such ignored key: an
 earlier SimpleDiagrams wrote it, and a reader that meets it ignores it
@@ -199,10 +197,10 @@ key is always refused, because the real key is then missing.
 - A fault in the **meaning** of a well-formed document (a repeated identifier, a colour that is not a
   colour, a connector attached to a shape that is not there) gives a specific message, such as "The
   diagram repeats identifier …" or "The diagram contains an invalid number in grid spacing."
-- A fault in the meaning of a complex shape gives that shape's own message, naming it: "Shape … holds
-  a container, swimlanes, table, callout or lifeline record that is not valid.", or, for a generated
-  shape, "The shape … is not a valid generated shape." This includes a generated part's own colour
-  that is not a colour ([generated-shapes.md](generated-shapes.md#3-parts)).
+- A fault in the meaning of a complex shape gives that shape's own message, naming it: "The shape … is
+  not a valid complex shape." A fault in the structure every complex shape shares, such as an unknown
+  key or a word that breaks the spelling rule, is a fault of form and gives the general message
+  ([elements.md](elements.md#129-which-message-a-fault-gives)).
 
 Some limits are enforced while the file is read, so exceeding them gives the general message rather
 than a specific one. The [Limits](#limits) table marks them.
@@ -700,7 +698,7 @@ equal anywhere in the document. A few other things use numbers or names with nar
 | Shape-data definition `id` | UUID | `shape_data_definitions` | A separate namespace, not compared with the shared one ([shape-data.md](shape-data.md)) |
 | Shape-data field `id` | UUID | Its definition | Normally the same in every definition derived from the same library field |
 | Choice option `id` | UUID | Its field | |
-| Lane `id` | UUID | Its swimlanes element | A separate namespace: two swimlanes may share lane identifiers ([elements.md](elements.md)) |
+| Part `id` | UUID | Its complex shape | A separate namespace: two complex shapes may share part identifiers, as a copied shape keeps its parts' ([elements.md](elements.md#123-parts)) |
 | Connection point `id` | whole number, 0 or more | Its element | Connectors refer to it ([elements.md](elements.md)) |
 | Attach line number | whole number | Its element | Fixed per kind of shape ([connections.md](connections.md)) |
 | Embedded asset `id` | 64 lower-case hexadecimal digits | `embedded_assets` | The SHA-256 digest of the file's bytes, so it cannot be chosen ([assets.md](assets.md)) |
@@ -800,51 +798,33 @@ the general "invalid document.json" message rather than a specific one.
 
 ### Complex shapes
 
-A fault in the *form* of a `complex_shape` record, including a list longer than its maximum, is
-enforced while reading (**R**). How much a shape or a page holds gives a message naming the limit
-([elements.md](elements.md#1212-how-much-a-shape-and-a-page-hold)). The other limits here give the
-complex-shape message ([elements.md](elements.md#124-which-message-a-fault-gives)).
+Every list in a `complex_shape` record is read no further than one entry past its limit. The limits of
+the structure every complex shape shares, from `version` to a placed text's turn below, are enforced
+while reading (**R**). How much a shape or a page holds gives a message naming the limit
+([elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold)); the others give the complex-shape
+message ([elements.md](elements.md#129-which-message-a-fault-gives)). Each type's own
+limits, such as how many lanes, rows or sections it has, are in its entry in the
+[complex-shape catalogue](complex-shapes/README.md).
 
 | What is limited | Limit | Defined in |
 | --- | --- | --- |
-| Members of one container or lane | 1,000; none repeated | [elements.md](elements.md#1212-how-much-a-shape-and-a-page-hold) |
-| Members of all the lanes of one swimlanes shape | 2,000 | [elements.md](elements.md#1212-how-much-a-shape-and-a-page-hold) |
-| Lanes in one swimlanes | 1 to 50 (above 50: **R**) | [elements.md](elements.md#126-swimlanes) |
-| Table rows; columns; cells | 1 to 200 (above 200: **R**); 1 to 50 (above 50, or more than 50 cells in one row: **R**); 2,000 | [elements.md](elements.md#127-table) |
-| Entity table fields; marks on one field | 1 to 60 below the header (above 60: **R**); 8, none repeated (above 8: **R**) | [elements.md](elements.md#entity-tables) |
-| Lane, row and column shares | 0.000001 to 1,000,000 | [elements.md](elements.md) |
-| Swimlanes title strip and title band | 28 to 10,000 points | [elements.md](elements.md) |
-| Smallest table column; row, as laid out | 16 points; 12 points | [elements.md](elements.md) |
-| Smallest swimlanes lane, as laid out | 28 points thick, with room for the title strip | [elements.md](elements.md) |
-| Shortest lifeline line | 20 points below the head | [elements.md](elements.md) |
-| Containers and swimlanes nested inside one another | 4 deep | [elements.md](elements.md) |
-| Lane titles, table cells and generated shapes' text slots | 100,000 in the document | [elements.md](elements.md) |
-| One lane title | 1,000 scalars and 100 runs | [elements.md](elements.md#1212-how-much-a-shape-and-a-page-hold) |
-| One table cell; all the cells of one table | 2,000 scalars and 200 runs; 100,000 scalars and 10,000 runs | [elements.md](elements.md#1212-how-much-a-shape-and-a-page-hold) |
-| Complex shapes on one page, generated shapes included; containers and swimlanes on one page | 2,000; 500 | [elements.md](elements.md#1212-how-much-a-shape-and-a-page-hold) |
-| Lane titles, table cells and generated shapes' text slots on one page | 1,000,000 scalars together | [elements.md](elements.md#1212-how-much-a-shape-and-a-page-hold) |
-
-### Generated shapes
-
-A fault in the *form* of a generated record, including a list longer than its maximum, is enforced while
-reading (**R**). The other limits give "The shape … is not a valid generated shape."
-([generated-shapes.md](generated-shapes.md#13-limits)).
-
-| What is limited | Limit | Defined in |
-| --- | --- | --- |
-| Parts in one shape, whatever its generator | 1 to 24 (above 24: **R**) | [generated-shapes.md](generated-shapes.md#2-the-record) |
-| Loops in one part; segments in one loop | 1 to 4 (above 4: **R**); 1 to 32 (above 32: **R**) | [generated-shapes.md](generated-shapes.md#3-parts) |
-| Segments in one part; in one shape | 64; 512 | [generated-shapes.md](generated-shapes.md#4-segments) |
-| Text slots in one part; points one part owns | 0 or 1 (above 1: **R**); 0 to 2 (above 2: **R**) | [generated-shapes.md](generated-shapes.md#3-parts) |
-| Characters in one text area | 500 scalars | [generated-shapes.md](generated-shapes.md#5-text-areas) |
-| Settings | 16 (above 16: **R**) | [generated-shapes.md](generated-shapes.md#6-settings) |
-| Generator name; setting word; role, slot and setting names | 3 to 128 bytes, reverse-DNS; 1 to 32 bytes; 1 to 32 characters | [generated-shapes.md](generated-shapes.md#13-limits) |
-| `generator_version` | 1 to 999 | [generated-shapes.md](generated-shapes.md#2-the-record) |
-| `made_at` width and height | 1 to 10,000,000 | [generated-shapes.md](generated-shapes.md#2-the-record) |
-| Arc radius; arc angles; sweep | above 0 and at most 10,000,000; ±720 degrees; not 0, at most 360 degrees either way | [generated-shapes.md](generated-shapes.md#4-segments) |
-| Shortest line or arc | 0.01 points | [generated-shapes.md](generated-shapes.md#4-segments) |
-| How far joints, closures and positions may miss | 0.01 points | [generated-shapes.md](generated-shapes.md#4-segments) |
-| A part's line width; a segment's share of the wobble | 0 to 10,000; 0 to 1 | [generated-shapes.md](generated-shapes.md#3-parts) |
+| `version` | 1 to 999 | [elements.md](elements.md#121-the-structure) |
+| Settings in one shape | 16 | [elements.md](elements.md#122-settings) |
+| Parts in one shape, whatever its type | 256 | [elements.md](elements.md#121-the-structure) |
+| A word: a type, setting name, setting word, role or mark | 32 bytes, matching `^[a-z][a-z0-9]*(_[a-z0-9]+)*$` | [elements.md](elements.md#124-words) |
+| Cells in one part; marks on one part; points one part owns | 50; 8, none repeated; 2, each 8 or more | [elements.md](elements.md#123-parts) |
+| A part's share (`size`) | 0.000001 to 1,000,000 | [elements.md](elements.md#123-parts) |
+| A part's line width | 0 to 10,000 | [elements.md](elements.md#123-parts) |
+| A placed text's turn | More than 0 and less than 360 degrees | [elements.md](elements.md#123-parts) |
+| Members of one container or lane | 1,000; none repeated | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| Members of all the lanes of one swimlanes shape | 2,000 | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| Containers and swimlanes nested inside one another | 4 deep | [elements.md](elements.md#1210-rules-across-the-page) |
+| Part texts and cells | 100,000 in the document | [elements.md](elements.md#1210-rules-across-the-page) |
+| One lane title | 1,000 scalars and 100 runs | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| One table cell; all the cells of one table | 2,000 scalars and 200 runs; 100,000 scalars and 10,000 runs | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| The text of a ring's section, a flow's or cycle's step, a pyramid's layer, a gauge's band or caption | 500 scalars | The type's entry in the [catalogue](complex-shapes/README.md) |
+| Complex shapes on one page; containers and swimlanes on one page | 2,000; 500 | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
+| Part texts and cells on one page | 1,000,000 scalars together | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
 
 ### Connections
 
@@ -922,18 +902,16 @@ example, 19 in both places, or format 19 with schema 17.
 The app always saves in document format 19, whatever the document contains. So a document saved by the
 app needs SimpleDiagrams 5.2 or later to open, even if it uses nothing new.
 
-### The generator catalogue
+### The complex-shape catalogue
 
-The rules of each generator version are not in the core of this specification but in the
-[generator catalogue](generators/README.md). A generator's name is fully qualified, such as
-`com.simplediagrams.ring`. The `com.simplediagrams.` namespace is the catalogue's: a writer MUST NOT
-write a name and version in it that the catalogue does not list. Another program MAY name generators
-of its own under its own domain and write their shapes in the complete form. Within document format 19, a later SimpleDiagrams release may add a generator
-or a new version of one to the catalogue, and may add words to an existing entry's open settings.
-Nothing else in an entry ever changes, and the core never does, so a document that was valid stays
-valid. A reader that does not know an entry or a word reads the shape as
-[generated-shapes.md](generated-shapes.md) says for an unknown generator, version or open word: drawn
-from its saved parts and kept exactly as read.
+What each type of complex shape holds is not in the core of this specification but in the
+[complex-shape catalogue](complex-shapes/README.md): one entry for each type and version, such as
+`ring` version 1. Only SimpleDiagrams defines complex shapes; a writer MUST write only the types and
+versions the catalogue lists. Within document format 19, a later SimpleDiagrams release may add a type,
+or a new version of one, as a new entry. Nothing else ever changes: an entry never changes, its words
+stay a closed list, and the structure every complex shape shares stays as it is, so a document that was
+valid stays valid. A reader that does not know a type or version opens the document, shows that shape as
+a placeholder and keeps its record exactly as read ([elements.md](elements.md#128-reading-a-complex-shape)).
 
 ### Older documents
 
@@ -958,12 +936,10 @@ implement rather than read the document partially.
 
 ### What the app may change when it opens a document
 
-**Informative.** Opening a document normally changes nothing on disk. There are two exceptions. When a
+**Informative.** Opening a document normally changes nothing on disk. There is one exception. When a
 document places shapes from a downloaded library installed on this Mac, or names a built-in shape by its
 published identifiers, the app fills in those shapes as it opens the document
-([libraries.md](libraries.md)). When a document holds a generated shape in the incomplete form, the app
-draws it as it opens the document ([generated-shapes.md](generated-shapes.md#12-the-incomplete-form)).
-In either case it then treats the document as edited, and macOS saves it in place. A writer that keeps
+([libraries.md](libraries.md)). It then treats the document as edited, and macOS saves it in place. A writer that keeps
 its own copy of a document SHOULD expect the file to change after the app opens it.
 
 ## Writing a document from a program
@@ -984,9 +960,9 @@ documents built this way.
 4. **Fill in each element** for its kind: style, text, and the kind-specific keys it requires; leave out
    the keys its kind forbids. Write `shape_data_definition_id` (as `null` if the element has no shape
    data) and `shape_data_values` on every element. For a complex shape, write its `complex_shape`
-   record and list what each container or lane holds ([elements.md](elements.md)). For a generated
-   shape, write its finished parts, or, for one of the five generators format 19 lists, the incomplete
-   form for the app to draw ([generated-shapes.md](generated-shapes.md)).
+   record: the type and version, every setting its catalogue entry declares, defaults included, and
+   its parts, with what each container or lane holds. Write no drawing: the app draws the shape from
+   these ([elements.md](elements.md#12-complex-shapes), [complex-shapes/](complex-shapes/README.md)).
 5. **Add connectors.** For each attached end, compute where the connection point lies on the page and
    store that position as the end point, as well as the attachment ([connections.md](connections.md)).
 6. **Add groups.** Each group has at least two members, all on its own page, and no member is in two
@@ -1024,8 +1000,9 @@ most of them.
   inside pages.
 - Content in a left-over array that must be empty.
 - An unknown value in a fixed list: an element `kind`, a line ending, texture, pattern, font weight,
-  alignment, text position, routing name, background kind and so on. (`note_style`, an entity table's
-  marks and the open words of generated shapes are read differently; see
+  alignment, text position, routing name, background kind, or a word in a complex shape of a known type
+  and version. (`note_style`, `marker_tip`, and the type or version of a complex shape are read
+  differently; see
   [What the app does with content it does not understand](#what-the-app-does-with-content-it-does-not-understand).)
 - A fraction in a whole-number field.
 - A repeated UUID anywhere in the shared namespace.
@@ -1033,14 +1010,16 @@ most of them.
 - A frame, page size or region with a width or height of zero or less.
 - A connector with fewer than two points, or attached to an element on another page, to a connection
   point number the element does not have, or to an attach line it does not offer.
-- A complex shape that breaks a rule of [elements.md](elements.md): a key its type does not use, a
-  member on another page or in two holders, a container or swimlanes in a group, counts or shares out
-  of range, an entity table's rows out of step; or a container, lane, cell, table or page holding more
-  than it may ([elements.md](elements.md#1212-how-much-a-shape-and-a-page-hold)).
-- A generated shape that breaks a rule of [generated-shapes.md](generated-shapes.md): a segment that is
-  not written in full, a loop that does not close, anything outside the frame its parts were drawn for,
-  a point that no part or two parts own, or, for one of the 5.2 generators, anything its version does
-  not declare.
+- A complex shape that breaks the structure of [elements.md](elements.md#12-complex-shapes): an
+  unknown key, a `null`, a value of the wrong kind, a word that breaks the spelling rule, a point
+  numbered below 8 or owned twice, a list past its limit.
+- A complex shape of a known type and version that breaks its catalogue entry: a missing or undeclared
+  setting, a word the entry does not list, parts out of order or with counts out of range, a key a role
+  does not allow, a rule such as a gauge's value outside its range, or connection points listed on a
+  shape that places its own.
+- A holder whose members break the rules across the page: a member on another page or in two holders,
+  a container or swimlanes in a group; or a container, lane, cell, table or page holding more than it
+  may ([elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold)).
 - A group with fewer than two members, a member in two groups, or a group that contains itself.
 - A `drawableOrder` that misses, repeats or invents anything.
 - A kind-specific key on the wrong kind of element, or a required one missing.
@@ -1063,9 +1042,7 @@ most of them.
 | An unknown `marker_tip` value | Read as no tip ([elements.md](elements.md)) |
 | An unknown `note_style` value | Drawn as a sticky note, and saved as `stickyNote` ([elements.md](elements.md#113-note)) |
 | `background_hex` in a text record | Ignored; no text background is drawn ([elements.md](elements.md#61-the-text-content-record)) |
-| A generated shape of a generator or version the app does not know | Drawn, painted, labelled, moved and resized from its saved parts; its settings and parts are kept exactly ([generated-shapes.md](generated-shapes.md)) |
-| A word the app does not know in a generated shape's open setting | Kept and drawn from the saved parts ([generated-shapes.md](generated-shapes.md#6-settings)) |
-| An entity table mark the app does not know | Kept, not drawn ([elements.md](elements.md#entity-tables)) |
+| A complex shape of a type or version the app does not know | Drawn as a labelled placeholder box, "Made with a newer version of SimpleDiagrams."; it can be moved, resized, turned, deleted, copied, grouped and locked, and its record and its element's flips are written back unchanged ([elements.md](elements.md#128-reading-a-complex-shape)) |
 | A `symbol_reference` the app has no artwork for | Opens as a dashed placeholder box, with a notice naming the missing library or asking for a newer SimpleDiagrams; kept on save ([libraries.md](libraries.md)) |
 | A faulty entry in `required_libraries` or `library_shape_names` | That entry is left out; the rest opens ([libraries.md](libraries.md)) |
 | `routes_around_shapes` on a direct connector | Ignored ([connections.md](connections.md)) |

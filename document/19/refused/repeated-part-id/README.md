@@ -2,11 +2,11 @@
 
 **Rule broken:** Each part's `id` is unique within its shape. Here the second section has the first section's `id`.
 
-**Stated in:** [generated-shapes.md](../../generated-shapes.md#3-parts), Parts.
+**Stated in:** [elements.md](../../elements.md#123-parts), Parts.
 
 **Caught by the JSON Schemas:** No.
 
-**The app's message (English):** "The shape FCEC5E2E-4701-5CF3-8DE4-6A1F14F11A4A is not a valid generated shape."
+**The app's message (English):** "The SimpleDiagrams document contains an invalid document.json file."
 
 ## In this folder
 

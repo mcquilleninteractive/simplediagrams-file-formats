@@ -26,9 +26,11 @@
       "elements": [
         {
           "complex_shape": {
-            "layout": "proportional",
             "members": [{"id": "F9A26802-AC80-5AC3-8D81-866A8782A9F4", "kind": "element"}],
-            "type": "container"
+            "parts": [],
+            "settings": {"layout": "proportional", "title_style": "band"},
+            "type": "container",
+            "version": 1
           },
           "content": {
             "content": {

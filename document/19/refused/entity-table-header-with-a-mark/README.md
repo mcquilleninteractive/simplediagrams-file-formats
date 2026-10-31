@@ -1,12 +1,12 @@
 # Refused: entity table header with a mark
 
-**Rule broken:** An entity table's header row has no marks and no points. Here the header row is marked `primary_key`.
+**Rule broken:** An entity table's header has no marks and no points. Here the header is marked `primary_key`.
 
-**Stated in:** [elements.md](../../elements.md#entity-tables), Entity tables.
+**Stated in:** [complex-shapes/entity_table/README.md](../../complex-shapes/entity_table/README.md#parts), Parts.
 
-**Caught by the JSON Schemas:** Yes: `document.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/entity_table/1.schema.json`.
 
-**The app's message (English):** "Shape 65DE1AF9-D172-5EFC-9735-6D60B5CC6550 holds a container, swimlanes, table, callout or lifeline record that is not valid."
+**The app's message (English):** "The shape 65DE1AF9-D172-5EFC-9735-6D60B5CC6550 is not a valid complex shape."
 
 ## In this folder
 
@@ -14,4 +14,4 @@
 
 ## To make it valid
 
-Empty the header's marks: `[]`.
+Remove the header's `marks`.

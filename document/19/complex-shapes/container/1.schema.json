@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/complex-shapes/container/1.schema.json",
+  "title": "SimpleDiagrams document format 19 complex shape catalogue: container, version 1",
+  "description": "The container complex shape at version 1: a frame with a title that holds other shapes. An element of document.json whose complex_shape has type container and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts", "members"],
+      "properties": {
+        "type": { "const": "container" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": ["layout", "title_style"],
+          "additionalProperties": false,
+          "properties": {
+            "layout": { "enum": ["free", "automatic", "proportional"] },
+            "title_style": { "enum": ["band", "corner_tag"] },
+            "artwork": {
+              "type": "object",
+              "required": ["asset_id"]
+            }
+          }
+        },
+        "parts": { "maxItems": 0 }
+      },
+      "not": { "anyOf": [{ "required": ["own_text_layout"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "complex_shape": {
+            "properties": {
+              "settings": { "properties": { "layout": { "enum": ["automatic", "proportional"] } } }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "properties": {
+              "content": {
+                "properties": {
+                  "content": { "properties": { "rotation_degrees": { "multipleOf": 360 } } }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

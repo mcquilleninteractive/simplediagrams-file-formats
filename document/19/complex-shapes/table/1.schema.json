@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/complex-shapes/table/1.schema.json",
+  "title": "SimpleDiagrams document format 19 complex shape catalogue: table, version 1",
+  "description": "The table complex shape at version 1: rows and columns of text. An element of document.json whose complex_shape has type table and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "table" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": ["header_row"],
+          "additionalProperties": false,
+          "properties": { "header_row": { "type": "boolean" } }
+        },
+        "parts": {
+          "minItems": 2,
+          "maxItems": 250,
+          "items": {
+            "properties": { "role": { "enum": ["column", "row"] } },
+            "allOf": [
+              {
+                "if": { "properties": { "role": { "const": "column" } } },
+                "then": {
+                  "required": ["role", "size"],
+                  "propertyNames": { "enum": ["role", "size"] }
+                }
+              },
+              {
+                "if": { "properties": { "role": { "const": "row" } } },
+                "then": {
+                  "required": ["role", "size", "cells"],
+                  "propertyNames": { "enum": ["role", "size", "cells"] },
+                  "properties": {
+                    "cells": {
+                      "minItems": 1,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "string": { "maxLength": 2000 },
+                          "character_runs": { "maxItems": 200 },
+                          "paragraph_runs": { "maxItems": 200 }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "allOf": [
+            {
+              "contains": { "properties": { "role": { "const": "column" } } },
+              "minContains": 1,
+              "maxContains": 50
+            },
+            {
+              "contains": { "properties": { "role": { "const": "row" } } },
+              "minContains": 1,
+              "maxContains": 200
+            }
+          ]
+        }
+      },
+      "not": { "anyOf": [{ "required": ["members"] }, { "required": ["own_text_layout"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false },
+        "content": {
+          "properties": {
+            "content": {
+              "properties": {
+                "text_content": {
+                  "properties": {
+                    "string": {
+                      "description": "This type has no text of its own, so the element's text is empty.",
+                      "const": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

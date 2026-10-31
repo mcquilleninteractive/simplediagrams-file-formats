@@ -1,0 +1,4446 @@
+{
+  "embedded_assets": [],
+  "id": "D4751C97-2377-5FE2-A574-CF7419210E73",
+  "name": "Newer shape of 257 parts",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "94D038B4-9108-52BF-88D6-8BF67EAA4ED7",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "1D96567F-F830-5600-822D-C40C56FF2D1E",
+                "point_ids": [8],
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "6AD698F2-B052-5483-BBFD-3990CF984787",
+                "point_ids": [9],
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "3B64F0D7-B61B-5566-AB11-B19EC32D12B6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "67F22A52-9BD3-55C0-A63F-7358E5E80A0A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9DF86649-97CE-5C79-BE99-45643ADCE5B1",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "51E19760-B6B3-5791-B909-E64662087A18",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D78B3848-EF6D-5E50-9C6B-1C3542C984F6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0914ED8F-D3AA-5EA3-A7B4-99B081A706A2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "29D7C530-EBE2-551D-9586-5F9CCF949E34",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "18558B79-42C5-5E14-9802-3CBAB303A05C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "21CF51D0-CD6A-592E-896E-5E71F164365C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "F700C042-D03A-5F33-88AA-46A98B099AEA",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "AADED2C9-7F95-5D33-974D-10204FB090C3",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "CFA23207-A08B-5969-9ECE-0C18DA1A48F5",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C88A08D8-41A4-54F5-A427-01988C8648B5",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C1D88B43-111C-55B1-B8B5-ACB813BC644A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FF62D5E0-FB92-587E-9F40-10B40628C04A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FE03D62F-628F-56C0-A976-B7B2E56BA558",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "96C78A08-17E0-535D-84FC-9C8BC4F45C44",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FBEEC1BA-4C19-5E99-B943-0BCEDE558A70",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "7F6E6F5A-8776-5426-AD4B-BB331974B2E5",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "8F49A1BF-65C0-5E62-899D-B4405256BB38",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "1FDD26E8-9FC6-5C8C-AF5F-A09144857D0A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "DD0D1B2E-6EE8-5CA4-B951-4C250705814E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FD8AF129-F2EE-5354-B5B6-E9B477425DAD",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "77F007B0-3F2E-5488-B930-67A82D26AF73",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "ABA8D6B7-F3E9-5D31-9D40-B3E7D0659A06",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4A6D0084-8FB1-5339-9A98-06528F3BBD13",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "309212DC-0F56-5F58-979A-D05D949FD39A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "7BAC58D7-CEC8-56F8-B83B-5898C2B1F874",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "74F3B6F7-BE95-54B4-ACBA-7AE00D05FFF3",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C407F756-DADC-5001-BB73-1CDCA35E9EC6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "BB3307C8-AFDB-5702-9BF6-D2D7841A57D5",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "41977D17-7106-5B62-A0A8-9F27D3BE94DA",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D798E239-0BF5-561F-8496-37E8FA8F8CDD",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4E41E84D-E86A-550C-924E-803C21735637",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "53B16722-9BAB-52F1-B944-552ECF1AE219",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "84419347-E1A7-5F63-BCCF-E2F25E7E59D4",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0DFB0CBF-44AE-550C-BEE1-F85A8673E6CA",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "AAB4A853-F27B-56E4-A7D0-C0537C780D3F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2076C3A5-33D9-5FA6-B34C-7C851E8F6837",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "3905DCBD-692D-56C8-ABE5-3A95660C0882",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B5594F6B-D84F-54BD-A60C-AF702DBB20E0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "68BBAA76-03EB-5080-85FE-482A75B4641A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "DF31D0B5-F27A-506F-98D0-AAD41E19999F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9CAD3A09-8910-581C-832B-BA05548D7272",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "109A0EE9-3594-52B7-A27E-9028D94D326F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "8805B2F3-12AB-5601-BF29-A970528B2525",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9A85F12E-BF49-5A36-B743-C53A4E16B4C2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E7500BDD-A995-50B2-AA92-156D3B2CC900",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C26B06C7-092D-5F7F-8DD6-2EC1DC623B1B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "5715603E-FFA0-5A63-BDA0-165D92E2C697",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4DB411D1-C2BF-588F-AE30-5E6DBD6C133B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2B55202C-D3CA-5CE8-AC20-C042A4850957",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E5DECF2D-B2F5-5540-B36F-694D3B323B43",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9D64CEC1-1182-5298-8F29-E888A8AAE84E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D0582034-5F04-5489-A6B0-546832B7B974",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "F57A1E16-82C7-513D-B8D5-025252040C3B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "79089398-06CC-5247-A388-812789BD2421",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "ECB44BC9-D185-5ABF-B28F-A6BBCAF7FD93",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C6A90C15-1CBB-5302-8FF2-87F5B5C27331",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "5F66B81F-EC92-52C1-AE0A-EF63F0EBC070",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "36B0F0F8-A6C8-5B1F-B45D-16E98D843B1F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "28396733-DED6-55C6-8FE5-72FD1BE9A2D2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "448FE6EC-EA1F-56D6-9532-DAB4B6A627E5",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "56563B7A-F62F-51DB-AA09-B2F7C6537AE0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "EA1B26A9-069F-52C4-B91A-68DACDAA545F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "EB339C94-00A9-585A-A03C-1233B2AAFB62",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "54948129-17AF-59C9-9730-475FF574FEE3",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0E5BA723-0BC7-5BA2-9235-1157671E028A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "265C8229-F9A9-54EE-943E-E4B6105AA991",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D9F14F7D-0649-5044-8905-2D5FF11146CB",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "AC6623B0-CE50-5111-BB13-AC81323A6AA1",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "6B58C43D-1481-598F-BBAA-9295DA6BAF42",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FB40AB66-D6F8-5F19-8FE8-6EF643187DEA",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D723A111-28C3-5DE7-BA2B-F9F46FC771E5",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C0BA4214-423A-57B8-A6FD-DFD159A81250",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4B2F6F96-A64F-5635-B868-BE58165B7329",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "F5FE8614-A6D2-5C7F-9067-066D70E091C2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "1FE43253-0767-590C-814C-5067D9E59A3B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "03FB3FBC-54BB-5EAB-8678-930F3072D37B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "169B59F9-BF89-5675-A53F-FA5F6F93B86D",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "53DE5C28-61E9-5FC8-9624-380323747EC4",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "71BF64EE-9CE7-5707-B36F-5E914B643E8D",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "74D8CF19-8200-5441-B33D-C20141DD34A0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "EAE52C98-8F14-5386-AED3-F04CA61A58D6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9036F640-6F4A-5BDD-A87D-0BF94C41DCEF",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "CA5169AE-BB8D-5EC8-8DD2-4036DA1CE504",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D650D23A-7393-5F6D-B553-292C7467D0A7",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "7458FD02-7DFD-5F18-8542-2D015FD5EF5B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "870594D7-2E74-58B9-9696-DE639BF6FB3C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "521EFE64-F25B-5240-B640-E2569F3BBA1C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "05060F8E-AFA3-5086-83D1-5B70976758DD",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2AA92DC0-C4BA-58DA-B7D1-5DB6E611151A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A0F956B3-B09E-5AF0-A156-D6AE5B6C121F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0459C91C-5C29-5FB4-A76B-D8E4A617CDC2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "F300F079-BF8D-5DA8-9CA7-28BA33823ACB",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B177A9BE-556A-5242-B67C-50D88FD8D8E7",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "72B0800C-9ACC-55D8-8955-4DA90527A3DF",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "07403B1C-E662-5D2E-B633-059573BC5462",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "33348779-0FCD-5C73-96FC-8B12E3915CF3",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B4BF51DE-7F7E-5137-A9A3-3F09F27604B8",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FC5F8B64-F035-521E-A67C-42A8ED94B2E1",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C7BBB5F8-5272-5C97-AA31-364AE13DE25C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "F69C4E3C-8CBC-5359-8EAC-DB73D4C8BC3C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E66142D4-11A8-58A9-BAB4-837019B63A24",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FEE67204-20EC-5278-944F-8A08752ECC8E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A7F456D2-EF3E-5C22-B4C9-5E9364A978BE",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "75E95A9C-4B45-5E6E-9A50-268817A6D8E0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "22C522AD-5608-5CB9-86C7-E78EF908EF4F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "DCC043C9-3AAA-5F6A-A864-C2118FFF8EDD",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "BD39E41E-3266-5457-8346-C4CD3D2AFACF",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D4CF4241-5D45-5F26-BFD6-E66C3A3E16E6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "DCE17180-8C12-5D8E-B039-872CE62C32BF",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "6B07D922-3C4B-5847-9229-F0C2941F9027",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "7C74980B-DAC4-5D91-BD0C-7A5363271DF0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "10E6681B-1E7E-5B5F-BBE2-E88A97D221E9",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "46E4B4A1-29CB-5B16-B25E-7706F7FCCF9E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "213B5CE9-4706-517E-87C2-5394277515A6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "8965A72E-6A48-5421-8A0E-28AC82CC0A45",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "522692E9-B6FC-5A43-9A4A-F52C5C3A8B61",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "54D17562-449A-51DD-836E-924028AD3BFB",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A0380779-76BE-5D91-BE2E-249DB528E1CF",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "70DA90F7-DBF5-57FC-B485-FED6EAB458FD",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "67BCAF50-6C20-51D2-9EA3-1258CCA6A30F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E7303D26-7D3E-5F93-9988-77135D1BB0A8",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "AEF4C8B9-D30F-5E80-BC67-37B41E324E70",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0F17FA9F-5DB3-5453-AC66-038D14A248FB",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "164833BE-F21E-590B-9D8E-760B2E3E7246",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A1D558DF-3E41-51A3-8752-0EE217510966",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "6E4309C2-DBC7-56E5-8E05-6D5410205E9E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0A530FC8-6A87-5F9F-A3CA-91E37E45A1E2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "395CB6D9-E111-55C5-ACC1-AE4F354AE3F5",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2EC0A64F-7B6D-5DCF-AFAA-AD59652CA103",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "78958631-D8CA-5B89-8F24-9307E25424F2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A0F1B7DF-887F-5550-AA91-656121C278E7",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B8023DD1-B5AA-5DBE-BB0B-FA3A5FD20DF6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "42FD2382-246B-58F3-82D7-D75B2A38427A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "63DCA199-A471-52EC-B402-C454639E223E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "BD16F4CD-2765-59BD-8CD6-0B9C78E451A6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "BB8124E7-4F93-5E7E-9860-4DAC98D139A3",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FC38A965-5EAF-57F5-8E11-F827D7E7A1C1",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "88C69E4E-B738-5539-9C95-F420CCEAEF81",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "90932192-BD68-5F0B-BC99-628A313FF68A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "CD522E42-79F3-5C3D-ADB8-64C71C8B79FF",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0711599E-B459-5DA0-B6A4-2485404EF3DD",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "824ACE2E-7BEA-56CF-B0A7-695A71440E75",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2BD2DD8D-D151-5004-A701-5B156C58D211",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "8DA7BACD-7149-559A-914D-1831F8E19003",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E8E56C22-237A-5135-8C89-906281D23795",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B86AF758-09CD-5643-BC67-D7AB03B6411B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0FD1E461-AB2F-526F-9DB4-C5002CFF461C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4F508B1E-F7F1-5958-AC11-4F9AD5B565BC",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "DD677CC7-1978-5B88-AC35-DF97E07CCA8D",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "1519B5E3-C35B-5B56-A822-03F38C760C2B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A3ABE50B-F046-59E3-BA0A-61ABAE872071",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "8CF7B6DB-C194-5664-A1E5-1CD3D508001F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "34135F85-07C9-5844-B4D5-4D42397F256E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "BA5CCA58-F5E3-5DB6-AE6A-041AD6D064EA",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A3F25FD4-59F1-53B8-B768-48CA23335C73",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9EA8522C-293C-5C8A-8718-7D63D9C15619",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A3D3DAF8-28B0-5AB3-9B3A-8C5D725E8945",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "AEFDF4BF-92CC-51A8-BF2D-D9F62D6EF908",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "BE89A6CB-5E08-5738-BE7E-2F8BF76AD84E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B9217BEE-E29A-539C-A395-B6A73CBC300B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A6AF9D3E-D062-5608-A354-E5FA30ABCE72",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "08DE37FC-CD24-5B07-AEE3-0A8DA648934F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "1E39F439-CBF9-5343-B596-482BB33C44A7",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "3CE90905-320F-5F46-8C00-1993C882B176",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "5A54AB43-AA49-537D-8189-569A7BC9F8F0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0DEDEF4A-6A34-5364-8EDA-28E8C68A2E71",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "EF46D097-26A8-59FB-A15A-84E8493A521C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2356EEAC-5E9B-5F83-B9EB-2CBE3565ABAD",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "3968ADFE-BE95-50D7-B274-19FC66D085B3",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0511CBC2-9B9C-53F8-BF65-E98C7F1D29E9",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "20BD60AC-C83C-5B08-B145-7864BFF4ECB6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0453563A-855E-564E-BF7F-91E135A3B89B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B5477139-AF37-5D3F-BABD-8FDB054E8594",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "19BD8F2F-8763-5C9C-8334-04BF295561F9",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E2AF2153-52AB-545E-BF10-28CF5906DDBB",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "43C143F6-4A0E-5CAA-893B-A162DB8C21EA",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "468A35F6-DBE3-5D5C-9EAB-B974C86FB0AF",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FC36BDEB-96C2-50D0-B1E5-52A9293AC32A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "35A4A20E-6168-533E-B5F7-40EDF2D136B4",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B4DCC683-43AA-5C1F-8CE5-03F7F224EDAE",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "EA14843D-7B5E-5516-82A5-B07AFF2AD755",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4A3C022F-88AB-5961-9CFC-82C0C51ACD38",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "81A1D3E2-CC1E-5BB4-A804-4750C00E5D7B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "664495B4-90DC-542E-B74F-2554A2D28D8D",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "743029F3-275A-532F-A79F-AB2269F96545",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C866743D-1C2C-5D3D-8658-3514BAD71973",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "7D9683F1-9F6F-5CB7-9106-97F05E0F3F20",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "5D68BA4F-02DC-502B-8A8B-259794A71AD0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FBA5CA6C-B9BF-59F8-814D-A17C4E06D723",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "22993BC6-51DF-5CC3-AEA7-20E9ECBEC458",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "F28EB6FA-23E7-5251-ACE5-A6140C2C757A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "DB74A86D-5B79-5C79-9E30-38133A62D626",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B72AC3A2-C8C4-553F-9ECD-A789134F8B76",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "346C5EFC-88A6-5994-8DC4-1FA50418C1B6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D8FB9BE9-D47E-56D3-806C-5F22F33BD8AE",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4839F19B-EE6A-59A2-9FA5-DCA453D373D0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "501E77B6-FB2A-570B-B044-EB9EA7172565",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4004CFD5-1E2F-511E-9866-15FE910DA055",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D7490498-552A-50BD-A833-4732DFBC9959",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "CF06F40F-A669-5A82-B9BE-DFB0F9383CC0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D59FD6EE-2AF1-5B7F-B7EF-3F714BA30979",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "629EF285-0811-52D3-948B-DA28FED1B4F3",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "D41C4E19-29AD-5237-90BB-5272D4067B2A",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B47625BE-EC25-54AA-A926-9E6A8F6333B6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FE20EB0D-DBB9-5A15-860A-B7AD3445037F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C6FB621E-95A8-5455-92AF-E96697CA0454",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "394D1CF7-8E95-5184-8497-AFC5B9BF7EF2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "12EE3D1C-EEB6-54FA-B8E6-DF125808A596",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "7A74C76A-C92B-510C-B468-06C6BF555776",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A73730FA-116F-5B3D-9826-D7DD08BDEC63",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "60C23B33-430A-551F-B94D-9D2436893D82",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "DAAAA509-A4FB-5008-B8FD-75568EC56573",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "CB0F9C40-9191-50D3-968D-3E7BD7E9B86B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2693519A-0697-5C04-90C1-0E3D56DA227C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4C8548BE-35F7-5A47-9C2E-03B69C7FD34C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "43BA40A6-30D9-51FE-96C7-C71BF466738B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FE492114-179F-59C4-BA49-9B7206F7A7F0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "8F6CA813-14FC-5F55-BA1E-CC740347F629",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "26FC322D-BE72-56F9-BF40-48CBE4DC49B6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E1CA8C09-3CBC-5493-8C9C-CD23987AB62E",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9E589CAD-D2F9-5165-B570-23D250C3F077",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "41495791-F10B-5144-B2CB-19C01EDC9722",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9DF80CF9-21CF-5E6F-8FB7-B749BC8CE15D",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "6E39320C-E395-55B0-B298-0E9C5DCFC78D",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E306C52B-CB22-5368-AD05-D3CD98572DFA",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2C57F2CF-1421-551C-A7CD-D204899E7B5B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "ADF6E369-DD3D-5D3E-898A-9F3CD42E78D3",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "B681AF45-C190-5345-BB9B-0A30F90547D1",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "5E53A06D-C773-5C3F-A60A-99C64748C766",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2C5FE578-AF26-5242-A306-16140406FA51",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9D61520D-1F17-53FB-908D-746BC989AE2B",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "FDF2CD8B-AE3E-5E6C-9CD2-EFB80184178C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "AE5F6BA9-F50C-5E97-9639-2098F5034422",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "4C2DCAFA-CACA-5FF6-A268-68E9EA3CD1B6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "65DA2134-456E-51AE-9E32-C73538102E80",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A9E94C15-F8DC-50E8-9F64-7E7EF9000EA6",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "F0B793C7-3F36-5DEB-8A55-A09D8875D3D9",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "932A46D5-8AC3-57E0-8FE4-99BCB0E48788",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "C297F81F-1FDC-513B-BD5C-83BF1EC2DFC9",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "0C867C84-4E90-5498-A0DC-A50EE9CD19A1",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "ADAB2C2A-224A-578F-B1CA-79D2F2B1C04F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "A0516417-4EBB-5B16-9A1F-433438015869",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "36562891-9E98-5BF9-8CEC-8EFF1A2FB1B2",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "2A9B4E8E-4226-536A-9E89-AA006ABB0687",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E5E54FA3-80D0-55FF-8520-4B95304D70EF",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "9D4A4894-E4AC-596D-88E7-EBE680FA447C",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "35A7863B-C6B1-5341-BBC8-58D66C2934CA",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "11A62532-29A6-59A0-B806-261907D5F800",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "74C826E2-C69B-563F-9098-103A13595FF0",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "E6B08076-8114-57B3-8E51-B2C09F36A5A1",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "837933D7-D5C8-589B-B715-0379E7362E14",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              },
+              {
+                "id": "07048A81-8E69-5660-9865-E6ACEED0CB5F",
+                "role": "quadrant",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Do now"
+                }
+              }
+            ],
+            "settings": {"corner": "rounded", "gap": 12, "shows_axes": true},
+            "type": "matrix",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 240, "width": 240, "x": 80, "y": 80},
+                "id": "F7D46E6B-C30B-575C-8FB3-ED1A26BA4A64",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": true,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 18,
+  "selected_page_id": "94D038B4-9108-52BF-88D6-8BF67EAA4ED7",
+  "shape_data_definitions": []
+}

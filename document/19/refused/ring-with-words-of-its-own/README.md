@@ -1,12 +1,12 @@
 # Refused: ring with words of its own
 
-**Rule broken:** A known generator version that declares no own text keeps the element's `text_content.string` empty. Here a ring version 1 has words of its own.
+**Rule broken:** A type with no text of its own keeps its element's `text_content.string` empty. Here a ring has the words `Centre`.
 
-**Stated in:** [generators/com.simplediagrams.ring/README.md](../../generators/com.simplediagrams.ring/README.md#the-record), The record.
+**Stated in:** [complex-shapes/ring/README.md](../../complex-shapes/ring/README.md#the-record), The record.
 
-**Caught by the JSON Schemas:** Yes: `generators/com.simplediagrams.ring/1.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/ring/1.schema.json`.
 
-**The app's message (English):** "The shape 2ACC1C70-3E40-5C42-85A8-35F6005427B9 is not a valid generated shape."
+**The app's message (English):** "The shape 2ACC1C70-3E40-5C42-85A8-35F6005427B9 is not a valid complex shape."
 
 ## In this folder
 
@@ -14,4 +14,4 @@
 
 ## To make it valid
 
-Empty the element's text. A ring's words go in its sections' labels.
+Empty the element's text. A ring's words go in its sections' texts.

@@ -2,7 +2,7 @@
 
 **Rule broken:** The lane titles and table cells of one page hold at most 1,000,000 characters together. Here the page has ten tables of 100,000 letters each and an eleventh of one letter: every cell and every table is within its own limit, and the page is one over.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** No. The check adds up every complex shape on the page.
 

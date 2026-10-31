@@ -2,7 +2,7 @@
 
 **Rule broken:** All the cells of one table hold at most 100,000 characters together. Here a table of one column has fifty cells of 2,000 letters and one of a single letter: every cell is within its own limit, and the table is one over.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** No. The check adds up every cell of the table.
 

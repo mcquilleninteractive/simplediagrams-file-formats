@@ -26,203 +26,73 @@
       "elements": [
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.ring",
-            "generator_version": 1,
-            "made_at": {"height": 200, "width": 200},
             "parts": [
               {
                 "id": "2BFB69AE-7776-55B8-B397-47C0D1002E95",
-                "loops": [
-                  [
-                    ["A", 100, 100, 100, -88.56760551217295, 28.567605512172943, "start", 1],
-                    [
-                      "L",
-                      187.8253482898284,
-                      147.8195378247253,
-                      152.69520897389705,
-                      128.6917226948352,
-                      "start",
-                      0.5
-                    ],
-                    ["A", 100, 100, 60, 28.567605512172943, -88.56760551217295, "end", 1],
-                    [
-                      "L",
-                      101.49984375488273,
-                      40.01874902345784,
-                      102.49973959147123,
-                      0.031248372429743654,
-                      "end",
-                      0.5
-                    ]
-                  ]
-                ],
                 "point_ids": [8],
                 "role": "section",
                 "style": {"fill_hex": "#A5D8FF"},
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Flat"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.052833795423891966,
-                        "width": 0.10566759084778393,
-                        "x": 0.7935763660898836,
-                        "y": 0.27358310228805405
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Flat"
+                }
               },
               {
                 "id": "02CFA5E2-83D7-5B1E-A12F-C954AA432D04",
-                "loops": [
-                  [
-                    ["A", 100, 100, 100, 31.432394487827057, 148.56760551217295, "start", 1],
-                    [
-                      "L",
-                      14.674391301642842,
-                      152.14921380284497,
-                      48.80463478098571,
-                      131.289528281707,
-                      "start",
-                      0.5
-                    ],
-                    ["A", 100, 100, 60, 148.56760551217295, 31.432394487827057, "end", 1],
-                    [
-                      "L",
-                      151.19536521901432,
-                      131.28952828170696,
-                      185.3256086983572,
-                      152.14921380284494,
-                      "end",
-                      0.5
-                    ]
-                  ]
-                ],
                 "point_ids": [9],
                 "role": "section",
                 "style": {"fill_hex": "#B2F2BB", "fill_texture": "PencilFill"},
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Textured"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.10362643408075364,
-                        "width": 0.2072528681615073,
-                        "x": 0.3963735659192464,
-                        "y": 0.8481867829596231
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Textured"
+                }
               },
               {
                 "id": "9A0FD48D-9D83-59A2-BE62-3990F048A995",
-                "loops": [
-                  [
-                    ["A", 100, 100, 100, 151.43239448782705, 268.5676055121729, "start", 1],
-                    [
-                      "L",
-                      97.50026040852872,
-                      0.031248372429743654,
-                      98.50015624511722,
-                      40.01874902345784,
-                      "start",
-                      0.5
-                    ],
-                    ["A", 100, 100, 60, 268.5676055121729, 151.43239448782705, "end", 1],
-                    [
-                      "L",
-                      47.304791026102954,
-                      128.6917226948352,
-                      12.174651710171588,
-                      147.8195378247253,
-                      "end",
-                      0.5
-                    ]
-                  ]
-                ],
                 "point_ids": [10],
                 "role": "section",
                 "style": {"line_width": 3, "stroke_hex": "#C92A2A"},
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": "Outlined"
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.052833795423891966,
-                        "width": 0.10566759084778393,
-                        "x": 0.10075604306233261,
-                        "y": 0.273583102288054
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Outlined"
+                }
               }
             ],
-            "resizing": "proportional",
             "settings": {"ring_width": 40},
-            "stacking": "last_in_front",
-            "type": "generated"
+            "type": "ring",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5000000000000001},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0.1464466094067263, "y": 0.1464466094067262},
-                  {"id": 5, "x": 0.1464466094067263, "y": 0.8535533905932737},
-                  {"id": 6, "x": 0.8535533905932737, "y": 0.1464466094067263},
-                  {"id": 7, "x": 0.8535533905932737, "y": 0.8535533905932737},
-                  {"id": 8, "x": 0.9330127018922194, "y": 0.25000000000000006},
-                  {"id": 9, "x": 0.5, "y": 1},
-                  {"id": 10, "x": 0.06698729810778069, "y": 0.24999999999999992}
-                ],
+                "connection_points": [],
                 "frame": {"height": 200, "width": 200, "x": 80, "y": 80},
                 "id": "F093BD77-D594-5B9C-B59B-7BE4340A5C4D",
                 "kind": "complex_shape",

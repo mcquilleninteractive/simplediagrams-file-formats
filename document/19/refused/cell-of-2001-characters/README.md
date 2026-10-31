@@ -2,7 +2,7 @@
 
 **Rule broken:** A table cell holds at most 2,000 characters. Here the table's first cell is 2,001 letters.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** Yes. The schema limits a cell's `string` to 2,000 characters.
 

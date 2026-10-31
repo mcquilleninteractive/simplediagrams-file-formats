@@ -60,7 +60,7 @@ refuse the document.
 | `image` | A PNG or JPEG picture stored in the document | [11.8](#118-image) |
 | `path` | A freehand or point-by-point line, or a closed outline | [11.9](#119-path) |
 | `unresolved` | A placeholder for content from an imported legacy file that has no native equivalent | [11.10](#1110-unresolved) |
-| `complex_shape` | A container, swimlanes, a table, a callout, a UML lifeline, or a generated shape such as a ring or a flow, drawn by the app from a few stored values | [12](#12-complex-shapes) |
+| `complex_shape` | A shape that does more than a basic shape: a container, swimlanes, a table, an entity table, a callout, a UML lifeline, a ring, a flow, a pyramid, a cycle or a gauge, drawn by the app from its settings | [12](#12-complex-shapes) |
 
 An element never contains another element. Containers and swimlanes *refer* to other elements by
 identifier ([section 12](#12-complex-shapes)); they do not nest them.
@@ -104,9 +104,8 @@ element                                   level 0 (outer object)
 ```
 
 **Unknown keys.** The app refuses a document that has an unknown key on the **outer object** (level
-0), in a `complex_shape` record, in a swimlanes lane, in a callout's `tail_attachment`, or in any record
-inside a generated shape other than the words of its text slots. Everywhere
-else in an element (levels 1 to 3, and the style, text content, text layout, path, path node, symbol
+0), or anywhere in a `complex_shape` record except inside its texts ([12.1](#121-the-structure)).
+Everywhere else in an element (levels 1 to 3, and the style, text content, text layout, path, path node, symbol
 reference, connection point and member records inside them) an unknown key is ignored and is gone the
 next time the app saves the document. A misspelt optional key at those levels is therefore silently
 lost, not refused. Writers MUST NOT write keys this specification does not define.
@@ -131,7 +130,7 @@ detailed rules.
 | `flip_vertical` | 1 | boolean | Yes | See [section 3](#3-identity-frame-rotation-and-flips) | Mirror the artwork top to bottom |
 | `text_layout` | 1 | object | No | Forbidden on `path`, `unresolved`, `svg_artwork`, `image`, `complex_shape` | Where the label sits ([section 7](#7-text-layout)). Absent: the default inset region, label centred |
 | `note_style` | 1 | string | No | One of the six looks of [11.3](#113-note); `note` only | Which note look. Absent: sticky note. A reader draws a word it does not know as a sticky note ([11.3](#113-note)) |
-| `preserves_aspect_ratio` | 1 | boolean | No | Default `false`; never `true` on a generated shape | Keep proportions when a person resizes the element ([section 9](#9-locking-and-aspect-ratio)) |
+| `preserves_aspect_ratio` | 1 | boolean | No | Default `false`; never `true` on a ring, flow, pyramid, cycle or gauge | Keep proportions when a person resizes the element ([section 9](#9-locking-and-aspect-ratio)) |
 | `shows_image_background` | 1 | boolean | No | Default `false`; `image` only | Fill the frame behind the picture |
 | `shows_image_border` | 1 | boolean | No | Default `false`; `image` only | Outline the frame |
 | `content` | 1 | object | Yes | | Level 2 |
@@ -236,7 +235,7 @@ element's nodes are drawn mirrored too.
 | Kind | Effect of the flips |
 | --- | --- |
 | `text`, `unresolved` | No artwork is mirrored. Connection points are still placed mirrored, as on any element. Writers SHOULD write `false` |
-| `complex_shape` | Only a callout may be flipped. On any other complex shape both MUST be `false` ([section 12](#12-complex-shapes)) |
+| `complex_shape` | Among the types the catalogue lists, only a callout may be flipped; on the others both MUST be `false`. A shape of a type or version the reader does not know keeps its flips as written ([12.6](#126-the-elements-own-keys)) |
 | Every other kind | The artwork is mirrored |
 
 ## 4. Stacking
@@ -256,7 +255,7 @@ exact.
 The order of elements in the page's `elements` array does not affect drawing.
 
 **Informative.** Containers and swimlanes are always drawn just behind the lowest thing they hold,
-whatever the stored order says ([12.11](#1211-rules-across-the-page)).
+whatever the stored order says ([12.10](#1210-rules-across-the-page)).
 
 ## 5. Style
 
@@ -288,7 +287,7 @@ How the values behave:
   [13.10](#1310-textures). They are tiled in page coordinates and clipped to the shape, so resizing
   a shape does not stretch them.
 - **`stroke_pattern_override`** applies only to `symbol` and `editable_vector` elements and to the
-  drawing a container wears (`artwork_asset_id`, [12.5](#125-container)), and within those only to
+  drawing a container wears (its `artwork` setting, [container](complex-shapes/container/README.md)), and within those only to
   the parts of the artwork that follow the element's line colour. A `path` has its own pattern
   (`path.stroke_pattern`). On every other kind the key is accepted and ignored.
 
@@ -303,7 +302,7 @@ How the values behave:
 | `image` | The panel behind the picture, when `shows_image_background` is `true` | The border, when `shows_image_border` is `true` | Used for those | Ignored |
 | `path` | Fills a closed path | The line | Used (a stroke texture turns marker ink off) | Ignored |
 | `unresolved` | Fills the placeholder box | Its dashed outline | Not used | Ignored |
-| `complex_shape` | Its body, a table's header row, and every part of a generated shape that has no fill of its own | Its outline, lane and cell lines, a lifeline's dashed line, and every generated part without a line of its own | Used | Ignored, except on a container that wears a drawing, where it applies to the drawing's line-coloured parts |
+| `complex_shape` | Its body, a table's header row, and every part that has no fill of its own | Its outline, lane and cell lines, a lifeline's dashed line, and every part without a line of its own | Used | Ignored, except on a container that wears a drawing, where it applies to the drawing's line-coloured parts |
 
 A container that wears a drawing paints it as an `editable_vector` is painted: the drawing's fill- and
 line-coloured parts take the container's `fill_hex`, `stroke_hex` and `line_width`.
@@ -371,7 +370,7 @@ The app's starting text is font size 15, weight `medium`, colour `#212529`, not 
 underlined, no `font_family`, no highlight, and `base_alignment` `center`.
 
 **Highlight.** `highlight_hex` may appear in `base_style` and in any character run's `style`, in every
-text: an element's label, a lane title, a table cell, a generated shape's text slot and a connector's
+text: an element's label, a part's text, a table cell and a connector's
 label. A writer leaves it out where there is no highlight. A highlight that is not a colour refuses the
 document ("The diagram contains an invalid color value: …"). **Informative.** The app draws each
 highlighted stretch as a band behind its characters on each line it covers, then the characters.
@@ -418,11 +417,9 @@ which is always valid, or use runs only on text where every character is a singl
 
 ### 6.4 Which kinds show their text
 
-Every element's text is drawn when `string` is not empty, whatever its kind, except on a generated
-shape whose record has no `own_text`, which keeps its text without drawing it; flips never mirror it. A
-table's own `string` MUST be empty, because its text is in its cells ([12.7](#127-table)), and so MUST
-that of a generated shape whose generator declares no text of its own
-([generated-shapes.md](generated-shapes.md#9-the-elements-other-keys)). On
+Every element's text is drawn when `string` is not empty, whatever its kind; flips never mirror it. A
+complex shape of a type without text of its own, such as a table, whose text is in its cells, MUST
+keep its own `string` empty ([12.6](#126-the-elements-own-keys)). On
 `path`, `unresolved`, `svg_artwork` and `image` the label always sits in the default place, because
 those kinds may not have a `text_layout`. A complex shape places its own text where its type puts it.
 
@@ -519,14 +516,15 @@ then turn (px, py) about the frame's centre by rotation_degrees (section 3)
 `x` and `y` are always the point's place on the *unflipped* element. Flipping an element never changes
 a point's stored position or number.
 
-**On a generated shape** `x` and `y` are fractions of the frame its parts were drawn for, its
-`made_at`, not of the element's frame, and one transform places them in the element's frame before the
-element's rotation, as it places the shape's parts. A generated shape is never flipped.
-[generated-shapes.md](generated-shapes.md#8-connection-points) gives the transform and the rules on
-which points such a shape has. Everything that resolves a point on another shape, a connector's end or
-a callout's locked tail, uses that placement.
+**Shapes that place their own points.** An entity table, a ring, a flow, a pyramid, a cycle and a gauge
+list no connection points: the reader works them out from the shape as it reads the document, and again
+whenever the shape changes ([12.6](#126-the-elements-own-keys)). Their numbers are fixed by the shape's
+catalogue entry, and their places are where the app draws them, so a connector attached to one follows
+it. Everything that resolves a point on another shape, a connector's end or a callout's locked tail,
+uses those places.
 
-**The standard eight.** The app gives every new element, except a `path` and a lifeline, these points:
+**The standard eight.** The app gives every new element, except a `path`, a lifeline and a shape that
+places its own points, these points:
 
 | `id` | Place | `x` | `y` |
 | --- | --- | --- | --- |
@@ -540,10 +538,9 @@ a callout's locked tail, uses that placement.
 | 7 | Bottom-right corner | 1 | 1 |
 
 A `path` made by the app has no points. A lifeline made by the app has point `2` alone; connectors
-attach along its line instead ([12.9](#129-lifeline)). A generated shape has the points its generator
-gives it, and an entity table the standard eight and two for each field
-([Entity tables](#entity-tables)). A library shape MAY define its own points (see
-[libraries.md](libraries.md)).
+attach along its line instead ([lifeline](complex-shapes/lifeline/README.md)). A shape that places its
+own points has those its catalogue entry gives it, as above. A library shape MAY define its own points
+(see [libraries.md](libraries.md)).
 
 **Other points.** An element MAY have any points, with any numbers, anywhere on or inside its frame.
 The numbers need not start at 0 or be consecutive. An empty list is valid and means no connector can
@@ -563,8 +560,8 @@ the element. A writer MUST NOT set `is_locked` to record a group's lock.
 **`preserves_aspect_ratio`**, when `true`, makes the app keep the element's proportions when a person
 resizes it, as if Shift were held. It does not require the frame to have any particular proportion. A
 library shape MAY ask for it; the app sets it from the library when the shape is placed. It MUST NOT be
-`true` on a generated shape, whose record says how it resizes
-([generated-shapes.md](generated-shapes.md#2-the-record)).
+`true` on a ring, a flow, a pyramid, a cycle or a gauge, whose catalogue entries say how they resize
+([12.6](#126-the-elements-own-keys)).
 
 ## 10. Which kind may carry which key
 
@@ -581,9 +578,9 @@ library shape MAY ask for it; the app sets it from the library when the shape is
 | `image_content_mode` | F | F | F | F | F | F | F | R | F | F | F |
 | `path` | F | F | F | F | F | F | F | F | R | F | F |
 | `unresolved_content` | F | F | F | F | F | F | F | F | F | R | F |
-| `flip_horizontal` or `flip_vertical` set to `true` | – | – | – | – | – | – | – | – | – | – | Callout only; F for the other types |
-| `preserves_aspect_ratio` set to `true` | – | – | – | – | – | – | – | – | – | – | F for a generated shape |
-| `text_content.string` not empty | – | – | – | – | – | – | – | – | – | – | F for a table, and for a generated shape whose known generator version has no text of its own |
+| `flip_horizontal` or `flip_vertical` set to `true` | – | – | – | – | – | – | – | – | – | – | Callout, or a type or version the reader does not know; F for the other listed types |
+| `preserves_aspect_ratio` set to `true` | – | – | – | – | – | – | – | – | – | – | F for a ring, flow, pyramid, cycle or gauge |
+| `text_content.string` not empty | – | – | – | – | – | – | – | – | – | – | F for a type without text of its own: a table, entity table, ring, flow, pyramid or cycle |
 
 Every other key of [2.2](#22-every-key) is required on every kind.
 
@@ -593,8 +590,8 @@ unresolved element source.", "…invalid number in unexpected element path.", "�
 layout.". A missing required key: "…invalid text in symbol reference.", "…embedded asset reference.",
 "…image properties.", "…invalid number in path node count.", "…invalid text in unresolved element
 source.". A `complex_shape` record on another kind, a `complex_shape` element without one, a flipped
-complex shape other than a callout, or a table with its own text: "Shape … holds a container,
-swimlanes, table, callout or lifeline record that is not valid."
+complex shape of a listed type other than a callout, or a table with its own text: "The shape … is not a valid complex
+shape."
 
 Some of these faults are found while the JSON is read, and give only the general message for an
 invalid `document.json`: `shows_image_background` or `shows_image_border` on a kind other than
@@ -623,7 +620,7 @@ A note, drawn by the app in one of six looks chosen by `note_style`:
 | `tapedNote` | A scrap of paper held up by a strip of clear tape |
 | `tag` | A luggage tag with a hole and a loop of string |
 | `notebookPage` | A page torn from a ruled notebook, with punched holes and a margin |
-| `pinnedNote` | Paper held by a red push pin |
+| `pinnedNote` | Paper held by a grey push pin |
 
 `note_style` on any other kind is refused. A writer MUST write one of these six words, or leave the key
 out for a sticky note.
@@ -808,33 +805,62 @@ stroked from `style`.
 
 ## 12. Complex shapes
 
-A **complex shape** is drawn by the app from a few stored values, not from stored artwork. Its `kind`
-is `complex_shape`, and its outer object (level 0) carries a `complex_shape` record naming the type and
-holding the values that type needs. The outline, title band, lane strips, cell lines, tail and dashed
-line are all worked out from those values and the element's frame. A generated shape is the exception:
-its record holds its finished drawing, so that a reader can draw it without knowing how it was made.
+A **basic shape** is a drawing and one text: a rectangle, a note, a library shape. A **complex shape**
+is any shape that does more: it holds other shapes, is divided into lanes or cells, has sections a
+person can paint and label one by one, or has a tail that can be locked to another shape. Its `kind`
+is `complex_shape`, and its outer object (level 0) carries a `complex_shape` record.
 
-There are six types:
+Every complex shape is saved in **one structure** ([12.1](#121-the-structure)): its type, the version
+of that type, its settings, the parts a person can touch, and, for a shape that holds other shapes on
+its whole body, its members. **Nothing drawn is saved.** The file holds no outline, no position of a
+part and no box the app works out for a text; the app draws every complex shape from its settings,
+its parts and the element's frame, each time it is drawn. So a file cannot hold a drawing that
+contradicts its settings, and a refinement to how a type is drawn reaches documents already saved.
 
-| `type` | What it is |
-| --- | --- |
-| `container` | A frame with a title that holds other shapes |
-| `swimlanes` | One shape divided into parallel lanes, each holding shapes |
-| `table` | Rows and columns of text, or, as an entity table, the fields of a database entity |
-| `callout` | A speech bubble with an optional tail |
-| `lifeline` | A participant in a UML sequence diagram |
-| `generated` | A shape such as a ring, a flow of steps, a pyramid, a cycle or a gauge, saved as finished parts ([generated-shapes.md](generated-shapes.md)) |
+What each type holds is declared by its entry in the [complex-shape catalogue](complex-shapes/README.md).
+This section gives the structure every type shares and the rules that hold whatever the type. Document
+format 19's catalogue has eleven types, each at version 1:
 
-### 12.1 The record
+| `type` | What it is | Entry |
+| --- | --- | --- |
+| `container` | A frame with a title that holds other shapes | [container](complex-shapes/container/README.md) |
+| `swimlanes` | One shape divided into parallel lanes, each holding shapes | [swimlanes](complex-shapes/swimlanes/README.md) |
+| `table` | Rows and columns of text | [table](complex-shapes/table/README.md) |
+| `entity_table` | One entity of a database: its name, then a row for each field | [entity_table](complex-shapes/entity_table/README.md) |
+| `callout` | A speech bubble with an optional tail | [callout](complex-shapes/callout/README.md) |
+| `lifeline` | A participant in a UML sequence diagram | [lifeline](complex-shapes/lifeline/README.md) |
+| `ring` | A ring cut into sections | [ring](complex-shapes/ring/README.md) |
+| `flow` | A row of steps, such as chevrons | [flow](complex-shapes/flow/README.md) |
+| `pyramid` | A pyramid or funnel cut into layers | [pyramid](complex-shapes/pyramid/README.md) |
+| `cycle` | Steps round a circle | [cycle](complex-shapes/cycle/README.md) |
+| `gauge` | A half dial with bands and a needle | [gauge](complex-shapes/gauge/README.md) |
 
-The record is strict. `type` is read first; after it, only `type`, `hand_drawn` and that type's own keys
-are allowed. A key another type uses, an unknown key, or an unknown `type` makes the app refuse the
-document.
+Only SimpleDiagrams defines complex shapes. A writer MUST write only the types and versions the
+catalogue lists, each with exactly what its entry declares. It MUST NOT invent a type, a version, a
+setting, a role or a word.
+
+### 12.1 The structure
+
+The record has these keys and no others:
 
 | Key | Type | Required | Rules / bounds | Meaning |
 | --- | --- | --- | --- | --- |
-| `type` | string | Yes | `container`, `swimlanes`, `table`, `callout`, `lifeline`, `generated` | Which complex shape |
-| `hand_drawn` | boolean | No | Default `true` | `true`: lines are drawn with the app's hand-drawn pen. `false`: drawn exactly. The app writes the key only when it is `false` |
+| `type` | string | Yes | A word ([12.4](#124-words)) | Which catalogue entry |
+| `version` | whole number | Yes | 1 to 999 | Which version of the entry |
+| `settings` | object | Yes | At most 16 entries; `{}` is valid ([12.2](#122-settings)) | The shape-wide values |
+| `parts` | array of parts | Yes | At most 256; `[]` is valid ([12.3](#123-parts)) | The pieces a person can touch, in the order and roles the entry declares |
+| `members` | array of members | For a type whose entry holds shapes on its whole body, and forbidden for every other | At most 1,000 ([12.5](#125-members)) | The shapes it holds, in order. `[]` when it holds none |
+| `own_text_layout` | object | No; only on a type whose entry allows it | A placed text layout ([12.3](#123-parts)) | Where a person placed the shape's own text. Absent: where the type puts it |
+| `hand_drawn` | boolean | No | Only `false` | `false`: the lines are drawn exactly. Absent: they are drawn with the app's hand-drawn pen. It is written only as `false` |
+
+The record is **strict**, and so is every record inside it except its texts, which are ordinary text
+records ([section 6](#6-text-content)): an unknown key refuses the document, `null` anywhere refuses it,
+and a value of the wrong JSON type refuses it. Every list is read no further than one entry past its
+limit, so a very long list costs little before it is refused.
+
+**The structure never changes.** It is the same for every type and every version, and stays as it is
+for the life of document format 19. A new kind of complex shape, or a new meaning for an existing one,
+is a new entry in the catalogue or a new version of one ([12.7](#127-the-catalogue)).
 
 **Informative: very large shapes are drawn with exact lines.** The hand-drawn pen's work grows with the
 length of the lines it draws. So that a document asking for shapes far larger than a page cannot make
@@ -843,391 +869,284 @@ would need more of the pen's work than one shape may have, or when the complex s
 same page have already used what a page may have. Nothing is refused and nothing stored changes; only
 shapes much larger than a page, or pages of very many of them, look less hand-drawn.
 
-The keys of each type follow in [12.5](#125-container) to [12.10](#1210-generated).
+### 12.2 Settings
 
-### 12.2 The element's own keys
+`settings` holds the shape-wide values a person chose, by name: how wide a ring's band is, which way a
+flow runs, where a callout's tail points. Each name is a word ([12.4](#124-words)). Each value is one
+of six kinds, and its JSON form says which, so a reader can tell the kinds apart without knowing the
+type:
 
-A complex shape is an ordinary element in every other way: it has a frame, a rotation, a style, a
-stacking position, a lock, connection points and shape data. In addition:
+| Kind | Written as | Example |
+| --- | --- | --- |
+| Boolean | `true` or `false` | `"pointer": false` |
+| Number | A finite JSON number | `"ring_width": 40` |
+| Word | A JSON string that is a word ([12.4](#124-words)) | `"direction": "across"` |
+| Point | An object of exactly `x` and `y`, finite numbers in diagram points, from an origin the entry states | `"tail_tip": {"x": -40, "y": 70}` |
+| Attachment | An object of exactly `element_id`, an element's UUID, and `connection_point_id`, a whole number 0 or more | `"tail_attachment": {"element_id": "7E1A3C5F-9B2D-4E6A-8C0B-1D3F5A7C9E02", "connection_point_id": 1}` |
+| Embedded asset | An object of exactly `asset_id`, an embedded asset's identifier: 64 lower-case hexadecimal digits | `"artwork": {"asset_id": "8c267a32bf4c6f6e89e1db2a05312d14531d6103096cd3a50e610539eb617fb7"}` |
 
-- **Text.** `text_content` is the shape's own text: a container's title, the title across the top of
-  swimlanes, a callout's words, a lifeline's name, a gauge's caption. A table's `text_content.string`
-  MUST be empty, because its text is in its cells, and so MUST that of a generated shape whose known
-  generator version has no text of its own. The shape puts its text in a place of its own, so
-  `text_layout` is forbidden.
-- **Flips.** Only a callout may be flipped. On every other type `flip_horizontal` and `flip_vertical`
-  MUST be `false`.
-- **Style.** `style` gives the fill and line as for any shape ([section 5](#5-style)).
+Nothing else is a setting: `null`, a list, free text and any other object refuse the document. A number
+is a number and a word is a word: `1` is not `true`, and `"40"` is not a word, because a word starts
+with a letter.
 
-### 12.3 Members
+**An attachment** fastens the shape to a numbered connection point of another element on the same page,
+as a callout's locked tail does. It never names the shape itself and never an attach line
+([12.10](#1210-rules-across-the-page)). **An embedded asset** names an asset the document holds, of the
+kind the entry requires ([assets.md](assets.md)).
 
-A container and each lane of swimlanes record what they hold, in order, as a list of **members**.
-A member is an object of the same form a group member has:
+**Every setting is written.** A shape of a known type holds exactly the settings its entry declares,
+each of the kind, range and words the entry gives. A writer MUST write every one, including those
+whose value is the entry's default. Only a setting the entry marks optional may be left out, and then
+its absence has the meaning the entry states: a callout without a tail, a container without artwork.
+
+How many sections, steps, lanes or rows a shape has is never a setting: it is the number of its parts
+of that role. And a record holds only what a person chose, never what the app was doing with it: no
+chosen part and no open control is saved.
+
+### 12.3 Parts
+
+Each entry of `parts` is one piece of the shape a person can touch: a lane, a column or a row of a
+table, a field of an entity table, a ring's section, a flow's step, a gauge's needle. Every part has a
+`role`. Its other keys come from one closed set of ten, and the type's entry says, role by role, which
+keys a part must hold and which it may; any other key of the ten refuses the document.
+
+| Key | Type | Rules / bounds | Meaning |
+| --- | --- | --- | --- |
+| `id` | UUID | Unique among the shape's parts | The part's identity. Like the parts themselves, it is unique only within its shape: a copied shape keeps its parts' identifiers. The app makes it with the part and never changes or reuses it |
+| `role` | string | A word; required on every part | What the part is, such as `lane` or `section` |
+| `text` | text content | [Section 6](#6-text-content), and the limits its entry gives | The part's words: a lane's title, a section's label |
+| `text_layout` | object | A placed text layout (below) | Where a person placed the part's words. Absent: where the type puts them |
+| `style` | object | 1 to 5 channels (below) | The part's own paint. Absent: the shape's |
+| `size` | number | Finite, 0.000001 to 1,000,000 | The part's share of the shape: a lane's thickness, a row's height, a column's width, as its part of the sum of all its siblings' sizes, not a length in points |
+| `members` | array of members | At most 1,000 ([12.5](#125-members)) | The shapes the part holds, in order |
+| `cells` | array of text content | At most 50 | The part's texts, one for each column |
+| `marks` | array of words | At most 8, none repeated | Words marking the part, such as a field's `primary_key` |
+| `point_ids` | array of whole numbers | At most 2, each 8 or more | The numbers of the connection points the part owns |
+
+**Order.** The parts come in the order of the roles the entry declares, all the parts of one role
+together, and each role has a number of parts within the range the entry gives. A gauge, for example,
+has its bands and then its one needle. Within a role, the order of the parts is the shape's sequence:
+reading order, moving from part to part with the Tab key, VoiceOver and the order of parts in exported
+SVG all follow it.
+
+**Points.** A part owns connection points only from 8 up, and lists them in `point_ids`; no number is
+listed twice, by one part or by two. How many points a part of each role owns, and what each one is, is
+the entry's to say: in a shape that places its own points ([12.6](#126-the-elements-own-keys)), points
+0 to 7 are the shape's own and every point from 8 up belongs to one of its parts. A shape of a type or
+version the reader does not know whose element lists connection points MUST list every point its parts
+own among them.
+**Informative.** A new part takes the smallest unused numbers from 8 up; removing a part removes its
+points and releases the connectors attached to them where they were drawn, so a number used again
+attaches nothing by accident.
+
+**Part paint.** A part's `style` holds any of these five channels, at least one, and nothing else:
+
+| Key | Type | Rules | Meaning |
+| --- | --- | --- | --- |
+| `fill_hex` | colour | A colour ([README.md](README.md#terms)) | The part's fill colour |
+| `fill_texture` | string | A texture name ([13.10](#1310-textures)); only with `fill_hex` | The part's fill texture |
+| `stroke_hex` | colour | A colour | The part's line colour |
+| `stroke_texture` | string | A texture name; only with `stroke_hex` | The part's line texture |
+| `line_width` | number | 0 to 10,000 | The part's line weight in points |
+
+A missing channel follows the element's `style` ([section 5](#5-style)), with one rule for textures: a
+colour and its texture go together.
+
+| A part's `style` holds | Its fill is drawn with | Its line is drawn with |
+| --- | --- | --- |
+| No `fill_hex` | The shape's fill colour and fill texture | |
+| `fill_hex` alone | The part's colour, flat | |
+| `fill_hex` and `fill_texture` | The part's colour and texture | |
+| No `stroke_hex` | | The shape's line colour and line texture |
+| `stroke_hex` alone | | The part's colour, flat |
+| `stroke_hex` and `stroke_texture` | | The part's colour and texture |
+
+`line_width` stands alone: absent, the part has the shape's line weight. So a part keeps the shape's
+texture under a colour of its own only by naming that texture too. An empty `style`, `{}`, and a
+texture without its colour refuse the document. A part's lines are always solid.
+
+**A placed text layout.** A part's `text_layout`, and the record's `own_text_layout`, record where a
+person placed a text. Each has exactly these keys:
+
+| Key | Type | Required | Rules / bounds | Meaning |
+| --- | --- | --- | --- | --- |
+| `frame` | object | Yes | Exactly `x`, `y`, `width` and `height`, finite fractions of the element's frame; `width` and `height` 0 or more | The region: from `x × frame.width` across and `y × frame.height` down from the frame's top-left corner, `width × frame.width` wide and `height × frame.height` tall |
+| `position` | string | Yes | `top`, `middle` or `bottom` | Where the words sit in the region, as on any shape ([section 7](#7-text-layout)). `above` and `below` refuse the document |
+| `rotation_degrees` | number | No | More than 0 and less than 360; written only when it is not 0 | The region's turn, clockwise about its centre, on top of the element's |
+
+The region, turned as it is, lies inside the element's frame: each of its four corners within 0.01
+points. It MAY run over any line, hole or other part. A layout is present only where a person placed
+the text; without one, the text sits where its type puts it. **Informative.** When the number of a
+shape's parts changes, and for the few settings that change every part, the app returns each placed
+text to its type's place and stops saving its layout.
+
+### 12.4 Words
+
+Every word in a complex shape follows one spelling rule: its `type`, its setting names, a setting's
+word value, its roles and its marks. A word is lower-case letters and digits, starting with a letter,
+in groups joined by single underscores, and is at most 32 bytes:
+
+```text
+^[a-z][a-z0-9]*(_[a-z0-9]+)*$
+```
+
+`ring`, `entity_table`, `corner_tag` and `primary_key` are words. `Ring`, `rounded-rectangle`,
+`two__parts`, `_tail`, `tail_` and `3d` are not, and refuse the document wherever they appear.
+
+Words are machine words: they are stored exactly as written and never translated. Within a known type
+and version every list of words is **closed**: a word its entry does not list refuses the document. A
+new word for a setting or a mark is a new version of the entry ([12.7](#127-the-catalogue)).
+
+### 12.5 Members
+
+A shape that holds other shapes records them, in order, as a list of **members**: a container on its
+whole body (the record's `members`), and swimlanes lane by lane (each lane part's `members`). A member
+is an object of the same form a group member has, with exactly these two keys; any other refuses the
+document:
 
 | Key | Type | Required | Rules / bounds | Meaning |
 | --- | --- | --- | --- | --- |
 | `kind` | string | Yes | `element` or `group` | What the member is |
 | `id` | UUID | Yes | An element or group on the **same page** | Which one |
 
-A connector is never a member: a member of kind `connection` makes the app refuse the document. A
-member list MUST NOT repeat an entry. A container holds at most 1,000 members, a lane at most 1,000,
-and all the lanes of one swimlanes shape at most 2,000 together ([12.12](#1212-how-much-a-shape-and-a-page-hold)).
-Members are references only;
-each member keeps its own position in page coordinates, and the reader does not check that a member
-lies inside its holder's frame. The rules that involve other shapes on the page are in
-[12.11](#1211-rules-across-the-page).
-
-### 12.4 Which message a fault gives
-
-Faults in the record's *form* are found while the JSON is read and give the general message for an
-invalid `document.json`: an unknown type, key or enumerated value; a missing required key
-(`direction`, `lanes`, `row_sizes`, `column_sizes`, `cells`, or a lane's key); a lane or member `id`
-that is not a UUID; a member `kind` other than `element`, `group` or `connection`; and a list longer
-than its maximum (more than 50 lanes, 200 rows, 50 columns or 50 cells in a row). A member list
-longer than 1,000 is not one of these: it gets the message of
-[12.12](#1212-how-much-a-shape-and-a-page-hold), however long it is. A reader stops reading one
-past 2,001 entries, so a very long list costs little before it is refused.
-
-Faults in its *meaning* are found afterwards and give "Shape … holds a container, swimlanes, table,
-callout or lifeline record that is not valid.": no lanes, a share out of range, a cell count that does
-not match, more than 2,000 cells, strip or band sizes out of range, a forbidden flip or rotation, a
-frame below a smallest size, a tail rule, a member rule, or an entity table's rule. A generated shape's
-faults of meaning give "The shape … is not a valid generated shape." instead
-([generated-shapes.md](generated-shapes.md#10-the-three-checks)).
-
-Three exceptions: a fault in the shape's own text, a lane title or a cell gives the text messages of
-[section 6](#6-text-content); an `artwork_asset_id` that does not name an `editable_vector` asset
-gives "…invalid text in container artwork reference."; and a shape or page holding more than it may
-gives the message of its limit ([12.12](#1212-how-much-a-shape-and-a-page-hold)).
-
-### 12.5 `container`
-
-A frame with a title that holds other shapes.
-
-| Key | Type | Required | Rules / bounds | Meaning |
-| --- | --- | --- | --- | --- |
-| `members` | array of members | No | Default `[]`. At most 1,000; no repeats; no connectors | What the container holds, in order. The app always writes the key, even when empty |
-| `layout` | string | No | Default `free`. `free`, `automatic` or `proportional` | `free`: members stay where they are put. `automatic`: the members are meant to sit in order, left to right and then down (see below). `proportional`: when the container is resized, its members keep their sizes and their places spread out or close in with it (see below). The app writes the key only when it is not `free` |
-| `artwork_asset_id` | string | No | MUST name an embedded asset of kind `editable_vector` | A drawing the container wears in place of its plain box, stretched to its frame. Absent: the app's own rounded box |
-| `title_style` | string | No | Default `band`. `band` or `corner_tag` | `band`: the title is drawn along the top. `corner_tag`: the title is drawn in a tag in the top-left corner, sized to the title, as a UML frame names itself. The app writes the key only for `corner_tag` |
-
-An `automatic` or `proportional` container MUST NOT be turned: its `rotation_degrees`, reduced to one
-turn, MUST be 0 (so 0, 360 and −720 are all accepted).
-
-A new container made by the app has an empty title whose `base_alignment` is `leading`.
-
-**What `automatic` does in SimpleDiagrams 5.2.** The app keeps and draws an `automatic` container and
-its members exactly as stored: it does not move the members or resize the container on its own, either
-when the document opens or when it is edited. Apart from the rotation rule above, `automatic` changes
-nothing in how the document is read or drawn. Members are drawn where they are stored.
-
-**`proportional`.** Nothing more is stored for it: members are drawn where they are stored, and where
-they go is worked out only when a person resizes the container. **Informative.** On a resize the app
-keeps each member's centre at the same fraction of the container's content area (12 points in from the
-sides and bottom, below a 32-point title band), held inside that area, and moves no member that is
-locked. A container inside a proportional container moves like any member and then spreads its own
-members when it is resized.
-
-**The arrangement.** The RECOMMENDED placement for an automatic container's members, and its height, is
-this arrangement. Members keep their sizes and are placed in
-list order, each in a slot as large as its upright bounding box: from 12 points inside the left edge
-and 32 points below the top, 12 points apart, wrapping to a new row before crossing 12 points inside
-the right edge. Each row is as tall as its tallest slot, and members are centred on their row's middle
-line. The container's height is the title band, the rows and 12 points of padding at the bottom.
-
-**Informative: the corner tag.** The tag's size is never stored; the app sizes it to the title each
-time it is drawn.
-
-Example record:
-
-```json
-{
-  "type": "container",
-  "members": [{"kind": "element", "id": "3B9E1F2A-6C4D-4E8F-A0B2-C4D6E8F0A1B3"}],
-  "title_style": "corner_tag"
-}
-```
-
-### 12.6 `swimlanes`
-
-One shape divided into parallel lanes. Each lane has a title strip and its own members, and a title
-band across the top of the whole shape holds the shape's own title.
-
-| Key | Type | Required | Rules / bounds | Meaning |
-| --- | --- | --- | --- | --- |
-| `direction` | string | Yes | `horizontal` or `vertical` | `horizontal`: lanes are rows, their title strips down the left side. `vertical`: lanes are columns, their title strips across the top of each lane |
-| `lanes` | array of lanes | Yes | 1 to 50 | The lanes, from the top (horizontal) or from the left (vertical) |
-| `title_strip_size` | number, diagram points | No | Default `28`. Finite, 28 to 10,000 | How thick every lane's title strip is. The app writes the key only when it is not 28 |
-| `title_band_size` | number, diagram points | No | Default `28`. Finite, 28 to 10,000 | How tall the band across the top is. The app writes the key only when it is not 28 |
-
-A **lane** has exactly these four keys. Any other key makes the app refuse the document.
-
-| Key | Type | Required | Rules / bounds | Meaning |
-| --- | --- | --- | --- | --- |
-| `id` | UUID | Yes | Unique among this shape's lanes | The lane's identity. It is unique only within its shape, not in the document: a copied shape keeps its lanes' identifiers |
-| `title` | text content | Yes | As any text content ([section 6](#6-text-content)), and at most 1,000 characters and 100 runs | The lane's title |
-| `size` | number | Yes | Finite, 0.000001 to 1,000,000 | The lane's thickness as a **share**: its part of the sum of all the lanes' sizes, not a length in points |
-| `members` | array of members | Yes | As a container's: at most 1,000. MUST be present even when empty | What the lane holds, in order. All the lanes of one shape hold at most 2,000 together |
-
-**Laying out the lanes.** The title band is `title_band_size` points tall across the top of the frame.
-The lanes share what is left of the frame between them, in proportion to their `size` values:
-
-| `direction` | Each lane's frame, before rotation | Smallest sizes the frame MUST allow |
-| --- | --- | --- |
-| `horizontal` | Full frame width; height = (frame height − title band) × `size` ÷ sum of sizes; stacked top to bottom below the band | Frame width at least `title_strip_size`; every lane at least 28 points tall |
-| `vertical` | Full height below the band; width = frame width × `size` ÷ sum of sizes; side by side from the left | Every lane at least 28 points wide; frame height minus the title band at least `title_strip_size` |
-
-A frame too small for its lanes makes the app refuse the document with the complex shape message
-([12.4](#124-which-message-a-fault-gives)). The comparison allows a relative shortfall of 10⁻⁹, so a
-size worked out from shares that lands a rounding error below its smallest still passes.
-
-A new swimlanes shape made by the app has three horizontal lanes of `size` 1, titled "Lane 1" to
-"Lane 3" in the language of the Mac that made it.
-
-Example record:
-
-```json
-{
-  "type": "swimlanes",
-  "direction": "horizontal",
-  "lanes": [
-    {
-      "id": "5C0A7E21-94B3-4D6F-8A1E-0B2C3D4E5F60",
-      "title": {
-        "base_alignment": "center",
-        "base_style": {"color_hex": "#212529", "font_size": 15, "is_italic": false,
-                       "is_underlined": false, "weight": "medium"},
-        "character_runs": [], "paragraph_runs": [], "string": "Sales"
-      },
-      "size": 1,
-      "members": []
-    }
-  ]
-}
-```
-
-### 12.7 `table`
-
-Rows and columns with text in each cell.
-
-| Key | Type | Required | Rules / bounds | Meaning |
-| --- | --- | --- | --- | --- |
-| `row_sizes` | array of numbers | Yes | 1 to 200 entries, each finite, 0.000001 to 1,000,000 | Each row's height as a share of the table's height |
-| `column_sizes` | array of numbers | Yes | 1 to 50 entries, each as above | Each column's width as a share of the table's width |
-| `cells` | array of rows, each an array of text content | Yes | Exactly one row per entry of `row_sizes`, and in every row exactly one cell per entry of `column_sizes`; at most 2,000 cells in all. Each cell at most 2,000 characters and 200 runs; all the cells together at most 100,000 characters and 10,000 runs | Each cell's text, row by row ([section 6](#6-text-content)) |
-| `header_row` | boolean | No | Default `true` | `true`: the first row is drawn as a header, its text bold on a band of the fill colour. It changes only how the row is drawn, never the stored text. The app writes the key only when it is `false` |
-| `variant` | string | No | `entity` | Absent: a plain table. `entity`: an entity table ([below](#entity-tables)) |
-| `row_ids`, `row_marks`, `row_point_ids` | arrays | With `variant` only, and then required | [Entity tables](#entity-tables) | An entity table's rows |
-
-A row's height is the frame height × its share ÷ the sum of `row_sizes`; a column's width likewise
-from the frame width. With the frame as stored, no column may be narrower than 16 points and no row
-shorter than 12 points (with the same 10⁻⁹ allowance as lanes).
-
-The table element's own `text_content.string` MUST be empty.
-
-A new table made by the app has three rows and three columns, all shares 1, and empty cells.
-
-Example record of a table with two rows and two columns, the first column twice as wide as the
-second. Each cell is a complete text content record; the second row's cells are left empty.
-
-```json
-{
-  "type": "table",
-  "row_sizes": [1, 1],
-  "column_sizes": [2, 1],
-  "cells": [
-    [
-      {"base_alignment": "center", "character_runs": [], "paragraph_runs": [], "string": "Item",
-       "base_style": {"color_hex": "#212529", "font_size": 15, "is_italic": false,
-                      "is_underlined": false, "weight": "medium"}},
-      {"base_alignment": "center", "character_runs": [], "paragraph_runs": [], "string": "Qty",
-       "base_style": {"color_hex": "#212529", "font_size": 15, "is_italic": false,
-                      "is_underlined": false, "weight": "medium"}}
-    ],
-    [
-      {"base_alignment": "center", "character_runs": [], "paragraph_runs": [], "string": "",
-       "base_style": {"color_hex": "#212529", "font_size": 15, "is_italic": false,
-                      "is_underlined": false, "weight": "medium"}},
-      {"base_alignment": "center", "character_runs": [], "paragraph_runs": [], "string": "",
-       "base_style": {"color_hex": "#212529", "font_size": 15, "is_italic": false,
-                      "is_underlined": false, "weight": "medium"}}
-    ]
-  ]
-}
-```
-
-#### Entity tables
-
-An **entity table** describes one entity of a database: its name in a header row, then one row for each
-field, holding the field's name in the first column and its type in the second. Its record is a table
-record with `"variant": "entity"` and three more keys, one entry per row in each. Every rule of a plain
-table above still applies.
-
-| Key | Type | Required | Rules / bounds | Meaning |
-| --- | --- | --- | --- | --- |
-| `variant` | string | Yes, for an entity table | Exactly `entity` | Makes the table an entity table. Any other word refuses the document |
-| `row_ids` | array of UUIDs | Yes, with `variant` | One per row, the header's included; unique within the table | Each row's identity. Like a lane's, it is unique only within its table: a copied table keeps its rows' identifiers |
-| `row_marks` | array of arrays of strings | Yes, with `variant` | One list per row. The header's is `[]`. A field's holds at most 8 marks, none repeated, each a name of 1 to 32 characters matching `^[a-z][a-z0-9_]{0,31}$` | What each field is: a key, unique, and so on (below) |
-| `row_point_ids` | array of arrays of whole numbers | Yes, with `variant` | One list per row. The header's is `[]`. A field's holds exactly 2 numbers, each 8 or more and the number of one of the element's connection points | The connection points at the left and right ends of each field, in that order |
-
-The three row keys are refused on a table without `variant`, and `variant` is refused without all
-three. A writer MUST also keep these rules, which the app checks on reading and after every edit:
-
-- exactly two columns, names and types;
-- `header_row` absent or `true`, and the header's second cell empty: the header names the entity across
-  both columns;
-- 1 to 60 fields, so 2 to 61 rows;
-- `row_sizes`, `cells`, `row_ids`, `row_marks` and `row_point_ids` all of the same length;
-- no two rows with the same identifier;
-- every connection point numbered 8 or more listed by exactly one field, and none listed twice; and
-  points 0 to 7 present at the standard eight places ([section 8](#8-connection-points)), each within
-  0.000001 of its place on both axes.
-
-An entity table's connection points are ordinary points, fractions of the element's frame. Points 0
-to 7 are for lines to the whole entity; a field's two points are for a relationship drawn to that field.
-
-**Marks.** A mark is a name, and the list is open. SimpleDiagrams 5.2 draws five: `primary_key`,
-`foreign_key`, `unique`, `indexed` and `nullable`. A reader keeps a mark it does not know, writes it
-back, and does not draw it.
-
-**Informative: how the app lays out an entity table.** The header row spans both columns. A field's two
-points sit at `x` 0 and 1, at the middle of the field's row, and the app writes them again whenever
-rows change, so a connector follows its field. A new field takes the two smallest unused numbers from 8
-up. The drawn marks of a field are small icons stacked in one narrow column at the start of the name
-cell, always in the order above, whatever their saved order; that column is present whenever any field
-has a drawn mark, so the names line up. A new entity table made by the app is 220 by 96 points, with a
-header and the fields `id` (type `uuid`, marked `primary_key`) and `name` (type `text`).
-
-Example record of an entity table with two fields, the first a primary key (the cells are shortened
-here; each is a complete text record):
-
-```json
-{
-  "type": "table",
-  "variant": "entity",
-  "row_sizes": [1, 1, 1],
-  "column_sizes": [2, 1],
-  "cells": [["… Customer …", "… empty …"], ["… id …", "… uuid …"], ["… email …", "… text …"]],
-  "row_ids": [
-    "0B6E5C1A-2D3F-4A5B-8C6D-7E8F9A0B1C2D",
-    "1C7F6D2B-3E4A-4B6C-9D7E-8F9A0B1C2D3E",
-    "2D80EE3C-4F5B-4C7D-8E8F-9A0B1C2D3E4F"
-  ],
-  "row_marks": [[], ["primary_key"], []],
-  "row_point_ids": [[], [8, 9], [10, 11]]
-}
-```
-
-### 12.8 `callout`
-
-A speech bubble with an optional tail.
-
-| Key | Type | Required | Rules / bounds | Meaning |
-| --- | --- | --- | --- | --- |
-| `tail_tip` | point, diagram points | No | Finite; and once placed on the page (below), each coordinate within ±1,000,000,000 | Where the tail points, measured from the centre of the frame along the bubble's own axes, before rotation and flipping. Absent: no tail |
-| `tail_attachment` | object | No | Only with `tail_tip`; see below | Locks the tail to a numbered connection point on another shape |
-
-**Placing the tip on the page.** Take the point `(width / 2 + tail_tip.x, height / 2 + tail_tip.y)`
-relative to the frame's top-left corner; mirror it about the frame's centre for each flip that is
-`true`; then turn it about the frame's centre by `rotation_degrees`. A free tail therefore moves and
-turns with its bubble.
-
-**A locked tail.** `tail_attachment` is an attachment record of the form a connector end uses (see
-[connections.md](connections.md)), and refuses unknown keys in the same way. For a callout it MUST be
-the numbered-point form:
-
-```json
-{"element_id": "7E1A3C5F-9B2D-4E6A-8C0B-1D3F5A7C9E02", "connection_point_id": 1}
-```
-
-- It MUST name a connection point that an element on the **same page** has.
-- It MUST NOT name the callout itself.
-- It MUST NOT use the attach-line form (`attach_line_id` and `distance`).
-- `tail_tip` MUST be present as well. It records where the tail was last drawn, and is used again if
-  the lock is removed.
-
-A locked tail is drawn to its target's connection point, wherever that shape now is. That drawn tip,
-expressed in the bubble's own axes and placed back on the page, MUST also lie within ±1,000,000,000 on
-both axes.
-
-**Informative.** A tip that lies inside the bubble's frame, or on its edge, draws no tail; it is kept,
-so moving the bubble or the tip outward shows the tail again. A new callout made by the app has
-`tail_tip` `{"x": -40, "y": 70}`.
-
-### 12.9 `lifeline`
-
-A participant in a UML sequence diagram: a head holding its name, and a dashed line down from the
-bottom centre of the head to the bottom of the frame.
-
-| Key | Type | Required | Rules / bounds | Meaning |
-| --- | --- | --- | --- | --- |
-| `head_style` | string | No | Default `box`. `box` or `actor` | `box`: the name in a box. `actor`: a stick figure with the name below it. The app writes the key only for `actor` |
-| `ends_in_destroy_mark` | boolean | No | Default `false` | `true`: the line ends in UML's destroy mark, an X centred on the line's end. The app writes the key only when it is `true` |
-
-**Geometry.** The head spans the full width of the frame at its top and is 40 points tall for `box`,
-72 points for `actor`. The line runs from the bottom centre of the head (`x` = 0.5 of the frame) down
-to the bottom of the frame, or, with a destroy mark, to 12 points above the bottom, where the centre
-of the 24-point mark is.
-
-**Smallest height.** The frame's height MUST be at least the head's height plus 20 points of line, plus
-12 more with a destroy mark:
-
-| `head_style` | Without destroy mark | With destroy mark |
-| --- | --- | --- |
-| `box` | 60 | 72 |
-| `actor` | 92 | 104 |
-
-**The attach line.** A lifeline offers connectors one **attach line**, number `0`: its dashed line,
-measured from its start at the head. A connector end may be attached anywhere along it; how such an
-attachment is stored is specified in [connections.md](connections.md). A lifeline offers the attach
-line whatever its `connection_points` are. A callout's tail cannot lock to the attach line, but it
-may lock to one of the lifeline's numbered connection points, such as point `2` below.
-
-A new lifeline made by the app has one connection point, number `2`, at the top centre of its head.
-
-Example record:
-
-```json
-{"type": "lifeline", "head_style": "actor"}
-```
-
-### 12.10 `generated`
-
-A shape such as a ring, a flow of steps, a pyramid or funnel, a cycle or a gauge. A generator, code in
-the app, works its drawing out from a few settings, and the record saves the finished drawing as
-**parts**, each a few closed outlines with an optional text slot, so that any reader can draw, paint,
-label, move and resize the shape without that code. The record and its rules, the transform that
-places it in the element's frame, the five generators SimpleDiagrams 5.2 ships and the incomplete form
-another program may write are specified in [generated-shapes.md](generated-shapes.md).
-
-On the element:
-
-- `text_content` is the shape's own text where its generator gives it one (a gauge's caption), and
-  otherwise MUST be empty for a generator version the reader knows;
-- `connection_points` are fractions of the frame the parts were drawn for, not of the element's frame
-  ([generated-shapes.md](generated-shapes.md#8-connection-points));
-- `flip_horizontal` and `flip_vertical` MUST be `false`, `preserves_aspect_ratio` MUST NOT be `true`,
-  and `text_layout` is forbidden; `rotation_degrees` turns the shape as any element.
-
-Example record: [generated-shapes.md](generated-shapes.md#15-an-example).
-
-### 12.11 Rules across the page
-
-These rules involve more than one shape and are checked with the rest of the page. A broken rule makes
-the app refuse the document with "Shape … holds a container, swimlanes, table, callout or lifeline
-record that is not valid.", naming the holder or callout.
+A connector is never a member: a member of kind `connection` refuses the document. A member list MUST
+NOT repeat an entry. A container holds at most 1,000 members, a lane at most 1,000, and all the lanes
+of one swimlanes shape at most 2,000 together ([12.11](#1211-how-much-a-shape-and-a-page-hold)).
+Members are references only: each member keeps its own position in page coordinates, and the reader
+does not check that a member lies inside its holder's frame. The rules that involve other shapes on the
+page are in [12.10](#1210-rules-across-the-page).
+
+### 12.6 The element's own keys
+
+A complex shape is an ordinary element in every other way: it has a frame, a rotation, a style, a
+stacking position, a lock, connection points and shape data. In addition:
+
+- **Text.** `text_content` is the shape's own text where its type has one: a container's title, the
+  title across the top of swimlanes, a callout's words, a lifeline's name, a gauge's caption. A type
+  without text of its own (a table, an entity table, a ring, a flow, a pyramid, a cycle) keeps its
+  `text_content.string` empty, so that no hidden words travel in files, searches or exports. The
+  entry places the shape's own text, so `text_layout` is forbidden on every complex shape; a type whose
+  entry allows it records a place a person chose in `own_text_layout` instead.
+- **Flips.** Among the types the catalogue lists, only a callout may be flipped: on every other
+  listed type, `flip_horizontal` and `flip_vertical` MUST be `false`. A shape of a type or version the
+  reader does not know keeps its flips as written, and a reader MUST NOT refuse a document for them
+  ([12.8](#128-reading-a-complex-shape)).
+- **Connection points.** An entity table, a ring, a flow, a pyramid, a cycle and a gauge **place their
+  own points**: their element MUST list none, `"connection_points": []`, and the reader works the points
+  out from the shape as it reads the document. Their numbers are fixed: points 0 to 7 as the entry
+  gives them, and from 8 up the numbers the parts list. Each entry says where its points are. Every
+  other complex shape lists its points as any element does ([section 8](#8-connection-points)).
+- **Proportions.** `preserves_aspect_ratio` MUST NOT be `true` on a ring, a flow, a pyramid, a cycle or a
+  gauge: each entry says how its shape resizes.
+- **Style.** `style` gives the fill and line as for any shape ([section 5](#5-style)); a part's own
+  `style` overrides it channel by channel ([12.3](#123-parts)).
+
+### 12.7 The catalogue
+
+What each type holds is not on this page. It is in the **complex-shape catalogue**,
+[complex-shapes/](complex-shapes/README.md): one entry for each type and version SimpleDiagrams knows,
+each with a page that explains the shape and a JSON Schema, `<version>.schema.json`. An entry declares
+the shape's settings, with their kinds, ranges, words and defaults; its roles, in order, with their
+counts and the keys each role's parts hold; whether it holds members on its whole body, has text of its
+own, lets a person place that text, and places its own connection points; the rules that relate its
+values to each other; and, informatively, how the app draws it.
+
+**How the catalogue grows.** A later SimpleDiagrams release, within document format 19, may add a new
+type, or a new version of a type already listed, each as a new entry with its own page and schema.
+Nothing else changes: an entry, once published, never changes, its lists of words stay closed, and the
+structure of [12.1](#121-the-structure) stays as it is. A new setting, role, key or word for an existing
+type is a new version. So a document that was valid stays valid, and means what it meant. Each
+addition is recorded in the repository's CHANGELOG.
+
+### 12.8 Reading a complex shape
+
+A reader holds every complex shape to the structure, [12.1](#121-the-structure) to
+[12.6](#126-the-elements-own-keys), whether or not it knows the type. Then:
+
+**A type and version the reader knows.** The record MUST hold exactly what the entry declares: every
+setting it requires and no other, each of its kind, range and words; `members` exactly when the entry
+holds members on its whole body; `own_text_layout` only where the entry allows it; parts in the
+entry's roles and order, each role's count in its range; each part with every key its role requires
+and no key its role does not allow; and each part's points as the entry declares. And it MUST keep the
+entry's rules. An unknown key, role or word in a known type and version refuses the document: such a
+record is never read as one from a later version to escape a check.
+
+**A type, or a version of a type, the reader does not know.** The document opens: such a shape comes
+from a later release of SimpleDiagrams, which can draw it. The reader keeps the record as it read it
+and writes it back unchanged, except for the settling of its references below, and MUST NOT refuse it
+for settings, roles, keys or words it does not know, or for its element's flips. It is still held to
+the structure, to the rules of the element's own keys that hold for every type, and to the rules across
+the page: its members are held as any holder's, so a shape that holds members counts among a page's
+containers and swimlanes ([12.11](#1211-how-much-a-shape-and-a-page-hold)) and is never in a group;
+its attachment settings follow the rules of a callout's locked tail
+([12.10](#1210-rules-across-the-page)); and every embedded asset its settings name is one the document
+holds. Its placed texts are not checked against its frame, since only its entry could say where they
+belong.
+
+**Informative: what the app does with one.** The app draws it as a labelled box in its frame, "Made with
+a newer version of SimpleDiagrams." It can be moved, resized, turned, deleted, copied and locked, and
+grouped unless it holds shapes, as no holder may be in a group; it cannot be painted, have its text
+edited or have a part chosen. Its element's flips are kept as written. The app changes such a record
+only to keep its references true, as it does a container's: a member that names a shape the person
+deletes is dropped; a group that is ungrouped gives back its members in its place; members that a person
+groups are replaced by their outermost group, where every shape of that group was already a member,
+and otherwise leave the list; and an attachment setting whose shape or connection point is gone is
+dropped. When
+its element lists connection points, they are kept. When it lists none, the app gives it the standard
+eight on its frame ([section 8](#8-connection-points)) and puts each point its parts list at the frame's
+centre, so every connector attached to it still has a point to end on; it writes the list back empty.
+
+### 12.9 Which message a fault gives
+
+A fault in the **structure** of a complex shape ([12.1](#121-the-structure) to
+[12.5](#125-members)) is found while the JSON is read, and gives the general message for an invalid
+`document.json`: "The SimpleDiagrams document contains an invalid document.json file." That covers an
+unknown key, a `null`, a value of the wrong kind, a word that breaks the spelling rule, a `version` out
+of range, a list past its limit, a part identifier used twice, a mark repeated on one part, a point
+numbered below 8 or listed twice, a part's paint without a channel or with a texture beside no colour, and a placed text set
+`above` or `below`. It holds whether or not the reader knows the type.
+
+Every other fault refuses the document with one message naming the shape: "The shape *id* is not a
+valid complex shape.", *id* being the element's identifier. That covers a fault against the entry's
+declarations, such as a missing or undeclared setting, a word the entry does not list, parts out of
+order or past their counts, or a key a role does not have; a fault against the entry's rules; a fault
+in the element's own keys ([12.6](#126-the-elements-own-keys)), such as a flip or listed points; a
+member list that repeats an entry or names a connector; an embedded asset a shape of an unknown type
+names that the document does not hold; and a broken rule across the page.
+
+Five exceptions:
+
+- a fault in the element's frame, position or rotation gives the message any element gives
+  ([section 3](#3-identity-frame-rotation-and-flips)), such as "The diagram contains an invalid number
+  in element width.";
+- a fault in the shape's own text, a part's text or a cell gives the messages any text gives
+  ([section 6](#6-text-content));
+- a `text_layout` on the element gives "…invalid text in unexpected element text layout."
+  ([section 10](#10-which-kind-may-carry-which-key));
+- a member list longer than 1,000, and a shape or page holding more than it may, give the message of
+  its limit ([12.11](#1211-how-much-a-shape-and-a-page-hold)), however long the list is;
+- an embedded-asset setting of a known type that names no asset of the kind its entry requires gives
+  the message of an asset reference ([assets.md](assets.md)), such as "…invalid text in container artwork reference.".
+
+### 12.10 Rules across the page
+
+These rules involve more than one shape and are checked with the rest of the page. A broken rule
+refuses the document with the complex-shape message, naming the holder or the shape whose attachment
+is broken. A **holder** here is a shape with a place to hold shapes: a container, swimlanes, or a shape
+of a type the reader does not know that has `members` on its body or on a part.
 
 1. Every member names an element or group on the **same page** as its holder, and never the holder
    itself.
-2. Swimlanes are never a member of a container or lane.
-3. An element or group is a member of at most one container or lane.
+2. Swimlanes are never a member of a holder.
+3. An element or group is a member of at most one holder.
 4. A group can be a member only as a whole, and only a group that is not itself inside another group:
    no element or group that is inside a group may also be a member on its own.
-5. A container or swimlanes MUST NOT be a member of any group. (A container holding it does that job.)
-6. Containers and swimlanes nest at most **4** levels deep (a holder inside a holder inside a holder
-   inside a holder), with no loops.
-7. A callout's locked tail names a connection point its target has, on the same page, and the tail's
-   drawn tip lies within ±1,000,000,000 on both axes ([12.8](#128-callout)).
+5. A holder MUST NOT be a member of any group. (A container holding it does that job.)
+6. Holders nest at most **4** levels deep (a holder inside a holder inside a holder inside a holder),
+   with no loops.
+7. An attachment setting, such as a callout's locked tail, names a connection point that another
+   element on the same page has. A callout's tail, as drawn, lies within ±1,000,000,000 on both axes
+   ([callout](complex-shapes/callout/README.md)).
 
 Nothing compares a complex shape, its members or a callout's tip with the page's stored `width` and
 `height`; "on the page" means within the coordinate limits.
@@ -1236,19 +1155,19 @@ Nothing compares a complex shape, its members or a callout's tip with the page's
 
 | Budget | Limit | Refusal example |
 | --- | --- | --- |
-| One swimlanes or generated shape's text: its own `text_content` and every lane title or text slot together | 1,000,000 bytes of UTF-8 and 100,000 runs | "…invalid text in text content." / "…too many text-formatting runs (*n*)." |
-| Lane titles, table cells and generated shapes' text slots across the whole document | 100,000 | "The diagram contains too many lane titles and table cells (*n*)." |
+| One shape's text other than a table's: its own `text_content` and every part's `text` together | 1,000,000 bytes of UTF-8 and 100,000 runs | "…invalid text in text content." / "…too many text-formatting runs (*n*)." |
+| Part texts and cells across the whole document | 100,000 | "The diagram contains too many lane titles and table cells (*n*)." |
 
 A table's cells, and how much a page's complex shapes hold, have limits of their own
-([12.12](#1212-how-much-a-shape-and-a-page-hold)).
+([12.11](#1211-how-much-a-shape-and-a-page-hold)).
 
-**Informative: drawing order.** A container or swimlanes is drawn, and clicked, just behind the lowest
-thing it holds: a member, a member of a group it holds, a container inside it, or a connector joined
-to one of these. Inner holders are placed first, so a container inside another lands behind its own
-contents and the outer one behind it. This drawn order is worked out every time and never stored; a
-writer cannot put a container in front of its own contents.
+**Informative: drawing order.** A holder is drawn, and clicked, just behind the lowest thing it holds: a
+member, a member of a group it holds, a holder inside it, or a connector joined to one of these. Inner
+holders are placed first, so a container inside another lands behind its own contents and the outer
+one behind it. This drawn order is worked out every time and never stored; a writer cannot put a
+container in front of its own contents.
 
-### 12.12 How much a shape and a page hold
+### 12.11 How much a shape and a page hold
 
 These limits keep a document that one person makes from hanging or exhausting the Mac of another who
 opens it. They are set far above any diagram drawn by hand. A document over any of them is refused as
@@ -1269,37 +1188,64 @@ and paragraph runs of one text content together ([6.3](#63-runs-and-ranges)).
 | One table cell's runs | 200 | "The diagram contains a table cell with too many text-formatting runs (*n*)." |
 | All the cells of one table: characters | 100,000 | "The diagram contains a table with too much text (*n* characters)." |
 | All the cells of one table: runs | 10,000 | "The diagram contains a table with too many text-formatting runs (*n*)." |
-| Complex shapes on one page, of every type, generated shapes included | 2,000 | "The diagram contains a page with too many complex shapes (*n*)." |
+| Complex shapes on one page, of every type | 2,000 | "The diagram contains a page with too many complex shapes (*n*)." |
 | Containers and swimlanes on one page together | 500 | "The diagram contains a page with too many containers and swimlanes (*n*)." |
-| Characters in all the lane titles, table cells and generated shapes' text slots on one page together | 1,000,000 | "The diagram contains a page with too much text in its complex shapes (*n* characters)." |
+| Characters in all the part texts and cells of one page's complex shapes together | 1,000,000 | "The diagram contains a page with too much text in its complex shapes (*n* characters)." |
 
 *n* is the count the document holds, written as numbers are in the reader's language, for example
-`1,001` in English. A shape's own
-`text_content` is held to the limits every element's text has ([section 6](#6-text-content)), not to
-these. A generated shape's text slots have a limit of their own, 500 characters each
-([generated-shapes.md](generated-shapes.md#5-text-areas)). When a document breaks more than one limit, which message it gets is not specified.
+`1,001` in English. A shape's own `text_content` is held to the limits every element's text has
+([section 6](#6-text-content)), not to these. An entity table's cells are a table's cells here. The
+texts of a ring's sections, a flow's steps, a pyramid's layers, a cycle's steps and a gauge's bands have
+a limit of their own, 500 characters each, given in their entries. When a document breaks more than one
+limit, which message it gets is not specified.
+
+### 12.12 An example
+
+A ring of one section, as the app's Ring tile places it: 200 by 200 points, its band 40 points wide.
+The section's text reads "Customers" (shortened here; it is a complete text record, [section 6](#6-text-content)).
+
+```json
+{
+  "type": "ring",
+  "version": 1,
+  "settings": {"ring_width": 40},
+  "parts": [
+    {
+      "id": "7DD1BEF2-4998-5B81-A60A-2A1CE5D1AA81",
+      "role": "section",
+      "text": "… Customers …",
+      "point_ids": [8]
+    }
+  ]
+}
+```
+
+That is the whole record: the app draws the band, the section's outline, where its text sits and where
+its point lies from `ring_width`, the one section and the element's frame. The element beside it has
+an empty `text_content` and `"connection_points": []`; as the document is read, the ring gets points 0
+to 7 on its circle and point 8, the section's, at the middle of its outer edge
+([ring](complex-shapes/ring/README.md)). The complete element is in the
+[`complex-shapes`](examples/complex-shapes.simplediagram/) example, beside a flow, a pyramid, a cycle
+and a gauge.
 
 ## 13. Enumerated values
 
 Every value below is stored exactly as shown, and is case-sensitive. An unknown value makes the app
-refuse the document, except in three open lists: `marker_tip`, which is read as absent; `note_style`,
-which is read as a sticky note ([13.2](#132-note_style)); and an entity table's marks, which are kept and
-not drawn ([Entity tables](#entity-tables)). A generated shape's own words are listed in
-[generated-shapes.md](generated-shapes.md#13-limits).
+refuse the document, except in two open lists: `marker_tip`, which is read as absent, and `note_style`,
+which is read as a sticky note ([13.2](#132-note_style)). A shape of a complex-shape type or version the
+reader does not know is not refused but opened as a placeholder ([12.8](#128-reading-a-complex-shape)).
 
 ### 13.1 Element and complex shape values
 
 | Where | Values |
 | --- | --- |
 | Element `kind` | `rectangle`, `ellipse`, `note`, `text`, `symbol`, `editable_vector`, `svg_artwork`, `image`, `path`, `unresolved`, `complex_shape` |
-| `complex_shape.type` | `container`, `swimlanes`, `table`, `callout`, `lifeline`, `generated` |
-| Container `layout` | `free`, `automatic`, `proportional` |
-| Table `variant` | `entity` |
-| Entity table marks drawn by SimpleDiagrams 5.2 (an open list) | `primary_key`, `foreign_key`, `unique`, `indexed`, `nullable` |
-| Container `title_style` | `band`, `corner_tag` |
-| Swimlanes `direction` | `horizontal`, `vertical` |
-| Lifeline `head_style` | `box`, `actor` |
-| Container and lane member `kind` | `element`, `group` (`connection` is read but refused) |
+| `complex_shape.type` in document format 19's catalogue | `container`, `swimlanes`, `table`, `entity_table`, `callout`, `lifeline`, `ring`, `flow`, `pyramid`, `cycle`, `gauge` |
+| Part `text_layout.position` and `own_text_layout.position` | `top`, `middle`, `bottom` |
+| Member `kind` | `element`, `group` (`connection` is read but refused) |
+
+The settings' words, the roles and the marks of each type are listed in its
+[catalogue entry](complex-shapes/README.md).
 
 ### 13.2 `note_style`
 
@@ -1310,7 +1256,7 @@ not drawn ([Entity tables](#entity-tables)). A generated shape's own words are l
 | `tapedNote` | A scrap of paper held up by clear tape |
 | `tag` | A luggage tag with a hole and string |
 | `notebookPage` | A ruled notebook page with punched holes |
-| `pinnedNote` | Paper held by a red push pin |
+| `pinnedNote` | Paper held by a grey push pin |
 
 An open list: a reader draws any other word as a sticky note ([11.3](#113-note)).
 
@@ -1386,4 +1332,6 @@ value:
    version.
 2. **Drawing details** such as text measurement and wrapping, texture tile sizes, ending sizes, marker
    ink shapes and the hand-drawn pen's wobble are the app's own presentation. They do not affect
-   whether a document is valid, and are not specified here.
+   whether a document is valid, and are not specified here. So is how each complex shape is drawn from
+   its settings: a later release may refine it, and the refinement reaches documents already saved,
+   without changing what any of them means.

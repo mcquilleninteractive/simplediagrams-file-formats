@@ -1,12 +1,12 @@
 # Refused: entity table of 61 fields
 
-**Rule broken:** An entity table has 1 to 60 fields below its header. Here it has 61, and so, with two points a field, 130 connection points, past the 128 an element may have. SimpleDiagrams 5.2 refuses it for its fields, while reading, with the message below.
+**Rule broken:** An entity table has 1 to 60 fields below its header. Here it has 61.
 
-**Stated in:** [elements.md](../../elements.md#entity-tables), Entity tables.
+**Stated in:** [complex-shapes/entity_table/README.md](../../complex-shapes/entity_table/README.md#parts), Parts.
 
-**Caught by the JSON Schemas:** Yes: `document.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/entity_table/1.schema.json`.
 
-**The app's message (English):** "The SimpleDiagrams document contains an invalid document.json file."
+**The app's message (English):** "The shape E4F8E1CE-0433-5961-9C8B-547FEB49C38E is not a valid complex shape."
 
 ## In this folder
 
@@ -14,4 +14,4 @@
 
 ## To make it valid
 
-Remove the last field, with its two points.
+Remove the last field.

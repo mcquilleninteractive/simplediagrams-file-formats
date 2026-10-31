@@ -1,12 +1,12 @@
 # Refused: label above its shape
 
-**Rule broken:** A text area of a generated shape is placed `top`, `middle` or `bottom`, never `above` or `below`. Here the label's `position` is `above`.
+**Rule broken:** A placed text's `position` is `top`, `middle` or `bottom`, never `above` or `below`. Here the section's label has `"position": "above"`.
 
-**Stated in:** [generated-shapes.md](../../generated-shapes.md#5-text-areas), Text areas.
+**Stated in:** [elements.md](../../elements.md#123-parts), Parts.
 
 **Caught by the JSON Schemas:** Yes: `document.schema.json`.
 
-**The app's message (English):** "The shape FCA10BA5-1291-558C-87C7-7C411BF0C672 is not a valid generated shape."
+**The app's message (English):** "The SimpleDiagrams document contains an invalid document.json file."
 
 ## In this folder
 

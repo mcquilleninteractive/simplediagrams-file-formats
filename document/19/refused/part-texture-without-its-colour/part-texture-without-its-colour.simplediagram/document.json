@@ -26,67 +26,35 @@
       "elements": [
         {
           "complex_shape": {
-            "generator": "com.simplediagrams.ring",
-            "generator_version": 1,
-            "made_at": {"height": 200, "width": 200},
             "parts": [
               {
                 "id": "6B829851-805A-5DAC-BE0B-D916360C55B6",
-                "loops": [
-                  [["A", 100, 100, 100, -90, 270, "start", 1]],
-                  [["A", 100, 100, 60, -90, 270, "start", 1]]
-                ],
                 "point_ids": [8],
                 "role": "section",
                 "style": {"fill_texture": "PencilFill"},
-                "texts": [
-                  {
-                    "slot": "label",
-                    "text": {
-                      "base_alignment": "center",
-                      "base_style": {
-                        "color_hex": "#212529",
-                        "font_size": 15,
-                        "is_italic": false,
-                        "is_underlined": false,
-                        "weight": "medium"
-                      },
-                      "character_runs": [],
-                      "paragraph_runs": [],
-                      "string": ""
-                    },
-                    "text_layout": {
-                      "frame": {
-                        "height": 0.10362643408006988,
-                        "width": 0.20725286816013977,
-                        "x": 0.3963735659199301,
-                        "y": 0.8481867829599651
-                      },
-                      "position": "middle"
-                    }
-                  }
-                ]
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
               }
             ],
-            "resizing": "proportional",
             "settings": {"ring_width": 40},
-            "stacking": "last_in_front",
-            "type": "generated"
+            "type": "ring",
+            "version": 1
           },
           "content": {
             "content": {
               "content": {
-                "connection_points": [
-                  {"id": 0, "x": 0, "y": 0.5000000000000001},
-                  {"id": 1, "x": 1, "y": 0.5},
-                  {"id": 2, "x": 0.5, "y": 0},
-                  {"id": 3, "x": 0.5, "y": 1},
-                  {"id": 4, "x": 0.1464466094067263, "y": 0.1464466094067262},
-                  {"id": 5, "x": 0.1464466094067263, "y": 0.8535533905932737},
-                  {"id": 6, "x": 0.8535533905932737, "y": 0.1464466094067263},
-                  {"id": 7, "x": 0.8535533905932737, "y": 0.8535533905932737},
-                  {"id": 8, "x": 0.5, "y": 1}
-                ],
+                "connection_points": [],
                 "frame": {"height": 200, "width": 200, "x": 80, "y": 80},
                 "id": "A7EBB321-9A0C-59AB-A37F-7B0A97FBCB8F",
                 "kind": "complex_shape",

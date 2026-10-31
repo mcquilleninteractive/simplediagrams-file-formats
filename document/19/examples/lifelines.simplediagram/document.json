@@ -93,7 +93,12 @@
       },
       "elements": [
         {
-          "complex_shape": {"type": "lifeline"},
+          "complex_shape": {
+            "parts": [],
+            "settings": {"ends_in_destroy_mark": false, "head_style": "box"},
+            "type": "lifeline",
+            "version": 1
+          },
           "content": {
             "content": {
               "content": {
@@ -127,7 +132,12 @@
           "shape_data_values": []
         },
         {
-          "complex_shape": {"ends_in_destroy_mark": true, "head_style": "actor", "type": "lifeline"},
+          "complex_shape": {
+            "parts": [],
+            "settings": {"ends_in_destroy_mark": true, "head_style": "actor"},
+            "type": "lifeline",
+            "version": 1
+          },
           "content": {
             "content": {
               "content": {

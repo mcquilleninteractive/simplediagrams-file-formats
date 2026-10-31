@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/19/complex-shapes/callout/1.schema.json",
+  "title": "SimpleDiagrams document format 19 complex shape catalogue: callout, version 1",
+  "description": "The callout complex shape at version 1: a speech bubble with an optional tail. An element of document.json whose complex_shape has type callout and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "callout" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": [],
+          "additionalProperties": false,
+          "properties": {
+            "tail_tip": {
+              "type": "object",
+              "required": ["x", "y"]
+            },
+            "tail_attachment": {
+              "type": "object",
+              "required": ["element_id", "connection_point_id"]
+            }
+          },
+          "dependentRequired": { "tail_attachment": ["tail_tip"] }
+        },
+        "parts": { "maxItems": 0 }
+      },
+      "not": { "anyOf": [{ "required": ["members"] }, { "required": ["own_text_layout"] }] }
+    }
+  }
+}

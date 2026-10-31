@@ -10,14 +10,18 @@ Draft, to be published with SimpleDiagrams 5.2.
 - First publication of the document format 19 specification, written by SimpleDiagrams 5.2: the
   specification, JSON Schemas for `manifest.json`, `document.json` and vector artwork assets, a
   catalogue of the built-in shapes, accepted examples and refused examples.
-- New in format 19: generated shapes (rings, flows, pyramids and funnels, cycles and gauges), saved as
-  finished parts, and an incomplete form that other programs may write for the app to draw on opening
-  (`generated-shapes.md`); entity tables; a `proportional` container layout; a highlight colour behind
-  characters, `highlight_hex`; four more note looks, with a reader drawing a look it does not know as a
-  sticky note; and the manifest's optional `app_version` and `app_build`.
-- A generator catalogue (`generators/`): one page and JSON Schema for each generator version, beside
-  the frozen core. Later releases may add entries, and words in an entry's open settings, within
-  format 19; nothing else in an entry ever changes. Each such addition will be listed here.
+- New in format 19: one structure for every complex shape (`elements.md` §12), in which a shape saves
+  only its type, version, settings, parts and members, and the app draws it from them; a complex-shape
+  catalogue (`complex-shapes/`) with one page and JSON Schema for each type and version; the entity
+  table as a type of its own; rings, flows, pyramids and funnels, cycles and gauges; a `proportional`
+  container layout; a highlight colour behind characters, `highlight_hex`; four more note looks, with a
+  reader drawing a look it does not know as a sticky note; and the manifest's optional `app_version`
+  and `app_build`.
+- Containers, swimlanes, tables, callouts and lifelines, which format 18 saved with records of their
+  own, are saved in format 19 in the one complex-shape structure, every setting written.
+- The complex-shape catalogue may gain entries, new types and new versions, within format 19; an entry
+  never changes once published, and its words are a closed list. A reader that does not know an entry
+  opens the document and shows that shape as a placeholder. Each addition will be listed here.
 - Removed in format 19: the text record's `background_hex`, which a reader ignores.
 - Stricter in format 19: the innermost level of a page refuses anything in its left-over `elements`
   and `connections` lists.

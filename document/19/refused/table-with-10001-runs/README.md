@@ -2,7 +2,7 @@
 
 **Rule broken:** All the cells of one table have at most 10,000 runs together. Here a table of one column has fifty cells of 200 paragraph runs each and one of a single run.
 
-**Stated in:** [elements.md](../../elements.md#1212-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
+**Stated in:** [elements.md](../../elements.md#1211-how-much-a-shape-and-a-page-hold), Complex shapes: how much a shape and a page hold.
 
 **Caught by the JSON Schemas:** No. The check adds up every cell of the table.
 

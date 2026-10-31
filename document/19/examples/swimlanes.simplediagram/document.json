@@ -51,13 +51,13 @@
       "elements": [
         {
           "complex_shape": {
-            "direction": "horizontal",
-            "lanes": [
+            "parts": [
               {
                 "id": "8DF54910-ACE5-54F7-9B31-70F461C283BE",
                 "members": [{"id": "ACC9FEB8-8060-515B-A48D-5C149BD98D5A", "kind": "element"}],
+                "role": "lane",
                 "size": 1,
-                "title": {
+                "text": {
                   "base_alignment": "center",
                   "base_style": {
                     "color_hex": "#212529",
@@ -74,8 +74,9 @@
               {
                 "id": "461BD92A-1A2B-50F7-9D51-5B351F30849C",
                 "members": [{"id": "CE05AD43-5144-54BD-919F-31923C8DEEB1", "kind": "element"}],
+                "role": "lane",
                 "size": 1,
-                "title": {
+                "text": {
                   "base_alignment": "center",
                   "base_style": {
                     "color_hex": "#212529",
@@ -90,7 +91,13 @@
                 }
               }
             ],
-            "type": "swimlanes"
+            "settings": {
+              "direction": "horizontal",
+              "title_band_size": 28,
+              "title_strip_size": 28
+            },
+            "type": "swimlanes",
+            "version": 1
           },
           "content": {
             "content": {

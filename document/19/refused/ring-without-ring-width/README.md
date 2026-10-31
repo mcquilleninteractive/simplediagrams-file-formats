@@ -1,12 +1,12 @@
 # Refused: ring without ring width
 
-**Rule broken:** A known generator version has every setting it declares; none has a default. Here a ring version 1 has no `ring_width`.
+**Rule broken:** A known type has every setting its entry declares, defaults included. Here a ring has no `ring_width`.
 
-**Stated in:** [generators/com.simplediagrams.ring/README.md](../../generators/com.simplediagrams.ring/README.md#the-record), The record.
+**Stated in:** [complex-shapes/ring/README.md](../../complex-shapes/ring/README.md#settings), Settings.
 
-**Caught by the JSON Schemas:** Yes: `generators/com.simplediagrams.ring/1.schema.json`.
+**Caught by the JSON Schemas:** Yes: `complex-shapes/ring/1.schema.json`.
 
-**The app's message (English):** "The shape 51084B03-0B07-58CB-BB2E-E51629BFBB3E is not a valid generated shape."
+**The app's message (English):** "The shape 51084B03-0B07-58CB-BB2E-E51629BFBB3E is not a valid complex shape."
 
 ## In this folder
 
