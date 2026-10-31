@@ -214,7 +214,7 @@ folder:
 Order flow.simplediagram/        the document package
   manifest.json                  required: what kind of file this is, and its version
   document.json                  required: the whole diagram
-  assets/                        required, even when empty
+  assets/                        written even when empty
     <sha256>.sdvector            native vector artwork
     <sha256>.svg                 SVG artwork
     <sha256>.png                 a PNG image
@@ -233,7 +233,7 @@ Order flow.simplediagram/        the document package
 | --- | --- | --- | --- |
 | `manifest.json` | Yes | 64 KiB (65,536 bytes) | Names the format and its version, so a reader can decide how to read the rest before reading it ([The manifest](#the-manifest)) |
 | `document.json` | Yes | 100 MiB (104,857,600 bytes) | Every page, element, connection and group, and the inventory of `assets/` ([The document](#the-document)) |
-| `assets/` | Yes, as a folder, even when empty | 10,000 files; 16 MiB (16,777,216 bytes) each; 100 MiB in total | The bytes of embedded artwork and images. Each file is named after the SHA-256 digest of its own contents and listed in the document's inventory ([assets.md](assets.md)) |
+| `assets/` | A writer MUST write it, as a folder, even when empty; a reader treats a missing one as empty (below) | 10,000 files; 16 MiB (16,777,216 bytes) each; 100 MiB in total | The bytes of embedded artwork and images. Each file is named after the SHA-256 digest of its own contents and listed in the document's inventory ([assets.md](assets.md)) |
 | `legacy/` | Only when the manifest says so | One file, `source.sdxml`, at most 100 MiB | The original file of a document the app converted from its older `.sdxml` format. A writer creating a new document MUST NOT create it |
 
 ### Package rules
@@ -251,6 +251,11 @@ A writer MUST produce a package that meets all of these:
 6. `assets/` contains exactly the files listed in the document's `embedded_assets` inventory, no more
    and no fewer, each a regular file whose name does not start with `.`, contains no `/` or `\`, and is
    at most 256 bytes long ([assets.md](assets.md)).
+
+**A missing `assets/` folder.** A writer MUST write `assets/`, even when it is empty. Git and some
+archive tools drop empty folders, so a reader MUST accept a package that lacks only an empty `assets/`
+folder and read it as if the folder were there and empty. A package without `assets/` whose inventory
+lists any asset is still refused, as a folder that lacks those files is.
 7. `legacy/`, when present, contains exactly one file, `source.sdxml`, and the manifest's
    `contains_legacy_source` is `true`. When `contains_legacy_source` is `true`, `legacy/source.sdxml`
    exists.
@@ -258,13 +263,10 @@ A writer MUST produce a package that meets all of these:
 A document is treated as untrusted input, so the exact inventory is enforced: it prevents content that
 would be ignored, ambiguous or substituted.
 
-**Informative: how good documents get broken.** Four everyday things add or remove a member and make a
-document unreadable:
+**Informative: how good documents get broken.** Three everyday things add a member and make a document
+unreadable:
 
 - Finder writes `.DS_Store` inside the package after someone uses **Show Package Contents**.
-- Git and some archive tools drop empty folders, removing an empty `assets/`. (This is why the
-  [examples](examples/README.md) in this repository are stored without an empty `assets/` folder; add
-  one before opening them.)
 - A file-sync tool adds its own bookkeeping file.
 - Copying the package to a volume without extended-attribute support (FAT, exFAT, some network
   shares) makes macOS add a `._name` file beside each member.
@@ -275,13 +277,13 @@ document unreadable:
 | --- | --- |
 | The path is not a folder, is a symbolic link, cannot be listed, or holds more than four members | "The SimpleDiagrams document is not a valid document package." |
 | A member with any other name is present, such as `.DS_Store` or `._document.json` | "The SimpleDiagrams document contains an invalid *name* file." |
-| `manifest.json`, `document.json` or `assets` is missing | "The SimpleDiagrams document is missing *name*." |
+| `manifest.json` or `document.json` is missing | "The SimpleDiagrams document is missing *name*." |
 | A member is the wrong kind of thing, is a link, or cannot be read | "The SimpleDiagrams document contains an invalid *name* file." |
 | `manifest.json`, `document.json` or `legacy/source.sdxml` is over its size limit | "The SimpleDiagrams document contains an invalid manifest.json file." (or the file concerned) |
 | One asset over 16 MiB, or an entry in `assets/` that is a folder or a link | "The SimpleDiagrams document contains an invalid assets/*file name* file." |
 | All assets together over 100 MiB | "The assets file is too large (*n* bytes)." |
 | A file in `assets/` whose name starts with `.`, contains `/` or `\`, or is longer than 256 bytes | "The SimpleDiagrams document contains an invalid assets file." |
-| `assets/` and the inventory disagree | "The SimpleDiagrams document contains an invalid assets file." |
+| `assets/` and the inventory disagree, including a missing `assets/` while the inventory lists assets | "The SimpleDiagrams document contains an invalid assets file." |
 | `legacy/` holds anything other than exactly `source.sdxml` | "The SimpleDiagrams document contains an invalid legacy file." |
 | `legacy/` exists but the manifest says there is no legacy source | "The SimpleDiagrams document contains an invalid manifest.json file." |
 | The manifest says there is a legacy source but `legacy/source.sdxml` is missing | "The SimpleDiagrams document is missing legacy/source.sdxml." |
@@ -994,7 +996,8 @@ most of them.
 - Any extra member in the package folder or in `assets/`, including `.DS_Store`, an AppleDouble `._`
   file, or a `.gitkeep` placed to keep an empty `assets/` folder in a repository. Create `assets/` when
   writing instead.
-- A missing `assets/` folder.
+- A missing `assets/` folder when the inventory lists any asset. (A missing empty `assets/` folder is
+  accepted.)
 - An unknown key in a strict record ([Unknown keys](#unknown-keys)).
 - A missing required key anywhere, including `shape_data_definition_id` and the empty left-over arrays
   inside pages.

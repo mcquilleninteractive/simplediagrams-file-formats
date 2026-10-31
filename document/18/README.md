@@ -254,7 +254,9 @@ document unreadable:
 - Finder writes `.DS_Store` inside the package after someone uses **Show Package Contents**.
 - Git and some archive tools drop empty folders, removing an empty `assets/`. (This is why the
   [examples](examples/README.md) in this repository are stored without an empty `assets/` folder; add
-  one before opening them.)
+  one before opening them in SimpleDiagrams 5.1. SimpleDiagrams 5.2 and later open a package that lacks
+  only its empty `assets/` folder, reading it as empty, and refuse one whose inventory lists assets with
+  "The SimpleDiagrams document contains an invalid assets file.")
 - A file-sync tool adds its own bookkeeping file.
 - Copying the package to a volume without extended-attribute support (FAT, exFAT, some network
   shares) makes macOS add a `._name` file beside each member.
@@ -991,7 +993,7 @@ most of them.
 - Any extra member in the package folder or in `assets/`, including `.DS_Store`, an AppleDouble `._`
   file, or a `.gitkeep` placed to keep an empty `assets/` folder in a repository. Create `assets/` when
   writing instead.
-- A missing `assets/` folder.
+- A missing `assets/` folder (SimpleDiagrams 5.1; 5.2 and later accept a missing empty one).
 - An unknown key in a strict record ([Unknown keys](#unknown-keys)).
 - A missing required key anywhere, including `shape_data_definition_id` and the empty left-over arrays
   inside pages.

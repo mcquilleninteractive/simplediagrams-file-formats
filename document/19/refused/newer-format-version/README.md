@@ -10,7 +10,7 @@
 
 ## In this folder
 
-`newer-format-version.simplediagram/` is a complete document that breaks only this rule. It is stored without the empty `assets/` folder every document needs, because Git does not keep empty folders. Even without `assets/`, the app refuses it for this fault, because it checks for a newer format version before it looks for `assets/`; with an empty `assets/` folder added, it is refused the same way.
+`newer-format-version.simplediagram/` is a complete document that breaks only this rule. It is stored without its empty `assets/` folder, because Git does not keep empty folders; a reader treats a missing empty `assets/` folder as empty.
 
 ## To make it valid
 

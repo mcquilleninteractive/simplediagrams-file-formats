@@ -12,11 +12,11 @@ A document the app has saved also carries keys with their default values, such a
 
 ## Before opening one
 
-Every document needs an `assets/` folder, even an empty one, and Git does not keep empty folders. So
-every example except `embedded-assets.simplediagram` is stored without `assets/`. **Create an empty
-`assets/` folder inside an example before opening it**, or the app refuses it with "The SimpleDiagrams
-document is missing assets." Do not add a placeholder file such as `.gitkeep`: the app refuses any file
-in `assets/` that the document does not list.
+Git does not keep empty folders, so every example except `embedded-assets.simplediagram` is stored
+without its empty `assets/` folder. A reader accepts that and treats the folder as empty
+([Package rules](../README.md#package-rules)); a program writing a document still writes it. Do not add
+a placeholder file such as `.gitkeep`: the app refuses any file in `assets/` that the document does not
+list.
 
 The repository's `.gitattributes` file stops Git from converting line endings inside these packages, so
 every file keeps the exact bytes that its SHA-256 name and inventory entry depend on.
@@ -74,8 +74,7 @@ each time the document is opened.
 
 ## How these were checked
 
-Every example was opened with the reading code of SimpleDiagrams 5.2, after adding an empty `assets/`
-folder where it has none. Each opened, and the diagram the app read was saved and read again unchanged.
+Every example was opened with the reading code of SimpleDiagrams 5.2, as stored. Each opened, and the diagram the app read was saved and read again unchanged.
 
 SimpleDiagrams' own automated tests keep an exact copy of this folder. On every run they open each
 example, require each refused case to be refused with its stated message, and check that every shape in

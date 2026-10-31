@@ -17,8 +17,8 @@ program must check the rule itself.
 
 Every document needs an `assets/` folder, even an empty one, and Git does not keep empty folders. So
 each document here that has no artwork is stored without `assets/`. Create an empty `assets/` folder
-inside it first, or the app refuses most of them for the missing folder instead of for the rule they
-demonstrate. Two are refused for their own fault either way, because the app checks for a newer format
+inside it first, or SimpleDiagrams 5.1 refuses most of them for the missing folder instead of for the
+rule they demonstrate (SimpleDiagrams 5.2 and later read a missing empty folder as empty). Two are refused for their own fault either way, because the app checks for a newer format
 version and for unexpected names in the package before it looks for `assets/`:
 [newer-format-version](newer-format-version/README.md) and
 [extra-file-in-package](extra-file-in-package/README.md). The documents about assets already have
@@ -85,7 +85,7 @@ are described here rather than stored. Each is a common way a good document gets
 | --- | --- | --- | --- |
 | Finder's `.DS_Store` file inside the package | Package members | [README.md](../README.md) | "The SimpleDiagrams document contains an invalid .DS_Store file." |
 | An AppleDouble `._document.json` file, added when a package is copied to a drive without extended attributes | Package members | [README.md](../README.md) | "The SimpleDiagrams document contains an invalid ._document.json file." |
-| No `assets/` folder (a tool such as Git dropped the empty folder) | Package members | [README.md](../README.md) | "The SimpleDiagrams document is missing assets." |
+| No `assets/` folder in a document whose inventory lists assets | Package members | [README.md](../README.md) | "The SimpleDiagrams document contains an invalid assets file." |
 | A `.gitkeep` file inside an otherwise empty `assets/` | Inventory and files | [assets.md](../assets.md) | "The SimpleDiagrams document contains an invalid assets file." |
 
 ## How these were checked

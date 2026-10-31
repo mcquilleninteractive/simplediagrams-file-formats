@@ -51,3 +51,8 @@ Draft, to be published with SimpleDiagrams 5.2.
   before first publication: SimpleDiagrams 5.2 and later report "The shape *id* is not a valid complex
   shape."; SimpleDiagrams 5.1 reports "Shape *id* holds a container, swimlanes, table, callout or
   lifeline record that is not valid."
+- A package without its `assets/` folder (`README.md`, the package on disk, and the refused index's
+  described-only faults), clarified before first publication: SimpleDiagrams 5.2 and later open a
+  package that lacks only its empty `assets/` folder, reading it as empty, and refuse one whose
+  inventory lists assets with "The SimpleDiagrams document contains an invalid assets file.";
+  SimpleDiagrams 5.1 refuses any package without `assets/`. A writer still writes the folder.

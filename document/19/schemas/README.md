@@ -107,7 +107,7 @@ unless the page says otherwise.
 
 | Rule | Stated in |
 | --- | --- |
-| The package is a folder holding exactly `manifest.json`, `document.json` and `assets/` (required, even when empty), and `legacy/` holding only `source.sdxml` exactly when `contains_legacy_source` is true; nothing else, including `.DS_Store` and `._` files | [The package on disk](../README.md#the-package-on-disk) |
+| The package is a folder holding exactly `manifest.json`, `document.json` and `assets/` (written even when empty; a reader treats a missing one as empty, unless the inventory lists assets), and `legacy/` holding only `source.sdxml` exactly when `contains_legacy_source` is true; nothing else, including `.DS_Store` and `._` files | [The package on disk](../README.md#the-package-on-disk) |
 | Size limits: `manifest.json` 65,536 bytes; `document.json` and `legacy/source.sdxml` 104,857,600 bytes; at most 10,000 assets, each at most 16,777,216 bytes and together at most 104,857,600 bytes | [Limits](../README.md#limits) |
 | Asset file names: at most 256 bytes, not starting with `.`, with no `/` or `\` | [The package on disk](../README.md#the-package-on-disk) |
 | `document.json`'s `schema_version` is the manifest's `format_version` minus one (each schema checks its own file only) | [Versions](../README.md#versions) |

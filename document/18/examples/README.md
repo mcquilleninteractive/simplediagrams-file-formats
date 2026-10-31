@@ -13,8 +13,8 @@ A document the app has saved also carries keys with their default values, such a
 
 Every document needs an `assets/` folder, even an empty one, and Git does not keep empty folders. So
 every example except `embedded-assets.simplediagram` is stored without `assets/`. **Create an empty
-`assets/` folder inside an example before opening it**, or the app refuses it with "The SimpleDiagrams
-document is missing assets." Do not add a placeholder file such as `.gitkeep`: the app refuses any file
+`assets/` folder inside an example before opening it**, or SimpleDiagrams 5.1 refuses it with "The
+SimpleDiagrams document is missing assets." (SimpleDiagrams 5.2 and later accept it.) Do not add a placeholder file such as `.gitkeep`: the app refuses any file
 in `assets/` that the document does not list.
 
 The repository's `.gitattributes` file stops Git from converting line endings inside these packages, so

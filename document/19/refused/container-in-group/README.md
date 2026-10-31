@@ -12,7 +12,7 @@ The identifier is that of the first container, `Web tier`.
 
 ## In this folder
 
-`container-in-group.simplediagram/` is a complete document that breaks only this rule. It is stored without the empty `assets/` folder every document needs, because Git does not keep empty folders. Create an empty `assets/` folder inside it before opening it, or the document is refused for that instead.
+`container-in-group.simplediagram/` is a complete document that breaks only this rule. It is stored without its empty `assets/` folder, because Git does not keep empty folders; a reader treats a missing empty `assets/` folder as empty.
 
 ## To make it valid
 

@@ -39,7 +39,9 @@ separately.
 ## The inventory
 
 The top-level key `embedded_assets` of `document.json` is required. It is an array with one entry per
-file in `assets/`, and `[]` when the folder is empty.
+file in `assets/`, and `[]` when the folder is empty. A writer always writes the folder, even empty; a
+reader treats a package without it as having an empty one, so `[]` with no folder opens and any entry
+with no folder is refused ([Package rules](README.md#package-rules)).
 
 | Key | Type | Required | Rules / bounds | Meaning |
 | --- | --- | --- | --- | --- |
