@@ -380,6 +380,68 @@
           },
           "shape_data_definition_id": null,
           "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "E060595C-BC21-5D5B-AB19-7C401F1A1774",
+                "point_ids": [8],
+                "role": "section",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "A"
+                },
+                "text_layout": {
+                  "frame": {"height": 0.06, "width": 0.5, "x": 0.1, "y": 0.02},
+                  "position": "middle"
+                }
+              }
+            ],
+            "settings": {"ring_width": "full"},
+            "type": "ring",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 16, "width": 10, "x": 360, "y": 80},
+                "id": "61855A4B-4322-5119-9DAF-AD21EC5DB15B",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 4
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
         }
       ]
     }

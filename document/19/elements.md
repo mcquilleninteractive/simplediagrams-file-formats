@@ -975,7 +975,10 @@ person placed a text. Each has exactly these keys:
 | `rotation_degrees` | number | No | More than 0 and less than 360; written only when it is not 0 | The region's turn, clockwise about its centre, on top of the element's |
 
 The region, turned as it is, lies inside the element's frame: each of its four corners within 0.01
-points. It MAY run over any line, hole or other part. A layout is present only where a person placed
+points. The element's frame is the bound for every type at any size. When a shape is smaller than the
+smallest frame its type is drawn for, the app draws it at that smallest size shrunk to fit and centred
+in the frame; the margins this leaves are still inside the element's frame, and a placed text may sit
+there. It MAY run over any line, hole or other part. A layout is present only where a person placed
 the text; without one, the text sits where its type puts it. **Informative.** When the number of a
 shape's parts changes, and for the few settings that change every part, the app returns each placed
 text to its type's place and stops saving its layout.
