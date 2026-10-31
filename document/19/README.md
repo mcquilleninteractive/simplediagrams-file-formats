@@ -1,14 +1,10 @@
 # SimpleDiagrams document format 19
 
-> **Draft.** Document format 19 is the format SimpleDiagrams 5.2 writes. Until SimpleDiagrams 5.2 is
-> released and this repository is tagged `document-19`, this specification is a draft and may still
-> change. From that tag on, its rules are final.
-
 A SimpleDiagrams document is a file whose name ends in `.simplediagram`. It holds one or more pages of
 shapes, connectors, groups and text, together with any artwork and images those pages use. This
 specification describes document format 19, the current format, closely enough that a program can
 read such a document, or write one that SimpleDiagrams for macOS (in this specification, **the app**)
-opens. It is a draft until SimpleDiagrams 5.2 is released.
+opens. Document format 19 is the format SimpleDiagrams 5.2 writes.
 
 This page is the entry point. It covers the conventions every page relies on, the package on disk, the
 manifest, the document and its pages, identity rules, every limit, versions, and a checklist for

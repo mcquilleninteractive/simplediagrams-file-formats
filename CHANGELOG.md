@@ -5,7 +5,7 @@ it record clarifications of wording only.
 
 ## Document format 19
 
-Draft, to be published with SimpleDiagrams 5.2.
+Published with SimpleDiagrams 5.2.
 
 - First publication of the document format 19 specification, written by SimpleDiagrams 5.2: the
   specification, JSON Schemas for `manifest.json`, `document.json` and vector artwork assets, a

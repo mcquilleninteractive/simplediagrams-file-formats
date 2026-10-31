@@ -6,7 +6,7 @@ plain-language specification, JSON Schemas, documents the app accepts and docume
 
 | Format | Folder | Status |
 | --- | --- | --- |
-| Document format 19 (`.simplediagram`), the current format | [`document/19/`](document/19/README.md) | Draft until SimpleDiagrams 5.2 is released and the `document-19` tag; final from that tag |
+| Document format 19 (`.simplediagram`), the current format | [`document/19/`](document/19/README.md) | Final, from the `document-19` tag |
 | Document format 18 (`.simplediagram`) | [`document/18/`](document/18/README.md) | Draft until the `document-18` tag; final from that tag |
 
 ## The SimpleDiagrams document
