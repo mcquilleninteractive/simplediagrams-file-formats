@@ -46,3 +46,8 @@ Draft, to be published with SimpleDiagrams 5.2.
   drawn as that look, and any other word as a sticky note, rather than refusing the document as
   SimpleDiagrams 5.1 does. A format 18 writer still writes only `stickyNote` or `indexCard`. Also
   noted: SimpleDiagrams 5.2 stops an index card's rules at least 10 points above its bottom edge.
+- The message for a complex shape that breaks a rule across the page (`connections.md`, and the refused
+  cases `container-in-group`, `shape-in-two-containers` and `table-cell-count-mismatch`), clarified
+  before first publication: SimpleDiagrams 5.2 and later report "The shape *id* is not a valid complex
+  shape."; SimpleDiagrams 5.1 reports "Shape *id* holds a container, swimlanes, table, callout or
+  lifeline record that is not valid."

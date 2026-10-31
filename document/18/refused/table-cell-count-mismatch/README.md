@@ -6,7 +6,9 @@
 
 **Caught by the JSON Schemas:** No. JSON Schema cannot compare the lengths of two arrays.
 
-**The app's message (English):** "Shape 890CB3FA-71CA-55F8-A832-0F424FD90E6D holds a container, swimlanes, table, callout or lifeline record that is not valid."
+**The app's message (English):** "The shape 890CB3FA-71CA-55F8-A832-0F424FD90E6D is not a valid complex shape."
+
+SimpleDiagrams 5.1 reports this as "Shape 890CB3FA-71CA-55F8-A832-0F424FD90E6D holds a container, swimlanes, table, callout or lifeline record that is not valid."
 
 The identifier is the table's.
 

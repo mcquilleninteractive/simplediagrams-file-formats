@@ -360,7 +360,7 @@ A writer MUST meet every rule in this table.
 | A group is not a member of itself | Same |
 | Each element, connection and group has at most one direct parent group | Same |
 | No loops (group A in group B in group A) | Same |
-| A container or swimlanes element is never a member of a group; a container holding it does that job ([elements.md](elements.md#1210-rules-across-the-page)) | "Shape *id* holds a container, swimlanes, table, callout or lifeline record that is not valid." |
+| A container or swimlanes element is never a member of a group; a container holding it does that job ([elements.md](elements.md#1210-rules-across-the-page)) | "The shape *id* is not a valid complex shape." (SimpleDiagrams 5.1: "Shape *id* holds a container, swimlanes, table, callout or lifeline record that is not valid.") |
 | Nesting at most 64 levels deep | "The diagram contains groups nested too deeply (*n*)." |
 | `rotation_degrees` at least 0 and less than 360 | "The SimpleDiagrams document contains an invalid document.json file." |
 | Group identifiers unique, and distinct from every other identifier in the shared namespace | "The diagram repeats identifier *id*." |

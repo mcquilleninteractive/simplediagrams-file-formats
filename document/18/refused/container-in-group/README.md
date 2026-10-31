@@ -6,7 +6,9 @@
 
 **Caught by the JSON Schemas:** No. The check spans groups and elements.
 
-**The app's message (English):** "Shape 991246F5-D565-5AAC-B093-C922F44392DF holds a container, swimlanes, table, callout or lifeline record that is not valid."
+**The app's message (English):** "The shape 991246F5-D565-5AAC-B093-C922F44392DF is not a valid complex shape."
+
+SimpleDiagrams 5.1 reports this as "Shape 991246F5-D565-5AAC-B093-C922F44392DF holds a container, swimlanes, table, callout or lifeline record that is not valid."
 
 The identifier is that of the first container, `Web tier`.
 

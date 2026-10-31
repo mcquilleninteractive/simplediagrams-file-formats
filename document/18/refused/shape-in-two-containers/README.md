@@ -6,7 +6,9 @@
 
 **Caught by the JSON Schemas:** No. The check spans every container on the page.
 
-**The app's message (English):** "Shape 33D5BD73-2FFB-555A-B77C-9ECBC8FC0B96 holds a container, swimlanes, table, callout or lifeline record that is not valid."
+**The app's message (English):** "The shape 33D5BD73-2FFB-555A-B77C-9ECBC8FC0B96 is not a valid complex shape."
+
+SimpleDiagrams 5.1 reports this as "Shape 33D5BD73-2FFB-555A-B77C-9ECBC8FC0B96 holds a container, swimlanes, table, callout or lifeline record that is not valid."
 
 The identifier is the second container's (`Notes`), which already holds the note.
 
