@@ -931,7 +931,7 @@
           "$ref": "#/$defs/Texture"
         },
         "stroke_pattern_override": {
-          "description": "Optional: replaces the line pattern of a library shape's artwork for this one placed shape. It applies to symbol and editable_vector elements and to a container wearing a drawing, and only to artwork parts that follow the shape's line colour.",
+          "description": "Optional: replaces the line pattern of a library shape's artwork for this one placed shape. It applies to symbol and editable_vector elements and to a container wearing a drawing, and only to artwork parts that follow the shape's line colour. From SimpleDiagrams 5.3 it also sets the outline of a container with no drawing.",
           "$ref": "#/$defs/StrokePattern"
         }
       }

@@ -269,7 +269,7 @@ own; it is the alpha part of each colour.
 | `line_width` | number, diagram points | Yes | Finite, 0 to 10,000 | Line weight. `0` draws no line |
 | `fill_texture` | string | No | A texture name ([13.10](#1310-textures)) | A texture, tinted with the fill colour, drawn in place of the flat fill |
 | `stroke_texture` | string | No | A texture name | The same for the line |
-| `stroke_pattern_override` | string | No | `solid`, `dashed`, `dotted` | A line pattern for a library shape's artwork, replacing the artwork's own |
+| `stroke_pattern_override` | string | No | `solid`, `dashed`, `dotted` | A line pattern for a library shape's artwork, replacing the artwork's own, or for a container's outline |
 
 The keys `fill_hex`, `stroke_hex` and `line_width` are required on every kind, even where they are
 not drawn. Refusals: "The diagram contains an invalid color value: …", "…invalid number in element
@@ -288,8 +288,9 @@ How the values behave:
   a shape does not stretch them.
 - **`stroke_pattern_override`** applies only to `symbol` and `editable_vector` elements and to the
   drawing a container wears (its `artwork` setting, [container](complex-shapes/container/README.md)), and within those only to
-  the parts of the artwork that follow the element's line colour. A `path` has its own pattern
-  (`path.stroke_pattern`). On every other kind the key is accepted and ignored.
+  the parts of the artwork that follow the element's line colour. From SimpleDiagrams 5.3 it also
+  sets the outline of a container with no drawing; earlier versions draw that outline solid. A `path`
+  has its own pattern (`path.stroke_pattern`). On every other kind the key is accepted and ignored.
 
 **Informative: which style values each kind uses.**
 
@@ -302,7 +303,7 @@ How the values behave:
 | `image` | The panel behind the bitmap image, when `shows_image_background` is `true` | The border, when `shows_image_border` is `true` | Used for those | Ignored |
 | `path` | Fills a closed path | The line | Used (a stroke texture turns marker ink off) | Ignored |
 | `unresolved` | Fills the placeholder box | Its dashed outline | Not used | Ignored |
-| `complex_shape` | Its body, a table's header row, and every part that has no fill of its own | Its outline, lane and cell lines, a lifeline's dashed line, and every part without a line of its own | Used | Ignored, except on a container that wears a drawing, where it applies to the drawing's line-coloured parts |
+| `complex_shape` | Its body, a table's header row, and every part that has no fill of its own | Its outline, lane and cell lines, a lifeline's dashed line, and every part without a line of its own | Used | Ignored, except on a container: on one that wears a drawing it applies to the drawing's line-coloured parts, and from 5.3 on one that doesn't it sets the outline |
 
 A container that wears a drawing paints it as an `editable_vector` is painted: the drawing's fill- and
 line-coloured parts take the container's `fill_hex`, `stroke_hex` and `line_width`.
