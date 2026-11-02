@@ -1,6 +1,6 @@
 # Embedded assets
 
-Artwork and pictures that are not shipped inside the app are stored in the document as files in its
+Artwork and bitmap images that are not shipped inside the app are stored in the document as files in its
 `assets/` folder. Each file is named after the SHA-256 digest of its own bytes. `document.json` lists
 every one of them in `embedded_assets`, and the list and the folder must agree exactly. Elements,
 containers and page backgrounds refer to an asset by that digest.
@@ -125,9 +125,9 @@ A `raster_png` or `raster_jpeg` asset MUST meet these rules:
 - At most 16 MiB.
 
 **Informative.** When the app opens a document it reads only each image's header, so a document full of
-images does not have to decode every picture to open. When a person imports a picture, the app
+images does not have to decode every bitmap image to open. When a person imports a bitmap image, the app
 re-encodes it as PNG or JPEG, which removes camera and location metadata. A program writing a document
-SHOULD do the same when the picture may carry private metadata.
+SHOULD do the same when the bitmap image may carry private metadata.
 
 ## SVG artwork
 
@@ -177,8 +177,8 @@ comma), each from 0 to 100.
   `base`.
 - No attribute value may contain, in any letter case, `javascript:`, `vbscript:`, `data:`, `file:`,
   `http:`, `https:`, or a backslash. Two exceptions: namespace declarations (`xmlns` and
-  `xmlns:prefix`) are not checked, and pictures in the form described under
-  [Pictures inside SVG artwork](#pictures-inside-svg-artwork) are allowed.
+  `xmlns:prefix`) are not checked, and bitmap images in the form described under
+  [Bitmap images inside SVG artwork](#bitmap-images-inside-svg-artwork) are allowed.
 - An `href` or `src` attribute (under any prefix, so `xlink:href` counts) MUST be a **local reference**:
   `#` followed by 1 to 256 bytes, each character a Unicode letter, mark or number, or one of `.` `_` `:`
   `-`. So `#a%20b` and `#a b` are refused.
@@ -190,15 +190,15 @@ comma), each from 0 to 100.
   drawing it expands to MUST stay within the element and depth limits above. A gradient or filter
   reference that names nothing is allowed.
 
-### Pictures inside SVG artwork
+### Bitmap images inside SVG artwork
 
-An SVG MAY carry small PNG pictures (textures) in one form only, chosen so that it cannot hold camera
+An SVG MAY carry small PNG bitmap images (textures) in one form only, chosen so that it cannot hold camera
 or location metadata:
 
 - only in an `image` element's `href` attribute (under any prefix, so `xlink:href` works; not `src`);
 - the value starts with `data:image/png;base64,` (letter case ignored), followed by base64 with no white
   space or line breaks;
-- at most 4 pictures in one SVG, each from 1 to 1,024 pixels a side, together at most 1,048,576 pixels
+- at most 4 bitmap images in one SVG, each from 1 to 1,024 pixels a side, together at most 1,048,576 pixels
   and 4,259,840 bytes of PNG data after base64 decoding (4 MiB plus 64 KiB);
 - each PNG is: the PNG signature; an `IHDR` chunk; then, in any order, at most one each of `sRGB`
   (exactly 1 byte of data), `gAMA` (exactly 4) and `cHRM` (exactly 32); then one or more consecutive
@@ -209,7 +209,7 @@ or location metadata:
   types 0, 2, 4 and 6;
 - and the result is a valid one-frame PNG under the rules of [PNG and JPEG images](#png-and-jpeg-images).
 
-JPEG pictures, SVG pictures and pictures in any other form are refused.
+JPEG images, SVG images and images in any other form are refused.
 
 ### Size of the drawing
 
@@ -419,8 +419,8 @@ Rules:
 ### Pinned parts
 
 A **pinned part** is a run of consecutive layers that keeps the size it was drawn at, and its distance
-from one spot of the frame, while the rest of the artwork stretches: for example, a task's small
-picture in its corner, or the plus sign on a collapsed sub-process. Vector artwork formats 3 and 4 only.
+from one spot of the frame, while the rest of the artwork stretches: for example, a task's
+small icon in its corner, or the plus sign on a collapsed sub-process. Vector artwork formats 3 and 4 only.
 
 | Key | Type | Required | Rules / bounds | Meaning |
 | --- | --- | --- | --- | --- |

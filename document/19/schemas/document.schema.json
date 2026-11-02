@@ -707,7 +707,7 @@
           "type": "boolean"
         },
         "shows_image_background": {
-          "description": "For an image only: fill the frame behind the picture with the style's fill colour. Absent means false.",
+          "description": "For an image only: fill the frame behind the bitmap image with the style's fill colour. Absent means false.",
           "type": "boolean"
         },
         "shows_image_border": {
@@ -858,7 +858,7 @@
           "$ref": "#/$defs/Sha256"
         },
         "image_content_mode": {
-          "description": "For image only, and required there. fit: the whole picture, as large as fits, centred. fill: the picture covers the frame and the overflow is clipped. stretch: the picture is distorted to the frame.",
+          "description": "For image only, and required there. fit: the whole bitmap image, as large as fits, centred. fill: the bitmap image covers the frame and the overflow is clipped. stretch: the bitmap image is distorted to the frame.",
           "type": "string",
           "enum": ["fit", "fill", "stretch"]
         },

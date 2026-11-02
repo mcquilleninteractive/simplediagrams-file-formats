@@ -22,6 +22,9 @@ Published with SimpleDiagrams 5.2.
 - The complex-shape catalogue may gain entries, new types and new versions, within format 19; an entry
   never changes once published, and its words are a closed list. A reader that does not know an entry
   opens the document and shows that shape as a placeholder. Each addition will be listed here.
+- Clarification of wording, November 2026: "picture" now reads "bitmap image" throughout, because it could
+  be taken to mean other artwork, and a task's pinned part is described as a small icon. What the format
+  allows and refuses is unchanged.
 - Removed in format 19: the text record's `background_hex`, which a reader ignores.
 - Stricter in format 19: the innermost level of a page refuses anything in its left-over `elements`
   and `connections` lists.

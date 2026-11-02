@@ -5,7 +5,7 @@ carries, and the rules the app checks when it opens a document. Read [README.md]
 the conventions this page relies on (colours, identifiers, diagram points, page coordinates, how JSON
 is read) and for the page record that holds the elements.
 
-An **element** is one shape on a page: a rectangle, a shape from a library, a picture, a freehand
+An **element** is one shape on a page: a rectangle, a shape from a library, a bitmap image, a freehand
 stroke, a container and so on. Connectors are not elements; they are described in
 [connections.md](connections.md), and groups in the same file.
 
@@ -57,7 +57,7 @@ refuse the document.
 | `symbol` | A library shape placed by reference: the document names the shape, not its artwork | [11.5](#115-symbol) |
 | `editable_vector` | A shape whose artwork is stored in the document as native vector artwork (a `.sdvector` asset) | [11.6](#116-editable_vector) |
 | `svg_artwork` | An SVG stored in the document and drawn as its author made it | [11.7](#117-svg_artwork) |
-| `image` | A PNG or JPEG picture stored in the document | [11.8](#118-image) |
+| `image` | A PNG or JPEG bitmap image stored in the document | [11.8](#118-image) |
 | `path` | A freehand or point-by-point line, or a closed outline | [11.9](#119-path) |
 | `unresolved` | A placeholder for content from an imported legacy file that has no native equivalent | [11.10](#1110-unresolved) |
 | `complex_shape` | A shape that does more than a basic shape: a container, swimlanes, a table, an entity table, a callout, a UML lifeline, a ring, a flow, a pyramid, a cycle or a gauge, drawn by the app from its settings | [12](#12-complex-shapes) |
@@ -131,7 +131,7 @@ detailed rules.
 | `text_layout` | 1 | object | No | Forbidden on `path`, `unresolved`, `svg_artwork`, `image`, `complex_shape` | Where the label sits ([section 7](#7-text-layout)). Absent: the default inset region, label centred |
 | `note_style` | 1 | string | No | One of the six looks of [11.3](#113-note); `note` only | Which note look. Absent: sticky note. A reader draws a word it does not know as a sticky note ([11.3](#113-note)) |
 | `preserves_aspect_ratio` | 1 | boolean | No | Default `false`; never `true` on a ring, flow, pyramid, cycle or gauge | Keep proportions when a person resizes the element ([section 9](#9-locking-and-aspect-ratio)) |
-| `shows_image_background` | 1 | boolean | No | Default `false`; `image` only | Fill the frame behind the picture |
+| `shows_image_background` | 1 | boolean | No | Default `false`; `image` only | Fill the frame behind the bitmap image |
 | `shows_image_border` | 1 | boolean | No | Default `false`; `image` only | Outline the frame |
 | `content` | 1 | object | Yes | | Level 2 |
 | `is_locked` | 2 | boolean | Yes | | A person locked this element ([section 9](#9-locking-and-aspect-ratio)) |
@@ -146,7 +146,7 @@ detailed rules.
 | `connection_points` | 3 | array | Yes | 0 to 128 entries | Where connector ends can attach ([section 8](#8-connection-points)). `[]` is valid |
 | `symbol_reference` | 3 | object | If `kind` is `symbol`; forbidden otherwise | [11.5](#115-symbol) | Which library shape |
 | `embedded_asset_id` | 3 | string | If `kind` is `editable_vector`, `svg_artwork` or `image`; forbidden otherwise | Names an embedded asset of the matching kind | Which file in `assets/` holds the artwork |
-| `image_content_mode` | 3 | string | If `kind` is `image`; forbidden otherwise | `fit`, `fill`, `stretch` | How the picture fills the frame |
+| `image_content_mode` | 3 | string | If `kind` is `image`; forbidden otherwise | `fit`, `fill`, `stretch` | How the bitmap image fills the frame |
 | `path` | 3 | object | If `kind` is `path`; forbidden otherwise | [11.9](#119-path) | The line's points |
 | `unresolved_content` | 3 | object | If `kind` is `unresolved`; forbidden otherwise | [11.10](#1110-unresolved) | The retained legacy fragment |
 
@@ -299,7 +299,7 @@ How the values behave:
 | `text` | Not drawn | Not drawn | Not drawn | Ignored |
 | `symbol`, `editable_vector` | Colours the parts of the artwork that follow the fill | Colour and weight of the parts that follow the line | Used on those parts | Used |
 | `svg_artwork` | Not used: the SVG keeps its own paint | Not used | Not used | Ignored |
-| `image` | The panel behind the picture, when `shows_image_background` is `true` | The border, when `shows_image_border` is `true` | Used for those | Ignored |
+| `image` | The panel behind the bitmap image, when `shows_image_background` is `true` | The border, when `shows_image_border` is `true` | Used for those | Ignored |
 | `path` | Fills a closed path | The line | Used (a stroke texture turns marker ink off) | Ignored |
 | `unresolved` | Fills the placeholder box | Its dashed outline | Not used | Ignored |
 | `complex_shape` | Its body, a table's header row, and every part that has no fill of its own | Its outline, lane and cell lines, a lifeline's dashed line, and every part without a line of its own | Used | Ignored, except on a container that wears a drawing, where it applies to the drawing's line-coloured parts |
@@ -333,7 +333,7 @@ words, a container's title. The same record is used for a connector's label
 ([connections.md](connections.md)), a swimlanes lane's title and a table cell
 ([section 12](#12-complex-shapes)).
 
-The record is a closed list of formatting. There are no links, attachments, pictures, HTML or RTF, and
+The record is a closed list of formatting. There are no links, attachments, bitmap images, HTML or RTF, and
 no way to add them.
 
 ### 6.1 The text content record
@@ -702,20 +702,20 @@ safety rules to be stored at all; see [assets.md](assets.md).
 
 ### 11.8 `image`
 
-A PNG or JPEG picture. `embedded_asset_id` MUST name an embedded asset of kind `raster_png` or
+A PNG or JPEG bitmap image. `embedded_asset_id` MUST name an embedded asset of kind `raster_png` or
 `raster_jpeg` (see [assets.md](assets.md)). An `image` may not have a `text_layout`.
 
 | Key | Level | Type | Required | Rules / bounds | Meaning |
 | --- | --- | --- | --- | --- | --- |
-| `image_content_mode` | 3 | string | Yes | `fit`, `fill`, `stretch` | How the picture fills the frame |
-| `shows_image_background` | 1 | boolean | No | Default `false` | Fill the frame behind the picture with `style.fill_hex` |
+| `image_content_mode` | 3 | string | Yes | `fit`, `fill`, `stretch` | How the bitmap image fills the frame |
+| `shows_image_background` | 1 | boolean | No | Default `false` | Fill the frame behind the bitmap image with `style.fill_hex` |
 | `shows_image_border` | 1 | boolean | No | Default `false` | Outline the frame with `style.stroke_hex` at `style.line_width` |
 
 | `image_content_mode` | Result |
 | --- | --- |
-| `fit` | The whole picture, as large as fits, centred; the frame may show empty bands |
-| `fill` | The picture covers the frame, centred; what overflows is clipped to the frame |
-| `stretch` | The picture is distorted to fill the frame exactly |
+| `fit` | The whole bitmap image, as large as fits, centred; the frame may show empty bands |
+| `fill` | The bitmap image covers the frame, centred; what overflows is clipped to the frame |
+| `stretch` | The bitmap image is distorted to fill the frame exactly |
 
 ### 11.9 `path`
 

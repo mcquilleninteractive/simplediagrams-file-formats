@@ -1,6 +1,6 @@
 # Refused: asset name not its hash
 
-**Rule broken:** An asset's `id`, and so its file name, is the SHA-256 of the file's bytes. Here the picture is stored under the digest of a different picture, and the inventory and the element use that name consistently.
+**Rule broken:** An asset's `id`, and so its file name, is the SHA-256 of the file's bytes. Here the bitmap image is stored under the digest of a different bitmap image, and the inventory and the element use that name consistently.
 
 **Stated in:** [assets.md](../../assets.md), the asset inventory.
 

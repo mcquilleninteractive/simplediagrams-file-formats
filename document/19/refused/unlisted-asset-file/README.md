@@ -1,6 +1,6 @@
 # Refused: unlisted asset file
 
-**Rule broken:** `assets/` holds exactly the files listed in `embedded_assets`. Here it holds a second picture that the inventory does not list.
+**Rule broken:** `assets/` holds exactly the files listed in `embedded_assets`. Here it holds a second bitmap image that the inventory does not list.
 
 **Stated in:** [assets.md](../../assets.md), the asset inventory.
 
