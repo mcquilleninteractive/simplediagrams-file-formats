@@ -1,14 +1,12 @@
 # SimpleDiagrams document format 20
 
-**Status:** Draft. Document format 20 is written by SimpleDiagrams 5.3. This specification is a
-draft until this repository is tagged `document-20`; from that tag on, its rules are final.
-
 A SimpleDiagrams document is a file whose name ends in `.simplediagram`. It holds one or more pages of
 shapes, connectors, groups and text, together with any artwork and images those pages use. This
 specification describes document format 20, the current format, closely enough that a program can
 read such a document, or write one that SimpleDiagrams for macOS (in this specification, **the app**)
-opens. Document format 20 is the format SimpleDiagrams 5.3 writes. It is document format 19 with two
-additions, the labels beside a connector's ends ([connections.md](connections.md#labels-beside-the-ends)) and a ring section's share ([ring](complex-shapes/ring/README.md)).
+opens. Document format 20 is the format SimpleDiagrams 5.3 writes. It is document format 19 with three
+additions: the labels beside a connector's ends ([connections.md](connections.md#labels-beside-the-ends)), a ring section's share ([ring](complex-shapes/ring/README.md))
+and a new complex shape, the audience ([audience](complex-shapes/audience/README.md)).
 
 This page is the entry point. It covers the conventions every page relies on, the package on disk, the
 manifest, the document and its pages, identity rules, every limit, versions, and a checklist for
@@ -825,6 +823,7 @@ limits, such as how many lanes, rows or sections it has, are in its entry in the
 | One lane title | 1,000 scalars and 100 runs | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
 | One table cell; all the cells of one table | 2,000 scalars and 200 runs; 100,000 scalars and 10,000 runs | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
 | The text of a ring's section, a flow's or cycle's step, a pyramid's layer, a gauge's band or caption | 500 scalars | The type's entry in the [catalogue](complex-shapes/README.md) |
+| An audience's seats: in one group; in all its groups together | A whole number from 1 to 1,000; 1,000 | [audience](complex-shapes/audience/README.md#rules) |
 | Complex shapes on one page; containers and swimlanes on one page | 2,000; 500 | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
 | Part texts and cells on one page | 1,000,000 scalars together | [elements.md](elements.md#1211-how-much-a-shape-and-a-page-hold) |
 
@@ -908,14 +907,16 @@ app needs SimpleDiagrams 5.3 or later to open, even if it uses nothing new.
 
 ### What changed from document format 19
 
-Two things. A connection's outer record may hold `start_label` and `end_label`, a label beside each
+Three things. A connection's outer record may hold `start_label` and `end_label`, a label beside each
 end ([connections.md](connections.md#labels-beside-the-ends)). A format 19 document that holds either
-key is refused as damaged: "The SimpleDiagrams document contains an invalid document.json file." And a
+key is refused as damaged: "The SimpleDiagrams document contains an invalid document.json file." A
 `ring`'s section may hold a `size`, its share of the ring ([ring](complex-shapes/ring/README.md#parts)).
 A format 19 document whose ring section holds `size` is refused: "The shape … is not a valid complex
-shape." Everything else is exactly as in document format 19. A connector without labels at its ends,
-and a ring whose sections hold no share, are written exactly as in format 19, so a format 20 document
-that uses neither differs from format 19 only in its two version numbers.
+shape." And the complex-shape catalogue gains a type, the `audience`, an arch of seats in coloured
+groups ([audience](complex-shapes/audience/README.md)). A format 19 document that holds an audience is
+refused the same way. Everything else is exactly as in document format 19. A connector without labels
+at its ends, and a ring whose sections hold no share, are written exactly as in format 19, so a format
+20 document that uses none of the three differs from format 19 only in its two version numbers.
 
 ### The complex-shape catalogue
 

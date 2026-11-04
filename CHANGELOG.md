@@ -5,9 +5,9 @@ it record clarifications of wording only.
 
 ## Document format 20
 
-Draft, to be published with SimpleDiagrams 5.3.
+Published with SimpleDiagrams 5.3.
 
-- First draft of the document format 20 specification, written by SimpleDiagrams 5.3: format 19's
+- The document format 20 specification, written by SimpleDiagrams 5.3: format 19's
   pages, schemas, catalogue, examples and refused examples, changed only where format 20 differs.
 - New in format 20: a connector may carry a label beside each end, `start_label` and `end_label` on
   the connection's outer record, each placed by its `distance` from that end and its `normal_offset`
@@ -19,9 +19,18 @@ Draft, to be published with SimpleDiagrams 5.3.
   shares add up to at most 100, and under 100 the rest of the circle is left empty. Sections without
   one share equally what the others leave, so a ring that holds none draws its equal sections as in
   format 19, gaps included; once any section holds one, neighbouring slices touch.
+- New in format 20: the complex-shape catalogue gains a type, the `audience`, first drawn by
+  SimpleDiagrams 5.3 (`complex-shapes/audience/`): a half-circle arch of seats drawn as dots, divided
+  into 1 to 20 groups, each a whole number of seats and an optional paint of its own, with the total
+  drawn in the middle or hidden (`show_total`). Its groups hold at most 1,000 seats in all. A document
+  claiming format 19 or lower that holds an audience is refused. One accepted example (`audiences`)
+  and three refused examples (`audience-of-21-groups`, `audience-group-size-not-whole` and
+  `audience-of-1001-seats`) show it. The pages that list the catalogue's types, the shapes that place
+  their own points and the shapes that never keep their proportions now name it.
 - Every document SimpleDiagrams 5.3 saves is format 20, so it needs 5.3 or later to open.
 - A complex shape's `version` is kept as earlier documents wrote it, 1 for every type, and is no longer
-  raised: what a type holds changes only with a new document format version, and the pages now say so.
+  raised: what a type holds changes only with a new document format version, and the pages and the
+  catalogue's schemas now say so.
 - The built-in shape catalogue lists every shape 5.3 bundles, including Biz's Trophy. Format 19's
   catalogue stays as 5.2 published it.
 

@@ -1,6 +1,6 @@
 # Refused: ring keeping proportions
 
-**Rule broken:** `preserves_aspect_ratio` is never `true` on a ring, flow, pyramid, cycle or gauge; its entry says how it resizes. Here a ring's element has `"preserves_aspect_ratio": true`.
+**Rule broken:** `preserves_aspect_ratio` is never `true` on a ring, flow, pyramid, cycle, gauge or audience; its entry says how it resizes. Here a ring's element has `"preserves_aspect_ratio": true`.
 
 **Stated in:** [complex-shapes/ring/README.md](../../complex-shapes/ring/README.md#the-record), The record.
 

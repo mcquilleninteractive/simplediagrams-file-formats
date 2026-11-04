@@ -30,11 +30,13 @@ here as they are published.
 | `pyramid` | 1 | A pyramid or funnel cut into layers | SimpleDiagrams 5.2 | [page](pyramid/README.md), [`1.schema.json`](pyramid/1.schema.json) |
 | `cycle` | 1 | Steps round a circle | SimpleDiagrams 5.2 | [page](cycle/README.md), [`1.schema.json`](cycle/1.schema.json) |
 | `gauge` | 1 | A half dial with bands and a needle | SimpleDiagrams 5.2 | [page](gauge/README.md), [`1.schema.json`](gauge/1.schema.json) |
+| `audience` | 1 | An arch of seats in coloured groups. New in document format 20 | SimpleDiagrams 5.3 | [page](audience/README.md), [`1.schema.json`](audience/1.schema.json) |
 
 Each entry's folder is named after its type and holds its page, `README.md`, and its schema,
 `1.schema.json`, named after the `version` it is written with. A type drawn first by SimpleDiagrams 5.1 was saved in document format
 18 with a record of its own; document formats 19 and 20 save it in the one structure, with the meaning the
-entry gives.
+entry gives. The `audience`, first drawn by SimpleDiagrams 5.3, is new in document format 20: a document
+claiming an earlier format that holds one is refused.
 
 ## What an entry declares
 

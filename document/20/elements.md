@@ -60,7 +60,7 @@ refuse the document.
 | `image` | A PNG or JPEG bitmap image stored in the document | [11.8](#118-image) |
 | `path` | A freehand or point-by-point line, or a closed outline | [11.9](#119-path) |
 | `unresolved` | A placeholder for content from an imported legacy file that has no native equivalent | [11.10](#1110-unresolved) |
-| `complex_shape` | A shape that does more than a basic shape: a container, swimlanes, a table, an entity table, a callout, a UML lifeline, a ring, a flow, a pyramid, a cycle or a gauge, drawn by the app from its settings | [12](#12-complex-shapes) |
+| `complex_shape` | A shape that does more than a basic shape: a container, swimlanes, a table, an entity table, a callout, a UML lifeline, a ring, a flow, a pyramid, a cycle, a gauge or an audience, drawn by the app from its settings | [12](#12-complex-shapes) |
 
 An element never contains another element. Containers and swimlanes *refer* to other elements by
 identifier ([section 12](#12-complex-shapes)); they do not nest them.
@@ -130,7 +130,7 @@ detailed rules.
 | `flip_vertical` | 1 | boolean | Yes | See [section 3](#3-identity-frame-rotation-and-flips) | Mirror the artwork top to bottom |
 | `text_layout` | 1 | object | No | Forbidden on `path`, `unresolved`, `svg_artwork`, `image`, `complex_shape` | Where the label sits ([section 7](#7-text-layout)). Absent: the default inset region, label centred |
 | `note_style` | 1 | string | No | One of the six looks of [11.3](#113-note); `note` only | Which note look. Absent: sticky note. A reader draws a word it does not know as a sticky note ([11.3](#113-note)) |
-| `preserves_aspect_ratio` | 1 | boolean | No | Default `false`; never `true` on a ring, flow, pyramid, cycle or gauge | Keep proportions when a person resizes the element ([section 9](#9-locking-and-aspect-ratio)) |
+| `preserves_aspect_ratio` | 1 | boolean | No | Default `false`; never `true` on a ring, flow, pyramid, cycle, gauge or audience | Keep proportions when a person resizes the element ([section 9](#9-locking-and-aspect-ratio)) |
 | `shows_image_background` | 1 | boolean | No | Default `false`; `image` only | Fill the frame behind the bitmap image |
 | `shows_image_border` | 1 | boolean | No | Default `false`; `image` only | Outline the frame |
 | `content` | 1 | object | Yes | | Level 2 |
@@ -517,8 +517,8 @@ then turn (px, py) about the frame's centre by rotation_degrees (section 3)
 `x` and `y` are always the point's place on the *unflipped* element. Flipping an element never changes
 a point's stored position or number.
 
-**Shapes that place their own points.** An entity table, a ring, a flow, a pyramid, a cycle and a gauge
-list no connection points: the reader works them out from the shape as it reads the document, and again
+**Shapes that place their own points.** An entity table, a ring, a flow, a pyramid, a cycle, a gauge and an
+audience list no connection points: the reader works them out from the shape as it reads the document, and again
 whenever the shape changes ([12.6](#126-the-elements-own-keys)). Their numbers are fixed by the shape's
 catalogue entry, and their places are where the app draws them, so a connector attached to one follows
 it. Everything that resolves a point on another shape, a connector's end or a callout's locked tail,
@@ -561,7 +561,8 @@ the element. A writer MUST NOT set `is_locked` to record a group's lock.
 **`preserves_aspect_ratio`**, when `true`, makes the app keep the element's proportions when a person
 resizes it, as if Shift were held. It does not require the frame to have any particular proportion. A
 library shape MAY ask for it; the app sets it from the library when the shape is placed. It MUST NOT be
-`true` on a ring, a flow, a pyramid, a cycle or a gauge, whose catalogue entries say how they resize
+`true` on a ring, a flow, a pyramid, a cycle, a gauge or an audience, whose catalogue entries say how
+they resize
 ([12.6](#126-the-elements-own-keys)).
 
 ## 10. Which kind may carry which key
@@ -580,8 +581,8 @@ library shape MAY ask for it; the app sets it from the library when the shape is
 | `path` | F | F | F | F | F | F | F | F | R | F | F |
 | `unresolved_content` | F | F | F | F | F | F | F | F | F | R | F |
 | `flip_horizontal` or `flip_vertical` set to `true` | – | – | – | – | – | – | – | – | – | – | Callout, or a type or version the reader does not know; F for the other listed types |
-| `preserves_aspect_ratio` set to `true` | – | – | – | – | – | – | – | – | – | – | F for a ring, flow, pyramid, cycle or gauge |
-| `text_content.string` not empty | – | – | – | – | – | – | – | – | – | – | F for a type without text of its own: a table, entity table, ring, flow, pyramid or cycle |
+| `preserves_aspect_ratio` set to `true` | – | – | – | – | – | – | – | – | – | – | F for a ring, flow, pyramid, cycle, gauge or audience |
+| `text_content.string` not empty | – | – | – | – | – | – | – | – | – | – | F for a type without text of its own: a table, entity table, ring, flow, pyramid, cycle or audience |
 
 Every other key of [2.2](#22-every-key) is required on every kind.
 
@@ -836,6 +837,7 @@ format 20's catalogue has these types, each written with `version` 1, and may ga
 | `pyramid` | A pyramid or funnel cut into layers | [pyramid](complex-shapes/pyramid/README.md) |
 | `cycle` | Steps round a circle | [cycle](complex-shapes/cycle/README.md) |
 | `gauge` | A half dial with bands and a needle | [gauge](complex-shapes/gauge/README.md) |
+| `audience` | An arch of seats in coloured groups. New in document format 20 | [audience](complex-shapes/audience/README.md) |
 
 Only SimpleDiagrams defines complex shapes. A writer MUST write only the types the catalogue
 lists, each with the `version` its entry gives and exactly what its entry declares. It MUST NOT invent a type, a version, a
@@ -908,7 +910,7 @@ chosen part and no open control is saved.
 ### 12.3 Parts
 
 Each entry of `parts` is one piece of the shape a person can touch: a lane, a column or a row of a
-table, a field of an entity table, a ring's section, a flow's step, a gauge's needle. Every part has a
+table, a field of an entity table, a ring's section, a flow's step, a gauge's needle, an audience's group. Every part has a
 `role`. Its other keys come from one closed set of ten, and the type's entry says, role by role, which
 keys a part must hold and which it may; any other key of the ten refuses the document.
 
@@ -919,7 +921,7 @@ keys a part must hold and which it may; any other key of the ten refuses the doc
 | `text` | text content | [Section 6](#6-text-content), and the limits its entry gives | The part's words: a lane's title, a section's label |
 | `text_layout` | object | A placed text layout (below) | Where a person placed the part's words. Absent: where the type puts them |
 | `style` | object | 1 to 5 channels (below) | The part's own paint. Absent: the shape's |
-| `size` | number | Finite, 0.000001 to 1,000,000 | The part's share of the shape: a lane's thickness, a row's height, a column's width, as its part of the sum of all its siblings' sizes, not a length in points |
+| `size` | number | Finite, 0.000001 to 1,000,000 | The part's share of the shape: a lane's thickness, a row's height, a column's width, as its part of the sum of all its siblings' sizes, not a length in points; or what its type's entry gives, such as a ring section's percentage or an audience group's seats |
 | `members` | array of members | At most 1,000 ([12.5](#125-members)) | The shapes the part holds, in order |
 | `cells` | array of text content | At most 50 | The part's texts, one for each column |
 | `marks` | array of words | At most 8, none repeated | Words marking the part, such as a field's `primary_key` |
@@ -1028,7 +1030,8 @@ stacking position, a lock, connection points and shape data. In addition:
 
 - **Text.** `text_content` is the shape's own text where its type has one: a container's title, the
   title across the top of swimlanes, a callout's words, a lifeline's name, a gauge's caption. A type
-  without text of its own (a table, an entity table, a ring, a flow, a pyramid, a cycle) keeps its
+  without text of its own (a table, an entity table, a ring, a flow, a pyramid, a cycle, an
+  audience) keeps its
   `text_content.string` empty, so that no hidden words travel in files, searches or exports. The
   entry places the shape's own text, so `text_layout` is forbidden on every complex shape; a type whose
   entry allows it records a place a person chose in `own_text_layout` instead.
@@ -1036,13 +1039,13 @@ stacking position, a lock, connection points and shape data. In addition:
   listed type, `flip_horizontal` and `flip_vertical` MUST be `false`. A shape of a type or version the
   reader does not know keeps its flips as written, and a reader MUST NOT refuse a document for them
   ([12.8](#128-reading-a-complex-shape)).
-- **Connection points.** An entity table, a ring, a flow, a pyramid, a cycle and a gauge **place their
-  own points**: their element MUST list none, `"connection_points": []`, and the reader works the points
+- **Connection points.** An entity table, a ring, a flow, a pyramid, a cycle, a gauge and an
+  audience **place their own points**: their element MUST list none, `"connection_points": []`, and the reader works the points
   out from the shape as it reads the document. Their numbers are fixed: points 0 to 7 as the entry
   gives them, and from 8 up the numbers the parts list. Each entry says where its points are. Every
   other complex shape lists its points as any element does ([section 8](#8-connection-points)).
-- **Proportions.** `preserves_aspect_ratio` MUST NOT be `true` on a ring, a flow, a pyramid, a cycle or a
-  gauge: each entry says how its shape resizes.
+- **Proportions.** `preserves_aspect_ratio` MUST NOT be `true` on a ring, a flow, a pyramid, a cycle, a
+  gauge or an audience: each entry says how its shape resizes.
 - **Style.** `style` gives the fill and line as for any shape ([section 5](#5-style)); a part's own
   `style` overrides it channel by channel ([12.3](#123-parts)).
 
@@ -1246,7 +1249,7 @@ reader does not know is not refused but opened as a placeholder ([12.8](#128-rea
 | Where | Values |
 | --- | --- |
 | Element `kind` | `rectangle`, `ellipse`, `note`, `text`, `symbol`, `editable_vector`, `svg_artwork`, `image`, `path`, `unresolved`, `complex_shape` |
-| `complex_shape.type` in document format 20's catalogue | `container`, `swimlanes`, `table`, `entity_table`, `callout`, `lifeline`, `ring`, `flow`, `pyramid`, `cycle`, `gauge` |
+| `complex_shape.type` in document format 20's catalogue | `container`, `swimlanes`, `table`, `entity_table`, `callout`, `lifeline`, `ring`, `flow`, `pyramid`, `cycle`, `gauge`, `audience` |
 | Part `text_layout.position` and `own_text_layout.position` | `top`, `middle`, `bottom` |
 | Member `kind` | `element`, `group` (`connection` is read but refused) |
 

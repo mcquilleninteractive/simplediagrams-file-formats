@@ -6,7 +6,7 @@ plain-language specification, JSON Schemas, documents the app accepts and docume
 
 | Format | Folder | Status |
 | --- | --- | --- |
-| Document format 20 (`.simplediagram`), the format SimpleDiagrams 5.3 writes | [`document/20/`](document/20/README.md) | Draft until the `document-20` tag; final from that tag |
+| Document format 20 (`.simplediagram`), the format SimpleDiagrams 5.3 writes | [`document/20/`](document/20/README.md) | Final, from the `document-20` tag |
 | Document format 19 (`.simplediagram`) | [`document/19/`](document/19/README.md) | Final, from the `document-19` tag |
 | Document format 18 (`.simplediagram`) | [`document/18/`](document/18/README.md) | Draft until the `document-18` tag; final from that tag |
 
@@ -33,9 +33,8 @@ up only when the way a document is laid out changes, not with every app release.
 | 10 | 5.0.0 to 5.0.3 |
 | 1 to 9 | No public release |
 
-Each document format version that this repository specifies has its own folder. Document format 19 is
-the current released format; document format 20, which SimpleDiagrams 5.3 writes, is a draft until 5.3
-is published. A program that writes documents MUST write the newest format it implements; the
+Each document format version that this repository specifies has its own folder. Document format 20,
+which SimpleDiagrams 5.3 writes, is the current released format. A program that writes documents MUST write the newest format it implements; the
 app reads every earlier format itself.
 
 ## The compatibility promise

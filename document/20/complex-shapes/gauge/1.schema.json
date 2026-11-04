@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://simplediagrams.com/schemas/document/20/complex-shapes/gauge/1.schema.json",
   "title": "SimpleDiagrams document format 20 complex shape catalogue: gauge, version 1",
-  "description": "The gauge complex shape at version 1: a half dial with bands and a needle. An element of document.json whose complex_shape has type gauge and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry never changes: a change in what the shape means is a new version, a new entry.",
+  "description": "The gauge complex shape at version 1: a half dial with bands and a needle. An element of document.json whose complex_shape has type gauge and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry stays as it is for the rest of document format 20; what the type holds changes only with a later document format.",
   "type": "object",
   "required": ["complex_shape"],
   "properties": {

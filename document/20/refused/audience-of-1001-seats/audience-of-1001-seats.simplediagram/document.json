@@ -1,0 +1,87 @@
+{
+  "embedded_assets": [],
+  "id": "22301DF2-2A59-51F7-BA4C-DC049278AEDC",
+  "name": "Audience of 1,001 seats",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "9638168A-2015-5BB6-8513-13BF8409911C",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "A9BD4A25-180C-5CDF-8863-F9F1F7F44197",
+                "role": "group",
+                "size": 1000,
+                "style": {"fill_hex": "#4E97D2"}
+              },
+              {
+                "id": "832F35F1-ED68-5C0E-8B00-50933B7E6E5E",
+                "role": "group",
+                "size": 1,
+                "style": {"fill_hex": "#ED692F"}
+              }
+            ],
+            "settings": {"show_total": true},
+            "type": "audience",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 240, "x": 80, "y": 80},
+                "id": "B523273C-04AC-5129-9692-756F97B014A7",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 19,
+  "selected_page_id": "9638168A-2015-5BB6-8513-13BF8409911C",
+  "shape_data_definitions": []
+}

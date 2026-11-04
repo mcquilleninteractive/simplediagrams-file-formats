@@ -703,7 +703,7 @@
           "enum": ["stickyNote", "indexCard", "tapedNote", "tag", "notebookPage", "pinnedNote"]
         },
         "preserves_aspect_ratio": {
-          "description": "Keep proportions when a person resizes the element. Absent means false. Never true on a ring, flow, pyramid, cycle or gauge, whose catalogue entries say how they resize.",
+          "description": "Keep proportions when a person resizes the element. Absent means false. Never true on a ring, flow, pyramid, cycle, gauge or audience, whose catalogue entries say how they resize.",
           "type": "boolean"
         },
         "shows_image_background": {
@@ -1228,7 +1228,7 @@
       }
     },
     "Share": {
-      "description": "A lane's thickness, or a table row's or column's size, as a share of the total of its siblings, not in points: 0.000001 to 1,000,000.",
+      "description": "A lane's thickness, or a table row's or column's size, as a share of the total of its siblings, not in points; or what its type's entry gives, such as a ring section's percentage or an audience group's seats: 0.000001 to 1,000,000.",
       "type": "number",
       "minimum": 1e-06,
       "maximum": 1000000

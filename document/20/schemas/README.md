@@ -9,9 +9,9 @@ This folder holds three JSON Schemas (draft 2020-12) for SimpleDiagrams document
 | [`vector-artwork.schema.json`](vector-artwork.schema.json) | Each `.sdvector` file in `assets/` (vector artwork formats 1 to 4) | `https://simplediagrams.com/schemas/document/20/vector-artwork.schema.json` |
 
 Beside them, each entry of the [complex-shape catalogue](../complex-shapes/README.md) has its own
-schema, `complex-shapes/<type>/<version>.schema.json`, such as
+schema, `complex-shapes/<type>/1.schema.json`, such as
 [`complex-shapes/ring/1.schema.json`](../complex-shapes/ring/1.schema.json). An element of
-`document.json` whose `complex_shape` names that type and version MUST pass it as well as
+`document.json` whose `complex_shape` names that type MUST pass it as well as
 `document.schema.json`. A program that validates a document validates `document.json` against
 `document.schema.json`, then each such element against its entry's schema; an element of a type or
 version the catalogue does not list has no entry schema, and the core schema alone applies to it. The
@@ -59,7 +59,7 @@ are listed below.
 - **Complex shapes.** The structure every complex shape shares: its closed keys, the six kinds of
   setting value, the ten part keys and their forms, words that keep the spelling rule, part paint with
   a texture only beside its colour, placed texts `top`, `middle` or `bottom`, and every list's limit.
-  Each catalogue entry's schema adds what its type and version declare: the settings with their kinds,
+  Each catalogue entry's schema adds what its type declares: the settings with their kinds,
   ranges, closed words and which are required; the roles, their counts, and the keys each role's parts
   hold; whether `members` and `own_text_layout` are allowed; no flips except on a callout; an empty own
   text where the type has none;
@@ -169,6 +169,8 @@ unless the page says otherwise.
 | Words are measured in bytes; the schemas check characters | [Words](../elements.md#124-words) |
 | A known type's parts come in the order of its roles, such as a gauge's bands before its needle | [Parts](../elements.md#123-parts), each type's entry |
 | A gauge's minimum is below its maximum and its value between them | [`gauge`](../complex-shapes/gauge/README.md#rules) |
+| A ring's shares, with the sections that hold none sharing what is left, add up to at most 100 | [`ring`](../complex-shapes/ring/README.md#rules) |
+| An audience's groups hold at most 1,000 seats in all | [`audience`](../complex-shapes/audience/README.md#rules) |
 | An embedded-asset setting names an asset the document holds, of the kind its entry requires | [Settings](../elements.md#122-settings) |
 
 ### Totals across the document
