@@ -3,6 +3,28 @@
 Changes to the specifications in this repository. A released format's rules never change; entries for
 it record clarifications of wording only.
 
+## Document format 20
+
+Draft, to be published with SimpleDiagrams 5.3.
+
+- First draft of the document format 20 specification, written by SimpleDiagrams 5.3: format 19's
+  pages, schemas, catalogue, examples and refused examples, changed only where format 20 differs.
+- New in format 20: a connector may carry a label beside each end, `start_label` and `end_label` on
+  the connection's outer record, each placed by its `distance` from that end and its `normal_offset`
+  to one side, its text at most 200 scalars (`connections.md`, Labels beside the ends). A document
+  claiming format 19 or lower that holds either key is refused. One accepted example
+  (`connector-end-labels`) and one refused example (`end-label-at-a-negative-distance`) show them.
+- New in format 20: a `ring` section may hold a `size`, its share of the circle as a percentage, a
+  whole number from 1 to 100, so a ring is a true pie or donut chart (`complex-shapes/ring/`). A ring's
+  shares add up to at most 100, and under 100 the rest of the circle is left empty. Sections without
+  one share equally what the others leave, so a ring that holds none draws its equal sections as in
+  format 19, gaps included; once any section holds one, neighbouring slices touch.
+- Every document SimpleDiagrams 5.3 saves is format 20, so it needs 5.3 or later to open.
+- A complex shape's `version` is kept as earlier documents wrote it, 1 for every type, and is no longer
+  raised: what a type holds changes only with a new document format version, and the pages now say so.
+- The built-in shape catalogue lists every shape 5.3 bundles, including Biz's Trophy. Format 19's
+  catalogue stays as 5.2 published it.
+
 ## Document format 19
 
 Published with SimpleDiagrams 5.2.
@@ -22,6 +44,10 @@ Published with SimpleDiagrams 5.2.
 - The complex-shape catalogue may gain entries, new types and new versions, within format 19; an entry
   never changes once published, and its words are a closed list. A reader that does not know an entry
   opens the document and shows that shape as a placeholder. Each addition will be listed here.
+- Clarification, 4 November 2026: `connections.md` now records that SimpleDiagrams 5.3 and later
+  refuse a format 19 document whose connection holds `start_label` or `end_label`, the labels beside a
+  connector's ends that format 20 brought in, instead of ignoring them as unknown keys. A writer never
+  writes them in format 19, so no document written to this specification is affected.
 - Clarification of wording, November 2026: "picture" now reads "bitmap image" throughout, because it could
   be taken to mean other artwork, and a task's pinned part is described as a small icon. What the format
   allows and refuses is unchanged.

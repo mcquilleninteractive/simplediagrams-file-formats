@@ -107,7 +107,8 @@ Each entry of `points`:
 | `kind` | string | Yes | `straight` or `curve` | A corner or a smooth bend at this point ([Direct routing](#direct-routing)). Not used by a right-angle connector, which SHOULD write `straight` |
 
 The outer record, the inner record, each point and the label are lenient records: the app ignores keys
-it does not know ([README.md, Unknown keys](README.md#unknown-keys)). The attachment record is strict.
+it does not know ([README.md, Unknown keys](README.md#unknown-keys)), with one exception on the outer
+record, `start_label` and `end_label` ([Labels](#labels)). The attachment record is strict.
 
 **Informative.** A new connector made by the app has `stroke_hex` `#495057`, `line_width` 2,
 `stroke_pattern` `solid`, `start_ending` `stop` and `end_ending` `arrow`. Note that `stop` draws a short
@@ -299,6 +300,12 @@ A connector MAY carry one label, drawn upright (never turned with the line) at a
 
 `position` is measured along the line **as drawn**, including the corners of an automatic right-angle
 route and the curves of a direct one, not along the stored points.
+
+A writer MUST NOT write `start_label` or `end_label` on a connection's outer record. They are the labels
+beside a connector's ends that document format 20 brought in, and SimpleDiagrams 5.3 and later refuse a
+document claiming format 19 whose connection holds either of them, with "The SimpleDiagrams document
+contains an invalid document.json file.", rather than ignore them as an unknown key, so that a label a
+person placed is never silently lost. SimpleDiagrams 5.2 ignores them as it ignores any unknown key.
 
 ## Locking
 

@@ -1,0 +1,17 @@
+# Refused: schema version mismatch
+
+**Rule broken:** `schema_version` in `document.json` must be one less than `format_version` in `manifest.json`: 19 for document format 20. Here it is 20.
+
+**Stated in:** [README.md](../../README.md#versions), Versions.
+
+**Caught by the JSON Schemas:** Yes: `document.schema.json` requires 19.
+
+**The app's message (English):** "The SimpleDiagrams document contains an invalid document.json file."
+
+## In this folder
+
+`schema-version-mismatch.simplediagram/` is a complete document that breaks only this rule. It is stored without its empty `assets/` folder, because Git does not keep empty folders; a reader treats a missing empty `assets/` folder as empty.
+
+## To make it valid
+
+Set `schema_version` to 19.

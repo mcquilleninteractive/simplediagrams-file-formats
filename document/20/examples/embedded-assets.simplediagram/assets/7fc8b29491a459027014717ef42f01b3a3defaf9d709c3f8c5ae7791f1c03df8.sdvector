@@ -1,0 +1,45 @@
+{
+  "asset_id": "8c267a32bf4c6f6e89e1db2a05312d14531d6103096cd3a50e610539eb617fb7",
+  "format": "com.simplediagrams.vector-asset",
+  "intrinsic_size": {"height": 60, "width": 100},
+  "layers": [
+    {
+      "clip_paths": [],
+      "fill": {"opacity": 1, "paint": {"kind": "linked_diagram_fill"}, "rule": "nonzero"},
+      "opacity": 1,
+      "path": {
+        "commands": [
+          ["M", 12, 0],
+          ["L", 88, 0],
+          ["L", 100, 30],
+          ["L", 88, 60],
+          ["L", 12, 60],
+          ["L", 0, 30],
+          ["Z"]
+        ]
+      },
+      "stroke": {
+        "dash_array": [],
+        "dash_offset": 0,
+        "line_cap": "round",
+        "line_join": "round",
+        "miter_limit": 10,
+        "opacity": 1,
+        "paint": {"kind": "linked_diagram_stroke"},
+        "width": 1
+      }
+    },
+    {
+      "clip_paths": [],
+      "fill": {
+        "opacity": 1,
+        "paint": {"color_hex_rgba": "#7A5C00FF", "kind": "authored"},
+        "rule": "nonzero"
+      },
+      "opacity": 1,
+      "path": {"commands": [["M", 14, 26], ["L", 22, 26], ["L", 22, 34], ["L", 14, 34], ["Z"]]}
+    }
+  ],
+  "schema_version": 1,
+  "source_view_box": {"height": 60, "width": 100, "x": 0, "y": 0}
+}
