@@ -1,0 +1,137 @@
+{
+  "embedded_assets": [],
+  "id": "FF6AF8F0-393B-5FAE-926A-FDCBC20855A6",
+  "name": "Part paint",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "4272E1DA-F4AC-58BD-8D91-430445144820",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "2BFB69AE-7776-55B8-B397-47C0D1002E95",
+                "point_ids": [8],
+                "role": "section",
+                "style": {"fill_hex": "#A5D8FF"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Flat"
+                }
+              },
+              {
+                "id": "02CFA5E2-83D7-5B1E-A12F-C954AA432D04",
+                "point_ids": [9],
+                "role": "section",
+                "style": {"fill_hex": "#B2F2BB", "fill_texture": "PencilFill"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Textured"
+                }
+              },
+              {
+                "id": "9A0FD48D-9D83-59A2-BE62-3990F048A995",
+                "point_ids": [10],
+                "role": "section",
+                "style": {"line_width": 3, "stroke_hex": "#C92A2A"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Outlined"
+                }
+              }
+            ],
+            "settings": {"ring_width": 40},
+            "type": "ring",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 200, "width": 200, "x": 80, "y": 80},
+                "id": "F093BD77-D594-5B9C-B59B-7BE4340A5C4D",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {
+                  "fill_hex": "#FFE8CC",
+                  "fill_texture": "PencilFill",
+                  "line_width": 1,
+                  "stroke_hex": "#000000"
+                },
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "4272E1DA-F4AC-58BD-8D91-430445144820",
+  "shape_data_definitions": []
+}

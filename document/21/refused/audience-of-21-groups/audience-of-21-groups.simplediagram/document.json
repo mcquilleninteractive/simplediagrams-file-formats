@@ -1,0 +1,96 @@
+{
+  "embedded_assets": [],
+  "id": "610B0A0D-DD96-5902-8995-F5B3D20E543F",
+  "name": "Audience of 21 groups",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "CFB5BA5E-89C7-5677-8710-B59E4E39D578",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {"id": "A7480973-1E81-5A7D-89A8-3A22CC77DD79", "role": "group", "size": 1},
+              {"id": "D9776563-1213-57F4-8850-D1D009C93258", "role": "group", "size": 1},
+              {"id": "743118F5-9EEF-5593-8700-5D38B17A1CA8", "role": "group", "size": 1},
+              {"id": "9CAEA6C2-347A-5239-B5D6-0897D0AD9F1A", "role": "group", "size": 1},
+              {"id": "3DD6E48D-1D09-57B0-83B3-F1B0B8A12F48", "role": "group", "size": 1},
+              {"id": "A0E265B1-7032-50EE-A736-F5E4E65E8327", "role": "group", "size": 1},
+              {"id": "889BDC14-828F-56F6-9682-488D16A10DD5", "role": "group", "size": 1},
+              {"id": "F30E0A4B-2F16-5EF4-B02E-262BDE277F94", "role": "group", "size": 1},
+              {"id": "F9DE11CA-1A95-5297-8AE6-967C70AD5345", "role": "group", "size": 1},
+              {"id": "32846BC3-1804-5014-857F-1681EE928ED4", "role": "group", "size": 1},
+              {"id": "A2F17D3C-1F21-53BF-AB00-49E6BEDF7C23", "role": "group", "size": 1},
+              {"id": "53CCA156-6AD7-5A51-B6F7-B237720C5830", "role": "group", "size": 1},
+              {"id": "F7479A1B-0393-5AD2-A64B-674D3A3E5DB7", "role": "group", "size": 1},
+              {"id": "F00A0DD1-B5DB-5AAE-9745-12B24554D72A", "role": "group", "size": 1},
+              {"id": "187EA363-E821-5E63-A7AD-4A307547A8B5", "role": "group", "size": 1},
+              {"id": "55A41CC0-09CE-5712-93B4-A0792C1D705F", "role": "group", "size": 1},
+              {"id": "E5FB1BFD-FA3A-5611-84A0-85F003B67D0B", "role": "group", "size": 1},
+              {"id": "4779155F-8399-50CE-AE71-48A58922530E", "role": "group", "size": 1},
+              {"id": "4B21F76D-EE55-59BC-BD42-79D20D023E42", "role": "group", "size": 1},
+              {"id": "50AE1F8A-E073-519B-B419-CE0A77C4FD2B", "role": "group", "size": 1},
+              {"id": "15BC02E2-D21E-53F5-9CF0-E1C09DCEACDE", "role": "group", "size": 1}
+            ],
+            "settings": {"show_total": true},
+            "type": "audience",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 240, "x": 80, "y": 80},
+                "id": "4325E4BD-F8B5-516C-8B2D-2D168B4DC06A",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "CFB5BA5E-89C7-5677-8710-B59E4E39D578",
+  "shape_data_definitions": []
+}

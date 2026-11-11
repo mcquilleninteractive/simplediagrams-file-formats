@@ -1,0 +1,211 @@
+{
+  "embedded_assets": [],
+  "id": "C8C5A7FD-D5AE-516D-A09C-F29D644309B8",
+  "name": "Audiences",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "0E8ABF84-D82F-531D-97F3-22AFB9DBD80C",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "57A2BE6D-416E-504E-8F72-E37F2AE3CF8F",
+                "role": "group",
+                "size": 50,
+                "style": {"fill_hex": "#4E97D2"}
+              },
+              {
+                "id": "E750C8B0-D581-5CB6-907A-50E43027F846",
+                "role": "group",
+                "size": 30,
+                "style": {"fill_hex": "#ED692F"}
+              },
+              {
+                "id": "FBD15E25-54DB-588E-A76D-47F36DEA67DB",
+                "role": "group",
+                "size": 20,
+                "style": {"fill_hex": "#4BB275"}
+              }
+            ],
+            "settings": {"show_total": true},
+            "type": "audience",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 240, "x": 80, "y": 80},
+                "id": "3413F035-33D5-5B91-92BC-08EE27E7B0C7",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "hand_drawn": false,
+            "parts": [
+              {
+                "id": "2BC3F3F7-EE4A-514E-8881-C7FDA658120F",
+                "role": "group",
+                "size": 5,
+                "style": {"fill_hex": "#4E97D2"}
+              },
+              {"id": "C4599122-7711-5BB1-A910-D4E1D69FC9A8", "role": "group", "size": 4}
+            ],
+            "settings": {"show_total": false},
+            "type": "audience",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 240, "x": 400, "y": 80},
+                "id": "E2D0F33C-EB44-5B5E-8B78-4D5247839EA1",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 2
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "13EB90E4-CCCA-5C98-8DC4-31695FAA98EC",
+                "role": "group",
+                "size": 400,
+                "style": {"fill_hex": "#4E97D2"}
+              },
+              {
+                "id": "61565189-AB55-53A8-A359-E49ACC0946EF",
+                "role": "group",
+                "size": 250,
+                "style": {"fill_hex": "#ED692F"}
+              },
+              {
+                "id": "DA97AB55-F694-51AC-920B-2EFA087B87B5",
+                "role": "group",
+                "size": 200,
+                "style": {"fill_hex": "#4BB275"}
+              },
+              {
+                "id": "2C0A8F95-56E6-5730-9F28-BE085442CC0A",
+                "role": "group",
+                "size": 100,
+                "style": {"fill_hex": "#E92128"}
+              },
+              {
+                "id": "9B182004-E69C-5DC6-8FEB-DD160B6EFDFE",
+                "role": "group",
+                "size": 50,
+                "style": {"fill_hex": "#8567B7"}
+              }
+            ],
+            "settings": {"show_total": true},
+            "type": "audience",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 280, "width": 480, "x": 80, "y": 300},
+                "id": "C75225D6-65FE-51A2-8698-C5F6A963FF76",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 3
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "0E8ABF84-D82F-531D-97F3-22AFB9DBD80C",
+  "shape_data_definitions": []
+}

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/21/complex-shapes/audience/1.schema.json",
+  "title": "SimpleDiagrams document format 21 complex shape catalogue: audience, version 1",
+  "description": "The audience complex shape at version 1, new in document format 20: a half-circle arch of seats drawn as dots, divided into coloured groups. An element of document.json whose complex_shape has type audience and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its setting, its role with its count and the keys its parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including the one this schema cannot check: the groups' seats add up to at most 1,000. This entry stays as it is for the rest of document format 21; what the type holds changes only with a later document format.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "audience" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": ["show_total"],
+          "additionalProperties": false,
+          "properties": { "show_total": { "type": "boolean" } }
+        },
+        "parts": {
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "properties": { "role": { "enum": ["group"] } },
+            "allOf": [
+              {
+                "if": { "properties": { "role": { "const": "group" } } },
+                "then": {
+                  "required": ["role", "id", "size"],
+                  "propertyNames": { "enum": ["role", "id", "size", "style"] },
+                  "properties": {
+                    "size": {
+                      "description": "The group's seats: a whole number from 1 to 1,000. A shape's groups hold at most 1,000 seats in all, which this schema cannot check.",
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 1000
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "allOf": [
+            {
+              "contains": { "properties": { "role": { "const": "group" } } },
+              "minContains": 1,
+              "maxContains": 20
+            }
+          ]
+        }
+      },
+      "not": { "anyOf": [{ "required": ["members"] }, { "required": ["own_text_layout"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false },
+        "preserves_aspect_ratio": { "const": false },
+        "content": {
+          "properties": {
+            "content": {
+              "properties": {
+                "text_content": {
+                  "properties": {
+                    "string": {
+                      "description": "This type has no text of its own, so the element's text is empty.",
+                      "const": ""
+                    }
+                  }
+                },
+                "connection_points": {
+                  "description": "This type places its own connection points, worked out as the document is read, so the element lists none.",
+                  "maxItems": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1271 @@
+{
+  "embedded_assets": [],
+  "id": "D3F92B7E-8B88-54AF-A63C-E88D2CD300A7",
+  "name": "Gantt charts",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "5F4B704D-651D-5B00-9B8E-09E7BF441975",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "62E57050-3F1C-5871-B085-832082EA7984",
+                "role": "section",
+                "size": 31,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 1"
+                }
+              },
+              {
+                "id": "20267B69-F26D-53AE-A03B-DE7912A04F24",
+                "role": "section",
+                "size": 30,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 2"
+                }
+              },
+              {
+                "id": "4090F0BE-E177-59D3-9AF8-CAF57706B94E",
+                "point_ids": [8, 9],
+                "role": "task",
+                "size": 1,
+                "start": "2026-11-09",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 1"
+                }
+              },
+              {
+                "id": "BCFF4E16-D413-5B20-87AE-EF12137614A6",
+                "point_ids": [10, 11],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 2"
+                }
+              },
+              {
+                "id": "327976E5-5EFC-5EA1-A38B-E1D666F20312",
+                "point_ids": [12, 13],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 3"
+                }
+              },
+              {
+                "id": "BA4DE1B0-7B9C-5977-BB33-85D1E7A66060",
+                "point_ids": [14, 15],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 4"
+                }
+              },
+              {
+                "id": "D1F27DC4-155C-5BC9-B4C4-FAED356AC11C",
+                "point_ids": [16, 17],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 5"
+                }
+              },
+              {
+                "id": "7EBB8EF6-8705-5075-A6E5-46850908C930",
+                "point_ids": [18, 19],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 6"
+                }
+              },
+              {
+                "id": "66BF60CE-7066-5F21-803F-CD6E98E27AE5",
+                "point_ids": [20, 21],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 7"
+                }
+              },
+              {
+                "id": "A3C61D3A-4B3B-5A7A-BB9B-4AD1A197E388",
+                "point_ids": [22, 23],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 8"
+                }
+              },
+              {
+                "id": "464154D4-FD40-54B4-A4F1-C7832374E752",
+                "point_ids": [24, 25],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 9"
+                }
+              },
+              {
+                "id": "48B42885-2DC4-5B66-B3E0-6B1ED0C6B2E0",
+                "point_ids": [26, 27],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 10"
+                }
+              },
+              {
+                "id": "C8EF0DE1-DE1E-5EE3-B6B3-0F45F3C90F42",
+                "point_ids": [28, 29],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 11"
+                }
+              },
+              {
+                "id": "EC995713-8BE7-586D-AA76-CA416F810D9A",
+                "point_ids": [30, 31],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 12"
+                }
+              },
+              {
+                "id": "7D636F0D-7188-563B-A35C-E9D624F74092",
+                "point_ids": [32, 33],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 13"
+                }
+              },
+              {
+                "id": "E12766E6-2629-553B-80B8-DE3F09C1D68B",
+                "point_ids": [34, 35],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 14"
+                }
+              },
+              {
+                "id": "AAB0A283-4B37-518E-80C9-AA3E1580B734",
+                "point_ids": [36, 37],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 15"
+                }
+              },
+              {
+                "id": "033C0F0A-0DCC-5A4D-80C4-2AF6DAB2B1B4",
+                "point_ids": [38, 39],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 16"
+                }
+              },
+              {
+                "id": "2A7B5FEA-37BE-589E-9E37-BE6364E0EBA1",
+                "point_ids": [40, 41],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 17"
+                }
+              },
+              {
+                "id": "B3763975-1D94-5709-8B08-3BA1419CA8CE",
+                "point_ids": [42, 43],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 18"
+                }
+              },
+              {
+                "id": "1192BBE7-7313-59D9-9F64-ECE5C11A9671",
+                "point_ids": [44, 45],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 19"
+                }
+              },
+              {
+                "id": "D8928383-ADB9-5150-B4FB-E1B10E857AD7",
+                "point_ids": [46, 47],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 20"
+                }
+              },
+              {
+                "id": "956035DD-A3D7-56FC-B8C4-D9738A0267C8",
+                "point_ids": [48, 49],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 21"
+                }
+              },
+              {
+                "id": "B51EEF47-3F50-5D02-B73F-F2E2D929F55D",
+                "point_ids": [50, 51],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 22"
+                }
+              },
+              {
+                "id": "468C9DD4-E3DE-5599-BAC9-65A5311E2313",
+                "point_ids": [52, 53],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 23"
+                }
+              },
+              {
+                "id": "30B6E4DB-EFB5-570E-A041-5A6C5211A873",
+                "point_ids": [54, 55],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 24"
+                }
+              },
+              {
+                "id": "204E1CE5-786E-55E7-91CF-09E6813513EB",
+                "point_ids": [56, 57],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 25"
+                }
+              },
+              {
+                "id": "7847CD82-3098-5E93-821C-8A2F72AE4FA9",
+                "point_ids": [58, 59],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 26"
+                }
+              },
+              {
+                "id": "89E1204D-9F1A-5598-ABAD-F5C414E9614D",
+                "point_ids": [60, 61],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 27"
+                }
+              },
+              {
+                "id": "4D9723F7-A656-55DB-B87A-E0753AFF2A74",
+                "point_ids": [62, 63],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 28"
+                }
+              },
+              {
+                "id": "C7C1A543-C302-5CF9-BE4B-63D4B76CBAB5",
+                "point_ids": [64, 65],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 29"
+                }
+              },
+              {
+                "id": "81142E6E-E257-5884-ADC8-259A2A947133",
+                "point_ids": [66, 67],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 30"
+                }
+              },
+              {
+                "id": "20B0E53A-E3F8-5CF4-AC6D-F2E2BF0314A9",
+                "point_ids": [68, 69],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 31"
+                }
+              },
+              {
+                "id": "B1B73936-D3AB-5BDB-9F5D-A6B8B0DE2353",
+                "point_ids": [70, 71],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 32"
+                }
+              },
+              {
+                "id": "066FAE9D-77C6-5AFF-A631-EDAB3CD71A88",
+                "point_ids": [72, 73],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 33"
+                }
+              },
+              {
+                "id": "3EDF0E5C-C7E4-503E-9A94-D426B39D379D",
+                "point_ids": [74, 75],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 34"
+                }
+              },
+              {
+                "id": "4BCBACE4-324E-5FDD-BE35-B4C0E67B8190",
+                "point_ids": [76, 77],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 35"
+                }
+              },
+              {
+                "id": "D27CE730-F104-5EC4-B0E0-DB7979ED3819",
+                "point_ids": [78, 79],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 36"
+                }
+              },
+              {
+                "id": "11717F5A-73B2-5647-8234-BB7E33DE333A",
+                "point_ids": [80, 81],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 37"
+                }
+              },
+              {
+                "id": "499CA1CC-6882-5D56-93BE-32DC86F75386",
+                "point_ids": [82, 83],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 38"
+                }
+              },
+              {
+                "id": "B44ADE33-2999-5F29-9929-F78FFCAB8F05",
+                "point_ids": [84, 85],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 39"
+                }
+              },
+              {
+                "id": "0A0C6FB6-E4F9-5C3C-A815-4D7130673AEE",
+                "point_ids": [86, 87],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 40"
+                }
+              },
+              {
+                "id": "F47FEB37-3031-543C-9E8D-C368EEEFD87D",
+                "point_ids": [88, 89],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 41"
+                }
+              },
+              {
+                "id": "01509FCC-487F-53D3-A24F-2F48C9490043",
+                "point_ids": [90, 91],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 42"
+                }
+              },
+              {
+                "id": "F09E7424-22F9-5C90-85EC-EB82615F4D90",
+                "point_ids": [92, 93],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 43"
+                }
+              },
+              {
+                "id": "8A17E129-CD28-599A-A400-516A203AE096",
+                "point_ids": [94, 95],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 44"
+                }
+              },
+              {
+                "id": "57487696-6730-5896-96A0-F7D2D31659A6",
+                "point_ids": [96, 97],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 45"
+                }
+              },
+              {
+                "id": "209F8EED-ECD7-591E-9ED4-874FE2BA843D",
+                "point_ids": [98, 99],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 46"
+                }
+              },
+              {
+                "id": "4EFEE7C5-43ED-5302-85C7-6015C6B16B4C",
+                "point_ids": [100, 101],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 47"
+                }
+              },
+              {
+                "id": "A687F1F7-60EA-5237-8116-7AEC0FE44C33",
+                "point_ids": [102, 103],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 48"
+                }
+              },
+              {
+                "id": "61BB8CBC-BD52-547E-9D0A-73D2BE1C87AA",
+                "point_ids": [104, 105],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 49"
+                }
+              },
+              {
+                "id": "04A82F44-0BDE-53B7-9ADE-A0661B8DDD9D",
+                "point_ids": [106, 107],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 50"
+                }
+              },
+              {
+                "id": "3AAF6B18-7FB0-543A-A742-56E67A6CEAF3",
+                "point_ids": [108, 109],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 51"
+                }
+              },
+              {
+                "id": "6728FBA3-7A67-51B5-B018-592726A12A7A",
+                "point_ids": [110, 111],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 52"
+                }
+              },
+              {
+                "id": "70AA32F1-573A-5A64-B3E9-55E29920ADE0",
+                "point_ids": [112, 113],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 53"
+                }
+              },
+              {
+                "id": "34D50889-0911-52DC-8B39-9859819788F4",
+                "point_ids": [114, 115],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 54"
+                }
+              },
+              {
+                "id": "2AE887DC-E364-5AEE-B4EF-DDE59480CD80",
+                "point_ids": [116, 117],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 55"
+                }
+              },
+              {
+                "id": "58655D10-54D9-59E0-9D8D-C40D6E9C012E",
+                "point_ids": [118, 119],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 56"
+                }
+              },
+              {
+                "id": "7AB29E0C-5325-53EE-AB71-BC1947B21891",
+                "point_ids": [120, 121],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 57"
+                }
+              },
+              {
+                "id": "276B835B-F6E0-52A4-923A-7161FD809040",
+                "point_ids": [122, 123],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 58"
+                }
+              },
+              {
+                "id": "F149C8BD-2FBF-5A25-9D3B-2A451DAF1279",
+                "point_ids": [124, 125],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 59"
+                }
+              },
+              {
+                "id": "1A19D95B-8A45-55C8-9E8F-2E6120A16C81",
+                "point_ids": [126, 127],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 60"
+                }
+              },
+              {
+                "id": "26273C1D-BFF4-59D7-8CC1-54BCFFA18544",
+                "point_ids": [128, 129],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 61"
+                }
+              }
+            ],
+            "settings": {"skip_weekends": false},
+            "type": "gantt",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 792, "width": 480, "x": 80, "y": 80},
+                "id": "7C9B4067-8797-59BB-B0A9-13916B3A54CA",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Project plan"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "5F4B704D-651D-5B00-9B8E-09E7BF441975",
+  "shape_data_definitions": []
+}

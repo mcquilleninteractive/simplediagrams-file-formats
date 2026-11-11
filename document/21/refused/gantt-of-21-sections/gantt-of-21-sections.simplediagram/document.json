@@ -1,0 +1,853 @@
+{
+  "embedded_assets": [],
+  "id": "D3F92B7E-8B88-54AF-A63C-E88D2CD300A7",
+  "name": "Gantt charts",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "5F4B704D-651D-5B00-9B8E-09E7BF441975",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "CF76C751-BA2E-5108-ADC1-6DC41AD5692F",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 1"
+                }
+              },
+              {
+                "id": "D349F5EB-D587-5164-9D01-2140E3A08DB7",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 2"
+                }
+              },
+              {
+                "id": "85191CD2-ED2F-528E-BDDB-B18428C15CFD",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 3"
+                }
+              },
+              {
+                "id": "DA4F490A-7BE7-5601-9FA5-989F9FE93CF9",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 4"
+                }
+              },
+              {
+                "id": "6F7F4C04-85E4-528B-A896-5F61266DE726",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 5"
+                }
+              },
+              {
+                "id": "CF8180CB-756A-5DD9-B3B0-8393940044B6",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 6"
+                }
+              },
+              {
+                "id": "1F37F811-6DCF-5080-A4AF-817BE7DC980F",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 7"
+                }
+              },
+              {
+                "id": "5B17AE42-5568-5A98-B427-AD2759C2E224",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 8"
+                }
+              },
+              {
+                "id": "CB41AF83-9D28-58F9-ABDE-92B2D5860E82",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 9"
+                }
+              },
+              {
+                "id": "5558CD1A-8968-531E-A804-87F189A2ECDE",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 10"
+                }
+              },
+              {
+                "id": "3C34FFFE-B2E5-597B-AEA8-94008F689F7D",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 11"
+                }
+              },
+              {
+                "id": "0EBDA9D3-B95F-599F-8EFB-F283D135C557",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 12"
+                }
+              },
+              {
+                "id": "476331BF-A1D7-5B91-B34F-634D9191684B",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 13"
+                }
+              },
+              {
+                "id": "B68403BB-61F3-5412-9DC3-70AEDC634EFC",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 14"
+                }
+              },
+              {
+                "id": "94787DC5-B712-58EC-85C7-54482DDBCC49",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 15"
+                }
+              },
+              {
+                "id": "6F378594-0364-59E3-BACA-E4EEA578127A",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 16"
+                }
+              },
+              {
+                "id": "7F60FB7B-B6CF-59FE-B436-F819A093F3FD",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 17"
+                }
+              },
+              {
+                "id": "A74E0541-0D32-5BA9-94E8-A28A4A73D3B0",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 18"
+                }
+              },
+              {
+                "id": "4BEFD2F4-9D58-5EF8-B35B-2CC9DF2A6F24",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 19"
+                }
+              },
+              {
+                "id": "7269DE3C-6F5D-5437-BE0F-50F4EF096167",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 20"
+                }
+              },
+              {
+                "id": "28EB3717-F0CE-58A5-963C-121D812E6054",
+                "role": "section",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Section 21"
+                }
+              },
+              {
+                "id": "A4BF6872-EAE1-5183-8CA8-3FEB5C7BA29A",
+                "point_ids": [8, 9],
+                "role": "task",
+                "size": 1,
+                "start": "2026-11-09",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 1"
+                }
+              },
+              {
+                "id": "474EDA09-0AAC-5288-A1B9-A62D764503B5",
+                "point_ids": [10, 11],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 2"
+                }
+              },
+              {
+                "id": "FAB6F4B1-C2DF-5FB5-8EAF-4F2AB82B2BB8",
+                "point_ids": [12, 13],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 3"
+                }
+              },
+              {
+                "id": "BCF5F23F-42A9-57EC-BD31-B30E33F2D604",
+                "point_ids": [14, 15],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 4"
+                }
+              },
+              {
+                "id": "D5E1085F-0DC7-5F08-B453-9D04A332D518",
+                "point_ids": [16, 17],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 5"
+                }
+              },
+              {
+                "id": "535961ED-7921-55CB-91F5-06DE2F5834C4",
+                "point_ids": [18, 19],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 6"
+                }
+              },
+              {
+                "id": "70265449-3FE1-5EE7-85B6-F20AA0A4EA59",
+                "point_ids": [20, 21],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 7"
+                }
+              },
+              {
+                "id": "23486B1B-EC37-5399-B6DA-AE7312EFFFE6",
+                "point_ids": [22, 23],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 8"
+                }
+              },
+              {
+                "id": "0E5BFBCD-095D-5E06-8237-0D4CA5C1541F",
+                "point_ids": [24, 25],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 9"
+                }
+              },
+              {
+                "id": "6E5B0946-C4CE-5F7E-A6AD-C72B39B08AF9",
+                "point_ids": [26, 27],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 10"
+                }
+              },
+              {
+                "id": "09D51C0F-EF8F-5702-8F9F-A5C20F4791A9",
+                "point_ids": [28, 29],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 11"
+                }
+              },
+              {
+                "id": "38EA4F03-315E-559D-91CE-E8EAB72A0391",
+                "point_ids": [30, 31],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 12"
+                }
+              },
+              {
+                "id": "991001FF-2F80-59B4-A86B-DA7C77FA1D0E",
+                "point_ids": [32, 33],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 13"
+                }
+              },
+              {
+                "id": "151D364A-87E8-52A6-B2CE-C50F6D3ED680",
+                "point_ids": [34, 35],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 14"
+                }
+              },
+              {
+                "id": "3EA0AC4F-E607-5AA8-813A-D05DE00E1BC9",
+                "point_ids": [36, 37],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 15"
+                }
+              },
+              {
+                "id": "2362FE58-232C-5C0F-86BC-E077FC8A5E5E",
+                "point_ids": [38, 39],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 16"
+                }
+              },
+              {
+                "id": "3A78C8B5-660E-50A4-8013-F66731E10F79",
+                "point_ids": [40, 41],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 17"
+                }
+              },
+              {
+                "id": "8E9CFCEB-E5F8-5DD2-BC65-5DDBC7FB7621",
+                "point_ids": [42, 43],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 18"
+                }
+              },
+              {
+                "id": "1D6A96C9-E476-59B8-9BF1-63F55650B062",
+                "point_ids": [44, 45],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 19"
+                }
+              },
+              {
+                "id": "96DA4938-1165-5D18-B9D0-624573E52753",
+                "point_ids": [46, 47],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 20"
+                }
+              },
+              {
+                "id": "48B0C26E-9D4E-5535-9D09-0AC1CFCC5A2C",
+                "point_ids": [48, 49],
+                "role": "task",
+                "size": 1,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Task 21"
+                }
+              }
+            ],
+            "settings": {"skip_weekends": false},
+            "type": "gantt",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 312, "width": 480, "x": 80, "y": 80},
+                "id": "7C9B4067-8797-59BB-B0A9-13916B3A54CA",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Project plan"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "5F4B704D-651D-5B00-9B8E-09E7BF441975",
+  "shape_data_definitions": []
+}

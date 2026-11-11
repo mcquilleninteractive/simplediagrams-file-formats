@@ -1,0 +1,355 @@
+{
+  "embedded_assets": [],
+  "id": "29E1A07B-3100-507A-9F39-328B16757A05",
+  "name": "Gauges",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "31474BAF-2C0D-5D23-8EFF-3BBB0106A316",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "3ED98CEC-6B73-5F48-872C-3BD378425052",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              },
+              {
+                "id": "BC4B2411-A6EC-5D79-856B-A1C8D24DEFEC",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              },
+              {
+                "id": "A0FAAF12-EF04-5046-BD46-2383F1DEC41D",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              },
+              {"id": "DB1D3A8F-CFA4-59D0-8004-5C1353B3D91B", "role": "needle"}
+            ],
+            "settings": {"auto_rotate_labels": true, "maximum": 100, "minimum": 0, "value": 0},
+            "type": "gauge",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 200, "x": 80, "y": 80},
+                "id": "40326C7C-6BA2-5166-87B4-8A886A722611",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Empty"
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "9D8B7658-11E7-5C91-AAEA-910C7B2E945F",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              },
+              {
+                "id": "767B3AD3-5902-57AE-B1BF-6F0ACF12F874",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              },
+              {
+                "id": "F095F521-7724-5C28-8FEF-9534309668DF",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              },
+              {"id": "466E6A93-2EEE-5100-B042-DAFE1980F376", "role": "needle"}
+            ],
+            "settings": {
+              "auto_rotate_labels": true,
+              "maximum": 100,
+              "minimum": 0,
+              "value": 100
+            },
+            "type": "gauge",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 200, "x": 340, "y": 80},
+                "id": "D5EDDD4C-C811-540D-ACEB-8A14EBB0A2FB",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Full"
+                },
+                "z_index": 2
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "C8C67297-FEAE-5DA8-9A4E-AA648C211F50",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "A"
+                }
+              },
+              {
+                "id": "A6016157-5DE6-5D39-8B13-C8256D14A7A8",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "B"
+                }
+              },
+              {
+                "id": "7B16E0A0-CA2D-5CC4-8EB0-8A9F92AE69B4",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "C"
+                }
+              },
+              {
+                "id": "F3C1AB99-0161-5676-B989-02B5306215D2",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "D"
+                }
+              },
+              {
+                "id": "75D25EEC-AEC5-5162-AE4B-FA56417199C8",
+                "role": "band",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "E"
+                }
+              },
+              {"id": "571AE557-1254-5BA7-B105-C76D26836B86", "role": "needle"}
+            ],
+            "settings": {
+              "auto_rotate_labels": false,
+              "maximum": 100,
+              "minimum": 0,
+              "value": 50
+            },
+            "type": "gauge",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 200, "x": 600, "y": 80},
+                "id": "69402E31-7FD1-5EEB-903D-BF112A07DC1A",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Grade"
+                },
+                "z_index": 3
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "31474BAF-2C0D-5D23-8EFF-3BBB0106A316",
+  "shape_data_definitions": []
+}

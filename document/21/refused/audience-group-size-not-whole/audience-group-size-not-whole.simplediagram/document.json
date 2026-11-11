@@ -1,0 +1,93 @@
+{
+  "embedded_assets": [],
+  "id": "71D1AB39-F404-550D-883A-16502BFA3554",
+  "name": "Audience group size not whole",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "3C215334-4A1C-5ACA-80CC-4A097CCE8D5E",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "6E2650F8-38B5-5D37-91D3-A8DBF919A695",
+                "role": "group",
+                "size": 50,
+                "style": {"fill_hex": "#4E97D2"}
+              },
+              {
+                "id": "DE8F1468-7427-54DB-B179-F716D917867F",
+                "role": "group",
+                "size": 30.5,
+                "style": {"fill_hex": "#ED692F"}
+              },
+              {
+                "id": "0AE1EE1E-B4D7-5172-BB8A-4B390520B0B1",
+                "role": "group",
+                "size": 20,
+                "style": {"fill_hex": "#4BB275"}
+              }
+            ],
+            "settings": {"show_total": true},
+            "type": "audience",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 240, "x": 80, "y": 80},
+                "id": "DAECF345-CC7B-54A5-824B-8692C9BD5B0B",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "3C215334-4A1C-5ACA-80CC-4A097CCE8D5E",
+  "shape_data_definitions": []
+}

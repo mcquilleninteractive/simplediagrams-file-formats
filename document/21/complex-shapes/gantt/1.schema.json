@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simplediagrams.com/schemas/document/21/complex-shapes/gantt/1.schema.json",
+  "title": "SimpleDiagrams document format 21 complex shape catalogue: gantt, version 1",
+  "description": "The gantt complex shape at version 1: a time chart of tasks in sections, new in document format 21. An element of document.json whose complex_shape has type gantt and version 1 must pass this schema as well as document.schema.json. It holds what this entry declares, as far as JSON Schema can: its settings with their kinds, ranges and words, its roles with their counts and the keys each role's parts hold, and what it allows of its element, such as flips. The README.md beside this file states every rule, including those this schema cannot check, such as the order of the roles. This entry stays as it is for the rest of document format 21; what the type holds changes only with a later document format.",
+  "type": "object",
+  "required": ["complex_shape"],
+  "properties": {
+    "complex_shape": {
+      "required": ["type", "version", "settings", "parts"],
+      "properties": {
+        "type": { "const": "gantt" },
+        "version": { "const": 1 },
+        "settings": {
+          "required": ["skip_weekends"],
+          "additionalProperties": false,
+          "properties": { "skip_weekends": { "type": "boolean" } }
+        },
+        "parts": {
+          "minItems": 2,
+          "maxItems": 80,
+          "items": {
+            "properties": { "role": { "enum": ["section", "task"] } },
+            "allOf": [
+              {
+                "if": { "properties": { "role": { "const": "section" } } },
+                "then": {
+                  "required": ["role", "id", "text", "size"],
+                  "propertyNames": {
+                    "enum": ["role", "id", "text", "size", "text_layout", "style"]
+                  },
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "properties": { "string": { "maxLength": 500 } }
+                    },
+                    "size": { "type": "integer", "minimum": 1, "maximum": 60 }
+                  }
+                }
+              },
+              {
+                "if": { "properties": { "role": { "const": "task" } } },
+                "then": {
+                  "required": ["role", "id", "text", "point_ids"],
+                  "propertyNames": {
+                    "enum": [
+                      "role",
+                      "id",
+                      "text",
+                      "point_ids",
+                      "start",
+                      "after",
+                      "size",
+                      "marks",
+                      "text_layout",
+                      "style"
+                    ]
+                  },
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "properties": { "string": { "maxLength": 500 } }
+                    },
+                    "point_ids": { "minItems": 2, "maxItems": 2 },
+                    "start": {
+                      "description": "A day from 1900-01-01 to 2199-12-31; the pattern checks the years.",
+                      "pattern": "^(19|20|21)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+                    },
+                    "after": { "maxItems": 1 },
+                    "size": { "type": "integer", "minimum": 1, "maximum": 3650 },
+                    "marks": { "items": { "enum": ["milestone", "done", "crit"] } }
+                  }
+                }
+              }
+            ]
+          },
+          "allOf": [
+            {
+              "contains": { "properties": { "role": { "const": "section" } } },
+              "minContains": 1,
+              "maxContains": 20
+            },
+            {
+              "contains": { "properties": { "role": { "const": "task" } } },
+              "minContains": 1,
+              "maxContains": 60
+            }
+          ]
+        }
+      },
+      "not": { "anyOf": [{ "required": ["members"] }] }
+    },
+    "content": {
+      "properties": {
+        "flip_horizontal": { "const": false },
+        "flip_vertical": { "const": false },
+        "preserves_aspect_ratio": { "const": false },
+        "content": {
+          "properties": {
+            "content": {
+              "properties": {
+                "text_content": {
+                  "properties": {
+                    "string": {
+                      "description": "The title: at most 500 characters (Unicode scalars, which maxLength counts).",
+                      "maxLength": 500
+                    }
+                  }
+                },
+                "connection_points": {
+                  "description": "This type places its own connection points, worked out as the document is read, so the element lists none.",
+                  "maxItems": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

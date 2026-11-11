@@ -3,6 +3,44 @@
 Changes to the specifications in this repository. A released format's rules never change; entries for
 it record clarifications of wording only.
 
+## Document format 21
+
+Draft, to be published with SimpleDiagrams 5.4.
+
+- First draft of the document format 21 specification, written by SimpleDiagrams 5.4: format 20's
+  pages, schemas, catalogue, examples and refused examples, changed only where format 21 differs.
+- New in format 21: a paragraph run may hold `list`, a `kind` (`bullet` or `number`) and a `level` from
+  1 to 3, which makes its paragraphs the items of a list, in any text: an element's, a connector's
+  labels, a lane's title, a table cell or a complex shape's part (`elements.md`, Lists). Numbers are
+  not stored; they follow the order of the items.
+- New in format 21: a note may hold `collapsed`, set to `true`, which shows it as a small icon of its
+  look while it keeps its expanded frame (`elements.md`, Note). Only a note may be collapsed.
+- A document claiming format 20 or lower that holds a `list` or `collapsed` set to `true` is refused.
+  One accepted example (`lists-and-collapsed-notes`) and three refused examples (`list-at-level-4`,
+  `list-of-an-unknown-kind` and `collapsed-rectangle`) show them.
+- `note_style` gains three looks, `documentation`, `textAnnotation` and `umlNote`. The list of looks
+  is open in every format, so this needs no change of a reader: one that does not know a look draws it
+  as a sticky note.
+- In the complex-shape catalogue, a `table` gains the setting `uml_box`, which kind of UML box it
+  stands for (`none`, `class`, `interface` or `enumeration`), written by every table in format 21, and
+  a `ring` holds 1 to 20 sections rather than 1 to 12. A format 20 document holding either is refused.
+  The `ring-of-13-sections` refused example becomes `ring-of-21-sections`, and three refused examples
+  (`table-with-an-unknown-uml-box`, `table-without-uml-box` and `entity-table-with-uml-box`) show
+  `uml_box`.
+- New in format 21: a complex shape's part may hold two more keys, `start`, the day it begins, written
+  `YYYY-MM-DD`, and `after`, 1 to 8 other parts of the same shape it follows, named by `id`
+  (`elements.md`, Parts). The structure's closed set of part keys grows from ten to twelve, once,
+  with format 21 itself. Two refused examples (`part-start-not-a-date` and
+  `part-after-naming-no-part`) show the structure's rules.
+- New in format 21: the complex-shape catalogue gains a type, the `gantt`, first drawn by
+  SimpleDiagrams 5.4 (`complex-shapes/gantt/`): a time chart of 1 to 60 tasks in 1 to 20 sections,
+  each task starting on a day or when another ends, lasting 1 to 3,650 days or marked a milestone,
+  with an optional count of weekdays only (`skip_weekends`). A document claiming format 20 or lower
+  that holds one is refused. One accepted example (`gantt-charts`) and fourteen refused examples, one
+  for each of its limits and rules, show it. The pages that list the catalogue's types, the shapes
+  that place their own points and the shapes that never keep their proportions now name it.
+- Every document SimpleDiagrams 5.4 saves is format 21, so it needs 5.4 or later to open.
+
 ## Document format 20
 
 Published with SimpleDiagrams 5.3.
@@ -33,6 +71,10 @@ Published with SimpleDiagrams 5.3.
   catalogue's schemas now say so.
 - The built-in shape catalogue lists every shape 5.3 bundles, including Biz's Trophy. Format 19's
   catalogue stays as 5.2 published it.
+- Clarification, 10 November 2026: `elements.md` now records that SimpleDiagrams 5.4 and later refuse
+  a format 20 document whose paragraph run holds `list`, or whose note holds `collapsed` set to `true`,
+  which format 21 brought in, instead of ignoring them as unknown keys. A writer never writes them in
+  format 20, so no document written to this specification is affected.
 
 ## Document format 19
 

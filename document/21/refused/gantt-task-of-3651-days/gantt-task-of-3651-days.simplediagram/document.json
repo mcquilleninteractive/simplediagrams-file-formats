@@ -1,0 +1,212 @@
+{
+  "embedded_assets": [],
+  "id": "D3F92B7E-8B88-54AF-A63C-E88D2CD300A7",
+  "name": "Gantt charts",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "5F4B704D-651D-5B00-9B8E-09E7BF441975",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "42EE9D7F-AAED-5B4E-B96C-399C17AD12C9",
+                "role": "section",
+                "size": 2,
+                "style": {"fill_hex": "#4E97D2"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Plan"
+                }
+              },
+              {
+                "id": "4ACDD82E-62AB-5764-9FDA-6D9FFCF2B322",
+                "role": "section",
+                "size": 3,
+                "style": {"fill_hex": "#ED692F"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Build"
+                }
+              },
+              {
+                "id": "889CBC21-CFC8-542A-A18D-AEAA6C1F705B",
+                "point_ids": [8, 9],
+                "role": "task",
+                "size": 3651,
+                "start": "2026-11-09",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Research"
+                }
+              },
+              {
+                "id": "F86A1344-04CE-5C30-8936-48E569CAE97B",
+                "marks": ["done"],
+                "point_ids": [10, 11],
+                "role": "task",
+                "size": 5,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Sketches"
+                }
+              },
+              {
+                "after": ["F86A1344-04CE-5C30-8936-48E569CAE97B"],
+                "id": "95599D15-B3A4-55E8-B8AC-D9CCAE3CD0BF",
+                "marks": ["crit"],
+                "point_ids": [12, 13],
+                "role": "task",
+                "size": 10,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Prototype"
+                }
+              },
+              {
+                "id": "FB2EC2F3-BC77-5CA1-A91C-1AE32A765606",
+                "point_ids": [14, 15],
+                "role": "task",
+                "size": 5,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Testing"
+                }
+              },
+              {
+                "id": "EF00605B-7B1B-5117-92DE-F1855DE38E71",
+                "marks": ["milestone"],
+                "point_ids": [16, 17],
+                "role": "task",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Launch"
+                }
+              }
+            ],
+            "settings": {"skip_weekends": false},
+            "type": "gantt",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 220, "width": 480, "x": 80, "y": 80},
+                "id": "7C9B4067-8797-59BB-B0A9-13916B3A54CA",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Project plan"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "5F4B704D-651D-5B00-9B8E-09E7BF441975",
+  "shape_data_definitions": []
+}

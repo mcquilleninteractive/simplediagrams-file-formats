@@ -1,0 +1,332 @@
+{
+  "embedded_assets": [],
+  "id": "36389801-B4DC-5F29-86C9-2160478C7443",
+  "name": "Gantt charts",
+  "pages": [
+    {
+      "content": {
+        "background": {"kind": "none"},
+        "content": {
+          "connections": [],
+          "content": {
+            "connections": [],
+            "elements": [],
+            "grid": {"origin": {"x": 0, "y": 0}, "spacing_x": 20, "spacing_y": 20},
+            "height": 1200,
+            "id": "77147B6C-EC68-5675-9D25-A8189F8B4124",
+            "name": "Page 1",
+            "width": 2000
+          },
+          "elements": [],
+          "groups": []
+        },
+        "elements": [],
+        "groups": []
+      },
+      "elements": [
+        {
+          "complex_shape": {
+            "parts": [
+              {
+                "id": "51B59676-8147-503F-9618-F2AE38BEAF47",
+                "role": "section",
+                "size": 2,
+                "style": {"fill_hex": "#4E97D2"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Plan"
+                }
+              },
+              {
+                "id": "5BB20721-8FC9-5528-91F2-BEC680CB27D6",
+                "role": "section",
+                "size": 3,
+                "style": {"fill_hex": "#ED692F"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Build"
+                }
+              },
+              {
+                "id": "4A34B9F0-EE27-5D3C-84F9-136169186A07",
+                "point_ids": [8, 9],
+                "role": "task",
+                "size": 5,
+                "start": "2026-11-09",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Research"
+                }
+              },
+              {
+                "id": "496485B6-BA25-58AD-8F9D-AACDD3795353",
+                "marks": ["done"],
+                "point_ids": [10, 11],
+                "role": "task",
+                "size": 5,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Sketches"
+                }
+              },
+              {
+                "after": ["496485B6-BA25-58AD-8F9D-AACDD3795353"],
+                "id": "34151031-A3F2-52ED-ABCA-3B4D6331EEC6",
+                "marks": ["crit"],
+                "point_ids": [12, 13],
+                "role": "task",
+                "size": 10,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Prototype"
+                }
+              },
+              {
+                "id": "E14C4F26-73FD-5030-A34D-DB2472CCE418",
+                "point_ids": [14, 15],
+                "role": "task",
+                "size": 5,
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Testing"
+                }
+              },
+              {
+                "id": "7638504B-5011-55F1-BEE9-21429B1149FF",
+                "marks": ["milestone"],
+                "point_ids": [16, 17],
+                "role": "task",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Launch"
+                }
+              }
+            ],
+            "settings": {"skip_weekends": false},
+            "type": "gantt",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 220, "width": 480, "x": 80, "y": 80},
+                "id": "9F948B7F-F428-5FDC-AD9F-5E31255D381B",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Project plan"
+                },
+                "z_index": 0
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        },
+        {
+          "complex_shape": {
+            "hand_drawn": false,
+            "parts": [
+              {
+                "id": "38CCAB8C-2E8A-529A-AD0F-5BBDD362DA2C",
+                "role": "section",
+                "size": 3,
+                "style": {"fill_hex": "#4BB275"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                }
+              },
+              {
+                "id": "A398A4B1-43D7-59BF-AAA5-8D7C0B0E422E",
+                "point_ids": [8, 9],
+                "role": "task",
+                "size": 3,
+                "start": "2026-12-21",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Order parts"
+                }
+              },
+              {
+                "id": "9F7D0873-B341-5F3B-B692-44E62379E9DF",
+                "marks": ["crit"],
+                "point_ids": [10, 11],
+                "role": "task",
+                "size": 4,
+                "style": {"fill_hex": "#E92128"},
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Assemble"
+                }
+              },
+              {
+                "id": "0CC204EF-EA50-53CF-8B45-C41CB7404783",
+                "marks": ["milestone"],
+                "point_ids": [12, 13],
+                "role": "task",
+                "text": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": "Ship"
+                }
+              }
+            ],
+            "settings": {"skip_weekends": true},
+            "type": "gantt",
+            "version": 1
+          },
+          "content": {
+            "content": {
+              "content": {
+                "connection_points": [],
+                "frame": {"height": 140, "width": 360, "x": 80, "y": 360},
+                "id": "041AE829-C5A5-544B-88FA-23959743AFFE",
+                "kind": "complex_shape",
+                "rotation_degrees": 0,
+                "style": {"fill_hex": "#FFFFFF", "line_width": 1, "stroke_hex": "#000000"},
+                "text_content": {
+                  "base_alignment": "center",
+                  "base_style": {
+                    "color_hex": "#212529",
+                    "font_size": 15,
+                    "is_italic": false,
+                    "is_underlined": false,
+                    "weight": "medium"
+                  },
+                  "character_runs": [],
+                  "paragraph_runs": [],
+                  "string": ""
+                },
+                "z_index": 1
+              },
+              "is_locked": false
+            },
+            "flip_horizontal": false,
+            "flip_vertical": false
+          },
+          "shape_data_definition_id": null,
+          "shape_data_values": []
+        }
+      ]
+    }
+  ],
+  "quick_styles": [],
+  "revision": 0,
+  "schema_version": 20,
+  "selected_page_id": "77147B6C-EC68-5675-9D25-A8189F8B4124",
+  "shape_data_definitions": []
+}

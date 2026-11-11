@@ -107,8 +107,9 @@ element                                   level 0 (outer object)
 0), or anywhere in a `complex_shape` record except inside its texts ([12.1](#121-the-structure)).
 Everywhere else in an element (levels 1 to 3, and the style, text content, text layout, path, path node, symbol
 reference, connection point and member records inside them) an unknown key is ignored and is gone the
-next time the app saves the document. A misspelt optional key at those levels is therefore silently
-lost, not refused. Writers MUST NOT write keys this specification does not define.
+next time the app saves the document, with two exceptions, `collapsed` on level 1 ([11.3](#113-note)) set to
+`true` or to a value that is not a boolean, and a paragraph run's `list` ([6.3](#63-runs-and-ranges)). A misspelt optional key at those levels is
+therefore silently lost, not refused. Writers MUST NOT write keys this specification does not define.
 
 **Absent and `null`.** For an optional key, JSON `null` is read as if the key were absent. Writers
 MUST leave an optional key out rather than write `null`. One key is different:
@@ -385,6 +386,12 @@ A **character run** is an object `{"range": …, "style": …}`, where `style` i
 style: every required key, not only those that differ from `base_style`. A **paragraph run** is an
 object `{"range": …, "alignment": …}`, with `alignment` one of the four alignment values.
 
+A writer MUST NOT write `list` in a paragraph run. It marks the list items that document format 21
+brought in, and SimpleDiagrams 5.4 and later refuse a document claiming format 20 that holds one in any
+text, with "The SimpleDiagrams document contains an invalid document.json file.", rather than ignore it
+as an unknown key, so that a list a person made is never silently lost. SimpleDiagrams 5.3 ignores it
+as it ignores any unknown key.
+
 A **range**:
 
 | Key | Type | Required | Rules / bounds | Meaning |
@@ -626,6 +633,13 @@ A note, drawn by the app in one of six looks chosen by `note_style`:
 
 `note_style` on any other kind is refused. A writer MUST write one of these six words, or leave the key
 out for a sticky note.
+
+A writer MUST NOT write `collapsed` on an element. It marks the collapsed notes that document format
+21 brought in, and SimpleDiagrams 5.4 and later refuse a document claiming format 20 whose element
+holds `"collapsed": true`, or a `collapsed` that is not a boolean, with "The SimpleDiagrams document
+contains an invalid document.json file.", rather than ignore it as an unknown key, so that a note a
+person collapsed is never silently shown in full; `"collapsed": false` is read as no key. SimpleDiagrams
+5.3 ignores it as it ignores any unknown key.
 
 **A look the reader does not know.** The words form an open list: a later SimpleDiagrams may add looks
 within document format 20. A reader that meets a word it does not know MUST NOT refuse the document for
