@@ -1,8 +1,5 @@
 # SimpleDiagrams document format 21
 
-**Status:** Draft. Document format 21 is written by SimpleDiagrams 5.4. This specification is a
-draft until this repository is tagged `document-21`; from that tag on, its rules are final.
-
 A SimpleDiagrams document is a file whose name ends in `.simplediagram`. It holds one or more pages of
 shapes, connectors, groups and text, together with any artwork and images those pages use. This
 specification describes document format 21, the current format, closely enough that a program can

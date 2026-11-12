@@ -5,9 +5,9 @@ it record clarifications of wording only.
 
 ## Document format 21
 
-Draft, to be published with SimpleDiagrams 5.4.
+Published with SimpleDiagrams 5.4.
 
-- First draft of the document format 21 specification, written by SimpleDiagrams 5.4: format 20's
+- The document format 21 specification, written by SimpleDiagrams 5.4: format 20's
   pages, schemas, catalogue, examples and refused examples, changed only where format 21 differs.
 - New in format 21: a paragraph run may hold `list`, a `kind` (`bullet` or `number`) and a `level` from
   1 to 3, which makes its paragraphs the items of a list, in any text: an element's, a connector's
